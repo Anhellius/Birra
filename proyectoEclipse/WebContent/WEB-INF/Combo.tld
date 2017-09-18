@@ -9,7 +9,7 @@
     <function>
         <name>getCombo</name>
         <function-class>
-            ar.gob.inti.supai.modelo.db.PersistorHibernate
+            ar.gob.inti.birra.modelo.db.PersistorHibernate
         </function-class>
         <function-signature>
             java.util.List getCombo(java.lang.String,java.lang.String)
@@ -18,7 +18,7 @@
      <function>
         <name>getCombo2</name>
         <function-class>
-            ar.gob.inti.supai.modelo.db.PersistorHibernate
+            ar.gob.inti.birra.modelo.db.PersistorHibernate
         </function-class>
         <function-signature>
             java.util.List getCombo2(java.lang.String,java.lang.String)
@@ -27,7 +27,7 @@
      <function>
         <name>getComboV</name>
         <function-class>
-            ar.gob.inti.supai.modelo.db.PersistorHibernate
+            ar.gob.inti.birra.modelo.db.PersistorHibernate
         </function-class>
         <function-signature>
             java.util.List getComboV(java.lang.String)
@@ -36,7 +36,7 @@
     <function>
         <name>getComboVistaPorTipo</name>
         <function-class>
-                ar.gob.inti.supai.modelo.db.PersistorHibernate
+                ar.gob.inti.birra.modelo.db.PersistorHibernate
         </function-class>
         <function-signature>
             java.util.List getComboVistaPorTipo(java.lang.String,java.lang.String,java.lang.Integer)
@@ -45,7 +45,7 @@
     <function>
         <name>getComboVConID</name>
         <function-class>
-            ar.gob.inti.supai.modelo.db.PersistorHibernate
+            ar.gob.inti.birra.modelo.db.PersistorHibernate
         </function-class>
         <function-signature>
             java.util.List getComboVConID(java.lang.String,java.lang.String)

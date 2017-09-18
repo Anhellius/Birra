@@ -31,7 +31,7 @@
 				<li class="menu-text"><span class="txt-white">Instituto Nacional de Tecnología Industrial</span></li>
 			</ul>
 		</div>
-		<stripesDin:form data-abide="" id="form3" method="post" beanclass="ar.gob.inti.supai.controlador.actionBeans.PanelActionBean">
+		<stripesDin:form data-abide="" id="form3" method="post" beanclass="ar.gob.inti.birra.controlador.actionBeans.PanelActionBean">
 			<div class="top-bar-right">	
 				<ul class="dropdown menu" data-dropdown-menu>
 					<li>
@@ -50,6 +50,6 @@
 	</div>
 	<header class="expanded row bannerHeader bg-institucional  hide-for-small-only">
 		<div class="columns">
-			<h2 class="txt-white light">SUPAI <small class="size-12">v.${actionBean.version}</small></h2>
+			<h2 class="txt-white light">birra <small class="size-12">v.${actionBean.version}</small></h2>
 		</div>
 	</header>

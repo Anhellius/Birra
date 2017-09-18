@@ -1,5 +1,5 @@
 <%@ include file="/pages/taglibs.jsp" %>
- <stripes:form partial="true" beanclass="ar.gob.inti.supai.controlador.actionBeans.PanelActionBean" > 
+ <stripes:form partial="true" beanclass="ar.gob.inti.birra.controlador.actionBeans.PanelActionBean" > 
 <div class="title bg-color3 panel txt-white" id="divPedido">
 
 	<h4>
@@ -109,13 +109,13 @@
 		         	<div class="row collapse">
 		         		<div class="small-12 large-5 columns">
 			           	<label>
-	        				<input type="text" name="pweb.responsable.mail" id="mailResponsableSupai" placeholder="Usuario Mail Responsable" class="required">
-	        				<input type="hidden" name="pweb.responsable.legajo" id="legajoResponsableSupai" value="">
+	        				<input type="text" name="pweb.responsable.mail" id="mailResponsablebirra" placeholder="Usuario Mail Responsable" class="required">
+	        				<input type="hidden" name="pweb.responsable.legajo" id="legajoResponsablebirra" value="">
 	      				</label>		
       				</div>
       				<div class="small-12 large-7 columns color-scheme-color3">
       				 	<span class="txt-white label"><i class="mdi-action-account-box size-28 txt-white"></i></span>
-      				 	<span class="lead txt-color" id="supaiLabelResponsable"> </span>
+      				 	<span class="lead txt-color" id="birraLabelResponsable"> </span>
       				</div>
       				</div>
 		          </div>    
@@ -125,7 +125,7 @@
 		           	<h4 class="light">Titulo<small class="txt-innovacion"></small></h4>
 		           	</div>
 		          <div class="small-12">
-			          <label id="divTituloSupai"> 
+			          <label id="divTitulobirra"> 
 			          </label>
 		           </div>
 		          </div>
@@ -193,7 +193,7 @@
 				              </div>
 				               <div class="small-12 medium-4 columns" id="divBtnAdjuntar">
 				              
-			                 	<input class="button text-center" type="button" value="Adjuntar" id="supaiAgregarAdjunto" />	
+			                 	<input class="button text-center" type="button" value="Adjuntar" id="birraAgregarAdjunto" />	
 			                 </div>
 			             </div>
 			                
@@ -208,7 +208,7 @@
 			                      <th width="200">Eliminar</th>
 			                    </tr>
 			                  </thead>
-			                  <tbody id="supaiTbodyAdjunto">
+			                  <tbody id="birraTbodyAdjunto">
 			                   
 			                  </tbody>
 			                </table>

@@ -1,6 +1,6 @@
 <%@ include file="/pages/taglibs.jsp" %>
 <div class="small-12 column"> 
-<stripes:form method="POST" id="formBusquedaHorasExtras" beanclass="ar.gob.inti.supai.controlador.actionBeans.PanelActionBean">         
+<stripes:form method="POST" id="formBusquedaHorasExtras" beanclass="ar.gob.inti.birra.controlador.actionBeans.PanelActionBean">         
 	<fieldset class="fieldset sombra-1">
 	<h3>Buscador</h3> 
 	    <div class="row expanded color-scheme-color3">

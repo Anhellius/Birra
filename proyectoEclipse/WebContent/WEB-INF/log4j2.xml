@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-	<Configuration status="DEBUG" verbose="true" name="supai">
+	<Configuration status="DEBUG" verbose="true" name="birra">
      
      <Appenders>      
      	    <Console name="Console" target="SYSTEM_OUT">
 		      <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level - %msg%n"/>
 		    </Console>
      
-       <RollingFile name="file-log" fileName="c:/logs/supai.log"
-			filePattern="c:/logs/supai-%d{yyyy-MM-dd}.log">
+       <RollingFile name="file-log" fileName="c:/logs/birra.log"
+			filePattern="c:/logs/birra-%d{yyyy-MM-dd}.log">
 			<PatternLayout>
 				<pattern>[%-5level] [%NDC] %d{yyyy-MM-dd HH:mm:ss} [%t]  %c{1} - %m%n</pattern>
 			</PatternLayout>
@@ -19,8 +19,8 @@
 			<DefaultRolloverStrategy max="30"/>
 		</RollingFile>
 		
-		<RollingFile name="file-error-log" fileName="c:/logs/supai-ERROR.log"
-			filePattern="c:/logs/supai-ERROR-%d{yyyy-MM-dd}.log">
+		<RollingFile name="file-error-log" fileName="c:/logs/birra-ERROR.log"
+			filePattern="c:/logs/birra-ERROR-%d{yyyy-MM-dd}.log">
 			<PatternLayout>
 				<pattern>[%-5level] [%NDC] %d{yyyy-MM-dd HH:mm:ss} [%t]  %c{1} - %m%n</pattern>
 			</PatternLayout>

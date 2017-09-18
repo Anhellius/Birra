@@ -1,5 +1,5 @@
 <%@ include file="/pages/taglibs.jsp" %>
- <stripes:form partial="true" beanclass="ar.gob.inti.supai.controlador.actionBeans.PanelActionBean" > 
+ <stripes:form partial="true" beanclass="ar.gob.inti.birra.controlador.actionBeans.PanelActionBean" > 
 <div class="title bg-color3 panel txt-white">
 	<h5>
 		<span class="light">Pedido Num.</span>		
@@ -87,7 +87,7 @@
 		          <div class="row expanded">
 		            <div class="small-12 medium-12 columns">	            						
 		              
-		                <div id="divLogSupai">
+		                <div id="divLogbirra">
 		                	
 		                </div>
 		            </div>

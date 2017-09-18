@@ -32,7 +32,7 @@
   <div class="title-bar hide-for-large bg-institucional">
         <div class="title-bar-left">
           <button class="menu-icon" type="button" data-open="offCanvasLeft"></button>
-          <span class="title-bar-title"><span class="thin">SUPAI</span></span>
+          <span class="title-bar-title"><span class="thin">birra</span></span>
         </div>
         <div class="title-bar-right">
     		<button class="" type="button" data-toggle="example-dropdown"><i class="mdi-navigation-more-vert size-28"></i></button>
@@ -180,7 +180,7 @@ $(document).ready(function() {
 	});
 
 
-	$(document).on('change','#mailResponsableSupai', function() {
+	$(document).on('change','#mailResponsablebirra', function() {
 		if ($(this).val()!=''){
 			$.ajax({
 				url: 'miPanel?existeLegajo',
@@ -189,10 +189,10 @@ $(document).ready(function() {
 				dataType:'json',
 				success: function(data) {
 					if(transform(data.success)){
-						$('#supaiLabelResponsable').html(data.nombre);
-						$('#legajoResponsableSupai').val(data.legajo);
+						$('#birraLabelResponsable').html(data.nombre);
+						$('#legajoResponsablebirra').val(data.legajo);
 					}else{
-						$('#mailResponsableSupai').val('');
+						$('#mailResponsablebirra').val('');
 						$('#pError').html("El mail ingresado es incorrecto. <BR>Solo ingrese el usuario del mail sin @inti.gob.ar");
 						$('#modalError').foundation('open');
 						
@@ -209,7 +209,7 @@ $(document).ready(function() {
 	
 
 
-	$(document).on('click','#supaiAgregarAdjunto', function() {
+	$(document).on('click','#birraAgregarAdjunto', function() {
 
 		var tipoPedidoWeb = ($('#tipoPedidoWeb :selected').val());
 		var cantidadAdjunto = parseInt($('#cantidadAdjunto').val());
@@ -239,12 +239,12 @@ $(document).ready(function() {
 				    					
 				}	
 				
-				$('#supaiTbodyAdjunto').append('<tr id="trAdjuntoSupai-'+cantidadAdjunto+'">'+
+				$('#birraTbodyAdjunto').append('<tr id="trAdjuntobirra-'+cantidadAdjunto+'">'+
 		            '<td>'+(cantidadAdjunto+1)+'</td>'+
 		            '<td id="tdAdjunto-'+cantidadAdjunto+'"></td>'+
 		            '<td>'+$('#linkReferencia').val()+'<input type="hidden" name="adjuntos['+cantidadAdjunto+'].linkReferencia" value="'+$('#linkReferencia').val()+'" />'+
 		            appendHiddenAdjunto+'</td>'+
-		            '<td class="text-center"><i id="eliminarAdjuntoSupai-'+cantidadAdjunto+'" class="eliminarAdjuntoSupai mdi-action-delete txt-color"></i> </td>'+
+		            '<td class="text-center"><i id="eliminarAdjuntobirra-'+cantidadAdjunto+'" class="eliminarAdjuntobirra mdi-action-delete txt-color"></i> </td>'+
 		            '</tr>');
 
 				if($('.file-upload-input').val()!=''){
@@ -284,12 +284,12 @@ $(document).ready(function() {
 			    clone.attr('name', 'adjuntos['+cantidadAdjunto+'].fb');	
 		
 			  		
-			    $('#supaiTbodyAdjunto').append('<tr id="trAdjuntoSupai-'+cantidadAdjunto+'">'+
+			    $('#birraTbodyAdjunto').append('<tr id="trAdjuntobirra-'+cantidadAdjunto+'">'+
 			            '<td>'+(cantidadAdjunto+1)+'</td>'+
 			            '<td id="tdAdjunto-'+cantidadAdjunto+'"></td>'+
 			            '<td>'+$('#linkReferencia').val()+'<input type="hidden" name="adjuntos['+cantidadAdjunto+'].linkReferencia" value="'+$('#linkReferencia').val()+'" />'+
 			            '<input type="hidden" name="adjuntos['+cantidadAdjunto+'].tipoAdjunto" value="'+tipoAdjunto+'" /></td>'+
-			            '<td class="text-center"><i id="eliminarAdjuntoSupai-'+cantidadAdjunto+'" class="eliminarAdjuntoSupai mdi-action-delete txt-color"></i> </td>'+
+			            '<td class="text-center"><i id="eliminarAdjuntobirra-'+cantidadAdjunto+'" class="eliminarAdjuntobirra mdi-action-delete txt-color"></i> </td>'+
 			            '</tr>');
 			
 				clone.appendTo('#tdAdjunto-'+cantidadAdjunto);
@@ -337,12 +337,12 @@ $(document).ready(function() {
 			    clone.attr('name', 'adjuntos['+cantidadAdjunto+'].fb');	
 		
 			  		
-			    $('#supaiTbodyAdjunto').append('<tr id="trAdjuntoSupai-'+cantidadAdjunto+'">'+
+			    $('#birraTbodyAdjunto').append('<tr id="trAdjuntobirra-'+cantidadAdjunto+'">'+
 			            '<td>'+(cantidadAdjunto+1)+'</td>'+
 			            '<td id="tdAdjunto-'+cantidadAdjunto+'"></td>'+
 			            '<td>'+$('#linkReferencia').val()+'<input type="hidden" name="adjuntos['+cantidadAdjunto+'].linkReferencia" value="'+$('#linkReferencia').val()+'" />'+
 			            '<input type="hidden" name="adjuntos['+cantidadAdjunto+'].tipoAdjunto" value="'+tipoAdjunto+'" /></td>'+
-			            '<td class="text-center"><i id="eliminarAdjuntoSupai-'+cantidadAdjunto+'" class="eliminarAdjuntoSupai mdi-action-delete txt-color"></i> </td>'+
+			            '<td class="text-center"><i id="eliminarAdjuntobirra-'+cantidadAdjunto+'" class="eliminarAdjuntobirra mdi-action-delete txt-color"></i> </td>'+
 			            '</tr>');
 			
 				clone.appendTo('#tdAdjunto-'+cantidadAdjunto);
@@ -359,13 +359,13 @@ $(document).ready(function() {
 		}
 	});
 
-	$(document).on('click','.eliminarAdjuntoSupai', function() {
+	$(document).on('click','.eliminarAdjuntobirra', function() {
 		var id = $(this).attr('id');
 		var idAdjunto = id.substring(id.indexOf('-')+1,id.length);
 			
 		$('#cantidadAdjuntoReal').val(parseInt($('#cantidadAdjuntoReal').val()-1));
 
-		$('#trAdjuntoSupai-'+idAdjunto).remove();
+		$('#trAdjuntobirra-'+idAdjunto).remove();
 		
 	});
 	
