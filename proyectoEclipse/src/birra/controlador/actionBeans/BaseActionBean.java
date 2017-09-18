@@ -51,7 +51,7 @@ public abstract class BaseActionBean implements ActionBean {
 	}
 
 	public String getVersion() {
-		Properties props = CargadorPropiedades.cargarPropiedades("supaiProps");
+		Properties props = CargadorPropiedades.cargarPropiedades("birraProps");
 		
 		this.version = props.getProperty("version");
 		return version;
