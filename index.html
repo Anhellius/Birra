@@ -10,47 +10,59 @@
   <body>
 
   <!--INICIO DE TOPBAR-->
-
-    <div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium">
-      <button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
-      <div class="title-bar-title">Menu</div>
+  <!-- mobile nav bar -->
+  <div class="title-bar topbar-center-logo-mobile" data-responsive-toggle="topbar-center-logo" data-hide-for="medium">
+    <div class="title-bar-left">
+      <div class="title-bar-title"><img src="https://placehold.it/100x39" alt="" /></div>
     </div>
-
-    <div class="top-bar" id="responsive-menu">
-      <div class="top-bar-left">
-        <ul class="dropdown menu" data-dropdown-menu>
-          <li class="menu-text">Site Title</li>
-          <li class="has-submenu">
-            <a href="#0">One</a>
-            <ul class="submenu menu vertical" data-submenu>
-              <li><a href="#0">One</a></li>
-              <li><a href="#0">Two</a></li>
-              <li><a href="#0">Three</a></li>
-            </ul>
-          </li>
-          <li><a href="#0">Two</a></li>
-          <li><a href="#0">Three</a></li>
-        </ul>
-      </div>
-      <div class="top-bar-right">
-        <ul class="menu">
-          <li><input type="search" placeholder="Search"></li>
-          <li><button type="button" class="button">Search</button></li>
-        </ul>
-      </div>
+    <div class="title-bar-right">
+      <button class="menu-icon" type="button" data-toggle="topbar-center-logo"></button>
     </div>
+  </div>
+  <!-- /mobile nav bar -->
+
+  <!-- medium and larger nav bar -->
+  <div class="top-bar topbar-center-logo margin-vertical-1" id="topbar-center-logo">
+    <div class="top-bar-left">
+      <ul class="menu vertical medium-horizontal">
+        <li><button type="button" class="hollow button rounded secondary" href="#">Suscribirse</button></li>
+        <li class="margin-left-1"><button type="button" class="button rounded success" href="#">Ingresar</button></li>
+      </ul>
+    </div>
+    <div class="top-bar-center">
+      <a href="#"><img src="https://placehold.it/100x39&text=LOGO" alt="" /></a>
+    </div>
+    <div class="top-bar-right">
+      <ul class="dropdown menu"  data-dropdown-menu>
+        <li><div class="input-group input-group-rounded">
+          <input class="input-group-field" type="search" placeholder="Buscar">
+          <div class="input-group-button">
+            <input type="submit" class="button secondary" value="Buscar">
+          </div>
+        </div>
+
+        </li>
+        <li class="has-submenu">
+          <a href="#0">Secciones</a>
+          <ul class="submenu menu vertical" data-submenu>
+            <li><a href="#0">Uno</a></li>
+            <li><a href="#0">Dos</a></li>
+            <li><a href="#0">Tres</a></li>
+            <li><a href="#0">Cuatro</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- /medium and larger nav bar -->
+
+
 
   <!--FIN DE TOPBAR-->
 
 
-      <div class="grid-x grid-padding-x">
-        <div class="large-12 cell">
-          <h1>Welcome to Foundation</h1>
-        </div>
-      </div>
-
       <div class="grid-x grid-padding-x grid-margin-y">
-        <div class="large-7 cell">
+        <div class="large-8 cell">
           <div class="orbit clean-hero-slider" role="region" aria-label="Favorite Space Pictures" data-orbit>
             <div class="orbit-wrapper">
               <div class="orbit-controls">
@@ -60,8 +72,8 @@
               <ul class="orbit-container">
                 <li class="orbit-slide">
                   <figure class="orbit-figure">
-                    <div class="position-absolute z-index-1"><span class="label warning">Primary Label</span></div>
-                    <img class="orbit-image" src="//lorempixel.com/1200/500/" alt="image alt text">
+                    <div class="position-absolute z-index-1"><span class="label warning">EL NEGOCIO</span></div>
+                    <img class="orbit-image" src="//lorempixel.com/1200/500/nightlife" alt="image alt text">
                     <figcaption class="orbit-caption height-75">
                       <h3>Lorem Ipsum Etiam</h3>
                       <p>Etiam porta sem malesuada magna mollis euismod. Vestibulum id ligula porta felis euismod semper.</p>
@@ -81,7 +93,7 @@
 
 
         </div>
-        <div class="large-5 cell">
+        <div class="large-4 cell">
           <div class="orbit clean-hero-slider" role="region" aria-label="Favorite Space Pictures" data-orbit>
             <div class="orbit-wrapper">
               <div class="orbit-controls">
@@ -89,10 +101,10 @@
                 <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
               </div>
               <ul class="orbit-container">
+                <div class="position-absolute z-index-1"><span class="label warning">ACTUALIDAD</span></div>
                 <li class="orbit-slide">
                   <figure class="orbit-figure">
-                    <div class="position-absolute z-index-1"><span class="label warning">Primary Label</span></div>
-                    <img class="orbit-image" src="//lorempixel.com/900/530/" alt="image alt text">
+                    <img class="orbit-image" src="//lorempixel.com/900/770/" alt="image alt text">
                     <figcaption class="orbit-caption height-75">
                       <h3>Lorem Ipsum Etiam</h3>
                       <p>Etiam porta sem malesuada magna mollis euismod. Vestibulum id ligula porta felis euismod semper.</p>
@@ -102,7 +114,7 @@
                 </li>
                 <li class="orbit-slide">
                   <figure class="orbit-figure">
-                    <img class="orbit-image" src="//lorempixel.com/900/530/" alt="image alt text">
+                    <img class="orbit-image" src="//lorempixel.com/900/770/" alt="image alt text">
                     <figcaption class="orbit-caption height-75">
                       <h3>Ipsum Ornare Ultricies</h3>
                       <p>Nullam quis risus eget urna mollis ornare vel eu leo. Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -112,7 +124,7 @@
                 </li>
                 <li class="orbit-slide">
                   <figure class="orbit-figure">
-                    <img class="orbit-image" src="//lorempixel.com/900/530/" alt="image alt text">
+                    <img class="orbit-image" src="//lorempixel.com/900/770/" alt="image alt text">
                     <figcaption class="orbit-caption height-75">
                       <h3>Malesuada Parturient</h3>
                       <p>Fusce dapibus, tellus ac cursus commodo, sit amet risus. Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam sit amet non magna.</p>
@@ -134,126 +146,183 @@
       </div>
 
       <div class="grid-x grid-padding-x grid-margin-y">
-        <div class="large-8 medium-8 cell">
-          <h5>Here&rsquo;s your basic grid:</h5>
-          <!-- Grid Example -->
-
-          <div class="grid-x grid-padding-x">
-            <div class="large-12 cell">
-              <div class="primary callout">
-                <p><strong>This is a twelve cell section in a grid-x.</strong> Each of these includes a div.callout element so you can see where the cell are - it's not required at all for the grid.</p>
-              </div>
-            </div>
-          </div>
-          <div class="grid-x grid-padding-x">
-            <div class="large-6 medium-6 cell">
-              <div class="primary callout">
-                <p>Six cell</p>
-              </div>
-            </div>
-            <div class="large-6 medium-6 cell">
-              <div class="primary callout">
-                <p>Six cell</p>
-              </div>
-            </div>
-          </div>
+        <div class="small-12 cell">
           <div class="grid-x grid-padding-x">
             <div class="large-4 medium-4 small-4 cell">
-              <div class="primary callout">
-                <p>Four cell</p>
-              </div>
-            </div>
-            <div class="large-4 medium-4 small-4 cell">
-              <div class="primary callout">
-                <p>Four cell</p>
-              </div>
-            </div>
-            <div class="large-4 medium-4 small-4 cell">
-              <div class="primary callout">
-                <p>Four cell</p>
-              </div>
-            </div>
-          </div>
-
-          <hr />
-
-          <h5>We bet you&rsquo;ll need a form somewhere:</h5>
-          <form>
-            <div class="grid-x grid-padding-x">
-              <div class="large-12 cell">
-                <label>Input Label</label>
-                <input type="text" placeholder="large-12.cell" />
-              </div>
-            </div>
-            <div class="grid-x grid-padding-x">
-              <div class="large-4 medium-4 cell">
-                <label>Input Label</label>
-                <input type="text" placeholder="large-4.cell" />
-              </div>
-              <div class="large-4 medium-4 cell">
-                <label>Input Label</label>
-                <input type="text" placeholder="large-4.cell" />
-              </div>
-              <div class="large-4 medium-4 cell">
-                <div class="grid-x">
-                  <label>Input Label</label>
-                  <div class="input-group">
-                    <input type="text" placeholder="small-9.cell" class="input-group-field" />
-                    <span class="input-group-label">.com</span>
-                  </div>
+              <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+                <div class="orbit-wrapper">
+                  <ul class="orbit-container">
+                    <li class="is-active orbit-slide">
+                      <figure class="orbit-figure">
+                        <div class="position-absolute z-index-1"><span class="label warning">CIENCIA Y TECNO</span></div>
+                        <img class="orbit-image" src="//lorempixel.com/900/770/sports" alt="image alt text">
+                        <figcaption class="orbit-caption">
+                          <h4>Lorem Ipsum Etiam</h4>
+                          <p>Etiam porta sem malesuada magna mollis euismod. Vestibulum id ligula porta felis euismod semper.</p>
+                          <a href="#" class="button yellow">Mattis Elit</a>
+                        </figcaption>
+                      </figure>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
-            <div class="grid-x grid-padding-x">
-              <div class="large-12 cell">
-                <label>Select Box</label>
-                <select>
-                  <option value="husker">Husker</option>
-                  <option value="starbuck">Starbuck</option>
-                  <option value="hotdog">Hot Dog</option>
-                  <option value="apollo">Apollo</option>
-                </select>
+            <div class="large-4 medium-4 small-4 cell">
+              <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+                <div class="orbit-wrapper">
+                  <ul class="orbit-container">
+                    <li class="is-active orbit-slide">
+                      <figure class="orbit-figure">
+                        <div class="position-absolute z-index-1"><span class="label warning">DE GIRA</span></div>
+                        <img class="orbit-image" src="//lorempixel.com/900/770/city" alt="image alt text">
+                        <figcaption class="orbit-caption">
+                          <h4>Lorem Ipsum Etiam</h4>
+                          <p>Etiam porta sem malesuada magna mollis euismod. Vestibulum id ligula porta felis euismod semper.</p>
+                          <a href="#" class="button yellow">Mattis Elit</a>
+                        </figcaption>
+                      </figure>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
-            <div class="grid-x grid-padding-x">
-              <div class="large-6 medium-6 cell">
-                <label>Choose Your Favorite</label>
-                <input type="radio" name="pokemon" value="Red" id="pokemonRed"><label for="pokemonRed">Radio 1</label>
-                <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">Radio 2</label>
-              </div>
-              <div class="large-6 medium-6 cell">
-                <label>Check these out</label>
-                <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
-                <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
+            <div class="large-4 medium-4 small-4 cell">
+              <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+                <div class="orbit-wrapper">
+                  <ul class="orbit-container">
+                    <li class="is-active orbit-slide">
+                      <figure class="orbit-figure">
+                        <div class="position-absolute z-index-1"><span class="label warning">RSE</span></div>
+                        <img class="orbit-image" src="//lorempixel.com/900/770/food" alt="image alt text">
+                        <figcaption class="orbit-caption">
+                          <h4>Lorem Ipsum Etiam</h4>
+                          <p>Etiam porta sem malesuada magna mollis euismod. Vestibulum id ligula porta felis euismod semper.</p>
+                          <a href="#" class="button yellow">Mattis Elit</a>
+                        </figcaption>
+                      </figure>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
-            <div class="grid-x grid-padding-x">
-              <div class="large-12 cell">
-                <label>Textarea Label</label>
-                <textarea placeholder="small-12.cell"></textarea>
-              </div>
-            </div>
-          </form>
+          </div>
         </div>
-
-        <div class="large-4 medium-4 cell">
-          <h5>Try one of these buttons:</h5>
-          <p><a href="#" class="button">Simple Button</a><br/>
-          <a href="#" class="success button">Success Btn</a><br/>
-          <a href="#" class="alert button">Alert Btn</a><br/>
-          <a href="#" class="secondary button">Secondary Btn</a></p>
-          <div class="callout">
-            <h5>So many components, girl!</h5>
-            <p>A whole kitchen sink of goodies comes with Foundation. Check out the docs to see them all, along with details on making them your own.</p>
-            <a href="http://foundation.zurb.com/sites/docs/" class="small button">Go to Foundation Docs</a>
+      </div>
+      <div class="grid-x grid-padding-x grid-margin-y">
+        <div class="small-12 large-8 cell">
+          <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+            <div class="orbit-wrapper">
+              <ul class="orbit-container">
+                <li class="is-active orbit-slide">
+                  <figure class="orbit-figure">
+                    <div class="position-absolute z-index-1"><span class="label warning">ENTREVISTA</span></div>
+                    <img class="orbit-image" src="//lorempixel.com/1200/500/" alt="image alt text">
+                    <figcaption class="orbit-caption">
+                      <h4>Lorem Ipsum Etiam</h4>
+                      <p>Etiam porta sem malesuada magna mollis euismod. Vestibulum id ligula porta felis euismod semper.</p>
+                      <a href="#" class="button yellow">Mattis Elit</a>
+                    </figcaption>
+                  </figure>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="small-12 large-4 cell">
+          <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+            <div class="orbit-wrapper">
+              <ul class="orbit-container">
+                <li class="is-active orbit-slide">
+                  <figure class="orbit-figure">
+                    <div class="position-absolute z-index-1"><span class="label warning">HISTORIAS DE BIRRA</span></div>
+                    <img class="orbit-image" src="//lorempixel.com/900/770/technics" alt="image alt text">
+                    <figcaption class="orbit-caption">
+                      <h4>Lorem Ipsum Etiam</h4>
+                      <p>Etiam porta sem malesuada magna mollis euismod. Vestibulum id ligula porta felis euismod semper.</p>
+                      <a href="#" class="button yellow">Mattis Elit</a>
+                    </figcaption>
+                  </figure>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
+  <footer class="marketing-site-footer grid-x margin-top-1 grid-padding-x grid-padding-y">
 
-    <script src="bower_components/jquery/dist/jquery.js"></script>
+      <div class="small-12 large-3 cell">
+        <h5 class="marketing-site-footer-name">Dónde ir</h5>
+        <div class="marketing-site-footer-block">
+          <i class="fa fa-map-marker" aria-hidden="true"></i>
+          <p>100 W Rincon<br><small>San Francisco, CA 94015</small></p>
+        </div>
+        <div class="marketing-site-footer-block">
+          <i class="fa fa-map-marker" aria-hidden="true"></i>
+          <p>100 W Rincon<br><small>San Francisco, CA 94015</small></p>
+        </div>
+      </div>
+      <div class="small-12 large-3 cell">
+        <h5 class="marketing-site-footer-title">Insumos</h5>
+        <div class="marketing-site-footer-block">
+          <p>Algo que poner</p>
+        </div>
+        <div class="marketing-site-footer-block">
+          <p>Algo que poner</p>
+        </div>
+        <div class="marketing-site-footer-block">
+          <p>Algo que poner</p>
+        </div>
+      </div>
+      <div class="small-12 large-3 cell">
+        <h5 class="marketing-site-footer-title">Oferta Académica</h5>
+        <div class="marketing-site-footer-block">
+          <p>100 W Rincon<br>San Francisco, CA 94015</p>
+        </div>
+        <div class="marketing-site-footer-block">
+          <p>1 (800) 555-5555</p>
+        </div>
+        <div class="marketing-site-footer-block">
+          <p>yetirules@fakeemail.com</p>
+        </div>
+      </div>
+      <div class="small-12 large-3 cell">
+        <h5 class="marketing-site-footer-title">Alquileres</h5>
+        <div class="marketing-site-footer-block">
+          <i class="fa fa-phone" aria-hidden="true"></i>
+          <p>1 (800) 555-5555</p>
+        </div>
+        <div class="marketing-site-footer-block">
+          <i class="fa fa-envelope-o" aria-hidden="true"></i>
+          <p>yetirules@fakeemail.com</p>
+        </div>
+      </div>
+
+    <div class="marketing-site-footer-bottom small-12 cell">
+      <div class="grid-x">
+        <div class="small-12 large-6 cell align-self-middle">
+          <p>&copy; 2017 No rights reserved</p>
+        </div>
+        <div class="small-12 large-6 cell">
+          <ul class="menu marketing-site-footer-bottom-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Works</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/what-input/dist/what-input.js"></script>
     <script src="bower_components/foundation-sites/dist/js/foundation.js"></script>
+    <script src="https://use.fontawesome.com/b825156fce.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>
