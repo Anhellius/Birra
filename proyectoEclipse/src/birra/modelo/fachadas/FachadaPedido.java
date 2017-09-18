@@ -348,7 +348,7 @@ public class FachadaPedido {
 				HibernateUtil.getSessionFactory().getCurrentSession().clear();
 			}	
 
-			String consulta = "select new ar.gob.inti.supai.modelo.dominio.Adjunto"
+			String consulta = "select new ar.gob.inti.birra.modelo.dominio.Adjunto"
 					+ "(a.idAdjunto,a.nombreArchivo,a.mime,a.tamanio)"			
 					+ " from Adjunto a "				
 					+ " where a.idAdjunto = "+ idAdjunto;
@@ -370,7 +370,7 @@ public class FachadaPedido {
 	@SuppressWarnings("unchecked")
 	private static void eliminarAdjuntosFisicosPorIdPedido(int idPedido) throws IOException {
 		
-			String consulta = "select new ar.gob.inti.supai.modelo.dominio.Adjunto"
+			String consulta = "select new ar.gob.inti.birra.modelo.dominio.Adjunto"
 					+ "(a.idAdjunto,a.nombreArchivo)"			
 					+ " from Adjunto a "				
 					+ " where a.pedido.idPedido = "+ idPedido;

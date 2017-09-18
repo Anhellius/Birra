@@ -3,9 +3,9 @@ package birra.modelo.utiles;
 
 public class Constantes {
 	
-	public static final String proyecto = "supai";
+	public static final String proyecto = "birra";
 	//nombre del archivo de propiedades
-	public static final String ARCHIVO_PROPIEDADES = "supaiProps";
+	public static final String ARCHIVO_PROPIEDADES = "birraProps";
 	public static final String smtp = "smtp.inti.gob.ar";
 	//el from de todos los mails enviados
 	public static final String MAIL_FROM = "sistemas@inti.gob.ar";

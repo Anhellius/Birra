@@ -19,7 +19,7 @@ import birra.modelo.dominioInterno.Agente;
 import birra.modelo.tipificaciones.IEntidadWorkflow;
 
 @Entity
-@Table(name="LogSupai")
+@Table(name="Logbirra")
 public class LogPedido implements java.io.Serializable,IEntidadWorkflow {
 	
 	@Id
