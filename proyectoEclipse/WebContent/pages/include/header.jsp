@@ -31,7 +31,7 @@
 				<li class="menu-text"><span class="txt-white">Instituto Nacional de Tecnología Industrial</span></li>
 			</ul>
 		</div>
-		<stripesDin:form data-abide="" id="form3" method="post" beanclass="ar.gob.inti.birra.controlador.actionBeans.PanelActionBean">
+		<stripesDin:form data-abide="" id="form3" method="post" beanclass="birra.controlador.actionBeans.PanelActionBean">
 			<div class="top-bar-right">	
 				<ul class="dropdown menu" data-dropdown-menu>
 					<li>

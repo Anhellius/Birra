@@ -5,7 +5,7 @@
 <div class="row align-center">
   <div class="medium-4 columns vHeight">
 
-    <stripes:form id="form1" beanclass="ar.gob.inti.birra.controlador.actionBeans.LoginActionBean">
+    <stripes:form id="form1" beanclass="birra.controlador.actionBeans.LoginActionBean">
       <div class="row column profile-card">
       <div class="content">
         <h4 class="text-center">Ingrese con su cuenta de email institucional</h4>
