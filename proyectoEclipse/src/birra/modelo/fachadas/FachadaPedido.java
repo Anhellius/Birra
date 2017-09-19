@@ -14,7 +14,6 @@ import birra.modelo.db.HibernateUtil;
 import birra.modelo.db.PersistorHibernate;
 import birra.modelo.dominio.Accion;
 import birra.modelo.dominio.Adjunto;
-import birra.modelo.dominio.AgenteEnrolado;
 import birra.modelo.dominio.Pedido;
 import birra.modelo.dominio.Rol;
 import birra.modelo.dominio.Transicion;
@@ -27,7 +26,7 @@ import birra.modelo.utiles.StringUtil;
 public class FachadaPedido {	
 	
 	@SuppressWarnings("unchecked")
-	public static List<Pedido> getPedidosSolicitados(AgenteEnrolado a, Pedido pParaFiltrar) throws Exception {
+	public static List<Pedido> getPedidosSolicitados( Pedido pParaFiltrar) throws Exception {
 				
 		Set<Transicion> todosLasTransiciones =  new HashSet<Transicion>();
 		
@@ -44,7 +43,7 @@ public class FachadaPedido {
 		
 		String trans = "";
 		
-		for (Rol i : a.getRoles()) {
+	/*	for (Rol i : a.getRoles()) {
 			if(i.getIdRol()==Constantes.ROL_SOLICITANTE){
 				//Recorro todos los roles para acceder a todas las transiciones posibles que tiene ese usuario
 				for (Transicion j : i.getTransicions()) {	
@@ -52,14 +51,14 @@ public class FachadaPedido {
 					todosLasTransiciones.add(j);
 				}
 			}
-		}
+		}*/
 		
 		//si es un usuario pete, les filtro para ver los pedidos de su centro de costo
 		// si es un usuario admin nivel 2 solamente podra ver los pedidos en los cuales tienen alguna transicion en comun el pedido y el usuario logueado
 		
 		consulta = consulta + " left join fetch est.transicionsForIdEstadoInicial transi "
 				+ " left join fetch transi.estadoByIdEstadoFinal ef "
-				+ " where p.agenteSolicitante.legajo="+a.getAgente().getLegajo()
+				+ " where p.agenteSolicitante.legajo="+1
 				+ " order by p.idPedido desc";
 		
 		List<Pedido> p = PersistorHibernate.ejecutarConsulta(consulta);
@@ -72,7 +71,7 @@ public class FachadaPedido {
 	}
 	
 	@SuppressWarnings({ "unchecked", "unused" })
-	public static List<Pedido> getPedidosParaAdminTabs(AgenteEnrolado a,  int tabs) throws Exception {
+	public static List<Pedido> getPedidosParaAdminTabs(/*AgenteEnrolado a,*/  int tabs) throws Exception {
 		
 		/**
 		 * 1 - Asignados Abiertos Propios
@@ -82,7 +81,7 @@ public class FachadaPedido {
 		 */
 		
 		String filtroTabs = "";
-		if (tabs == 1)filtroTabs = " where ta.legajo = "+a.getAgente().getLegajo() +" AND (est.idEstado in (2,3,6,7))  ";
+		if (tabs == 1)filtroTabs = " where ta.legajo = 33051 AND (est.idEstado in (2,3,6,7))  ";
 		if (tabs == 2)filtroTabs = " where (est.idEstado = 1)  ";
 		if (tabs == 3)filtroTabs = " where (est.idEstado in (2,3,6,7))  ";
 		if (tabs == 4)filtroTabs = "";
@@ -108,7 +107,7 @@ public class FachadaPedido {
 		String trans = "";
 		Set<Transicion> todosLasTransicionesPrivativas =  new HashSet<Transicion>();
 		Set<Transicion> todosLasTransiciones =  new HashSet<Transicion>();
-		for (Rol i : a.getRoles()) {	
+	/*	for (Rol i : a.getRoles()) {	
 			//Recorro todos los roles para acceder a todas las transiciones posibles que tiene ese usuario
 			if(i.getIdRol()!=Constantes.ROL_SOLICITANTE){
 				for (Transicion j : i.getTransicions()) {	
@@ -117,7 +116,7 @@ public class FachadaPedido {
 						todosLasTransicionesPrivativas.add(j);
 				}
 			}
-		}
+		}*/
 	
 	
 		consulta = consulta + " left join fetch est.transicionsForIdEstadoInicial transi "
@@ -128,7 +127,7 @@ public class FachadaPedido {
 		List<Pedido> p = PersistorHibernate.ejecutarConsulta(consulta);	
 		
 		//Aca elimino las transiciones que son solo para el Dueño o tecnico asignado. la transicion es privativa
-		for (Pedido p2 : p) {			
+	/*	for (Pedido p2 : p) {			
 		
 			//si no soy el dueño elimino las transiciones privativas
 			if(p2.getTecnicoAsignado()!=null && p2.getTecnicoAsignado().getLegajo()!=a.getAgente().getLegajo()){
@@ -138,7 +137,7 @@ public class FachadaPedido {
 			p2.getEstado().getTransicionsForIdEstadoInicial().retainAll(todosLasTransiciones);	
 			
 			
-		}
+		}*/
 					
 		return p;
 	}
@@ -171,21 +170,21 @@ public class FachadaPedido {
 	
 	
 	@SuppressWarnings("unchecked")
-	public static ArrayList<Combo> getResumenPedidosParaAdmin(AgenteEnrolado user, int i) {
+	public static ArrayList<Combo> getResumenPedidosParaAdmin(/*AgenteEnrolado user,*/ int i) {
 		
 		String consulta = "";
 		if(i==1) consulta = " select * from vResumenGral order by ordenado";
 		if(i==2) consulta = " SELECT  COUNT(idPedido) AS cantidad, 'Abiertos' AS descripcion, 1 as ordenado"
 							+" FROM            dbo.Pedido AS p"
-							+" WHERE     p.idEstado in(2,3,6,7) and p.legajoTecnico="+user.getAgente().getLegajo()
+							+" WHERE     p.idEstado in(2,3,6,7) and p.legajoTecnico="+1
 							+" union"
 							+" SELECT        COUNT(idPedido) AS cantidad, 'UAT' AS descripcion, 2 as ordenado"
 							+" FROM            dbo.Pedido AS p"
-							+" WHERE     p.idEstado in(3) and p.legajoTecnico="+user.getAgente().getLegajo()
+							+" WHERE     p.idEstado in(3) and p.legajoTecnico="+1
 							+" union"
 							+" SELECT        COUNT(idPedido) AS cantidad, 'UAT(Aprobado)' AS descripcion,3 as ordenado"
 							+" FROM            dbo.Pedido AS p"
-							+" WHERE     p.idEstado in(6) and p.legajoTecnico="+user.getAgente().getLegajo()
+							+" WHERE     p.idEstado in(6) and p.legajoTecnico="+1
 							+"  order by ordenado";
 		
 		

@@ -20,9 +20,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Transient;
-
-import ar.gob.inti.sirhi.modelo.dominio.CentroCosto;
-import birra.modelo.dominioInterno.Agente;
 import birra.modelo.tipificaciones.IEntidadWorkflow;
 import birra.modelo.tipificaciones.IPersistible;
 
@@ -36,14 +33,6 @@ public abstract class Pedido implements java.io.Serializable, IPersistible, IEnt
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idPedido;
-	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "legajo", nullable = false, updatable = false)
-	private Agente agenteSolicitante;
-	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "legajoTecnico", nullable = true)
-	private Agente tecnicoAsignado;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "idEstado", nullable = false, updatable = false)
@@ -161,21 +150,7 @@ public abstract class Pedido implements java.io.Serializable, IPersistible, IEnt
 		this.logs = logs;
 	}
 
-	public Agente getAgenteSolicitante() {
-		return agenteSolicitante;
-	}
-
-	public void setAgenteSolicitante(Agente agenteSolicitante) {
-		this.agenteSolicitante = agenteSolicitante;
-	}
-
-	public Agente getTecnicoAsignado() {
-		return tecnicoAsignado;
-	}
-
-	public void setTecnicoAsignado(Agente tecnicoAsignado) {
-		this.tecnicoAsignado = tecnicoAsignado;
-	}
+	
 	public List<Adjunto> getAdjuntos() {
 		return adjuntos;
 	}

@@ -2,7 +2,6 @@ package birra.controlador.actionBeans;
 
 import javax.servlet.http.HttpSession;
 
-import birra.modelo.dominio.AgenteEnrolado;
 import birra.modelo.fachadas.FachadaLogin;
 import birra.modelo.utiles.Constantes;
 import birra.modelo.utiles.POP3UserValidation;
@@ -34,16 +33,16 @@ public class LoginActionBean extends BaseActionBean {
 		try {
 			if (POP3UserValidation.checkUser(usuarioLogin, passwordLogin)) {
 			//if (true) {
-				AgenteEnrolado a = FachadaLogin.obtenerUsuarioPorMail(usuarioLogin);
+				//AgenteEnrolado a = FachadaLogin.obtenerUsuarioPorMail(usuarioLogin);
 				
-				if (a != null && a.getRoles().size()>0) {
+				/*if (a != null && a.getRoles().size()>0) {
 					HttpSession sesion = getContext().getRequest().getSession();
-					sesion.setAttribute("agente", a);
+					//sesion.setAttribute("agente", a);
 					
 					return new RedirectResolution("/miPanel");
 					
 				} else getContext().getValidationErrors().addGlobalError(new SimpleError("No se encuentra habilitado para ingresar, por favor, comuniquese con sistemas@inti.gob.ar"));
-				
+				*/
 			} else getContext().getValidationErrors().addGlobalError(new SimpleError("Usuario o contraseña de mail incorrecta, intente nuevamente"));
 			
 		} catch (Exception e) {

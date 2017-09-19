@@ -3,14 +3,12 @@ package birra.modelo.fachadas;
 import java.util.List;
 
 import birra.modelo.db.PersistorHibernate;
-import birra.modelo.dominio.AgenteEnrolado;
 import birra.modelo.dominio.Rol;
-import birra.modelo.dominioInterno.Agente;
 import birra.modelo.utiles.Constantes;
 
 public class FachadaLogin {
 	
-	public static AgenteEnrolado obtenerUsuarioPorMail(String usuarioLogin) {
+	/*public static AgenteEnrolado obtenerUsuarioPorMail(String usuarioLogin) {
 		//armo dos consultas separadas, en la primera obtengo el agente con su dependencia y en la segunda los roles.
 		//lo hago así porque es mucho más fácil manejar los casos en que el agente no tiene roles asignados (es un usuario de solo lectura).
 		String consultaAgente = "select a "
@@ -79,6 +77,5 @@ public class FachadaLogin {
 		
 		AgenteEnrolado ae = new AgenteEnrolado(a, roles);
 		
-		return ae;
+		return ae;*/
 	}	
-}

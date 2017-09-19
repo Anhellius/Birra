@@ -16,8 +16,6 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
-import birra.modelo.dominioInterno.Agente;
-
 @Entity
 public class Rol implements java.io.Serializable {
 	@Id
@@ -31,12 +29,8 @@ public class Rol implements java.io.Serializable {
 										  inverseJoinColumns = @JoinColumn(name="idTransicion")
 	)
 	private List<Transicion> transicions = new ArrayList<Transicion>(0);
+
 	
-	@ManyToMany
-	@JoinTable(name="PoliticaDeUsuario" , joinColumns=@JoinColumn(name="idRol"),
-										  inverseJoinColumns = @JoinColumn(name="legajo")
-	)
-	private List<Agente> agentes = new ArrayList<Agente>(0);
 
 	public Rol() {
 	}
@@ -59,13 +53,7 @@ public class Rol implements java.io.Serializable {
 		return this.idRol;
 	}
 
-	public List<Agente> getAgentes() {
-		return agentes;
-	}
-
-	public void setAgentes(List<Agente> agentes) {
-		this.agentes = agentes;
-	}
+	
 
 	public void setIdRol(int idRol) {
 		this.idRol = idRol;

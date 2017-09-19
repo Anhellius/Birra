@@ -15,7 +15,6 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
-import birra.modelo.dominioInterno.Agente;
 import birra.modelo.tipificaciones.IEntidadWorkflow;
 
 @Entity
@@ -43,9 +42,9 @@ public class LogPedido implements java.io.Serializable,IEntidadWorkflow {
 	@Column(nullable = false,insertable=false, updatable = false)
 	private Date fecha;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	/*@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "legajo", nullable = false, updatable = false)
-	private Agente agente;
+	private Agente agente;*/
 	
 	private String comentario;
 	
@@ -55,17 +54,16 @@ public class LogPedido implements java.io.Serializable,IEntidadWorkflow {
 	public LogPedido() {
 	}
 
-	public LogPedido(int idLog, Estado estadoByIdEstadoViejo, Estado estadoByIdEstadoNuevo, PWeb pedido, Date fecha,
-			Agente agente) {
+	public LogPedido(int idLog, Estado estadoByIdEstadoViejo, Estado estadoByIdEstadoNuevo, PWeb pedido, Date fecha
+			) {
 		this.idLog = idLog;
 		this.estadoByIdEstadoViejo = estadoByIdEstadoViejo;
 		this.estadoByIdEstadoNuevo = estadoByIdEstadoNuevo;
 		this.pedido = pedido;
 		this.fecha = fecha;
-		this.agente = agente;
 	}
 	
-	public LogPedido(Estado estadoByIdEstadoViejo, Estado estadoByIdEstadoNuevo, PWeb pedido, Agente agente , LogPedido lp) {
+	public LogPedido(Estado estadoByIdEstadoViejo, Estado estadoByIdEstadoNuevo, PWeb pedido, LogPedido lp) {
 		//NEGRADA PROPUESTA POR RICHARD
 		if(estadoByIdEstadoViejo.getIdEstado()==0)
 			estadoByIdEstadoViejo.setIdEstado(10);			
@@ -73,7 +71,7 @@ public class LogPedido implements java.io.Serializable,IEntidadWorkflow {
 		this.estadoByIdEstadoViejo = estadoByIdEstadoViejo;
 		this.estadoByIdEstadoNuevo = estadoByIdEstadoNuevo;
 		this.pedido = pedido;
-		this.agente = agente;
+		//this.agente = agente;
 		
 		if(lp!=null)this.comentario= lp.getComentario();
 	}
@@ -144,19 +142,6 @@ public class LogPedido implements java.io.Serializable,IEntidadWorkflow {
 		return false;
 	}
 
-	/**
-	 * @return the agente
-	 */
-	public Agente getAgente() {
-		return agente;
-	}
-
-	/**
-	 * @param agente the agente to set
-	 */
-	public void setAgente(Agente agente) {
-		this.agente = agente;
-	}
 
 	public boolean isObligadoAGrabar() {
 		return obligadoAGrabar;

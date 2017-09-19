@@ -11,7 +11,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
-import birra.modelo.dominioInterno.Agente;
 import birra.modelo.tipificaciones.IEntidadWorkflow;
 import birra.modelo.tipificaciones.IPersistible;
 import birra.modelo.utiles.Constantes;
@@ -34,9 +33,6 @@ public class PWeb extends Pedido implements Serializable, IPersistible, IEntidad
 	@Column(length=500, nullable=true)
 	private String titulo;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "legajoResponsable", nullable = true)
-	private Agente responsable;
 	
 	public PWeb(){}
 	
@@ -47,19 +43,11 @@ public class PWeb extends Pedido implements Serializable, IPersistible, IEntidad
 			case "pweb.comentario": return getComentario();
 			case "pweb.idPedido": return String.valueOf(this.getIdPedido());
 			case "pweb.titulo": return getTitulo();
-			case "pweb.agente.mail": return getAgenteSolicitante().getMail();
-			case "pweb.agente.nombre": return getAgenteSolicitante().getNombre();
-			case "pweb.agente.apellido": return getAgenteSolicitante().getApellido();
+			
 			case "pweb.comentarioSolicitado": return getComentarioLog(Constantes.ESTADO_SOLICITADO);
 			case "pweb.comentarioPasarUAT": return getComentarioLog(Constantes.ESTADO_PRUEBA_DE_USUARIO);
 			case "pweb.comentarioFinalizado": return getComentarioLog(Constantes.ESTADO_FINALIZADO);
 			case "pweb.estado.idEstado": return String.valueOf(this.getEstado().getIdEstado());
-			case "pweb.tecnicoAsignado.legajo": return String.valueOf(this.getTecnicoAsignado().getLegajo());
-			case "pweb.tecnicoAsignado.nombre": return String.valueOf(this.getTecnicoAsignado().getNombre());
-			case "pweb.tecnicoAsignado.apellido": return String.valueOf(this.getTecnicoAsignado().getApellido());
-			case "pweb.responsable.nombre": return getResponsable().getNombre();
-			case "pweb.responsable.apellido": return getResponsable().getApellido();
-			case "pweb.responsable.mail": return getResponsable().getMail();
 						
 		}
 		return name;		
@@ -93,13 +81,7 @@ public class PWeb extends Pedido implements Serializable, IPersistible, IEntidad
 		this.comentario = comentario;
 	}
 
-	public Agente getResponsable() {
-		return responsable;
-	}
 
-	public void setResponsable(Agente responsable) {
-		this.responsable = responsable;
-	}
 
 	public String getTitulo() {
 		return titulo;

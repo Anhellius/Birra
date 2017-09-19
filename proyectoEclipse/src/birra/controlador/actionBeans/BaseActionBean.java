@@ -6,14 +6,13 @@ import javax.servlet.http.HttpSession;
 
 import net.sourceforge.stripes.action.ActionBean;
 import net.sourceforge.stripes.action.ActionBeanContext;
-import birra.modelo.dominio.AgenteEnrolado;
 import birra.modelo.utiles.CargadorPropiedades;
 
 
 public abstract class BaseActionBean implements ActionBean {
 	private ActionBeanContext context;
 	@SuppressWarnings("unused")
-	private AgenteEnrolado agente;
+	//private AgenteEnrolado agente;
 	private String version;
 
 	protected boolean sesionVencida;
@@ -37,7 +36,7 @@ public abstract class BaseActionBean implements ActionBean {
 	/**
 	 * @return the agente
 	 */
-	public AgenteEnrolado getAgente() {
+	/*public AgenteEnrolado getAgente() {
 		HttpSession sesion = getContext().getRequest().getSession();
 		
 		return (AgenteEnrolado)sesion.getAttribute("agente");
@@ -46,9 +45,9 @@ public abstract class BaseActionBean implements ActionBean {
 	/**
 	 * @param agente the agente to set
 	 */
-	public void setAgente(AgenteEnrolado agente) {
+	/*public void setAgente(AgenteEnrolado agente) {
 		this.agente = agente;
-	}
+	}*/
 
 	public String getVersion() {
 		Properties props = CargadorPropiedades.cargarPropiedades("birraProps");
