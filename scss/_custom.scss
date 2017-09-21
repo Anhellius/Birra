@@ -1,12 +1,9 @@
 $clean-hero-slider-accent: $warning-color;
 body {overflow-x: hidden;}
-<<<<<<< HEAD
-=======
 
 .position-absolute-bottom {
   @include position(absolute, null, null, 0, null);
 }
->>>>>>> d7d7e211931e4596672aa3a10f114b9f13392431
 
 .clean-hero-slider {
   .orbit-caption {
@@ -228,27 +225,6 @@ input[type='search'] {
 }
 
 .blur{
-<<<<<<< HEAD
-  //left: 0;
-  //right: 0;
-  //right: 0;
-  //bottom: 0;
-  z-index: -1;
-
-display: block;
-  //background-image: url('img-here');
-  background-size:cover;
-  //width: 110%;
-  //height: 110%;
-
-  -webkit-filter: sepia(100%);
-  -moz-filter: sepia(100%);
-  -o-filter: sepia(100%);
-  -ms-filter: sepia(100%);
-  filter: sepia(100%);
-}
-
-=======
   overflow: hidden;
   .orbit-image{
     width: 110% !important;
@@ -264,7 +240,6 @@ display: block;
   }
 
 }
->>>>>>> d7d7e211931e4596672aa3a10f114b9f13392431
 $large-article-header-bg: url('https://unsplash.it/1024/500/?blur');
 $large-article-header-color: $white;
 $large-article-header-height: rem-calc(500);
@@ -301,30 +276,6 @@ $large-article-header-height: rem-calc(500);
       padding: 0 rem-calc(20);
     }
   }
-<<<<<<< HEAD
-
-  .article-date {
-    color: $large-article-header-color;
-  }
-  .article-title {
-    h1 {
-      line-height: rem-calc(50);
-      color: $large-article-header-color;
-      font-weight: 600;
-
-      @include breakpoint(small only) {
-        line-height: rem-calc(30);
-      }
-    }
-  }
-  .article-details {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    a {
-      color: $large-article-header-color;
-=======
 
   .article-date {
     color: $large-article-header-color;
@@ -647,41 +598,10 @@ $social-brand-facebook: #3b5998;
       top: -12px;
       background-color: $form-registration-bg;
       padding: 0 8px;
->>>>>>> d7d7e211931e4596672aa3a10f114b9f13392431
-    }
-  }
-  .article-author {
-    display: flex;
-    align-items: center;
-    margin: $global-margin 0;
-    img {
-      border-radius: rem-calc(50);
-    }
-    a {
-      margin-left: $global-margin;
     }
   }
 }
 
-.txt-white{
-  color: white;
-}
-
-.article-author, .article-comments {
-  display: flex;
-  align-items: center;
-  margin: $global-margin 0;
-  img {
-    border-radius: rem-calc(50);
-  }
-  a {
-    margin-left: $global-margin;
-    color: white;
-    &:hover{
-      color: silver;
-    }
-  }
-}
 
 
 
