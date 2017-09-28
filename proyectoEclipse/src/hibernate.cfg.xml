@@ -5,61 +5,34 @@
 <hibernate-configuration>
 
     <session-factory name="birra">
-        <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
-        <property name="hibernate.connection.driver_class">com.p6spy.engine.spy.P6SpyDriver</property>
-        <!-- <property name="hibernate.connection.driver_class">net.sourceforge.jtds.jdbc.Driver</property> -->
+       <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+        
+      <!--  <property name="hibernate.connection.driver_class">com.p6spy.engine.spy.P6SpyDriver</property>  --> 
+       <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>     
         <property name="hibernate.connection.password">redes</property>
-        <property name="hibernate.connection.url">jdbc:p6spy:jtds:sqlserver://db.inti.gob.ar/birra</property>
-        <property name="hibernate.connection.username">birra</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost/birra</property>
+        <property name="hibernate.connection.username">root</property>  
+    <!-- <property name="hibernate.connection.url">jdbc:mysql://mysql29309-bambalinas.mircloud.host/bambalinas</property>
+        <property name="hibernate.connection.password">bamba</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.username">bamba</property>-->
+      
+        
         <property name="hibernate.current_session_context_class">thread</property>
-        <property name="hibernate.dialect">org.hibernate.dialect.SQLServer2008Dialect</property>
+        <property name="hibernate.default_catalog">birra</property>
         <property name="hibernate.search.autoregister_listeners">false</property>
+        
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
         <property name="hibernate.validator.apply_to_ddl">false</property>
         
-        <property name="hibernate.c3p0.min_size">5</property>
-	    <property name="hibernate.c3p0.max_size">100</property>
-	    <property name="hibernate.c3p0.timeout">300</property>
-	    <property name="hibernate.c3p0.max_statements">50</property>
-	    <property name="hibernate.c3p0.idle_test_period">300</property>
 	    
-	    <mapping class="ar.gob.inti.birra.modelo.dominio.Accion"/>
-	    <mapping class="ar.gob.inti.birra.modelo.dominio.Adjunto"/>
-	    <mapping class="ar.gob.inti.birra.modelo.dominio.AgenteEnrolado"/>
-	    <mapping class="ar.gob.inti.birra.modelo.dominio.Campo"/>
-	    <mapping class="ar.gob.inti.birra.modelo.dominio.Estado"/>
-	    <mapping class="ar.gob.inti.birra.modelo.dominio.Grabar"/>
-	    <mapping class="ar.gob.inti.birra.modelo.dominio.LogPedido"/>
-	    <mapping class="ar.gob.inti.birra.modelo.dominio.Mail"/>
-	    <mapping class="ar.gob.inti.birra.modelo.dominio.Pedido"/>
-	    <mapping class="ar.gob.inti.birra.modelo.dominio.PWeb"/>
-	    <mapping class="ar.gob.inti.birra.modelo.dominio.Rol"/>
-	    <mapping class="ar.gob.inti.birra.modelo.dominio.TipoAccion"/>
-	    <mapping class="ar.gob.inti.birra.modelo.dominio.Transicion"/>
-	    <mapping class="ar.gob.inti.birra.modelo.dominio.TipoPedidoWeb"/>
+	    <mapping class="birra.modelo.dominio.CategoriaListado"/>
+	    <mapping class="birra.modelo.dominio.CategoriaNoticia"/>
+	    <mapping class="birra.modelo.dominio.Clasificado"/>
+	    <mapping class="birra.modelo.dominio.Noticia"/>
+	    <mapping class="birra.modelo.dominio.Adjunto"/>
 	    
-	       
-	    <mapping class="ar.gob.inti.birra.modelo.dominioInterno.Agente"/>
-	    <mapping class="ar.gob.inti.birra.modelo.dominioInterno.CentroCosto"/>
-	    <mapping class="ar.gob.inti.birra.modelo.dominioInterno.Art"/>
-	    <mapping class="ar.gob.inti.birra.modelo.dominioInterno.CambioSituacion"/>
-	    <mapping class="ar.gob.inti.birra.modelo.dominioInterno.Dependencia"/>
-	    <mapping class="ar.gob.inti.birra.modelo.dominioInterno.Especialidad"/>
-	    <mapping class="ar.gob.inti.birra.modelo.dominioInterno.Log"/>
-	    <mapping class="ar.gob.inti.birra.modelo.dominioInterno.Lugar"/>
-	    <mapping class="ar.gob.inti.birra.modelo.dominioInterno.MotivoBaja"/>
-	    <mapping class="ar.gob.inti.birra.modelo.dominioInterno.Nivel"/>
-	    <mapping class="ar.gob.inti.birra.modelo.dominioInterno.NivelDependencia"/>
-	    <mapping class="ar.gob.inti.birra.modelo.dominioInterno.NivelEducacion"/>
-	    <mapping class="ar.gob.inti.birra.modelo.dominioInterno.Situacion"/>
-	    <mapping class="ar.gob.inti.birra.modelo.dominioInterno.TipoContrato"/>
-	    <mapping class="ar.gob.inti.birra.modelo.dominioInterno.TipoDependencia"/>
-	    <mapping class="ar.gob.inti.birra.modelo.dominioInterno.TipoDocumento"/>
-	    <mapping class="ar.gob.inti.birra.modelo.dominioInterno.TipoMovimiento"/>
-	    <mapping class="ar.gob.inti.birra.modelo.dominioInterno.TipoSituacion"/>
-	    <mapping class="ar.gob.inti.birra.modelo.dominioInterno.TipoUsuario"/>
-	    <mapping class="ar.gob.inti.birra.modelo.dominioInterno.Titulo"/>
-	    <mapping class="ar.gob.inti.birra.modelo.dominioInterno.UsuarioHabilitado"/>
 	    
     </session-factory>
 </hibernate-configuration>
