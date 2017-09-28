@@ -9,7 +9,7 @@ import java.util.Properties;
 
 import javax.servlet.http.HttpServletResponse;
 
-import birra.modelo.dominio.Adjunto;
+import birra.modelo.dominio.Imagen;
 import birra.modelo.fachadas.FachadaPedido;
 import birra.modelo.utiles.CargadorPropiedades;
 import birra.modelo.utiles.Constantes;
@@ -21,7 +21,7 @@ import net.sourceforge.stripes.action.UrlBinding;
 @UrlBinding("/abridor")
 public class AbridorArchivosActionBean extends BaseActionBean {	
 
-	private int idAdjunto;
+	private int idImagen;
 	private int idPedido;
 	private int tipoGuardado;
 	
@@ -31,30 +31,19 @@ public class AbridorArchivosActionBean extends BaseActionBean {
 		
 		try {
 		
-			final Adjunto r = FachadaPedido.getAdjunto(idAdjunto);		
+			final Imagen r = FachadaPedido.getImagen(idImagen);		
 			if(r!=null){
 				
 				response.setHeader("Content-Type", r.getMime());
 				response.setHeader("Content-Length", String.valueOf(r.getTamanio()));
 				response.setHeader("Content-Disposition", "inline; filename=\"" + r.getNombreArchivo() + "\"");
 				
-				if(r.getTipoGuardado()==Constantes.GUARDAR_EN_CONTENIDO_DB){
-							
-						final OutputStream responseOutputStream = response.getOutputStream();	
-					
-						return new StreamingResolution (r.getMime()) { 
-						    public void stream(HttpServletResponse response) throws Exception {			    	
-						    	//responseOutputStream.write(r.getContenido());			    	
-						    }
-						}.setFilename(r.getNombreArchivo());
-				}	
-				
-				if(r.getTipoGuardado()==Constantes.GUARDAR_EN_DISCO_LOCAL){	
+			
 					
 					Properties props = CargadorPropiedades.cargarPropiedades(Constantes.ARCHIVO_PROPIEDADES);	
 					String dirGuardadoArchivos = props.getProperty("direccionArchivos");
 					
-					File pdfFile = new File(dirGuardadoArchivos +"/"+idPedido+"-"+idAdjunto+"-"+r.getNombreArchivo());					
+					File pdfFile = new File(dirGuardadoArchivos +"/"+idPedido+"-"+idImagen+"-"+r.getNombreArchivo());					
 					final FileInputStream fileInputStream;
 					fileInputStream = new FileInputStream(pdfFile);		
 					
@@ -67,24 +56,23 @@ public class AbridorArchivosActionBean extends BaseActionBean {
 								responseOutputStream.write(bytes);
 							}
 					    }
-					}.setFilename(r.getNombreArchivo());
-					
-				}
+					}.setFilename(r.getNombreArchivo());		
+			
 				
 			}
 			
 			} catch (Exception e) {		
-				return new StreamingResolution("text/html", new StringReader("No se ha podido acceder al adjunto solicitado. Num:"+idAdjunto));
+				return new StreamingResolution("text/html", new StringReader("No se ha podido acceder al Imagen solicitado. Num:"+idImagen));
 			}				
 		return null;
 	}
 
-	public int getIdAdjunto() {
-		return idAdjunto;
+	public int getIdImagen() {
+		return idImagen;
 	}
 
-	public void setIdAdjunto(int idAdjunto) {
-		this.idAdjunto = idAdjunto;
+	public void setIdImagen(int idImagen) {
+		this.idImagen = idImagen;
 	}
 
 	public int getIdPedido() {
