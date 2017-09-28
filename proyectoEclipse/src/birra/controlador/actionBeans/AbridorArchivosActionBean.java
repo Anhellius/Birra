@@ -23,7 +23,6 @@ public class AbridorArchivosActionBean extends BaseActionBean {
 
 	private int idImagen;
 	private int idPedido;
-	private int tipoGuardado;
 	
 	@SuppressWarnings("unused")
 	public Resolution abridorPdf() {
@@ -38,25 +37,23 @@ public class AbridorArchivosActionBean extends BaseActionBean {
 				response.setHeader("Content-Length", String.valueOf(r.getTamanio()));
 				response.setHeader("Content-Disposition", "inline; filename=\"" + r.getNombreArchivo() + "\"");
 				
-			
-					
-					Properties props = CargadorPropiedades.cargarPropiedades(Constantes.ARCHIVO_PROPIEDADES);	
-					String dirGuardadoArchivos = props.getProperty("direccionArchivos");
-					
-					File pdfFile = new File(dirGuardadoArchivos +"/"+idPedido+"-"+idImagen+"-"+r.getNombreArchivo());					
-					final FileInputStream fileInputStream;
-					fileInputStream = new FileInputStream(pdfFile);		
-					
-					final OutputStream responseOutputStream = response.getOutputStream();	
-					
-					 return new StreamingResolution (r.getMime()) {				 
-					    public void stream(HttpServletResponse response) throws Exception {
-					    	int bytes;
-					    	while ((bytes = fileInputStream.read()) != -1) {
-								responseOutputStream.write(bytes);
-							}
-					    }
-					}.setFilename(r.getNombreArchivo());		
+				Properties props = CargadorPropiedades.cargarPropiedades(Constantes.ARCHIVO_PROPIEDADES);	
+				String dirGuardadoArchivos = props.getProperty("direccionArchivos");
+				
+				File pdfFile = new File(dirGuardadoArchivos +"/"+idPedido+"-"+idImagen+"-"+r.getNombreArchivo());					
+				final FileInputStream fileInputStream;
+				fileInputStream = new FileInputStream(pdfFile);		
+				
+				final OutputStream responseOutputStream = response.getOutputStream();	
+				
+				 return new StreamingResolution (r.getMime()) {				 
+				    public void stream(HttpServletResponse response) throws Exception {
+				    	int bytes;
+				    	while ((bytes = fileInputStream.read()) != -1) {
+							responseOutputStream.write(bytes);
+						}
+				    }
+				}.setFilename(r.getNombreArchivo());		
 			
 				
 			}
