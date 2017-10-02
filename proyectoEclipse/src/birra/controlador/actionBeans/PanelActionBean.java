@@ -67,7 +67,7 @@ public class PanelActionBean extends BaseActionBean {
 		}*/
 		try {
 			this.noticias=FachadaNoticia.getNoticias();		
-			return new ForwardResolution("/pages/listadoNoticias.jsp");			
+			return new ForwardResolution("/pages/listados/listadoNoticias.jsp");			
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class PanelActionBean extends BaseActionBean {
 		try {
 			this.categoriasListados=FachadaCategoria.getCatListados();	
 			this.categoriasNoticias=FachadaCategoria.getCatNoticias();		
-			return new ForwardResolution("/pages/listadoNoticias.jsp");			
+			return new ForwardResolution("/pages/listados/listadoCategorias.jsp");			
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -102,7 +102,7 @@ public class PanelActionBean extends BaseActionBean {
 		}*/
 		try {
 			this.clasificados=FachadaClasificado.getClasificados();		
-			return new ForwardResolution("/pages/listadoNoticias.jsp");			
+			return new ForwardResolution("/pages/listados/listadoClasificados.jsp");			
 			
 		} catch (Exception e) {
 			e.printStackTrace();
