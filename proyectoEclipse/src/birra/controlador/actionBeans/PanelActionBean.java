@@ -41,11 +41,14 @@ public class PanelActionBean extends BaseActionBean {
 	private boolean sesionVencida;
 	
 	private Categorialistado categoriaListado;
-	private Categorianoticia categoriaNoticia;
-	
-	private Noticia noticia;
-	
+	private Categorianoticia categoriaNoticia;	
+	private Noticia noticia;	
 	private Clasificado clasificado;
+	
+	private List<Categorialistado> categoriasListados;
+	private List<Categorianoticia> categoriasNoticias;
+	private List<Clasificado> clasificados;
+	private List<Noticia> noticias;
 		
 	@DefaultHandler
 	@DontValidate
@@ -177,6 +180,46 @@ public class PanelActionBean extends BaseActionBean {
 
 	public void setClasificado(Clasificado clasificado) {
 		this.clasificado = clasificado;
+	}
+
+
+	public List<Categorialistado> getCategoriasListados() {
+		return categoriasListados;
+	}
+
+
+	public void setCategoriasListados(List<Categorialistado> categoriasListados) {
+		this.categoriasListados = categoriasListados;
+	}
+
+
+	public List<Categorianoticia> getCategoriasNoticias() {
+		return categoriasNoticias;
+	}
+
+
+	public void setCategoriasNoticias(List<Categorianoticia> categoriasNoticias) {
+		this.categoriasNoticias = categoriasNoticias;
+	}
+
+
+	public List<Clasificado> getClasificados() {
+		return clasificados;
+	}
+
+
+	public void setClasificados(List<Clasificado> clasificados) {
+		this.clasificados = clasificados;
+	}
+
+
+	public List<Noticia> getNoticias() {
+		return noticias;
+	}
+
+
+	public void setNoticias(List<Noticia> noticias) {
+		this.noticias = noticias;
 	}
 
 }
