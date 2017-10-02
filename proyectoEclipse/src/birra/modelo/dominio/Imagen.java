@@ -11,6 +11,8 @@ public class Imagen implements java.io.Serializable {
 	private Noticia noticia;
 	private String nombreArchivo;
 	private Integer tipoImagen;
+	private String mime;
+	private Integer tamanio;
 
 	public Imagen() {
 	}
@@ -50,6 +52,22 @@ public class Imagen implements java.io.Serializable {
 
 	public void setNoticia(Noticia noticia) {
 		this.noticia = noticia;
+	}
+
+	public String getMime() {
+		return mime;
+	}
+
+	public void setMime(String mime) {
+		this.mime = mime;
+	}
+
+	public Integer getTamanio() {
+		return tamanio;
+	}
+
+	public void setTamanio(Integer tamanio) {
+		this.tamanio = tamanio;
 	}
 
 }

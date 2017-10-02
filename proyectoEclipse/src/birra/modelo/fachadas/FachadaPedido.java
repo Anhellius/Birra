@@ -14,6 +14,7 @@ import birra.modelo.db.HibernateUtil;
 import birra.modelo.db.PersistorHibernate;
 import birra.modelo.dominio.Accion;
 import birra.modelo.dominio.Adjunto;
+import birra.modelo.dominio.Imagen;
 import birra.modelo.dominio.Pedido;
 import birra.modelo.dominio.Rol;
 import birra.modelo.dominio.Transicion;
@@ -401,6 +402,11 @@ public class FachadaPedido {
 				+ filtro;				
 		
 		return PersistorHibernate.ejecutarConsulta(consulta);
+	}
+
+	public static Imagen getImagen(int idImagen) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 
