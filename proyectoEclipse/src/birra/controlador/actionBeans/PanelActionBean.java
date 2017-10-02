@@ -27,8 +27,9 @@ import birra.modelo.dominio.Categorianoticia;
 import birra.modelo.dominio.Clasificado;
 import birra.modelo.dominio.Noticia;
 import birra.modelo.fachadas.FachadaCategoria;
+import birra.modelo.fachadas.FachadaClasificado;
 import birra.modelo.fachadas.FachadaExcepciones;
-import birra.modelo.fachadas.FachadaPedido;
+import birra.modelo.fachadas.FachadaNoticia;
 import birra.modelo.tipificaciones.Combo;
 import birra.modelo.tipificaciones.IEntidadWorkflow;
 import birra.modelo.utiles.Constantes;
@@ -112,6 +113,11 @@ public class PanelActionBean extends BaseActionBean {
 				FachadaCategoria.grabar(categoriaListado);
 			if (categoriaNoticia!=null)
 				FachadaCategoria.grabar(categoriaNoticia);
+			if (clasificado!=null)
+				FachadaClasificado.grabar(clasificado);
+			if (noticia!=null)
+				FachadaNoticia.grabar(noticia);
+			
 			json.put("success", "true");		
 			
 		}catch (Exception e) {

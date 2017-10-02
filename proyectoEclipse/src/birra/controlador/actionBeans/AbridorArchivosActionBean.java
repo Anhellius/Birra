@@ -10,7 +10,7 @@ import java.util.Properties;
 import javax.servlet.http.HttpServletResponse;
 
 import birra.modelo.dominio.Imagen;
-import birra.modelo.fachadas.FachadaPedido;
+import birra.modelo.fachadas.FachadaNoticia;
 import birra.modelo.utiles.CargadorPropiedades;
 import birra.modelo.utiles.Constantes;
 import net.sourceforge.stripes.action.Resolution;
@@ -30,7 +30,7 @@ public class AbridorArchivosActionBean extends BaseActionBean {
 		
 		try {
 		
-			final Imagen r = FachadaPedido.getImagen(idImagen);		
+			final Imagen r = FachadaNoticia.getImagen(idImagen);		
 			if(r!=null){
 				
 				response.setHeader("Content-Type", r.getMime());
