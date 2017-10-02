@@ -26,7 +26,6 @@
         <property name="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
         <property name="hibernate.validator.apply_to_ddl">false</property>
         
-	    
 	    <mapping class="birra.modelo.dominio.CategoriaListado"/>
 	    <mapping class="birra.modelo.dominio.CategoriaNoticia"/>
 	    <mapping class="birra.modelo.dominio.Clasificado"/>

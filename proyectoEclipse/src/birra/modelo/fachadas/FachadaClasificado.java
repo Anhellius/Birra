@@ -1,5 +1,7 @@
 package birra.modelo.fachadas;
 
+import java.util.List;
+
 import birra.modelo.db.HibernateUtil;
 import birra.modelo.db.PersistorHibernate;
 import birra.modelo.dominio.Categorialistado;
@@ -30,6 +32,11 @@ public class FachadaClasificado {
 			HibernateUtil.getSessionFactory().getCurrentSession().close();
 		}
 		
+	}
+
+	public static List<Clasificado> getClasificados() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	

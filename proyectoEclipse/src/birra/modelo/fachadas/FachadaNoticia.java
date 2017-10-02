@@ -1,5 +1,7 @@
 package birra.modelo.fachadas;
 
+import java.util.List;
+
 import birra.modelo.db.HibernateUtil;
 import birra.modelo.db.PersistorHibernate;
 import birra.modelo.dominio.Categorialistado;
@@ -35,6 +37,11 @@ public class FachadaNoticia {
 	}
 
 	public static Imagen getImagen(int idImagen) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public static List<Noticia> getNoticias() {
 		// TODO Auto-generated method stub
 		return null;
 	}

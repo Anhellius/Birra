@@ -58,7 +58,7 @@ public class PanelActionBean extends BaseActionBean {
 	}
 	
 	
-	public Resolution presentacionSolicitante() {	
+	public Resolution listadoNoticias() {	
 	
 		/*AgenteEnrolado user = getAgente();
 		if(user==null){
@@ -66,32 +66,51 @@ public class PanelActionBean extends BaseActionBean {
 			return new ForwardResolution("vencido.jsp");
 		}*/
 		try {
-		//	this.listadoPedidos=FachadaPedido.getPedidosSolicitados(user,pweb);		
-			return new ForwardResolution("/pages/inicioSolicitante.jsp");			
+			this.noticias=FachadaNoticia.getNoticias();		
+			return new ForwardResolution("/pages/listadoNoticias.jsp");			
 			
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
-		
+		}		
 		return null;
 	}
 	
-	public Resolution presentacionAdmin() {	
+	public Resolution listadoCategorias() {	
 		
 		/*AgenteEnrolado user = getAgente();
 		if(user==null){
 			setSesionVencida(true);
 			return new ForwardResolution("vencido.jsp");
 		}*/
-		try {	
-					
-			return new ForwardResolution("/pages/inicioAdmin.jsp");
+		try {
+			this.categoriasListados=FachadaCategoria.getCatListados();	
+			this.categoriasNoticias=FachadaCategoria.getCatNoticias();		
+			return new ForwardResolution("/pages/listadoNoticias.jsp");			
+			
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
-		
+		}		
 		return null;
 	}
+	
+	public Resolution listadoClasificados() {	
+		
+		/*AgenteEnrolado user = getAgente();
+		if(user==null){
+			setSesionVencida(true);
+			return new ForwardResolution("vencido.jsp");
+		}*/
+		try {
+			this.clasificados=FachadaClasificado.getClasificados();		
+			return new ForwardResolution("/pages/listadoNoticias.jsp");			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}		
+		return null;
+	}
+	
+	
 	
 	public Resolution masInfoPedido() {	
 		
