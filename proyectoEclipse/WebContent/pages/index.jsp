@@ -201,6 +201,33 @@ $(document).ready(function() {
 				}
 			}).submit();	
 	});	
+
+
+	$(document).on('click','.modalParaNuevo', function() {
+		/*
+			if (tipoNuevo==1)return new ForwardResolution("/pages/formNuevo/nuevoSponsor.jsp");
+			if (tipoNuevo==2)return new ForwardResolution("/pages/formNuevo/nuevoCategoriaListado.jsp");
+			if (tipoNuevo==3)return new ForwardResolution("/pages/formNuevo/nuevoCategoriaNoticia.jsp");
+			if (tipoNuevo==4)return new ForwardResolution("/pages/formNuevo/nuevoNoticia.jsp");
+			if (tipoNuevo==5)return new ForwardResolution("/pages/formNuevo/nuevoClasificado.jsp");
+		
+		*/
+		var id = $(this).prop('id');
+		var tipoNuevo = id.substring(id.indexOf('-')+1,id.length);
+		$.ajax({
+			url: 'miPanel?nuevo',
+			type: 'post',
+			data: {'tipoNuevo':tipoNuevo},
+			success: function(data) {				
+				$('#divFormTransicion').html(data);
+				$('#modalTransicion').foundation('open');    							
+			},
+			error: function(data){					
+				alert("Error de sistema, intente nuevamente.");				
+			}
+		});		
+			
+	});	
 });
 
 function enviarCampo(lugar,campo,generarDiv){

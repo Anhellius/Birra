@@ -3,6 +3,7 @@
     <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
     	<div class="off-canvas-content" data-off-canvas-content>
 		  <h4> Sponsor</h4>
+		  <input type="button" id="nuevoSponsor-1" class="modalParaNuevo button expanded sombra-1 bg-color3" value="Nuevo Sponsor">
 		  <div class="small-12 columns vHeight">
 		    <table class="material-table scroll sombra-1 hover tablaweb" id="tablaweb">
 		      <thead>

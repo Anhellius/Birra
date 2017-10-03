@@ -53,6 +53,9 @@ public class PanelActionBean extends BaseActionBean {
 	private List<Clasificado> clasificados;
 	private List<Noticia> noticias;
 	private List<Sponsor> sponsors;
+	
+	private int id=0;
+	private int tipoNuevo = 0;
 		
 	@DefaultHandler
 	@DontValidate
@@ -124,6 +127,28 @@ public class PanelActionBean extends BaseActionBean {
 		try {
 			this.sponsors=FachadaSponsor.getSponsors();		
 			return new ForwardResolution("/pages/listados/listadoSponsor.jsp");			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}		
+		return null;
+	}
+	
+	public Resolution nuevo() {	
+		
+		/*AgenteEnrolado user = getAgente();
+		if(user==null){
+			setSesionVencida(true);
+			return new ForwardResolution("vencido.jsp");
+		}*/
+		try {
+			//this.sponsors=FachadaSponsor.getSponsors();		
+			
+			if (tipoNuevo==1)return new ForwardResolution("/pages/formNuevo/nuevoSponsor.jsp");
+			if (tipoNuevo==2)return new ForwardResolution("/pages/formNuevo/nuevoCategoriaListado.jsp");
+			if (tipoNuevo==3)return new ForwardResolution("/pages/formNuevo/nuevoCategoriaNoticia.jsp");
+			if (tipoNuevo==4)return new ForwardResolution("/pages/formNuevo/nuevoNoticia.jsp");
+			if (tipoNuevo==5)return new ForwardResolution("/pages/formNuevo/nuevoClasificado.jsp");
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -280,6 +305,26 @@ public class PanelActionBean extends BaseActionBean {
 
 	public void setSponsors(List<Sponsor> sponsors) {
 		this.sponsors = sponsors;
+	}
+
+
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+	public int getTipoNuevo() {
+		return tipoNuevo;
+	}
+
+
+	public void setTipoNuevo(int tipoNuevo) {
+		this.tipoNuevo = tipoNuevo;
 	}
 
 }
