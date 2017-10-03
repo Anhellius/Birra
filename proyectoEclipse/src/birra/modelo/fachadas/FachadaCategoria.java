@@ -66,7 +66,7 @@ public class FachadaCategoria {
 			}		
 			
 			String consulta = "select c "
-					+ " from Categorialistado c";
+					+ " from CategoriaListado c";
 			
 			List<CategoriaListado> cl = (List<CategoriaListado>)HibernateUtil.getSessionFactory().getCurrentSession().createQuery(consulta).list();
 			
@@ -93,7 +93,7 @@ public class FachadaCategoria {
 			}		
 			
 			String consulta = "select c "
-					+ " from Categorianoticia c";
+					+ " from CategoriaNoticia c";
 			
 			List<CategoriaNoticia> cl = (List<CategoriaNoticia>)HibernateUtil.getSessionFactory().getCurrentSession().createQuery(consulta).list();
 			
