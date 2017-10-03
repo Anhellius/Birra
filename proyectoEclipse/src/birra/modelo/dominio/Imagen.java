@@ -27,18 +27,33 @@ public class Imagen implements java.io.Serializable, IPersistible {
 	
 	private Integer idImagen;
 	private Noticia noticia;
+	private Sponsor sponsor;
 	private String nombreArchivo;
 	private Integer tipoImagen;
 	private String mime;
-	private Integer tamanio;
+	private long tamanio;
 
 	public Imagen() {
 	}
 
-	public Imagen(Noticia noticia, String nombreArchivo, Integer tipoImagen, String mime, Integer tamanio) {
+	public Imagen(Noticia noticia, String nombreArchivo, Integer tipoImagen, String mime, long tamanio) {
 		this.noticia = noticia;
 		this.nombreArchivo = nombreArchivo;
 		this.tipoImagen = tipoImagen;
+		this.mime = mime;
+		this.tamanio = tamanio;
+	}
+	
+	public Imagen( String nombreArchivo,long tamanio, String mime, Sponsor sponsor) {
+		this.sponsor = sponsor;
+		this.nombreArchivo = nombreArchivo;
+		this.mime = mime;
+		this.tamanio = tamanio;
+	}
+	
+	public Imagen( String nombreArchivo,long tamanio, String mime, Noticia noticia) {
+		this.noticia = noticia;
+		this.nombreArchivo = nombreArchivo;
 		this.mime = mime;
 		this.tamanio = tamanio;
 	}
@@ -93,12 +108,22 @@ public class Imagen implements java.io.Serializable, IPersistible {
 	}
 
 	@Column(name = "tamanio")
-	public Integer getTamanio() {
+	public long getTamanio() {
 		return this.tamanio;
 	}
 
-	public void setTamanio(Integer tamanio) {
+	public void setTamanio(long tamanio) {
 		this.tamanio = tamanio;
+	}
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "idSponsor")
+	public Sponsor getSponsor() {
+		return sponsor;
+	}
+
+	public void setSponsor(Sponsor sponsor) {
+		this.sponsor = sponsor;
 	}
 
 }

@@ -174,6 +174,9 @@ public class PanelActionBean extends BaseActionBean {
 	@HandlesEvent(value = "grabar")
 	public Resolution grabar() throws IOException, CloneNotSupportedException {	
 		JSONObject json = new JSONObject();
+		
+		String pathArchivos = this.getContext().getRequest().getRealPath("/imagenesCargadas");
+		
 		try {
 			if (categoriaListado!=null)
 				FachadaCategoria.grabar(categoriaListado);
@@ -184,7 +187,7 @@ public class PanelActionBean extends BaseActionBean {
 			if (noticia!=null)
 				FachadaNoticia.grabar(noticia);
 			if (sponsor!=null)
-				FachadaSponsor.grabar(sponsor);
+				FachadaSponsor.grabar(sponsor,pathArchivos);
 			
 			json.put("success", "true");		
 			
