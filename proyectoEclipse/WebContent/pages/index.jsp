@@ -31,6 +31,11 @@
        			 </a>
        		  </li>
        		   <li>
+       		  	 <a href="#miPanel?listadoSponsor" name="listadoSponsor" id="miPanel?listadoSponsor">
+       			   <i class="fi-home"></i><span>Sponsors</span>
+       			 </a>
+       		  </li>
+       		   <li>
        		  	 <a href="#miPanel?listadoCategorias" name="listadoCategorias" id="miPanel?listadoCategorias">
        			   <i class="fi-home"></i><span>Categorias</span>
        			 </a>

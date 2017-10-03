@@ -131,8 +131,6 @@ public class PanelActionBean extends BaseActionBean {
 		return null;
 	}
 	
-	
-	
 	public Resolution masInfoPedido() {	
 		
 	/*	AgenteEnrolado user = getAgente();
@@ -160,6 +158,8 @@ public class PanelActionBean extends BaseActionBean {
 				FachadaClasificado.grabar(clasificado);
 			if (noticia!=null)
 				FachadaNoticia.grabar(noticia);
+			if (sponsor!=null)
+				FachadaSponsor.grabar(sponsor);
 			
 			json.put("success", "true");		
 			
