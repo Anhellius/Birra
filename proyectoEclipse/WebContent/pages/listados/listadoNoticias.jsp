@@ -4,7 +4,7 @@
     	<div class="off-canvas-content" data-off-canvas-content>
 			  <h4>Noticias</h4>
 			  
-		  <input type="button" id="nuevaNoticia-4" class="modalParaNuevo button expanded sombra-1 bg-color3" value="Nuevo Noticia">
+		  <input type="button" id="nuevaNoticia-4" class="modalParaNuevo button sombra-1 bg-color3" value="Nuevo Noticia">
 		  <div class="small-12 columns vHeight">
 		    <table class="material-table scroll sombra-1 hover tablaweb" id="tablaweb">
 		      <thead>

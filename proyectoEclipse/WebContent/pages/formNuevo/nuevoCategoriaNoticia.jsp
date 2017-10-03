@@ -6,17 +6,10 @@
 	  	<div class="row expanded">
 	 		<div class="small-12 columns">	  		
 		  		<div class="row expanded vHeight" >
-					<div class="small-12 column">
-						<h5>Tipo Contribución:</h5>			
-						<stripes:radio name="contribucion.tipoContribucion.idTipoContribucion" id="tipoC1" class="required" value="1" />
-						<label for="tipoC1">
-							POA
-						</label>
-						<stripes:radio name="contribucion.tipoContribucion.idTipoContribucion" id="tipoC2" value="2" />
-						<label for="tipoC2">
-							PD
-						</label>
-						<hr>
+					<div class="small-6 column">
+						<label>Nombre de categoría de Noticia</label>
+						<stripes:hidden name="categoriaNoticia.idCategoriaNoticia"  />
+						<stripes:text name="categoriaNoticia.descripcion" class="required" />						
 					</div>
 				</div>					
 					

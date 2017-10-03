@@ -4,9 +4,9 @@
     	<div class="off-canvas-content" data-off-canvas-content>
 		  <h4>Categoria Noticias</h4>
 		 
-		  <input type="button" id="nuevaCategoriaNoticias-3" class="modalParaNuevo button expanded sombra-1 bg-color3" value="Nuevo Categoria de noticias">
+		  <input type="button" id="nuevaCategoriaNoticias-3" class="modalParaNuevo button sombra-1 bg-color3" value="Nueva Categoria de noticias">
 		  
-		  <input type="button" id="nuevaCategoriaClasificados-2" class="modalParaNuevo button expanded sombra-1 bg-color3" value="Nuevo Categoria de clasificados">
+		  <input type="button" id="nuevaCategoriaClasificados-2" class="modalParaNuevo button sombra-1 bg-color3" value="Nueva Categoria de clasificados">
 		 
 		  <div class="small-12 columns vHeight">
 		    <table class="material-table scroll sombra-1 hover tablaweb" id="tablaweb">
@@ -19,15 +19,12 @@
 		      </thead>
 		      <tbody>
 				<c:forEach items="${actionBean.categoriasListados}" var="p" varStatus="i">
-					<tr class="txt-${p.estado.classColor}">
+					<tr class="txt-">
 			       		<td width="1%" class="bold size-18">${p.idCategoriaListado}</td>
 			        	<td>
 			        		${p.descripcion}	        		
 			        	</td>			        	
 			        	<td>
-							<div class="secondary button-group small align-center">
-								
-							</div> 
 						</td>						
 			      </tr>
 				</c:forEach>	     

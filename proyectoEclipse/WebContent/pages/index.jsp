@@ -170,12 +170,10 @@ $(document).ready(function() {
 		
 	});
 	
-	$(document).on('click','#grabar', function() {
-	
-		var cantidadAdjunto = parseInt($('#cantidadAdjunto').val());
-		var cantidadAdjuntoReal = parseInt($('#cantidadAdjuntoReal').val());
+	$(document).on('click','#grabar', function() {	
 		
 		var contentType = 'application/x-www-form-urlencoded;charset=utf-8';
+		
 			$("#formTransicion").ajaxForm({
 				url:"miPanel?grabar",
 				type:'POST',
@@ -185,7 +183,7 @@ $(document).ready(function() {
 					if(transform(data.success)){			
 						$('#grabar').removeClass("disabled");
 						$('#grabar').prop("disabled",false);
-						$('#pExito').html("Pedido número "+data.idPedido+". Actualizado exitosamente.");
+						$('#pExito').html("Actualizado exitosamente.");
 						$('#myModalExitoGrabar').foundation('open');
 						recargarPagina();
 						
