@@ -38,7 +38,7 @@
 						<a href="${ctx}/buscador"><span class="txt-white"><i class="fi-home size-22"></i> <span>Inicio</span></span></a>
 					</li>
 					<li>
-						<a href="#"><span class="txt-white"><i class="mdi-action-account-circle size-24"></i><span>${actionBean.agente.agente.nombre} ${actionBean.agente.agente.apellido}</span></span></a>
+						<a href="#"><span class="txt-white"><i class="mdi-action-account-circle size-24"></i><span>Nombre</span></span></a>
 						<ul class="menu vertical">
 							<li><a href="mailto:sistemas@inti.gob.ar"><i class="mdi-action-help"></i> <span>Ayuda</span></a></li>
 							<li><a href="${ctx}/logout"><i class="mdi-action-exit-to-app"></i> <span>Salir</span></a></li>
@@ -50,6 +50,6 @@
 	</div>
 	<header class="expanded row bannerHeader bg-institucional  hide-for-small-only">
 		<div class="columns">
-			<h2 class="txt-white light">birra <small class="size-12">v.${actionBean.version}</small></h2>
+			<h2 class="txt-white light">Birra </h2>
 		</div>
 	</header>

@@ -148,7 +148,7 @@
 	
 
 <script>
-var paginaDefault= "miPanel?presentacionSolicitante";
+var paginaDefault= "miPanel?listadoNoticias";
 
 $(document).ready(function() {
 		 
@@ -200,7 +200,8 @@ $(document).ready(function() {
 					alert("Error de sistema. Comuniquese con sistemas@inti.gob.ar");		
 				}
 			}).submit();	
-});	
+	});	
+});
 
 function enviarCampo(lugar,campo,generarDiv){
 	if($('#div'+lugar).length==0)
