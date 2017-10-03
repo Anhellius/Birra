@@ -3,7 +3,6 @@ package birra.modelo.fachadas;
 import java.util.List;
 
 import birra.modelo.db.PersistorHibernate;
-import birra.modelo.dominio.Rol;
 import birra.modelo.utiles.Constantes;
 
 public class FachadaLogin {

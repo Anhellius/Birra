@@ -111,5 +111,9 @@ public abstract class StringUtil {
 		String d = (now.get(Calendar.DAY_OF_MONTH))+"/"+(now.get(Calendar.MONTH) + 1)+"/"+now.get(Calendar.YEAR);
 		return d;
 	}
+
+	public static String getExtesionNombre(String fileName) {
+		return fileName.substring(fileName.indexOf(".")+1,fileName.length());
+	}
 	
 }

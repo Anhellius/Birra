@@ -11,8 +11,7 @@
         <h4 class="text-center">Ingrese con su cuenta de email institucional</h4>
         <label>Email
           <div class="input-group">
-            <input class="input-group-field" type="text" name="usuarioLogin" id="username" required placeholder="Usuario">
-            <span class="input-group-label">@inti.gob.ar</span>
+            <input class="input-group-field" type="text" name="usuarioLogin" id="username" required placeholder="Usuario">           
           </div>
         </label>
         <label>Contraseña

@@ -22,17 +22,16 @@ import net.sourceforge.stripes.action.UrlBinding;
 import org.apache.commons.io.IOUtils;
 import org.json.simple.JSONObject;
 
-import birra.modelo.dominio.Accion;
-import birra.modelo.dominio.Adjunto;
-import birra.modelo.dominio.Estado;
-import birra.modelo.dominio.LogPedido;
-import birra.modelo.dominio.PWeb;
-import birra.modelo.dominio.Pedido;
-import birra.modelo.dominio.Rol;
-import birra.modelo.dominio.Transicion;
-import birra.modelo.fachadas.FachadaAccion;
+import birra.modelo.dominio.CategoriaListado;
+import birra.modelo.dominio.CategoriaNoticia;
+import birra.modelo.dominio.Clasificado;
+import birra.modelo.dominio.Noticia;
+import birra.modelo.dominio.Sponsor;
+import birra.modelo.fachadas.FachadaCategoria;
+import birra.modelo.fachadas.FachadaClasificado;
 import birra.modelo.fachadas.FachadaExcepciones;
-import birra.modelo.fachadas.FachadaPedido;
+import birra.modelo.fachadas.FachadaNoticia;
+import birra.modelo.fachadas.FachadaSponsor;
 import birra.modelo.tipificaciones.Combo;
 import birra.modelo.tipificaciones.IEntidadWorkflow;
 import birra.modelo.utiles.Constantes;
@@ -42,42 +41,31 @@ import birra.modelo.utiles.Constantes;
 public class PanelActionBean extends BaseActionBean {	
 
 	private boolean sesionVencida;
+	
+	private CategoriaListado categoriaListado;
+	private CategoriaNoticia categoriaNoticia;	
+	private Noticia noticia;	
+	private Clasificado clasificado;
+	private Sponsor sponsor;
+	
+	private List<CategoriaListado> categoriasListados;
+	private List<CategoriaNoticia> categoriasNoticias;
+	private List<Clasificado> clasificados;
+	private List<Noticia> noticias;
+	private List<Sponsor> sponsors;
+	
 	private int id=0;
-	private String mail = "";
-	private List<Pedido> listadoPedidos;
-	
-	private ArrayList<ArrayList<Pedido>> listaDeListasDePedidos = new ArrayList<ArrayList<Pedido>>();
-	
-	private ArrayList<ArrayList<Combo>> listaDeListasDeResumen = new ArrayList<ArrayList<Combo>>();
-	
-	private List<Adjunto> adjuntos;
-	private Transicion transicion;
-	private PWeb pweb;
-	private Accion accion;
-	private LogPedido log;
-	
-	private List<String> listaOpcionesMenu = new ArrayList<String>();
+	private int tipoNuevo = 0;
 		
 	@DefaultHandler
 	@DontValidate
-	public Resolution cargar() {
-		/*AgenteEnrolado user = getAgente();
-		if(user==null){
-			setSesionVencida(true);
-			return new RedirectResolution("/login?sesionVencida=true");
-		}	*/	
-		
-	/*	for (Rol r : user.getRoles()) {
-				if(r.getNivelVertical()==2)listaOpcionesMenu.add(Constantes.MENU_ADMIN);
-				if(r.getNivelVertical()==1)listaOpcionesMenu.add(Constantes.MENU_SOLICITANTE);
-				if(r.getNivelVertical()==3)listaOpcionesMenu.add(Constantes.MENU_AUDITORIA);
-		}*/
+	public Resolution cargar() {	
 		
 		return new ForwardResolution("/pages/index.jsp");
 	}
 	
 	
-	public Resolution presentacionSolicitante() {	
+	public Resolution listadoNoticias() {	
 	
 		/*AgenteEnrolado user = getAgente();
 		if(user==null){
@@ -85,74 +73,87 @@ public class PanelActionBean extends BaseActionBean {
 			return new ForwardResolution("vencido.jsp");
 		}*/
 		try {
-		//	this.listadoPedidos=FachadaPedido.getPedidosSolicitados(user,pweb);		
-			return new ForwardResolution("/pages/inicioSolicitante.jsp");			
+			this.noticias=FachadaNoticia.getNoticias();		
+			return new ForwardResolution("/pages/listados/listadoNoticias.jsp");			
 			
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
-		
+		}		
 		return null;
 	}
 	
-	public Resolution presentacionAdmin() {	
+	public Resolution listadoCategorias() {	
 		
 		/*AgenteEnrolado user = getAgente();
 		if(user==null){
 			setSesionVencida(true);
 			return new ForwardResolution("vencido.jsp");
 		}*/
-		try {			
+		try {
+			this.categoriasListados=FachadaCategoria.getCatListados();	
+			this.categoriasNoticias=FachadaCategoria.getCatNoticias();		
+			return new ForwardResolution("/pages/listados/listadoCategorias.jsp");			
 			
-			/**
-			 * 1 - Asignados Abiertos Propios
-			 * 2 - Sin Asignar
-			 * 3 - Asignados Abiertos
-			 * 4 - Todos
-			 */
-			
-		/*	listaDeListasDePedidos.add((ArrayList<Pedido>) FachadaPedido.getPedidosParaAdminTabs(user, 1));
-			listaDeListasDePedidos.add((ArrayList<Pedido>) FachadaPedido.getPedidosParaAdminTabs(user, 2));
-			listaDeListasDePedidos.add((ArrayList<Pedido>) FachadaPedido.getPedidosParaAdminTabs(user, 3));
-			listaDeListasDePedidos.add((ArrayList<Pedido>) FachadaPedido.getPedidosParaAdminTabs(user, 4));
-			
-			/**
-			 * 1 - General
-			 * 2 - Propio
-			 *//*
-			listaDeListasDeResumen.add((ArrayList<Combo>) FachadaPedido.getResumenPedidosParaAdmin(user, 1));
-			listaDeListasDeResumen.add((ArrayList<Combo>) FachadaPedido.getResumenPedidosParaAdmin(user, 2));*/
-			
-			
-					
-			return new ForwardResolution("/pages/inicioAdmin.jsp");
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
-		
+		}		
 		return null;
 	}
 	
-	
-	public Resolution armadorFormulario() {	
+	public Resolution listadoClasificados() {	
 		
 		/*AgenteEnrolado user = getAgente();
 		if(user==null){
 			setSesionVencida(true);
 			return new ForwardResolution("vencido.jsp");
 		}*/
-				
-		
-		this.accion = FachadaAccion.getAccionPorIdTransicionYTipoAccion(transicion.getIdTransicion(), Constantes.tipoAccionGrabar);
-		this.pweb = (PWeb) FachadaPedido.getPedidoPorId(pweb.getIdPedido());
-		
-		//Segun el dato de la transi devuelvo un form distinto
-		if (accion.getTransicion().getTipoFormulario()==2){
-			return new ForwardResolution("/pages/formularioArmadoSmall.jsp");	
-		}else{
-			return new ForwardResolution("/pages/formularioArmado.jsp");	
-		}
+		try {
+			this.clasificados=FachadaClasificado.getClasificados();		
+			return new ForwardResolution("/pages/listados/listadoClasificados.jsp");			
 			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}		
+		return null;
+	}
+	
+	public Resolution listadoSponsor() {	
+		
+		/*AgenteEnrolado user = getAgente();
+		if(user==null){
+			setSesionVencida(true);
+			return new ForwardResolution("vencido.jsp");
+		}*/
+		try {
+			this.sponsors=FachadaSponsor.getSponsors();		
+			return new ForwardResolution("/pages/listados/listadoSponsor.jsp");			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}		
+		return null;
+	}
+	
+	public Resolution nuevo() {	
+		
+		/*AgenteEnrolado user = getAgente();
+		if(user==null){
+			setSesionVencida(true);
+			return new ForwardResolution("vencido.jsp");
+		}*/
+		try {
+			//this.sponsors=FachadaSponsor.getSponsors();		
+			
+			if (tipoNuevo==1)return new ForwardResolution("/pages/formNuevo/nuevoSponsor.jsp");
+			if (tipoNuevo==2)return new ForwardResolution("/pages/formNuevo/nuevoCategoriaListado.jsp");
+			if (tipoNuevo==3)return new ForwardResolution("/pages/formNuevo/nuevoCategoriaNoticia.jsp");
+			if (tipoNuevo==4)return new ForwardResolution("/pages/formNuevo/nuevoNoticia.jsp");
+			if (tipoNuevo==5)return new ForwardResolution("/pages/formNuevo/nuevoClasificado.jsp");
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}		
+		return null;
 	}
 	
 	public Resolution masInfoPedido() {	
@@ -163,7 +164,7 @@ public class PanelActionBean extends BaseActionBean {
 			return new ForwardResolution("vencido.jsp");
 		}	*/	
 	
-		this.pweb = (PWeb) FachadaPedido.getPedidoPorId(pweb.getIdPedido());
+		//this.pweb = (PWeb) FachadaPedido.getPedidoPorId(pweb.getIdPedido());
 		return new ForwardResolution("/pages/pedidoMasInfo.jsp");		
 	}
 	
@@ -173,47 +174,27 @@ public class PanelActionBean extends BaseActionBean {
 	@HandlesEvent(value = "grabar")
 	public Resolution grabar() throws IOException, CloneNotSupportedException {	
 		JSONObject json = new JSONObject();
-		/*AgenteEnrolado user = getAgente();*/
-				
-		//todo lo que se va a eliminar
-		ArrayList<IEntidadWorkflow> objsEliminables = new ArrayList();
 		
-		//Todo lo que se va a persistir
-		ArrayList<IEntidadWorkflow> objsPersistibles = new ArrayList();
-		
-		//Agrego el log como persistible
-	
-		//LogPedido lp = new LogPedido(transicion.getEstadoByIdEstadoInicial(), transicion.getEstadoByIdEstadoFinal(),pweb,user.getAgente(),log);
-		
-	
-		
-		objsPersistibles.add(pweb);
-		//objsPersistibles.add(lp);		
-		
-		
-		//Los adjuntos los voy a tratar de grabar asi
-		if (adjuntos!=null){
-			adjuntos.removeAll(Collections.singleton(null));			
-			for (Adjunto i : adjuntos) {	
-				/***
-				 * Pregunto si fb del adjunto es != null cuando no hay archivos 
-				 */
-				if (i.getFb()!=null)i.inicializar();
-				
-				i.setPedido(pweb);
-				objsPersistibles.add(i);
-			}
-		}
+		String pathArchivos = this.getContext().getRequest().getRealPath("/imagenesCargadas");
 		
 		try {
-			FachadaPedido.grabar(objsPersistibles,objsEliminables,transicion);			
-			json.put("success", "true");
-			json.put("idPedido", pweb.getId());			
+			if (categoriaListado!=null)
+				FachadaCategoria.grabar(categoriaListado);
+			if (categoriaNoticia!=null)
+				FachadaCategoria.grabar(categoriaNoticia);
+			if (clasificado!=null)
+				FachadaClasificado.grabar(clasificado);
+			if (noticia!=null)
+				FachadaNoticia.grabar(noticia);
+			if (sponsor!=null)
+				FachadaSponsor.grabar(sponsor,pathArchivos);
+			
+			json.put("success", "true");		
 			
 		}catch (Exception e) {
-			int idError = FachadaExcepciones.reportarExcepcion(e, getContext().getRequest().getRemoteHost(), getContext().getRequest().getHeader("User-Agent"),"s", Constantes.proyecto,"Grabar o Actualizar Pedido. Transición num:"+transicion.getIdTransicion());
+			//int idError = FachadaExcepciones.reportarExcepcion(e, getContext().getRequest().getRemoteHost(), getContext().getRequest().getHeader("User-Agent"),"s", Constantes.proyecto,"Grabar o Actualizar Pedido. Transición num:"+transicion.getIdTransicion());
 			json.put("success", "false");
-			json.put("mensaje", "Error de sistema. Su error es el "+idError+". Comuniquese con sistemas@inti.gob.ar");
+			json.put("mensaje", "Error de sistema. Su error es con la base de datos. Comuniquese con sistemas@inti.gob.ar");
 		}
 		
 		return new StreamingResolution("text/html", new StringReader(json.toString()));	
@@ -228,111 +209,125 @@ public class PanelActionBean extends BaseActionBean {
 	public void setSesionVencida(boolean sesionVencida) {
 		this.sesionVencida = sesionVencida;
 	}
+	
+
+	public CategoriaListado getCategoriaListado() {
+		return categoriaListado;
+	}
+
+
+	public void setCategoriaListado(CategoriaListado categoriaListado) {
+		this.categoriaListado = categoriaListado;
+	}
+
+
+	public CategoriaNoticia getCategoriaNoticia() {
+		return categoriaNoticia;
+	}
+
+
+	public void setCategoriaNoticia(CategoriaNoticia categoriaNoticia) {
+		this.categoriaNoticia = categoriaNoticia;
+	}
+
+
+	public Noticia getNoticia() {
+		return noticia;
+	}
+
+
+	public void setNoticia(Noticia noticia) {
+		this.noticia = noticia;
+	}
+
+
+	public Clasificado getClasificado() {
+		return clasificado;
+	}
+
+
+	public void setClasificado(Clasificado clasificado) {
+		this.clasificado = clasificado;
+	}
+
+
+	public List<CategoriaListado> getCategoriasListados() {
+		return categoriasListados;
+	}
+
+
+	public void setCategoriasListados(List<CategoriaListado> categoriasListados) {
+		this.categoriasListados = categoriasListados;
+	}
+
+
+	public List<CategoriaNoticia> getCategoriasNoticias() {
+		return categoriasNoticias;
+	}
+
+
+	public void setCategoriasNoticias(List<CategoriaNoticia> categoriasNoticias) {
+		this.categoriasNoticias = categoriasNoticias;
+	}
+
+
+	public List<Clasificado> getClasificados() {
+		return clasificados;
+	}
+
+
+	public void setClasificados(List<Clasificado> clasificados) {
+		this.clasificados = clasificados;
+	}
+
+
+	public List<Noticia> getNoticias() {
+		return noticias;
+	}
+
+
+	public void setNoticias(List<Noticia> noticias) {
+		this.noticias = noticias;
+	}
+
+
+	public Sponsor getSponsor() {
+		return sponsor;
+	}
+
+
+	public void setSponsor(Sponsor sponsor) {
+		this.sponsor = sponsor;
+	}
+
+
+	public List<Sponsor> getSponsors() {
+		return sponsors;
+	}
+
+
+	public void setSponsors(List<Sponsor> sponsors) {
+		this.sponsors = sponsors;
+	}
+
 
 	public int getId() {
 		return id;
 	}
 
+
 	public void setId(int id) {
 		this.id = id;
 	}
-	
-	public String getMail() {
-		return mail;
+
+
+	public int getTipoNuevo() {
+		return tipoNuevo;
 	}
 
 
-	public void setMail(String mail) {
-		this.mail = mail;
-	}
-
-
-	public List<Pedido> getListadoPedidos() {
-		return listadoPedidos;
-	}
-
-	public void setListadoPedidos(List<Pedido> listadoPedidos) {
-		this.listadoPedidos = listadoPedidos;
-	}
-
-	public Transicion getTransicion() {
-		return transicion;
-	}
-
-	public void setTransicion(Transicion transicion) {
-		this.transicion = transicion;
-	}
-
-	public PWeb getPweb() {
-		return pweb;
-	}
-
-	public void setPweb(PWeb pweb) {
-		this.pweb = pweb;
-	}
-
-	public Accion getAccion() {
-		return accion;
-	}
-
-	public void setAccion(Accion accion) {
-		this.accion = accion;
-	}
-
-/*	public List<FileBean> getAdjuntos() {
-		return adjuntos;
-	}
-
-	public void setAdjuntos(List<FileBean> adjuntos) {
-		this.adjuntos = adjuntos;
-	}*/
-
-	public List<Adjunto> getAdjuntos() {
-		return adjuntos;
-	}
-
-	public void setAdjuntos(List<Adjunto> adjuntos) {
-		this.adjuntos = adjuntos;
-	}
-
-
-	public LogPedido getLog() {
-		return log;
-	}
-
-
-	public void setLog(LogPedido log) {
-		this.log = log;
-	}
-
-
-	public ArrayList<ArrayList<Pedido>> getListaDeListasDePedidos() {
-		return listaDeListasDePedidos;
-	}
-
-
-	public void setListaDeListasDePedidos(ArrayList<ArrayList<Pedido>> listaDeListasDePedidos) {
-		this.listaDeListasDePedidos = listaDeListasDePedidos;
-	}
-
-
-	public ArrayList<ArrayList<Combo>> getListaDeListasDeResumen() {
-		return listaDeListasDeResumen;
-	}
-
-
-	public void setListaDeListasDeResumen(ArrayList<ArrayList<Combo>> listaDeListasDeResumen) {
-		this.listaDeListasDeResumen = listaDeListasDeResumen;
-	}
-
-
-	public List<String> getListaOpcionesMenu() {
-		return listaOpcionesMenu;
-	}
-
-
-	public void setListaOpcionesMenu(List<String> listaOpcionesMenu) {
-		this.listaOpcionesMenu = listaOpcionesMenu;
+	public void setTipoNuevo(int tipoNuevo) {
+		this.tipoNuevo = tipoNuevo;
 	}
 
 }

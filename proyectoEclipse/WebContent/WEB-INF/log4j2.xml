@@ -35,7 +35,7 @@
 <Loggers>            
     	<logger name="p6spy" level="DEBUG" additivity="false">            
             <AppenderRef ref="file-log" />
-			<!--    <AppenderRef ref="Console" />  --> 
+			   <AppenderRef ref="Console" />   
         </logger>       
         
         <Root level="WARN">
