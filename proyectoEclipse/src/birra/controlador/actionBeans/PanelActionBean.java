@@ -26,10 +26,12 @@ import birra.modelo.dominio.Categorialistado;
 import birra.modelo.dominio.Categorianoticia;
 import birra.modelo.dominio.Clasificado;
 import birra.modelo.dominio.Noticia;
+import birra.modelo.dominio.Sponsor;
 import birra.modelo.fachadas.FachadaCategoria;
 import birra.modelo.fachadas.FachadaClasificado;
 import birra.modelo.fachadas.FachadaExcepciones;
 import birra.modelo.fachadas.FachadaNoticia;
+import birra.modelo.fachadas.FachadaSponsor;
 import birra.modelo.tipificaciones.Combo;
 import birra.modelo.tipificaciones.IEntidadWorkflow;
 import birra.modelo.utiles.Constantes;
@@ -44,11 +46,13 @@ public class PanelActionBean extends BaseActionBean {
 	private Categorianoticia categoriaNoticia;	
 	private Noticia noticia;	
 	private Clasificado clasificado;
+	private Sponsor sponsor;
 	
 	private List<Categorialistado> categoriasListados;
 	private List<Categorianoticia> categoriasNoticias;
 	private List<Clasificado> clasificados;
 	private List<Noticia> noticias;
+	private List<Sponsor> sponsors;
 		
 	@DefaultHandler
 	@DontValidate
@@ -103,6 +107,23 @@ public class PanelActionBean extends BaseActionBean {
 		try {
 			this.clasificados=FachadaClasificado.getClasificados();		
 			return new ForwardResolution("/pages/listados/listadoClasificados.jsp");			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}		
+		return null;
+	}
+	
+	public Resolution listadoSponsor() {	
+		
+		/*AgenteEnrolado user = getAgente();
+		if(user==null){
+			setSesionVencida(true);
+			return new ForwardResolution("vencido.jsp");
+		}*/
+		try {
+			this.sponsors=FachadaSponsor.getSponsors();		
+			return new ForwardResolution("/pages/listados/listadoSponsor.jsp");			
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -239,6 +260,26 @@ public class PanelActionBean extends BaseActionBean {
 
 	public void setNoticias(List<Noticia> noticias) {
 		this.noticias = noticias;
+	}
+
+
+	public Sponsor getSponsor() {
+		return sponsor;
+	}
+
+
+	public void setSponsor(Sponsor sponsor) {
+		this.sponsor = sponsor;
+	}
+
+
+	public List<Sponsor> getSponsors() {
+		return sponsors;
+	}
+
+
+	public void setSponsors(List<Sponsor> sponsors) {
+		this.sponsors = sponsors;
 	}
 
 }
