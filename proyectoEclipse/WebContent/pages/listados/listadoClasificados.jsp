@@ -3,7 +3,7 @@
     <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
     	<div class="off-canvas-content" data-off-canvas-content>
 		    <h4>Clasificados</h4>
-		    <input type="button" id="nuevoClasificado-5" class="modalParaNuevo button expanded sombra-1 bg-color3" value="Nuevo clasificado">
+		    <input type="button" id="nuevoClasificado-5" class="modalParaNuevo button sombra-1 bg-color3" value="Nuevo clasificado">
 		  <div class="small-12 columns vHeight">
 		    <table class="material-table scroll sombra-1 hover tablaweb" id="tablaweb">
 		      <thead>

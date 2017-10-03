@@ -2,12 +2,13 @@
 <div class="off-canvas-wrapper">
     <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
     	<div class="off-canvas-content" data-off-canvas-content>
-		  <h4>Categoria Noticias</h4>
+		
 		 
 		  <input type="button" id="nuevaCategoriaNoticias-3" class="modalParaNuevo button sombra-1 bg-color3" value="Nueva Categoria de noticias">
 		  
 		  <input type="button" id="nuevaCategoriaClasificados-2" class="modalParaNuevo button sombra-1 bg-color3" value="Nueva Categoria de clasificados">
 		 
+		   <h4>Categoria Clasificados</h4>
 		  <div class="small-12 columns vHeight">
 		    <table class="material-table scroll sombra-1 hover tablaweb" id="tablaweb">
 		      <thead>
@@ -32,7 +33,7 @@
 		    </table>
 		  </div>
 		  
-		    <h4>Categoria Clasificados</h4>
+		    <h4>Categoría de Noticias</h4>
 			  <div class="small-12 columns vHeight">
 				    <table class="material-table scroll sombra-1 hover tablaweb">
 				      <thead>

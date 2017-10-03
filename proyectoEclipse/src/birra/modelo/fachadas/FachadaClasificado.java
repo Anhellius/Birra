@@ -43,7 +43,8 @@ public class FachadaClasificado {
 			}		
 			
 			String consulta = "select c "
-					+ " from Clasificado c";
+					+ " from Clasificado c"
+					+ " join fetch c.categorialistado cl";
 			
 			List<Clasificado> cl = (List<Clasificado>)HibernateUtil.getSessionFactory().getCurrentSession().createQuery(consulta).list();
 			

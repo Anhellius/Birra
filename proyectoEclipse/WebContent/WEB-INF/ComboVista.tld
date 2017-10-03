@@ -9,7 +9,7 @@
     <function>
         <name>getComboVista</name>
         <function-class>
-            ar.gob.inti.birra.modelo.db.PersistorHibernate
+            birra.modelo.db.PersistorHibernate
         </function-class>
         <function-signature>
             java.util.List getComboVista(java.lang.String)
@@ -19,7 +19,7 @@
      <function>
         <name>getComboVistaPorTipo</name>
         <function-class>
-            ar.gob.inti.birra.modelo.db.PersistorHibernate
+            birra.modelo.db.PersistorHibernate
         </function-class>        
         <function-signature>
             java.util.List getComboVistaPorTipo(java.lang.String,java.lang.String,java.lang.Integer)
@@ -29,7 +29,7 @@
      <function>
         <name>getComboVistaOtraBase</name>
         <function-class>
-            ar.gob.inti.birra.modelo.db.PersistorHibernate
+            birra.modelo.db.PersistorHibernate
         </function-class>        
         <function-signature>
             java.util.List getComboVistaOtraBase(java.lang.String,java.lang.String, java.lang.String)
@@ -39,7 +39,7 @@
      <function>
         <name>getComboVistaOtraBaseConFiltroNeg</name>
         <function-class>
-            ar.gob.inti.birras.modelo.db.PersistorHibernate
+            birras.modelo.db.PersistorHibernate
         </function-class>        
         <function-signature>
             java.util.List getComboVistaOtraBaseConFiltroNeg(java.lang.String,java.lang.String, java.lang.String, java.lang.String, java.lang.Integer)
@@ -49,7 +49,7 @@
         <function>
         <name>getComboVistaGerentes</name>
         <function-class>
-            ar.gob.inti.birras.modelo.db.PersistorHibernate
+            birras.modelo.db.PersistorHibernate
         </function-class>        
         <function-signature>
             java.util.List getComboVistaGerentes(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Integer)

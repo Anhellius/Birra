@@ -1,6 +1,6 @@
 <%@ include file="/pages/taglibs.jsp" %>
 	<div class="title bg-color5 panel txt-white">
-		<h3>Categoria</h3>
+		<h3>Categoria Noticia</h3>
 	</div>
   	<stripes:form beanclass="birra.controlador.actionBeans.PanelActionBean" partial="true" >
 	  	<div class="row expanded">

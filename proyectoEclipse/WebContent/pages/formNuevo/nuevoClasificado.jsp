@@ -1,24 +1,53 @@
 <%@ include file="/pages/taglibs.jsp" %>
 	<div class="title bg-color5 panel txt-white">
-		<h3>Clasificado</h3>
+		<h3>Nuevo Clasificado</h3>
 	</div>
   	<stripes:form beanclass="birra.controlador.actionBeans.PanelActionBean" partial="true" >
 	  	<div class="row expanded">
 	 		<div class="small-12 columns">	  		
 		  		<div class="row expanded vHeight" >
-					<div class="small-12 column">
-						<h5>Tipo Contribución:</h5>			
-						<stripes:radio name="contribucion.tipoContribucion.idTipoContribucion" id="tipoC1" class="required" value="1" />
-						<label for="tipoC1">
-							POA
-						</label>
-						<stripes:radio name="contribucion.tipoContribucion.idTipoContribucion" id="tipoC2" value="2" />
-						<label for="tipoC2">
-							PD
-						</label>
-						<hr>
+					<div class="small-6 column">
+						<label>Nombre</label>
+						<stripes:hidden name="clasificado.idClasificado"  />
+						<stripes:text name="clasificado.nombre" class="required" />						
 					</div>
-				</div>					
+					<div class="small-6 column">
+						<label>Categoría</label>
+						 <stripes:select name="clasificado.categorialistado.idCategoriaListado" id="idCategoriaListado" class="required">                            
+							<stripes:option value="">Seleccione</stripes:option>
+							<stripes:options-collection collection="${combo:getCombo(\"birra.modelo.dominio.CategoriaListado\",\"descripcion\")}"
+							value="idCategoriaListado" label="descripcion" />                        
+						</stripes:select>						
+					</div>
+				</div>	
+				
+				<div class="row expanded vHeight" >
+					<div class="small-6 column">
+						<label>Mail</label>
+						<stripes:text name="clasificado.mail" class="required" />						
+					</div>
+					<div class="small-6 column">
+						<label>Telefono</label>
+						<stripes:text name="clasificado.telefono" class="required" />					
+					</div>
+				</div>	
+				
+				<div class="row expanded vHeight" >
+					<div class="small-6 column">
+						<label>Web</label>
+						<stripes:text name="clasificado.web" class="required" />						
+					</div>
+					<div class="small-6 column">
+						<label>Redes Sociales</label>
+						<stripes:text name="clasificado.redesSociales" class="required" />					
+					</div>
+				</div>	
+				<div class="row expanded vHeight" >
+					<div class="small-6 column">
+						<label>Dirección Google Maps</label>
+						<stripes:text name="clasificado.direccionMapa" class="required" />						
+					</div>
+				</div>			
 					
 			</div>
 		</div>	

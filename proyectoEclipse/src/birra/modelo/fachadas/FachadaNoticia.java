@@ -50,8 +50,8 @@ public class FachadaNoticia {
 			}		
 			
 			String consulta = "select c "
-					+ " from Noticia c";
-			
+					+ " from Noticia c"
+					+ " join fetch c.categorianistado cl";
 			List<Noticia> cl = (List<Noticia>)HibernateUtil.getSessionFactory().getCurrentSession().createQuery(consulta).list();
 			
 			HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().commit();
