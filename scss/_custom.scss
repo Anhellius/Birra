@@ -1,9 +1,34 @@
+@import 'colores';
 $clean-hero-slider-accent: $warning-color;
 body {overflow-x: hidden;}
+
+//TEXTOS DE COLORES
+
+.txt-white{
+  color: white;
+}
+
+//FONDOS DE COLORES
+
+//@mixin background-color($bg-color:white){
+//  background:$bg-color !important;
+//}
+//
+//.bg-gris{
+//  @include background-color($oil);
+//}
 
 .position-absolute-bottom {
   @include position(absolute, null, null, 0, null);
 }
+
+.bg-black-alpha {
+  background: linear-gradient(to top, #000 0%, transparent) !important;
+  width: 100%;
+}
+
+//PAGINA PRINCIPAL
+//SLIDE E IMAGEN ESPECIALES PARA NOTICIAS
 
 .clean-hero-slider {
   .orbit-caption {
@@ -127,6 +152,9 @@ body {overflow-x: hidden;}
   z-index: 999;
 }
 
+
+//FOOTER
+
 $marketing-site-footer-bg: #2c3840;
 
 .marketing-site-footer {
@@ -199,7 +227,7 @@ $marketing-site-footer-bg: #2c3840;
   }
 }
 
-
+//TOPBAR CON LOGO CENTRADO
 
 .topbar-center-logo .top-bar-center {
   flex: 1 0 auto;
@@ -224,6 +252,8 @@ input[type='search'] {
   }
 }
 
+//EXPERIMENTO PARA PONER UN LAYER DE BLUR SOBRE CUALQUIER IMAGEN
+
 .blur{
   overflow: hidden;
   .orbit-image{
@@ -240,6 +270,10 @@ input[type='search'] {
   }
 
 }
+
+
+//HEADER ENORME PARA NOTA
+
 $large-article-header-bg: url('https://unsplash.it/1024/500/?blur');
 $large-article-header-color: $white;
 $large-article-header-height: rem-calc(500);
@@ -313,9 +347,7 @@ $large-article-header-height: rem-calc(500);
   }
 }
 
-.txt-white{
-  color: white;
-}
+
 
 .article-author, .article-comments {
   display: flex;
@@ -477,6 +509,88 @@ $social-brand-google-plus: #dd4b39;
   }
 }
 
+$card-user-profile-bg: $card-background;
+$card-user-profile-text-color: $body-font-color;
+
+.card-user-profile {
+  position: relative;
+  z-index: 0;
+  //@include card-container($card-user-profile-bg, $card-user-profile-text-color,  $global-radius);
+
+  &:hover {
+    .card-user-profile-img {
+      opacity: 1;
+    }
+  }
+}
+
+.card-user-profile-content {
+  position: relative;
+
+  //&::before {
+  //  position: absolute;
+  //  content: '';
+  //  top: rem-calc(-55);
+  //  left: rem-calc(-30);
+  //  width: 0;
+  //  height: 0;
+  //  border-style: solid;
+  //  border-width: rem-calc(55) 0 0 rem-calc(500);
+  //  z-index: 0;
+  //  border-color: transparent transparent transparent $card-user-profile-bg;
+  //}
+}
+
+.card-user-profile-actions {
+  @include card-divider;
+  background: $card-user-profile-bg;
+  display: flex;
+  border-top: 1px solid lightgrey;
+}
+
+.card-user-profile-img {
+  max-width: 100%;
+  opacity: 0.85;
+  transition: all 0.25s ease;
+}
+
+.card-user-profile-avatar {
+  position: absolute;
+  bottom: 85%;
+  left: 0;
+  right:0;
+  z-index: 2;
+  max-width: rem-calc(60);
+  margin:0 auto;
+
+  img {
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba($black, 0.3);
+  }
+}
+
+.card-user-profile-name {
+  //margin-bottom: 0;
+  //font-weight: 300;
+  //font-size: 1.5rem;
+}
+
+.card-user-profile-button {
+  margin-bottom: 0;
+  flex: 1 0 0;
+
+  + .card-user-profile-button {
+    margin-left: 1rem;
+  }
+}
+
+.card-user-profile-info {
+  //font-size: 0.875rem;
+  //letter-spacing: 1px;
+  //opacity: 0.8;
+}
+
+
 
 
 
@@ -622,4 +736,154 @@ $social-brand-tumblr: #32506d;
   color: $white;
   text-align: center;
 }
+
+
+
+
+
+//CAROUSEL DE NETFLIX
+
+
+.contain {
+  width: 100%;
+  .orbit-previous, .orbit-next{
+    @include orbit-control;
+    //background-color: rgba(0, 0, 0, 0.2);
+    text-shadow: 0px 2px 3px rgba(150, 150, 150, 1);
+    &:hover{
+      background-color: transparent;
+    }
+  }
+
+  .row {
+    overflow-x: scroll;
+    width: 100%;
+  }
+  .row__inner {
+    //-webkit-transition: 450ms -webkit-transform;
+    //transition: 450ms -webkit-transform;
+    //transition: 450ms transform;
+    //transition: 450ms transform, 450ms -webkit-transform;
+    //font-size: 0;
+    white-space: nowrap;
+    margin:0 .3rem;
+    //margin: 70.3125px 0;
+    //padding-bottom: 10px;
+    p{
+      white-space: normal !important;
+      font-size: .8rem;
+      line-height: 1rem;
+    }
+  }
+  .tile {
+    position: relative;
+    display: inline-block;
+    width: xy-cell-size(2 of 5);
+    //height: 140.625px;
+    //margin-right: 10px;
+    //font-size: 20px;
+    cursor: pointer;
+    -webkit-transition: 450ms all;
+    transition: 450ms all;
+    -webkit-transform-origin: center left;
+    transform-origin: center left;
+    vertical-align: top;
+  }
+  //.tile__img {
+  //  width: 250px;
+  //  height: 140.625px;
+  //  -o-object-fit: cover;
+  //  object-fit: cover;
+  //}
+  //.tile__details {
+  //  position: absolute;
+  //  bottom: 0;
+  //  left: 0;
+  //  right: 0;
+  //  top: 0;
+  //  font-size: 10px;
+  //  opacity: 0;
+  //  background: -webkit-linear-gradient(bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+  //  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+  //  -webkit-transition: 450ms opacity;
+  //  transition: 450ms opacity;
+  //}
+  //.tile__details:after,
+  //.tile__details:before {
+  //  content: '';
+  //  position: absolute;
+  //  top: 50%;
+  //  left: 50%;
+  //  display: #000;
+  //}
+  //.tile__details:after {
+  //  margin-top: -25px;
+  //  margin-left: -25px;
+  //  width: 50px;
+  //  height: 50px;
+  //  border: 3px solid #ecf0f1;
+  //  line-height: 50px;
+  //  text-align: center;
+  //  border-radius: 100%;
+  //  background: rgba(0,0,0,0.5);
+  //  z-index: 1;
+  //}
+  //.tile__details:before {
+  //  content: '▶';
+  //  left: 0;
+  //  width: 100%;
+  //  font-size: 30px;
+  //  margin-left: 7px;
+  //  margin-top: -18px;
+  //  text-align: center;
+  //  z-index: 2;
+  //}
+  //.tile:hover .tile__details {
+  //  opacity: 1;
+  //}
+  //.tile__title {
+  //  position: absolute;
+  //  bottom: 0;
+  //  padding: 10px;
+  //}
+  //.row__inner:hover {
+  //  -webkit-transform: translate3d(-62.5px, 0, 0);
+  //  transform: translate3d(-62.5px, 0, 0);
+  //}
+  //.row__inner:hover .tile {
+  //  opacity: 0.3;
+  //}
+  //.row__inner:hover .tile:hover {
+  //  -webkit-transform: scale(1.5);
+  //  transform: scale(1.5);
+  //  opacity: 1;
+  //}
+  //.tile:hover ~ .tile {
+  //  -webkit-transform: translate3d(125px, 0, 0);
+  //  transform: translate3d(125px, 0, 0);
+  //}
+}
+
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
+  ::-webkit-scrollbar {
+    width:  $size;
+    height: $size;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+
+  // For Internet Explorer
+  body {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+
+@include scrollbars(0, slategray);
 
