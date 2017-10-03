@@ -1,6 +1,6 @@
 <%@ include file="/pages/taglibs.jsp" %>
 	<div class="title bg-color5 panel txt-white">
-		<h3>Contribución</h3>
+		<h3>Sponsor</h3>
 	</div>
   <stripes:form beanclass="birra.controlador.actionBeans.PanelActionBean" partial="true" >
 	  	<div class="row expanded">
@@ -30,10 +30,6 @@
 
 <script>
 	$(document).ready(function() {
-		$('.tablaweb').dataTable( {
-			"language": {
-				"url": "https://www.inti.gob.ar/js/Spanish.lang"
-			}
-		});
+		
 	});  
 </script>
