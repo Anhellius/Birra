@@ -230,15 +230,6 @@ $(document).ready(function() {
 	});	
 });
 
-function enviarCampo(lugar,campo,generarDiv){
-	if($('#div'+lugar).length==0)
-		$('#divTotal').append('<div class="row"><div class="small-12 column"><h5>'+lugar+'</h5></div></div><div class="row small-up-1 medium-up-3 large-up-3" id="div'+lugar+'"></div>');	
-	
-	if(generarDiv=='1')$('#div'+lugar).append('<div class="column">'+campo+"</div>");
-	if(generarDiv=='0')$('#div'+lugar).append(campo);
-	
-}
-
 function irA(direccion,id){
 	
 	var idActivo = "";
