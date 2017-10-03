@@ -22,8 +22,8 @@ import net.sourceforge.stripes.action.UrlBinding;
 import org.apache.commons.io.IOUtils;
 import org.json.simple.JSONObject;
 
-import birra.modelo.dominio.Categorialistado;
-import birra.modelo.dominio.Categorianoticia;
+import birra.modelo.dominio.CategoriaListado;
+import birra.modelo.dominio.CategoriaNoticia;
 import birra.modelo.dominio.Clasificado;
 import birra.modelo.dominio.Noticia;
 import birra.modelo.dominio.Sponsor;
@@ -42,14 +42,14 @@ public class PanelActionBean extends BaseActionBean {
 
 	private boolean sesionVencida;
 	
-	private Categorialistado categoriaListado;
-	private Categorianoticia categoriaNoticia;	
+	private CategoriaListado categoriaListado;
+	private CategoriaNoticia categoriaNoticia;	
 	private Noticia noticia;	
 	private Clasificado clasificado;
 	private Sponsor sponsor;
 	
-	private List<Categorialistado> categoriasListados;
-	private List<Categorianoticia> categoriasNoticias;
+	private List<CategoriaListado> categoriasListados;
+	private List<CategoriaNoticia> categoriasNoticias;
 	private List<Clasificado> clasificados;
 	private List<Noticia> noticias;
 	private List<Sponsor> sponsors;
@@ -183,22 +183,22 @@ public class PanelActionBean extends BaseActionBean {
 	}
 	
 
-	public Categorialistado getCategoriaListado() {
+	public CategoriaListado getCategoriaListado() {
 		return categoriaListado;
 	}
 
 
-	public void setCategoriaListado(Categorialistado categoriaListado) {
+	public void setCategoriaListado(CategoriaListado categoriaListado) {
 		this.categoriaListado = categoriaListado;
 	}
 
 
-	public Categorianoticia getCategoriaNoticia() {
+	public CategoriaNoticia getCategoriaNoticia() {
 		return categoriaNoticia;
 	}
 
 
-	public void setCategoriaNoticia(Categorianoticia categoriaNoticia) {
+	public void setCategoriaNoticia(CategoriaNoticia categoriaNoticia) {
 		this.categoriaNoticia = categoriaNoticia;
 	}
 
@@ -223,22 +223,22 @@ public class PanelActionBean extends BaseActionBean {
 	}
 
 
-	public List<Categorialistado> getCategoriasListados() {
+	public List<CategoriaListado> getCategoriasListados() {
 		return categoriasListados;
 	}
 
 
-	public void setCategoriasListados(List<Categorialistado> categoriasListados) {
+	public void setCategoriasListados(List<CategoriaListado> categoriasListados) {
 		this.categoriasListados = categoriasListados;
 	}
 
 
-	public List<Categorianoticia> getCategoriasNoticias() {
+	public List<CategoriaNoticia> getCategoriasNoticias() {
 		return categoriasNoticias;
 	}
 
 
-	public void setCategoriasNoticias(List<Categorianoticia> categoriasNoticias) {
+	public void setCategoriasNoticias(List<CategoriaNoticia> categoriasNoticias) {
 		this.categoriasNoticias = categoriasNoticias;
 	}
 

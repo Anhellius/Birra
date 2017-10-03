@@ -4,8 +4,8 @@ import java.util.List;
 
 import birra.modelo.db.HibernateUtil;
 import birra.modelo.db.PersistorHibernate;
-import birra.modelo.dominio.Categorialistado;
-import birra.modelo.dominio.Categorianoticia;
+import birra.modelo.dominio.CategoriaListado;
+import birra.modelo.dominio.CategoriaNoticia;
 import birra.modelo.dominio.Clasificado;
 
 public class FachadaClasificado {	

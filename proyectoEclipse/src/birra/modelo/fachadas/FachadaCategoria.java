@@ -4,13 +4,13 @@ import java.util.List;
 
 import birra.modelo.db.HibernateUtil;
 import birra.modelo.db.PersistorHibernate;
-import birra.modelo.dominio.Categorialistado;
-import birra.modelo.dominio.Categorianoticia;
+import birra.modelo.dominio.CategoriaListado;
+import birra.modelo.dominio.CategoriaNoticia;
 
 public class FachadaCategoria {	
 	
 	@SuppressWarnings("unchecked")
-	public static void grabar(Categorialistado c) throws Exception {
+	public static void grabar(CategoriaListado c) throws Exception {
 		try {
 			if (!HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().isActive()) {
 				HibernateUtil.getSessionFactory().getCurrentSession().beginTransaction();
@@ -34,7 +34,7 @@ public class FachadaCategoria {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public static void grabar(Categorianoticia c) throws Exception {
+	public static void grabar(CategoriaNoticia c) throws Exception {
 		try {
 			if (!HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().isActive()) {
 				HibernateUtil.getSessionFactory().getCurrentSession().beginTransaction();
@@ -57,7 +57,7 @@ public class FachadaCategoria {
 		
 	}
 
-	public static List<Categorialistado> getCatListados() {
+	public static List<CategoriaListado> getCatListados() {
 		try {
 			if (!HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().isActive()) {
 				HibernateUtil.getSessionFactory().getCurrentSession().beginTransaction();
@@ -68,7 +68,7 @@ public class FachadaCategoria {
 			String consulta = "select Categorialistado c "
 					+ " from Categorialistado";
 			
-			List<Categorialistado> cl = (List<Categorialistado>)HibernateUtil.getSessionFactory().getCurrentSession().createQuery(consulta).list();
+			List<CategoriaListado> cl = (List<CategoriaListado>)HibernateUtil.getSessionFactory().getCurrentSession().createQuery(consulta).list();
 			
 			HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().commit();
 			
@@ -84,7 +84,7 @@ public class FachadaCategoria {
 		}
 	}
 
-	public static List<Categorianoticia> getCatNoticias() {
+	public static List<CategoriaNoticia> getCatNoticias() {
 		try {
 			if (!HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().isActive()) {
 				HibernateUtil.getSessionFactory().getCurrentSession().beginTransaction();
@@ -95,7 +95,7 @@ public class FachadaCategoria {
 			String consulta = "select Categorianoticia c "
 					+ " from Categorianoticia";
 			
-			List<Categorianoticia> cl = (List<Categorianoticia>)HibernateUtil.getSessionFactory().getCurrentSession().createQuery(consulta).list();
+			List<CategoriaNoticia> cl = (List<CategoriaNoticia>)HibernateUtil.getSessionFactory().getCurrentSession().createQuery(consulta).list();
 			
 			HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().commit();
 			

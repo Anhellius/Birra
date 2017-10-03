@@ -25,7 +25,7 @@ import birra.modelo.tipificaciones.IPersistible;
 public class Clasificado implements java.io.Serializable, IPersistible {	
 	
 	private Integer idClasificado;
-	private Categorialistado categorialistado;
+	private CategoriaListado categorialistado;
 	private String nombre;
 	private String mail;
 	private String telefono;
@@ -36,7 +36,7 @@ public class Clasificado implements java.io.Serializable, IPersistible {
 	public Clasificado() {
 	}
 
-	public Clasificado(Categorialistado categorialistado, String nombre, String mail, String telefono, String web,
+	public Clasificado(CategoriaListado categorialistado, String nombre, String mail, String telefono, String web,
 			String redesSociales, String direccionMapa) {
 		this.categorialistado = categorialistado;
 		this.nombre = nombre;
@@ -61,11 +61,11 @@ public class Clasificado implements java.io.Serializable, IPersistible {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "idCategoriaListado")
-	public Categorialistado getCategorialistado() {
+	public CategoriaListado getCategorialistado() {
 		return this.categorialistado;
 	}
 
-	public void setCategorialistado(Categorialistado categorialistado) {
+	public void setCategorialistado(CategoriaListado categorialistado) {
 		this.categorialistado = categorialistado;
 	}
 

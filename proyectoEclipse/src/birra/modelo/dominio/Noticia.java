@@ -31,7 +31,7 @@ import birra.modelo.tipificaciones.IPersistible;
 public class Noticia implements java.io.Serializable, IPersistible {	
 
 	private Integer idNoticia;
-	private Categorianoticia categorianoticia;
+	private CategoriaNoticia categorianoticia;
 	private String titulo;
 	private String copete;
 	private String autor;
@@ -42,7 +42,7 @@ public class Noticia implements java.io.Serializable, IPersistible {
 	public Noticia() {
 	}
 
-	public Noticia(Categorianoticia categorianoticia, String titulo, String copete, String autor, Date fecha,
+	public Noticia(CategoriaNoticia categorianoticia, String titulo, String copete, String autor, Date fecha,
 			String cuerpo, Set<Imagen> imagens) {
 		this.categorianoticia = categorianoticia;
 		this.titulo = titulo;
@@ -67,11 +67,11 @@ public class Noticia implements java.io.Serializable, IPersistible {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "idCategoriaNoticia")
-	public Categorianoticia getCategorianoticia() {
+	public CategoriaNoticia getCategorianoticia() {
 		return this.categorianoticia;
 	}
 
-	public void setCategorianoticia(Categorianoticia categorianoticia) {
+	public void setCategorianoticia(CategoriaNoticia categorianoticia) {
 		this.categorianoticia = categorianoticia;
 	}
 

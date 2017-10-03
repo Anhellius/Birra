@@ -30,7 +30,8 @@
 	    <mapping class="birra.modelo.dominio.CategoriaNoticia"/>
 	    <mapping class="birra.modelo.dominio.Clasificado"/>
 	    <mapping class="birra.modelo.dominio.Noticia"/>
-	    <mapping class="birra.modelo.dominio.Adjunto"/>
+	    <mapping class="birra.modelo.dominio.Imagen"/>
+	     <mapping class="birra.modelo.dominio.Sponsor"/>
 	    
 	    
     </session-factory>
