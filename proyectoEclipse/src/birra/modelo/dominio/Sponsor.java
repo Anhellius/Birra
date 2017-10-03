@@ -20,8 +20,7 @@ import birra.modelo.tipificaciones.IPersistible;
 @Entity
 @Table(name = "sponsor")
 public class Sponsor implements java.io.Serializable, IPersistible {
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	
 	private Integer idSponsor;
 	private String nombre;
 	private String link;

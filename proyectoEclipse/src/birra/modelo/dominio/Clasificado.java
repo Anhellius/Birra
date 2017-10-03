@@ -22,10 +22,8 @@ import birra.modelo.tipificaciones.IPersistible;
  */
 @Entity
 @Table(name = "clasificado")
-public class Clasificado implements java.io.Serializable, IPersistible {
+public class Clasificado implements java.io.Serializable, IPersistible {	
 	
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer idClasificado;
 	private Categorialistado categorialistado;
 	private String nombre;

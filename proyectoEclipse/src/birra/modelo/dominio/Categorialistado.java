@@ -22,8 +22,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "categorialistado")
 public class Categorialistado implements java.io.Serializable {
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	
 	private Integer idCategoriaListado;
 	private String descripcion;
 	private Set clasificados = new HashSet(0);

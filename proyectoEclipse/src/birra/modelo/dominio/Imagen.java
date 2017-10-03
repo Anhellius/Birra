@@ -24,8 +24,7 @@ import birra.modelo.tipificaciones.IPersistible;
 @Table(name = "imagen")
 public class Imagen implements java.io.Serializable, IPersistible {
 	
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	
 	private Integer idImagen;
 	private Noticia noticia;
 	private String nombreArchivo;

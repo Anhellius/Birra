@@ -23,8 +23,7 @@ import javax.persistence.Table;
 @Table(name = "categorianoticia")
 public class Categorianoticia implements java.io.Serializable {
 	
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	
 	private Integer idCategoriaNoticia;
 	private String descripcion;
 	private Set noticias = new HashSet(0);

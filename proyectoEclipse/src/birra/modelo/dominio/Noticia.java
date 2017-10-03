@@ -39,13 +39,13 @@ public class Noticia implements java.io.Serializable, IPersistible {
 	private String autor;
 	private Date fecha;
 	private String cuerpo;
-	private Set imagens = new HashSet(0);
+	private Set<Imagen> imagens = new HashSet<Imagen>(0);
 
 	public Noticia() {
 	}
 
 	public Noticia(Categorianoticia categorianoticia, String titulo, String copete, String autor, Date fecha,
-			String cuerpo, Set imagens) {
+			String cuerpo, Set<Imagen> imagens) {
 		this.categorianoticia = categorianoticia;
 		this.titulo = titulo;
 		this.copete = copete;
@@ -124,11 +124,11 @@ public class Noticia implements java.io.Serializable, IPersistible {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "noticia")
-	public Set getImagens() {
+	public Set<Imagen> getImagens() {
 		return this.imagens;
 	}
 
-	public void setImagens(Set imagens) {
+	public void setImagens(Set<Imagen> imagens) {
 		this.imagens = imagens;
 	}
 
