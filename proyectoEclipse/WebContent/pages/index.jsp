@@ -173,6 +173,9 @@ $(document).ready(function() {
 	$(document).on('click','#grabar', function() {	
 		
 		var contentType = 'application/x-www-form-urlencoded;charset=utf-8';
+
+		if ($('#logoImagen').val()!=null && $('#logoImagen').val()!='')contentType = 'multipart/form-data;charset=utf-8';
+		if ($('#fondoImagen').val()!=null && $('#fondoImagen').val()!='')contentType = 'multipart/form-data;charset=utf-8';
 		
 			$("#formTransicion").ajaxForm({
 				url:"miPanel?grabar",
