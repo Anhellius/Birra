@@ -49,8 +49,8 @@ public class FachadaNoticia {
 				HibernateUtil.getSessionFactory().getCurrentSession().clear();
 			}		
 			
-			String consulta = "select Noticia c "
-					+ " from Noticia";
+			String consulta = "select c "
+					+ " from Noticia c";
 			
 			List<Noticia> cl = (List<Noticia>)HibernateUtil.getSessionFactory().getCurrentSession().createQuery(consulta).list();
 			

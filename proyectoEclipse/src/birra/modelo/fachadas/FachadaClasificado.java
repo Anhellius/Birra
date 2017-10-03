@@ -42,8 +42,8 @@ public class FachadaClasificado {
 				HibernateUtil.getSessionFactory().getCurrentSession().clear();
 			}		
 			
-			String consulta = "select Clasificado c "
-					+ " from Clasificado";
+			String consulta = "select c "
+					+ " from Clasificado c";
 			
 			List<Clasificado> cl = (List<Clasificado>)HibernateUtil.getSessionFactory().getCurrentSession().createQuery(consulta).list();
 			

@@ -65,8 +65,8 @@ public class FachadaCategoria {
 				HibernateUtil.getSessionFactory().getCurrentSession().clear();
 			}		
 			
-			String consulta = "select Categorialistado c "
-					+ " from Categorialistado";
+			String consulta = "select c "
+					+ " from Categorialistado c";
 			
 			List<CategoriaListado> cl = (List<CategoriaListado>)HibernateUtil.getSessionFactory().getCurrentSession().createQuery(consulta).list();
 			
@@ -92,8 +92,8 @@ public class FachadaCategoria {
 				HibernateUtil.getSessionFactory().getCurrentSession().clear();
 			}		
 			
-			String consulta = "select Categorianoticia c "
-					+ " from Categorianoticia";
+			String consulta = "select c "
+					+ " from Categorianoticia c";
 			
 			List<CategoriaNoticia> cl = (List<CategoriaNoticia>)HibernateUtil.getSessionFactory().getCurrentSession().createQuery(consulta).list();
 			

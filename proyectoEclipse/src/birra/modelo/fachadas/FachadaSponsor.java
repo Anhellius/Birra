@@ -43,8 +43,8 @@ public class FachadaSponsor {
 				HibernateUtil.getSessionFactory().getCurrentSession().clear();
 			}		
 			
-			String consulta = "select Sponsor c "
-					+ " from Sponsor";
+			String consulta = "select c "
+					+ " from Sponsor c";
 			
 			List<Sponsor> cl = (List<Sponsor>)HibernateUtil.getSessionFactory().getCurrentSession().createQuery(consulta).list();
 			
