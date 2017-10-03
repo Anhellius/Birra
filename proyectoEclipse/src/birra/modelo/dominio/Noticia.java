@@ -28,10 +28,8 @@ import birra.modelo.tipificaciones.IPersistible;
  */
 @Entity
 @Table(name = "noticia")
-public class Noticia implements java.io.Serializable, IPersistible {
-	
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+public class Noticia implements java.io.Serializable, IPersistible {	
+
 	private Integer idNoticia;
 	private Categorianoticia categorianoticia;
 	private String titulo;

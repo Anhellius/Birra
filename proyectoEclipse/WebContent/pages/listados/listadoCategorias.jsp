@@ -15,9 +15,9 @@
 		      <tbody>
 				<c:forEach items="${actionBean.categoriasListados}" var="p" varStatus="i">
 					<tr class="txt-${p.estado.classColor}">
-			       		<td width="1%" class="bold size-18">${p.idPedido}</td>
+			       		<td width="1%" class="bold size-18">${p.idCategoriaListado}</td>
 			        	<td>
-			        		${p.estado.descripcion}			        		
+			        		${p.descripcion}	        		
 			        	</td>			        	
 			        	<td>
 							<div class="secondary button-group small align-center">
@@ -42,10 +42,10 @@
 		      </thead>
 		      <tbody>
 				<c:forEach items="${actionBean.categoriasNoticias}" var="p" varStatus="i">
-					<tr class="txt-${p.estado.classColor}">
-			       		<td width="1%" class="bold size-18">${p.idPedido}</td>
+					<tr class="txt-">
+			       		<td width="1%" class="bold size-18">${p.idCategoriaNoticia}</td>
 			        	<td>
-			        		${p.estado.descripcion}			        		
+			        		${p.descripcion}			        		
 			        	</td>			        	
 			        	<td>
 							<div class="secondary button-group small align-center">
