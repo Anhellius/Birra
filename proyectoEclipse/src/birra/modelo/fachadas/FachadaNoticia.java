@@ -42,8 +42,30 @@ public class FachadaNoticia {
 	}
 
 	public static List<Noticia> getNoticias() {
-		// TODO Auto-generated method stub
-		return null;
+		try {
+			if (!HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().isActive()) {
+				HibernateUtil.getSessionFactory().getCurrentSession().beginTransaction();
+			} else {
+				HibernateUtil.getSessionFactory().getCurrentSession().clear();
+			}		
+			
+			String consulta = "select Noticia c "
+					+ " from Noticia";
+			
+			List<Noticia> cl = (List<Noticia>)HibernateUtil.getSessionFactory().getCurrentSession().createQuery(consulta).list();
+			
+			HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().commit();
+			
+			return cl;
+			
+		} catch (Exception e) {
+			HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().rollback();
+			HibernateUtil.getSessionFactory().getCurrentSession().close();
+			throw e;
+			
+		} finally {
+			HibernateUtil.getSessionFactory().getCurrentSession().close();
+		}
 	}
 	
 	

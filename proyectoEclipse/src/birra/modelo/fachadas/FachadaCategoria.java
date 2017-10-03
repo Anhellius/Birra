@@ -58,13 +58,57 @@ public class FachadaCategoria {
 	}
 
 	public static List<Categorialistado> getCatListados() {
-		// TODO Auto-generated method stub
-		return null;
+		try {
+			if (!HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().isActive()) {
+				HibernateUtil.getSessionFactory().getCurrentSession().beginTransaction();
+			} else {
+				HibernateUtil.getSessionFactory().getCurrentSession().clear();
+			}		
+			
+			String consulta = "select Categorialistado c "
+					+ " from Categorialistado";
+			
+			List<Categorialistado> cl = (List<Categorialistado>)HibernateUtil.getSessionFactory().getCurrentSession().createQuery(consulta).list();
+			
+			HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().commit();
+			
+			return cl;
+			
+		} catch (Exception e) {
+			HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().rollback();
+			HibernateUtil.getSessionFactory().getCurrentSession().close();
+			throw e;
+			
+		} finally {
+			HibernateUtil.getSessionFactory().getCurrentSession().close();
+		}
 	}
 
 	public static List<Categorianoticia> getCatNoticias() {
-		// TODO Auto-generated method stub
-		return null;
+		try {
+			if (!HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().isActive()) {
+				HibernateUtil.getSessionFactory().getCurrentSession().beginTransaction();
+			} else {
+				HibernateUtil.getSessionFactory().getCurrentSession().clear();
+			}		
+			
+			String consulta = "select Categorianoticia c "
+					+ " from Categorianoticia";
+			
+			List<Categorianoticia> cl = (List<Categorianoticia>)HibernateUtil.getSessionFactory().getCurrentSession().createQuery(consulta).list();
+			
+			HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().commit();
+			
+			return cl;
+			
+		} catch (Exception e) {
+			HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().rollback();
+			HibernateUtil.getSessionFactory().getCurrentSession().close();
+			throw e;
+			
+		} finally {
+			HibernateUtil.getSessionFactory().getCurrentSession().close();
+		}
 	}
 
 

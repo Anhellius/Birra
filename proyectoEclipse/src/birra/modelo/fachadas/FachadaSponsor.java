@@ -6,6 +6,7 @@ import birra.modelo.db.HibernateUtil;
 import birra.modelo.db.PersistorHibernate;
 import birra.modelo.dominio.Categorialistado;
 import birra.modelo.dominio.Categorianoticia;
+import birra.modelo.dominio.Clasificado;
 import birra.modelo.dominio.Sponsor;
 
 public class FachadaSponsor {	
@@ -35,8 +36,30 @@ public class FachadaSponsor {
 	}
 	
 	public static List<Sponsor> getSponsors() {
-		// TODO Auto-generated method stub
-		return null;
+		try {
+			if (!HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().isActive()) {
+				HibernateUtil.getSessionFactory().getCurrentSession().beginTransaction();
+			} else {
+				HibernateUtil.getSessionFactory().getCurrentSession().clear();
+			}		
+			
+			String consulta = "select Sponsor c "
+					+ " from Sponsor";
+			
+			List<Sponsor> cl = (List<Sponsor>)HibernateUtil.getSessionFactory().getCurrentSession().createQuery(consulta).list();
+			
+			HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().commit();
+			
+			return cl;
+			
+		} catch (Exception e) {
+			HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().rollback();
+			HibernateUtil.getSessionFactory().getCurrentSession().close();
+			throw e;
+			
+		} finally {
+			HibernateUtil.getSessionFactory().getCurrentSession().close();
+		}
 	}
 
 
