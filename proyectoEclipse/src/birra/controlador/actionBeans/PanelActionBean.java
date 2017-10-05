@@ -30,6 +30,7 @@ import birra.modelo.dominio.Sponsor;
 import birra.modelo.fachadas.FachadaCategoria;
 import birra.modelo.fachadas.FachadaClasificado;
 import birra.modelo.fachadas.FachadaExcepciones;
+import birra.modelo.fachadas.FachadaImagen;
 import birra.modelo.fachadas.FachadaNoticia;
 import birra.modelo.fachadas.FachadaSponsor;
 import birra.modelo.tipificaciones.Combo;
@@ -181,6 +182,28 @@ public class PanelActionBean extends BaseActionBean {
 	
 		//this.pweb = (PWeb) FachadaPedido.getPedidoPorId(pweb.getIdPedido());
 		return new ForwardResolution("/pages/pedidoMasInfo.jsp");		
+	}
+	
+	public Resolution eliminarImagen() {	
+		
+		JSONObject json = new JSONObject();
+		
+		String pathArchivos = this.getContext().getRequest().getRealPath("/pages/imagenesCargadas");
+		
+		try {
+			
+			FachadaImagen.eliminarImagen(id,pathArchivos);
+			
+			json.put("success", "true");		
+			
+		}catch (Exception e) {
+			//int idError = FachadaExcepciones.reportarExcepcion(e, getContext().getRequest().getRemoteHost(), getContext().getRequest().getHeader("User-Agent"),"s", Constantes.proyecto,"Grabar o Actualizar Pedido. Transición num:"+transicion.getIdTransicion());
+			e.printStackTrace();
+			json.put("success", "false");
+			json.put("mensaje", "Error de sistema. Su error es con la base de datos. Comuniquese con sistemas@inti.gob.ar");
+		}
+		
+		return new StreamingResolution("text/html", new StringReader(json.toString()));	
 	}
 	
 	

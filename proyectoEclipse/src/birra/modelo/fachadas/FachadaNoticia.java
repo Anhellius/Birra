@@ -85,6 +85,7 @@ public class FachadaNoticia {
 			String consulta = "select c "
 					+ " from Noticia c"
 					+ " join fetch c.categorianoticia cl";
+				
 			List<Noticia> cl = (List<Noticia>)HibernateUtil.getSessionFactory().getCurrentSession().createQuery(consulta).list();
 			
 			HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().commit();
@@ -111,6 +112,7 @@ public class FachadaNoticia {
 			
 			String consulta = "select c "
 					+ " from Noticia c"
+					+ " left join fetch c.imagens i"
 					+ " where c.idNoticia = " + id;
 			
 			Noticia cl = (Noticia)HibernateUtil.getSessionFactory().getCurrentSession().createQuery(consulta).uniqueResult();

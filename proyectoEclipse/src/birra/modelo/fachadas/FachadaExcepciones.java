@@ -34,20 +34,7 @@ public class FachadaExcepciones {
 		
 		ErrorExcepcion err = new ErrorExcepcion(sistema,usuario, stack,metodo,e.getClass().getName(),header); 
 		int idExcepcion = 0;
-		try{
-			HibernateUtil.getSessionFactory().getCurrentSession().beginTransaction();
-			ErrorExcepcion err2 = (ErrorExcepcion)HibernateUtil.getSessionFactory().getCurrentSession().merge(err);	
-			
-			HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().commit();
-			idExcepcion = err2.getIdExcepcion();			
-			
-		}catch (Exception k){
-			k.printStackTrace();
-			System.out.println("No se puede conectar para grabar el error.");
-		}
-		finally{
-			HibernateUtil.getSessionFactory().getCurrentSession().close();
-		}
+		
 		
 		return idExcepcion;
 	}

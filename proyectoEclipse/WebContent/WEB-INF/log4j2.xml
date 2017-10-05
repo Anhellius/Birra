@@ -40,7 +40,7 @@
         
         <Root level="WARN">
 			<AppenderRef ref="file-error-log"/>
-			<!--   <AppenderRef ref="Console" />  -->
+			   <AppenderRef ref="Console" />  
 	    </Root> 
 	 </Loggers> 
 </Configuration>

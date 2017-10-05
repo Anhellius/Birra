@@ -261,6 +261,28 @@ $(document).ready(function() {
 		});		
 			
 	});	
+
+
+	$(document).on('click','.eliminarImagen', function() {
+
+		var id = $(this).prop('id');
+		var idParaMandar = id.substring(id.lastIndexOf('-')+1,id.length);
+		$.ajax({
+			url: 'miPanel?eliminarImagen',
+			type: 'post',
+			data: {'id':idParaMandar},
+			success: function(data) {				
+				$('#pExito').html("Eliminada exitosamente.");
+				$('#myModalExitoGrabar').foundation('open');
+				recargarPagina();			  							
+			},
+			error: function(data){					
+				alert("Error de sistema, intente nuevamente.");				
+			}
+		});		
+			
+	});	
+	
 });
 
 function irA(direccion,id){
