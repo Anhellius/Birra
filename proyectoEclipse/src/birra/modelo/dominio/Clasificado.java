@@ -32,6 +32,7 @@ public class Clasificado implements java.io.Serializable, IPersistible {
 	private String web;
 	private String redesSociales;
 	private String direccionMapa;
+	private boolean publicada; 
 
 	public Clasificado() {
 	}
@@ -121,6 +122,14 @@ public class Clasificado implements java.io.Serializable, IPersistible {
 
 	public void setDireccionMapa(String direccionMapa) {
 		this.direccionMapa = direccionMapa;
+	}
+
+	public boolean isPublicada() {
+		return publicada;
+	}
+
+	public void setPublicada(boolean publicada) {
+		this.publicada = publicada;
 	}
 
 }

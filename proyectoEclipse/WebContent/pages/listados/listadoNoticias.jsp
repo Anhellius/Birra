@@ -27,13 +27,31 @@
 			        	<td>${p.autor}</td>
 			        	<td><small><fmt:formatDate value="${p.fecha}"/></small></td>
 			        	<td>
-							<i class="mdi-editor-border-color modalParaModificar" id="modificarNoticia-4-${p.idNoticia}"></i>	
+			        		<c:if test="${p.publicada}">
+								 <div class="switch small">
+										 <input class="switch-input publicarODespublicar" id="publicada-4-${p.idNoticia}" type="checkbox" checked="checked" name="publicada" value="1">
+										 <label class="switch-paddle" for="publicada-${p.idNoticia}">
+											 <span class="switch-active" aria-hidden="true">Si</span>
+											 <span class="switch-inactive" aria-hidden="true">No</span>
+										 </label>
+								 </div>
+								</c:if>
+								<c:if test="${!p.publicada}" >	
+									 <div class="switch small">
+										 <input class="switch-input publicarODespublicar" id="publicada-4-${p.idNoticia}" type="checkbox" name="publicada" value="1">
+										 <label class="switch-paddle" for="publicada-${p.idNoticia}">
+											 <span class="switch-active" aria-hidden="true">Si</span>
+											 <span class="switch-inactive" aria-hidden="true">No</span>
+										 </label>
+									 </div>
+								</c:if>
+								
 						</td>
 						<td>
 							<div class="row">
-								<div class="column small-4 shrink" id="idPedInfo-${p.idNoticia}">
-									<a href="noticia?idNoticia=${p.idNoticia}"><i class="mdi-action-search size-24 txt-color" title="Ver noticia"></i></a>
-								</div>							
+								<i class="mdi-editor-border-color modalParaModificar" id="modificarNoticia-4-${p.idNoticia}"></i>								
+								<a href="noticia?idNoticia=${p.idNoticia}"><i class="mdi-action-search size-24 txt-color" title="Ver noticia"></i></a>
+															
 							</div>
 						</td>
 			      </tr>

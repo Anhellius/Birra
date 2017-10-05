@@ -37,6 +37,8 @@ public class Sponsor implements java.io.Serializable, IPersistible {
 	private String linkTwitter;
 	private String linkWeb;
 	
+	private boolean publicada; 
+	
 	private FileBean logo;
 	private FileBean fondo;
 
@@ -173,6 +175,14 @@ public class Sponsor implements java.io.Serializable, IPersistible {
 	
 	public void setFondo(FileBean fondo) {
 		this.fondo = fondo;
+	}
+
+	public boolean isPublicada() {
+		return publicada;
+	}
+
+	public void setPublicada(boolean publicada) {
+		this.publicada = publicada;
 	}
 
 }

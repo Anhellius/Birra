@@ -117,6 +117,31 @@ public class FachadaSponsor {
 		}
 	}
 
-
+	public static void actualizarPublicada(int id, boolean publicada, String objeto) {
+		try {
+			if (!HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().isActive()) {
+				HibernateUtil.getSessionFactory().getCurrentSession().beginTransaction();
+			} else {
+				HibernateUtil.getSessionFactory().getCurrentSession().clear();
+			}		
+			
+			String consulta = "update "+objeto+" set publicada= "+publicada
+					+ " where id"+objeto+" = " + id;
+			
+			HibernateUtil.getSessionFactory().getCurrentSession().createQuery(consulta).executeUpdate();
+			
+			HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().commit();
+			
+			
+		} catch (Exception e) {
+			HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().rollback();
+			HibernateUtil.getSessionFactory().getCurrentSession().close();
+			throw e;
+			
+		} finally {
+			HibernateUtil.getSessionFactory().getCurrentSession().close();
+		}
+		
+	}
 
 }

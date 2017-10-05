@@ -282,6 +282,47 @@ $(document).ready(function() {
 		});		
 			
 	});	
+
+	$(document).on('change','.publicarODespublicar', function() {		
+	
+		if($(this).is(':checked')){			
+			publicada = '1';
+			}
+		else{			
+			publicada = '0';
+		}
+		
+		var id = $(this).prop('id');
+		var tipoNuevo = id.substring(id.indexOf('-')+1,id.lastIndexOf('-'));
+		var idParaMandar = id.substring(id.lastIndexOf('-')+1,id.length);
+		
+			$.ajax({
+				type: "POST",
+				url:"miPanel?grabarPublicada",
+				data: {'tipoNuevo':tipoNuevo,'id':idParaMandar,'publicada':publicada},
+				dataType:'json',  
+				contentType: "application/x-www-form-urlencoded;charset=utf-8",
+				success: function(data){							
+					if(transform(data.success)){		
+						$('#anclada-'+idNoticia).prop('checked', false);
+						$('#publiExitosamente').html(mensaje);
+						$('#publicadaExitosamenteModal').foundation('open');
+						
+					}else{
+						$('#pError').html(data.mensaje);
+						$('#modalError').foundation('open');
+						}
+				},
+				error: function(data){
+					alert("Error de sistema. Comuniquese con sistemas@inti.gob.ar");		
+				}
+			});
+		
+
+		
+					
+				
+	});	
 	
 });
 

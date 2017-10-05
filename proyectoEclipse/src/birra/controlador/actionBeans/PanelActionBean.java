@@ -57,6 +57,7 @@ public class PanelActionBean extends BaseActionBean {
 	
 	private int id=0;
 	private int tipoNuevo = 0;
+	private boolean publicada;
 		
 	@DefaultHandler
 	@DontValidate
@@ -238,6 +239,36 @@ public class PanelActionBean extends BaseActionBean {
 		
 		return new StreamingResolution("text/html", new StringReader(json.toString()));	
 	}
+	
+
+	@HandlesEvent(value = "grabarPublicada")
+	public Resolution grabarPublicada() throws IOException, CloneNotSupportedException {	
+		JSONObject json = new JSONObject();
+		
+		String pathArchivos = this.getContext().getRequest().getRealPath("/pages/imagenesCargadas");
+		
+		try {
+			if (tipoNuevo==1){
+				FachadaSponsor.actualizarPublicada(id,publicada,"Sponsor");
+			}			
+			if (tipoNuevo==4){
+				FachadaSponsor.actualizarPublicada(id,publicada,"Noticia");
+			}
+			if (tipoNuevo==5){
+				FachadaSponsor.actualizarPublicada(id,publicada,"Clasificado");
+			}
+			
+			json.put("success", "true");		
+			
+		}catch (Exception e) {
+			//int idError = FachadaExcepciones.reportarExcepcion(e, getContext().getRequest().getRemoteHost(), getContext().getRequest().getHeader("User-Agent"),"s", Constantes.proyecto,"Grabar o Actualizar Pedido. Transición num:"+transicion.getIdTransicion());
+			e.printStackTrace();
+			json.put("success", "false");
+			json.put("mensaje", "Error de sistema. Su error es con la base de datos. Comuniquese con sistemas@inti.gob.ar");
+		}
+		
+		return new StreamingResolution("text/html", new StringReader(json.toString()));	
+	}
 		
 	
 	
@@ -367,6 +398,15 @@ public class PanelActionBean extends BaseActionBean {
 
 	public void setTipoNuevo(int tipoNuevo) {
 		this.tipoNuevo = tipoNuevo;
+	}
+	
+	public boolean isPublicada() {
+		return publicada;
+	}
+
+
+	public void setPublicada(boolean publicada) {
+		this.publicada = publicada;
 	}
 
 }

@@ -41,6 +41,8 @@ public class Noticia implements java.io.Serializable, IPersistible {
 	private Date fecha;
 	private String cuerpo;
 	
+	private boolean publicada; 
+	
 	private FileBean imagenPrincipal;
 	private List<FileBean> imagenesGrilla;
 	
@@ -153,6 +155,14 @@ public class Noticia implements java.io.Serializable, IPersistible {
 
 	public void setImagenesGrilla(List<FileBean> imagenesGrilla) {
 		this.imagenesGrilla = imagenesGrilla;
+	}
+
+	public boolean isPublicada() {
+		return publicada;
+	}
+
+	public void setPublicada(boolean publicada) {
+		this.publicada = publicada;
 	}
 
 }

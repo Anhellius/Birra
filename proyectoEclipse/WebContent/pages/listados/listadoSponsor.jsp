@@ -38,12 +38,30 @@
 			        	<td>${p.linkFacebook}</td>
 			        	<td>${p.linkTwitter}</td>
 			        	<td>
-							<i class="mdi-editor-border-color modalParaModificar" id="modificarClasificado-1-${p.idSponsor}"></i>		
+			        		<c:if test="${p.publicada}">
+								 <div class="switch small">
+										 <input class="switch-input publicarODespublicar" id="publicada-5-${p.idSponsor}" type="checkbox" checked="checked" name="publicada" value="1">
+										 <label class="switch-paddle" for="publicada-${p.idSponsor}">
+											 <span class="switch-active" aria-hidden="true">Si</span>
+											 <span class="switch-inactive" aria-hidden="true">No</span>
+										 </label>
+								 </div>
+								</c:if>
+								<c:if test="${!p.publicada}" >	
+									 <div class="switch small">
+										 <input class="switch-input publicarODespublicar" id="publicada-5-${p.idSponsor}" type="checkbox" name="publicada" value="1">
+										 <label class="switch-paddle" for="publicada-${p.idSponsor}">
+											 <span class="switch-active" aria-hidden="true">Si</span>
+											 <span class="switch-inactive" aria-hidden="true">No</span>
+										 </label>
+									 </div>
+								</c:if>
+								
 						</td>
 						<td>
-							<div class="row">
-								<div class="masInfo column small-4 shrink" id="idPedInfo-${p.idSponsor}"><i class="mdi-action-info-outline size-24 txt-color" title="Más Info"></i></div>							
-							</div>
+							<i class="mdi-editor-border-color modalParaModificar" id="modificarClasificado-1-${p.idSponsor}"></i>	
+							<i class="mdi-action-info-outline size-24 txt-color" title="Más Info"></i>					
+							
 						</td>
 			      </tr>
 				</c:forEach>	     
