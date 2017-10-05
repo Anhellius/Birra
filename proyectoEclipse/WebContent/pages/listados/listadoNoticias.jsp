@@ -31,7 +31,9 @@
 						</td>
 						<td>
 							<div class="row">
-								<div class="masInfo column small-4 shrink" id="idPedInfo-${p.idNoticia}"><i class="mdi-action-info-outline size-24 txt-color" title="Más Info"></i></div>							
+								<div class="column small-4 shrink" id="idPedInfo-${p.idNoticia}">
+									<a href="noticia?idNoticia=${p.idNoticia}"><i class="mdi-action-search size-24 txt-color" title="Ver noticia"></i></a>
+								</div>							
 							</div>
 						</td>
 			      </tr>
