@@ -26,6 +26,7 @@
 			        		${p.descripcion}	        		
 			        	</td>			        	
 			        	<td>
+			        		<i class="mdi-editor-border-color modalParaModificar" id="modificarClasificado-2-${p.idCategoriaListado}"></i>
 						</td>						
 			      </tr>
 				</c:forEach>	     
@@ -51,9 +52,7 @@
 					        		${p.descripcion}			        		
 					        	</td>			        	
 					        	<td>
-									<div class="secondary button-group small align-center">
-										
-									</div> 
+									<i class="mdi-editor-border-color modalParaModificar" id="modificarCatNoticia-3-${p.idCategoriaNoticia}"></i>
 								</td>
 								
 					      </tr>

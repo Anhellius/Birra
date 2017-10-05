@@ -127,6 +127,7 @@
     <script src="https://www.inti.gob.ar/js/custom-file-upload.js"></script>
     <script type="text/javascript" src="https://www.inti.gob.ar/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://www.inti.gob.ar/js/dataTables.foundation.min.js"></script>
+    <script src="https://www.inti.gob.ar/js/tinymce/tinymce.min.js"></script>
     <script type="text/javascript" src="pages/js/jquery.validate.js"></script>
 	<script type="text/javascript" src="pages/js/additional-methods.js"></script>
 	<script type="text/javascript" src="pages/js/jquery.form.js"></script>
@@ -176,7 +177,9 @@ $(document).ready(function() {
 
 		if ($('#logoImagen').val()!=null && $('#logoImagen').val()!='')contentType = 'multipart/form-data;charset=utf-8';
 		if ($('#fondoImagen').val()!=null && $('#fondoImagen').val()!='')contentType = 'multipart/form-data;charset=utf-8';
-		
+		if ($('#imagenPrincipal').val()!=null && $('#imagenPrincipal').val()!='')contentType = 'multipart/form-data;charset=utf-8';
+		if ($('#imagenesGrilla').val()!=null && $('#imagenesGrilla').val()!='')contentType = 'multipart/form-data;charset=utf-8';
+		eliminarTiny();
 			$("#formTransicion").ajaxForm({
 				url:"miPanel?grabar",
 				type:'POST',
@@ -221,7 +224,36 @@ $(document).ready(function() {
 			data: {'tipoNuevo':tipoNuevo},
 			success: function(data) {				
 				$('#divFormTransicion').html(data);
-				$('#modalTransicion').foundation('open');    							
+				$('#modalTransicion').foundation('open'); 
+				iniciarTiny();   							
+			},
+			error: function(data){					
+				alert("Error de sistema, intente nuevamente.");				
+			}
+		});		
+			
+	});	
+
+	$(document).on('click','.modalParaModificar', function() {
+		/*
+			if (tipoNuevo==1)return new ForwardResolution("/pages/formNuevo/nuevoSponsor.jsp");
+			if (tipoNuevo==2)return new ForwardResolution("/pages/formNuevo/nuevoCategoriaListado.jsp");
+			if (tipoNuevo==3)return new ForwardResolution("/pages/formNuevo/nuevoCategoriaNoticia.jsp");
+			if (tipoNuevo==4)return new ForwardResolution("/pages/formNuevo/nuevoNoticia.jsp");
+			if (tipoNuevo==5)return new ForwardResolution("/pages/formNuevo/nuevoClasificado.jsp");
+		
+		*/
+		var id = $(this).prop('id');
+		var tipoNuevo = id.substring(id.indexOf('-')+1,id.lastIndexOf('-'));
+		var idParaMandar = id.substring(id.lastIndexOf('-')+1,id.length);
+		$.ajax({
+			url: 'miPanel?nuevo',
+			type: 'post',
+			data: {'tipoNuevo':tipoNuevo,'id':idParaMandar},
+			success: function(data) {				
+				$('#divFormTransicion').html(data);
+				$('#modalTransicion').foundation('open'); 
+				iniciarTiny();   							
 			},
 			error: function(data){					
 				alert("Error de sistema, intente nuevamente.");				
@@ -282,6 +314,75 @@ function chequearSesion(){
 	if($('#sesionVencida').val()!=null && $('#sesionVencida').val()!=""){            	
    	 window.location.reload('login?sesionVencida=true');
     }
+}
+
+function iniciarTiny(){
+	
+	var varToolbar = 'undo redo | code removeformat preview link | image media | mybutton';
+	tinymce.init({
+		selector:'.cuerpoNoticia',
+		content_css : 'http://inti.gob.ar/css/app.css',
+		body_class: 'color-scheme-institucional',
+		min_height: 400,
+		language: 'es',
+		menubar: 'format table edit',
+		toolbar: varToolbar,
+		plugins: 'advlist code link image imagetools preview media table contextmenu paste textpattern',
+			setup: function(editor) {
+				editor.on('change', function () {
+			         editor.save();
+			     }),
+				editor.addButton('mybutton', {
+					type: 'splitbutton',
+					text: 'Insertar',
+					icon: false,
+					menu: [{
+						text: 'Cita',
+						onclick: function() {
+							editor.insertContent('<blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quaerat delectus porro, ab doloribus laborum, nemo reiciendis quae ratione, praesentium ducimus! Totam unde minima, tempora qui veritatis impedit ut odit? <cite>Isaac Asimov</cite></blockquote>');
+						}
+						}, {
+						text: 'Media Object',
+						onclick: function() {
+							editor.insertContent('<div class="media-object"><div class="media-object-section"><div class="thumbnail"><img src="http://placehold.it/100x100.jpg"></div></div><div class="media-object-section"><h4>Dreams feel while we´re in time.</h4><p>I´m going to improvise. Listen, there´s something you should know about me... about inception. An idea is like a virus, resilient, highly contagious. The smallest sedd of an idea can groy. It can grow to define or destroy you.</p></div></div>');
+						}
+						}, {
+							text:'Grilla de imagenes', 
+							menu:[
+							      {text:'Grilla x5', onclick: function() {
+							    	  editor.insertContent('<div class="row small-up-1 medium-up-2 large-up-5"><div class="column"><img class="thumbnail" src="http://placehold.it/200x200.jpg" alt=""/></div><div class="column"><img class="thumbnail" src="http://placehold.it/200x200.jpg" alt=""/></div><div class="column"><img class="thumbnail" src="http://placehold.it/200x200.jpg" alt=""/></div><div class="column"><img class="thumbnail" src="http://placehold.it/200x200.jpg" alt=""/></div><div class="column"><img class="thumbnail" src="http://placehold.it/200x200.jpg" alt=""/></div></div>');}},
+							      {text:'Grilla x4', onclick: function() {
+								     editor.insertContent('<div class="row small-up-1 medium-up-2 large-up-5"><div class="column"><img class="thumbnail" src="http://placehold.it/200x200.jpg" alt=""/></div><div class="column"><img class="thumbnail" src="http://placehold.it/200x200.jpg" alt=""/></div><div class="column"><img class="thumbnail" src="http://placehold.it/200x200.jpg" alt=""/></div><div class="column"><img class="thumbnail" src="http://placehold.it/200x200.jpg" alt=""/></div></div>');}},
+								  {text:'Grilla x3', onclick: function() {
+								    	  editor.insertContent('<div class="row small-up-1 medium-up-2 large-up-3"><div class="column"><img class="thumbnail" src="http://placehold.it/200x200.jpg" alt=""/></div><div class="column"><img class="thumbnail" src="http://placehold.it/200x200.jpg" alt=""/></div><div class="column"><img class="thumbnail" src="http://placehold.it/200x200.jpg" alt=""/></div></div>');}},										     
+							    ], 
+							}
+						]
+				});
+				editor.addButton('mybutton2', {
+					type: 'menubutton',
+					text: 'Insertar',
+					icon: false,
+					menu: [{
+						text: 'Programa/Temario',
+						onclick: function() {
+							editor.insertContent('<div class="expanded row"><div class="small-1 column text-right content"><span class="lead">10</span><small class="txt-innovacion">AM</small></div><div class="small-11 column content"><div class="row"><div class="small-11 column"><p><span class="bold">La impresi&oacute;n 3D como actor clave de la nueva revoluci&oacute;n industrial</span><br /><span class="txt-innovacion">Visitas. Mi&eacute;rcoles 3 de mayo, 10 y 14 h.- <span class="label">Dise&ntilde;o Industrial</span> Edificio 4</span></p></div><div class="small-1 column align-self-middle text-right">&nbsp;</div></div><hr /><div class="row"><div class="small-11 column"><p><span class="bold">Hechos polvo: productos l&iacute;quidos transformados en s&oacute;lidos</span><br /><span class="txt-innovacion">Visitas. Mi&eacute;rcoles 3 de mayo, 10 y 13 h.-<span class="label">Agroalimentos</span> Edificio 40</span></p></div><div class="small-1 column align-self-middle text-right">&nbsp;</div></div><hr /><div class="row"><div class="small-11 column"><p><span class="bold">Hechos polvo: productos l&iacute;quidos transformados en s&oacute;lidos</span><br /><span class="txt-innovacion">Visitas. Mi&eacute;rcoles 3 de mayo, 10 y 13 h.-<span class="label">Agroalimentos</span> Edificio 40</span></p></div><div class="small-1 column align-self-middle text-right">&nbsp;</div></div><hr /><div class="row"><div class="small-11 column"><p><span class="bold">Hechos polvo: productos l&iacute;quidos transformados en s&oacute;lidos</span><br /><span class="txt-innovacion">Visitas. Mi&eacute;rcoles 3 de mayo, 10 y 13 h.-<span class="label">Agroalimentos</span> Edificio 40</span></p></div><div class="small-1 column align-self-middle text-right">&nbsp;</div></div><hr /><div class="row"><div class="small-11 column"><p><span class="bold">Hechos polvo: productos l&iacute;quidos transformados en s&oacute;lidos</span><br /><span class="txt-innovacion">Visitas. Mi&eacute;rcoles 3 de mayo, 10 y 13 h.-<span class="label">Agroalimentos</span> Edificio 40</span></p></div><div class="small-1 column align-self-middle text-right">&nbsp;</div></div><hr /><div class="row"><div class="small-11 column"><p><span class="bold">Hechos polvo: productos l&iacute;quidos transformados en s&oacute;lidos</span><br /><span class="txt-innovacion">Visitas. Mi&eacute;rcoles 3 de mayo, 10 y 13 h.-<span class="label">Agroalimentos</span> Edificio 40</span></p></div><div class="small-1 column align-self-middle text-right">&nbsp;</div></div></div></div>');
+						}
+						}]
+				});						
+			},
+		});
+
+
+	
+
+}
+
+function eliminarTiny(){
+	for (var i = tinymce.editors.length - 1 ; i > -1 ; i--) {
+	    var ed_id = tinymce.editors[i].id;
+	    tinymce.execCommand("mceRemoveEditor", true, ed_id);
+	}
 }
 	
 function transform(a){

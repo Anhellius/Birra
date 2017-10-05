@@ -34,7 +34,7 @@
 			        	<td>${p.redesSociales}</td>
 			        	<td>${p.direccionMapa}</td>
 			        	<td>
-							
+							<i class="mdi-editor-border-color modalParaModificar" id="modificarClasificado-5-${p.idClasificado}"></i>
 						</td>
 						<td>
 							<div class="row">

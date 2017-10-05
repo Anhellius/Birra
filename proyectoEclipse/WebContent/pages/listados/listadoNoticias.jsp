@@ -27,11 +27,11 @@
 			        	<td>${p.autor}</td>
 			        	<td><small><fmt:formatDate value="${p.fecha}"/></small></td>
 			        	<td>
-								
+							<i class="mdi-editor-border-color modalParaModificar" id="modificarNoticia-4-${p.idNoticia}"></i>	
 						</td>
 						<td>
 							<div class="row">
-								<div class="masInfo column small-4 shrink" id="idPedInfo-${p.idPedido}"><i class="mdi-action-info-outline size-24 txt-color" title="Más Info"></i></div>							
+								<div class="masInfo column small-4 shrink" id="idPedInfo-${p.idNoticia}"><i class="mdi-action-info-outline size-24 txt-color" title="Más Info"></i></div>							
 							</div>
 						</td>
 			      </tr>
