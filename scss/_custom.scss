@@ -1,11 +1,17 @@
 @import 'colores';
-$clean-hero-slider-accent: $warning-color;
+
 body {overflow-x: hidden;}
 
 //TEXTOS DE COLORES
 
-.txt-white{
-  color: white;
+.text-twitter{
+  color: $twitter ;
+}
+.text-facebook{
+  color: $facebook ;
+}
+.text-google{
+  color: $google ;
 }
 
 //FONDOS DE COLORES
@@ -18,6 +24,33 @@ body {overflow-x: hidden;}
 //  @include background-color($oil);
 //}
 
+//FUENTES
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto+Mono:300,400|Roboto:100,300,400,700');
+.roboto{
+  font-family: 'Roboto', sans-serif !important;
+  &-thin{
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 100;
+  }
+  &-light{
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 300;
+  }
+  &-bold{
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 700;
+  }
+}
+.montserrat{
+  font-family: 'Montserrat', sans-serif !important;
+}
+.robotoMono{
+  font-family: 'Roboto Mono', monospace !important;
+  &-light{
+    font-family: 'Roboto Mono', monospace !important;
+    font-weight: 300 !important;
+  }
+}
 .position-absolute-bottom {
   @include position(absolute, null, null, 0, null);
 }
@@ -29,11 +62,11 @@ body {overflow-x: hidden;}
 
 //PAGINA PRINCIPAL
 //SLIDE E IMAGEN ESPECIALES PARA NOTICIAS
-
+$clean-hero-slider-accent: $warning-color;
 .clean-hero-slider {
   .orbit-caption {
     width: auto;
-    height: auto;
+    height: fit-content;
     background: $black;
     position: absolute;
     text-align: center;
@@ -68,20 +101,20 @@ body {overflow-x: hidden;}
     }
 
     h3 {
-      color: $clean-hero-slider-accent;
+      //color: $clean-hero-slider-accent;
       //font-size: 1.5rem;
-      font-weight: bold;
+      //font-weight: bold;
       margin-bottom: 0;
 
       @include breakpoint(medium) {
         //font-size: 2.5rem;
-        font-weight: normal;
+        //font-weight: normal;
       }
     }
   }
 
   .orbit-slide {
-    padding-bottom: 40%;
+    //padding-bottom: 40%;
     background: $black;
 
     @include breakpoint(medium) {
@@ -318,7 +351,7 @@ $large-article-header-height: rem-calc(500);
     h1 {
       line-height: rem-calc(50);
       color: $large-article-header-color;
-      font-weight: 600;
+      //font-weight: 600;
 
       @include breakpoint(small only) {
         line-height: rem-calc(30);
@@ -436,24 +469,24 @@ $social-brand-google-plus: #dd4b39;
 
     .article-title {
       color: $black;
-      font-weight: 600;
+      //font-weight: 600;
     }
   }
 
   .neat-article-image {
-    margin-top: 1.5rem;
+    //margin-top: 1.5rem;
 
     .article-image {
       width: 100%;
       //height: 100vh;
 
-      @include breakpoint(medium only) {
-        height: 65vh;
-      }
-
-      @include breakpoint(small only) {
-        height: 45vh;
-      }
+      //@include breakpoint(medium only) {
+      //  height: 65vh;
+      //}
+      //
+      //@include breakpoint(small only) {
+      //  //height: 45vh;
+      //}
     }
   }
 
@@ -887,3 +920,59 @@ $social-brand-tumblr: #32506d;
 
 @include scrollbars(0, slategray);
 
+
+//QUOTE
+
+$pull-quote-maxwidth: 50%;
+$pull-quote-color: $primary-color;
+$pull-quote-offset-large: -15%;
+$pull-quote-offset-medium: -15%;
+$pull-quote-fontsize-medium-up: 1.875rem;
+$pull-quote-fontsize-small: 1.125rem;
+$pull-quote-gradient: true;
+
+.pull-quote {
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  font-style: normal;
+  font-size: $pull-quote-fontsize-small;
+  max-width: $pull-quote-maxwidth;
+  line-height: 1.25em;
+  text-transform: uppercase;
+  color: $pull-quote-color;
+  float: right;
+  margin: 10px 0 0 20px;
+  @if $pull-quote-gradient == true {
+    background: linear-gradient($secondary-color, $pull-quote-color);
+  } @else if $pull-quote-gradient == false {
+    background: $pull-quote-color; // sets text color
+  }
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  &:before {
+    content: '';
+  }
+
+  &:after {
+    content: '';
+  }
+
+  @include breakpoint(medium) {
+    font-size: $pull-quote-fontsize-medium-up;
+    max-width: calc(#{$pull-quote-maxwidth} - 5%);
+    margin-right: $pull-quote-offset-medium;
+  }
+
+  @include breakpoint(large) {
+    max-width: calc(#{$pull-quote-maxwidth} + 5%);
+    margin-right: $pull-quote-offset-large;
+  }
+}
+
+.cropcontainer {
+   width:  100%;
+   height: 300px;
+  object-fit: none; /* Do not scale the image */
+  object-position: center; /* Center the image within the element */
+ }
