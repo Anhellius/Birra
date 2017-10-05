@@ -61,7 +61,7 @@ public class PanelActionBean extends BaseActionBean {
 	@DontValidate
 	public Resolution cargar() {	
 		
-		return new ForwardResolution("/pages/index2.jsp");
+		return new ForwardResolution("/pages/index.jsp");
 	}
 	
 	
@@ -144,11 +144,26 @@ public class PanelActionBean extends BaseActionBean {
 		try {
 			//this.sponsors=FachadaSponsor.getSponsors();		
 			
-			if (tipoNuevo==1)return new ForwardResolution("/pages/formNuevo/nuevoSponsor.jsp");
-			if (tipoNuevo==2)return new ForwardResolution("/pages/formNuevo/nuevoCategoriaListado.jsp");
-			if (tipoNuevo==3)return new ForwardResolution("/pages/formNuevo/nuevoCategoriaNoticia.jsp");
-			if (tipoNuevo==4)return new ForwardResolution("/pages/formNuevo/nuevoNoticia.jsp");
-			if (tipoNuevo==5)return new ForwardResolution("/pages/formNuevo/nuevoClasificado.jsp");
+			if (tipoNuevo==1){
+				this.sponsor = FachadaSponsor.getPorId(id);
+				return new ForwardResolution("/pages/formNuevo/nuevoSponsor.jsp");
+			}
+			if (tipoNuevo==2){
+				this.categoriaListado = FachadaCategoria.getCatListadoPorId(id);
+				return new ForwardResolution("/pages/formNuevo/nuevoCategoriaListado.jsp");
+			}
+			if (tipoNuevo==3){
+				this.categoriaNoticia = FachadaCategoria.getCatNoticiaPorId(id);
+				return new ForwardResolution("/pages/formNuevo/nuevoCategoriaNoticia.jsp");
+			}
+			if (tipoNuevo==4){
+				this.noticia = FachadaNoticia.getNoticiaPorId(id);
+				return new ForwardResolution("/pages/formNuevo/nuevoNoticia.jsp");
+			}
+			if (tipoNuevo==5){
+				this.clasificado = FachadaClasificado.getClasificadoPorId(id);
+				return new ForwardResolution("/pages/formNuevo/nuevoClasificado.jsp");
+			}
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -175,7 +190,7 @@ public class PanelActionBean extends BaseActionBean {
 	public Resolution grabar() throws IOException, CloneNotSupportedException {	
 		JSONObject json = new JSONObject();
 		
-		String pathArchivos = this.getContext().getRequest().getRealPath("/imagenesCargadas");
+		String pathArchivos = this.getContext().getRequest().getRealPath("/pages/imagenesCargadas");
 		
 		try {
 			if (categoriaListado!=null)
@@ -185,7 +200,7 @@ public class PanelActionBean extends BaseActionBean {
 			if (clasificado!=null)
 				FachadaClasificado.grabar(clasificado);
 			if (noticia!=null)
-				FachadaNoticia.grabar(noticia);
+				FachadaNoticia.grabar(noticia,pathArchivos);
 			if (sponsor!=null)
 				FachadaSponsor.grabar(sponsor,pathArchivos);
 			
@@ -193,6 +208,7 @@ public class PanelActionBean extends BaseActionBean {
 			
 		}catch (Exception e) {
 			//int idError = FachadaExcepciones.reportarExcepcion(e, getContext().getRequest().getRemoteHost(), getContext().getRequest().getHeader("User-Agent"),"s", Constantes.proyecto,"Grabar o Actualizar Pedido. Transición num:"+transicion.getIdTransicion());
+			e.printStackTrace();
 			json.put("success", "false");
 			json.put("mensaje", "Error de sistema. Su error es con la base de datos. Comuniquese con sistemas@inti.gob.ar");
 		}
