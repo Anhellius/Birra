@@ -44,18 +44,20 @@ public class Imagen implements java.io.Serializable, IPersistible {
 		this.tamanio = tamanio;
 	}
 	
-	public Imagen( String nombreArchivo,long tamanio, String mime, Sponsor sponsor) {
+	public Imagen( String nombreArchivo,long tamanio, String mime,Integer tipoImagen, Sponsor sponsor) {
 		this.sponsor = sponsor;
 		this.nombreArchivo = nombreArchivo;
 		this.mime = mime;
 		this.tamanio = tamanio;
+		this.tipoImagen=tipoImagen;
 	}
 	
-	public Imagen( String nombreArchivo,long tamanio, String mime, Noticia noticia) {
+	public Imagen( String nombreArchivo,long tamanio, String mime,Integer tipoImagen, Noticia noticia) {
 		this.noticia = noticia;
 		this.nombreArchivo = nombreArchivo;
 		this.mime = mime;
 		this.tamanio = tamanio;
+		this.tipoImagen=tipoImagen;
 	}
 
 	@Id

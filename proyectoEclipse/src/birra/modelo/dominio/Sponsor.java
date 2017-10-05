@@ -10,10 +10,10 @@ import javax.persistence.GenerationType;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
-import java.beans.Transient;
 
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import birra.modelo.tipificaciones.IPersistible;
 import net.sourceforge.stripes.action.FileBean;
@@ -162,7 +162,6 @@ public class Sponsor implements java.io.Serializable, IPersistible {
 		return logo;
 	}
 	
-	@Transient
 	public void setLogo(FileBean logo) {
 		this.logo = logo;
 	}
@@ -172,7 +171,6 @@ public class Sponsor implements java.io.Serializable, IPersistible {
 		return fondo;
 	}
 	
-	@Transient
 	public void setFondo(FileBean fondo) {
 		this.fondo = fondo;
 	}
