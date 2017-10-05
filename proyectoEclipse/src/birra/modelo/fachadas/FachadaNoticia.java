@@ -44,15 +44,17 @@ public class FachadaNoticia {
 				Random randomGenerator = new Random();
 				   
 				for (FileBean im : c.getImagenesGrilla()) {
-					int j=randomGenerator.nextInt(100000);
-					String dirGuardadoArchivos = path;		
-					
-					String nombreFinal = c.getIdNoticia()+"_grilla_"+j+"."+StringUtil.getExtesionNombre(im.getFileName());
-					im.save(new File(dirGuardadoArchivos+"/"+nombreFinal));
-					
-					Imagen i = new Imagen(nombreFinal,im.getSize(),im.getContentType(),Constantes.IMAGEN_N_GRILLA,c);				
-					
-					HibernateUtil.getSessionFactory().getCurrentSession().saveOrUpdate(i);
+					if (im!=null){
+						int j=randomGenerator.nextInt(100000);
+						String dirGuardadoArchivos = path;		
+						
+						String nombreFinal = c.getIdNoticia()+"_grilla_"+j+"."+StringUtil.getExtesionNombre(im.getFileName());
+						im.save(new File(dirGuardadoArchivos+"/"+nombreFinal));
+						
+						Imagen i = new Imagen(nombreFinal,im.getSize(),im.getContentType(),Constantes.IMAGEN_N_GRILLA,c);				
+						
+						HibernateUtil.getSessionFactory().getCurrentSession().saveOrUpdate(i);
+					}
 				}				
 			}
 			
