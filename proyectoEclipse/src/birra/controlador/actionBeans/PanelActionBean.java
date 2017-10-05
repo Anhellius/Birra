@@ -61,7 +61,7 @@ public class PanelActionBean extends BaseActionBean {
 	@DontValidate
 	public Resolution cargar() {	
 		
-		return new ForwardResolution("/pages/index.jsp");
+		return new ForwardResolution("/pages/index2.jsp");
 	}
 	
 	
