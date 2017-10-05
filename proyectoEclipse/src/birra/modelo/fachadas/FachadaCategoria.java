@@ -6,6 +6,7 @@ import birra.modelo.db.HibernateUtil;
 import birra.modelo.db.PersistorHibernate;
 import birra.modelo.dominio.CategoriaListado;
 import birra.modelo.dominio.CategoriaNoticia;
+import birra.modelo.dominio.Noticia;
 
 public class FachadaCategoria {	
 	
@@ -96,6 +97,62 @@ public class FachadaCategoria {
 					+ " from CategoriaNoticia c";
 			
 			List<CategoriaNoticia> cl = (List<CategoriaNoticia>)HibernateUtil.getSessionFactory().getCurrentSession().createQuery(consulta).list();
+			
+			HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().commit();
+			
+			return cl;
+			
+		} catch (Exception e) {
+			HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().rollback();
+			HibernateUtil.getSessionFactory().getCurrentSession().close();
+			throw e;
+			
+		} finally {
+			HibernateUtil.getSessionFactory().getCurrentSession().close();
+		}
+	}
+
+	public static CategoriaListado getCatListadoPorId(int id) {
+		try {
+			if (!HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().isActive()) {
+				HibernateUtil.getSessionFactory().getCurrentSession().beginTransaction();
+			} else {
+				HibernateUtil.getSessionFactory().getCurrentSession().clear();
+			}		
+			
+			String consulta = "select c "
+					+ " from CategoriaListado c"
+					+ " where c.idCategoriaListado = " + id;
+			
+			CategoriaListado cl = (CategoriaListado)HibernateUtil.getSessionFactory().getCurrentSession().createQuery(consulta).uniqueResult();
+			
+			HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().commit();
+			
+			return cl;
+			
+		} catch (Exception e) {
+			HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().rollback();
+			HibernateUtil.getSessionFactory().getCurrentSession().close();
+			throw e;
+			
+		} finally {
+			HibernateUtil.getSessionFactory().getCurrentSession().close();
+		}
+	}
+
+	public static CategoriaNoticia getCatNoticiaPorId(int id) {
+		try {
+			if (!HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().isActive()) {
+				HibernateUtil.getSessionFactory().getCurrentSession().beginTransaction();
+			} else {
+				HibernateUtil.getSessionFactory().getCurrentSession().clear();
+			}		
+			
+			String consulta = "select c "
+					+ " from CategoriaNoticia c"
+					+ " where c.idCategoriaNoticia = " + id;
+			
+			CategoriaNoticia cl = (CategoriaNoticia)HibernateUtil.getSessionFactory().getCurrentSession().createQuery(consulta).uniqueResult();
 			
 			HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().commit();
 			

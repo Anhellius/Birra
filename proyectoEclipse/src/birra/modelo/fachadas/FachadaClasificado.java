@@ -62,4 +62,32 @@ public class FachadaClasificado {
 		}
 	}
 
+	public static Clasificado getClasificadoPorId(int id) {
+		try {
+			if (!HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().isActive()) {
+				HibernateUtil.getSessionFactory().getCurrentSession().beginTransaction();
+			} else {
+				HibernateUtil.getSessionFactory().getCurrentSession().clear();
+			}		
+			
+			String consulta = "select c "
+					+ " from Clasificado c"
+					+ " where c.idClasificado = " + id;
+			
+			Clasificado cl = (Clasificado)HibernateUtil.getSessionFactory().getCurrentSession().createQuery(consulta).uniqueResult();
+			
+			HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().commit();
+			
+			return cl;
+			
+		} catch (Exception e) {
+			HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().rollback();
+			HibernateUtil.getSessionFactory().getCurrentSession().close();
+			throw e;
+			
+		} finally {
+			HibernateUtil.getSessionFactory().getCurrentSession().close();
+		}
+	}
+
 }
