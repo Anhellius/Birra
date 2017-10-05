@@ -63,33 +63,35 @@
 					</div>
 				</div>	
 				
-				<div class="row expanded vHeight" >
-					<div class="small-12 column">						
-						<label>Imagenes cargadas:</label>
-						<table class="material-table">
-							<tr>
-								<td>
-									Dirección imagen
-								</td>
-								<td>
-									
-								</td>
-							</tr>
-							<c:set var="req" value="${pageContext.request}" />
-							<c:set var="baseURL" value="${fn:replace(req.requestURL, fn:substring(req.requestURI, 1, fn:length(req.requestURI)), req.contextPath)}" />
-							<c:forEach items="${actionBean.noticia.imagens}" var="img" varStatus="i">
-							<tr>
-								<td>
-									${baseURL}/pages/imagenesCargadas/${img.nombreArchivo}
-								</td>
-								<td>
-									<i class="mdi-action-delete eliminarImagen" id="eliminarImagen-${img.idImagen}"></i>
-								</td>
-							</tr>
-							</c:forEach>
-						</table>											
-					</div>
-				</div>		
+				<c:if test="${actionBean.noticia.imagens!=null}">
+					<div class="row expanded vHeight" >
+						<div class="small-12 column">						
+							<label>Imagenes cargadas:</label>
+							<table class="material-table">
+								<tr>
+									<td>
+										Dirección imagen
+									</td>
+									<td>
+										
+									</td>
+								</tr>
+								<c:set var="req" value="${pageContext.request}" />
+								<c:set var="baseURL" value="${fn:replace(req.requestURL, fn:substring(req.requestURI, 1, fn:length(req.requestURI)), req.contextPath)}" />
+								<c:forEach items="${actionBean.noticia.imagens}" var="img" varStatus="i">
+								<tr>
+									<td>
+										${baseURL}/pages/imagenesCargadas/${img.nombreArchivo}
+									</td>
+									<td>
+										<i class="mdi-action-delete eliminarImagen" id="eliminarImagen-${img.idImagen}"></i>
+									</td>
+								</tr>
+								</c:forEach>
+							</table>											
+						</div>
+					</div>	
+				</c:if>	
 					
 			</div>
 		</div>	
