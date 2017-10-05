@@ -47,7 +47,7 @@
 				<div class="row expanded vHeight" >
 					<div class="small-6 column">
 						<label>Imagen Principal</label>
-						<stripes:file name="noticia.imagenPrincipal" id="imagenPrincipal" class="required" />						
+						<stripes:file name="noticia.imagenPrincipal" id="imagenPrincipal"  />						
 					</div>
 					<div class="small-6 column">
 						<input type="hidden" id="cantidadGrilla" value="0">
@@ -56,7 +56,7 @@
 						<table id="tablaImagenesGrilla">
 							<tr>
 								<td>
-									<stripes:file name="noticia.imagenesGrilla[0]" id="imagenesGrilla" class="required" />	
+									<stripes:file name="noticia.imagenesGrilla[0]" id="imagenesGrilla" />	
 								</td>
 							</tr>
 						</table>											
@@ -103,7 +103,7 @@
 	$(document).ready(function() {
 		$(document).on('click','#agregarGrilla', function() {
 			var cantidad = parseInt($('#cantidadGrilla').val())+1;
-			$('#tablaImagenesGrilla').append('<tr id="trImagen-'+cantidad+'"><td><input type="file" name="noticia.imagenesGrilla['+cantidad+']" id="imagenesGrilla-'+cantidad+'" class="required" /></td></tr>');
+			$('#tablaImagenesGrilla').append('<tr id="trImagen-'+cantidad+'"><td><input type="file" name="noticia.imagenesGrilla['+cantidad+']" id="imagenesGrilla-'+cantidad+'" /></td></tr>');
 			$('#cantidadGrilla').val(cantidad);
 			
 		});	
