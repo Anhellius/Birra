@@ -40,8 +40,8 @@
 			        	<td>
 			        		<c:if test="${p.publicada}">
 								 <div class="switch small">
-										 <input class="switch-input publicarODespublicar" id="publicada-5-${p.idSponsor}" type="checkbox" checked="checked" name="publicada" value="1">
-										 <label class="switch-paddle" for="publicada-${p.idSponsor}">
+										 <input class="switch-input publicarODespublicar" id="publicada-1-${p.idSponsor}" type="checkbox" checked="checked" name="publicada" value="1">
+										 <label class="switch-paddle" for="publicada-1-${p.idSponsor}">
 											 <span class="switch-active" aria-hidden="true">Si</span>
 											 <span class="switch-inactive" aria-hidden="true">No</span>
 										 </label>
@@ -49,8 +49,8 @@
 								</c:if>
 								<c:if test="${!p.publicada}" >	
 									 <div class="switch small">
-										 <input class="switch-input publicarODespublicar" id="publicada-5-${p.idSponsor}" type="checkbox" name="publicada" value="1">
-										 <label class="switch-paddle" for="publicada-${p.idSponsor}">
+										 <input class="switch-input publicarODespublicar" id="publicada-1-${p.idSponsor}" type="checkbox" name="publicada" value="1">
+										 <label class="switch-paddle" for="publicada-1-${p.idSponsor}">
 											 <span class="switch-active" aria-hidden="true">Si</span>
 											 <span class="switch-inactive" aria-hidden="true">No</span>
 										 </label>

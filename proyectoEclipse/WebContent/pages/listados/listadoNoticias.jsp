@@ -30,7 +30,7 @@
 			        		<c:if test="${p.publicada}">
 								 <div class="switch small">
 										 <input class="switch-input publicarODespublicar" id="publicada-4-${p.idNoticia}" type="checkbox" checked="checked" name="publicada" value="1">
-										 <label class="switch-paddle" for="publicada-${p.idNoticia}">
+										 <label class="switch-paddle" for="publicada-4-${p.idNoticia}">
 											 <span class="switch-active" aria-hidden="true">Si</span>
 											 <span class="switch-inactive" aria-hidden="true">No</span>
 										 </label>
@@ -39,7 +39,7 @@
 								<c:if test="${!p.publicada}" >	
 									 <div class="switch small">
 										 <input class="switch-input publicarODespublicar" id="publicada-4-${p.idNoticia}" type="checkbox" name="publicada" value="1">
-										 <label class="switch-paddle" for="publicada-${p.idNoticia}">
+										 <label class="switch-paddle" for="publicada-4-${p.idNoticia}">
 											 <span class="switch-active" aria-hidden="true">Si</span>
 											 <span class="switch-inactive" aria-hidden="true">No</span>
 										 </label>

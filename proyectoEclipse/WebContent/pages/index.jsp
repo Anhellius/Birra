@@ -304,9 +304,8 @@ $(document).ready(function() {
 				contentType: "application/x-www-form-urlencoded;charset=utf-8",
 				success: function(data){							
 					if(transform(data.success)){		
-						$('#anclada-'+idNoticia).prop('checked', false);
-						$('#publiExitosamente').html(mensaje);
-						$('#publicadaExitosamenteModal').foundation('open');
+						$('#pExito').html('Cambio realizado exitosamente');
+						$('#myModalExitoGrabar').foundation('open');
 						
 					}else{
 						$('#pError').html(data.mensaje);
