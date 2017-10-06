@@ -10,47 +10,34 @@
   <body>
 <div class="">
   <!--INICIO DE TOPBAR-->
-  <!-- mobile nav bar -->
-  <div class="title-bar topbar-center-logo-mobile" data-responsive-toggle="topbar-center-logo" data-hide-for="medium">
-    <div class="title-bar-left">
-      <div class="title-bar-title"><img src="img/birra3.jpg" alt="" style="width:50px" /></div>
-    </div>
-    <div class="title-bar-right">
-      <button class="menu-icon" type="button" data-toggle="topbar-center-logo"></button>
-    </div>
+  <div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
+    <button class="menu-icon" type="button" data-toggle="example-menu"></button>
+    <div class="title-bar-title"><img src="img/birra3.jpg" style="width: 90px" alt=""></div>
   </div>
-  <!-- /mobile nav bar -->
 
-  <!-- medium and larger nav bar -->
-  <div class="top-bar topbar-center-logo" id="topbar-center-logo">
+  <div class="top-bar" id="example-menu">
     <div class="top-bar-left">
-      <ul class="menu vertical medium-horizontal">
-        <li><a href="login-register.html"><button type="button" class="hollow button rounded secondary" href="">Suscribirse</button></a></li>
-        <li><a href="login-register.html"><button type="button" class="button rounded success" href="">Ingresar</button></a></li>
-      </ul>
-    </div>
-    <div class="top-bar-center">
-      <a href="./">
-        <img src="img/birra3.jpg" alt="" style="width:100px" />
-      </a>
-    </div>
-    <div class="top-bar-right">
-      <ul class="dropdown menu"  data-dropdown-menu>
-        <li><input type="search" placeholder="Buscar"></li>
-        <li><i class="fa fa-search fa-lg"></i></li>
-        <li class="has-submenu">
-          <a href="#0">Secciones</a>
-          <ul class="submenu menu vertical" data-submenu>
-            <li><a href="#0">Uno</a></li>
-            <li><a href="#0">Dos</a></li>
-            <li><a href="#0">Tres</a></li>
-            <li><a href="#0">Cuatro</a></li>
+      <ul class="dropdown menu align-middle" data-dropdown-menu>
+        <li class="menu-text"><img src="img/birra3.jpg" style="width: 90px" alt=""></li>
+        <li>
+          <a href="#">Categorías</a>
+          <ul class="menu vertical">
+            <li><a href="#">One</a></li>
+            <li><a href="#">Two</a></li>
+            <li><a href="#">Three</a></li>
           </ul>
         </li>
+        <li><a href="#">Contacto</a></li>
+        <li><a href="#">Three</a></li>
+      </ul>
+    </div>
+    <div class="top-bar-right">
+      <ul class="menu">
+        <li><input type="search" placeholder="Search"></li>
+        <li><button type="button" class="button">Search</button></li>
       </ul>
     </div>
   </div>
-  <!-- /medium and larger nav bar -->
 
 
 
@@ -66,14 +53,14 @@
                 <!--<button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>-->
               </div>
               <ul class="orbit-container">
-                <li class="orbit-slide height-50">
+                <li class="orbit-slide">
                   <figure class="orbit-figure">
                     <div class="position-absolute z-index-1"><span class="label deep-orange darken-4">EL NEGOCIO</span></div>
                     <img class="cropcontainer" src="img/notas/nota-10.jpg" alt="image alt text">
                     <figcaption class="orbit-caption">
                       <h3 class="green-text text-lighten-2">Lorem Ipsum Etiam</h3>
                       <p class="roboto-light">Etiam porta sem malesuada magna mollis euismod. Vestibulum id ligula porta felis euismod semper.</p>
-                      <a href="noticia.html" class="button green">Mattis Elit</a>
+                      <a href="noticia.html" class="button green rounded">Mattis Elit</a>
                     </figcaption>
                   </figure>
                 </li>
@@ -322,8 +309,8 @@
 
       <div class="grid-x grid-padding-x grid-padding-y">
         <div class="small-12 cell">
-          <div class="grid-x grid-padding-x">
-            <div class="large-4 medium-4 small-4 cell">
+          <div class="grid-x grid-padding-y grid-padding-x">
+            <div class="large-4 medium-4 small-12 cell">
               <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
                 <div class="orbit-wrapper">
                   <ul class="orbit-container">
@@ -342,7 +329,7 @@
                 </div>
               </div>
             </div>
-            <div class="large-4 medium-4 small-4 cell">
+            <div class="large-4 medium-4 small-12 cell">
               <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
                 <div class="orbit-wrapper">
                   <ul class="orbit-container">
@@ -361,7 +348,7 @@
                 </div>
               </div>
             </div>
-            <div class="large-4 medium-4 small-4 cell">
+            <div class="large-4 medium-4 small-12 cell">
               <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
                 <div class="orbit-wrapper">
                   <ul class="orbit-container">
