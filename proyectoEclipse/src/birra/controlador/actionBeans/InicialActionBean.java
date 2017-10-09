@@ -41,8 +41,6 @@ import birra.modelo.utiles.Constantes;
 @SuppressWarnings("unused")
 @UrlBinding("/inicio")
 public class InicialActionBean extends BaseActionBean {	
-
-	private boolean sesionVencida;
 	
 	private CategoriaListado categoriaListado;
 	private CategoriaNoticia categoriaNoticia;	
@@ -64,17 +62,8 @@ public class InicialActionBean extends BaseActionBean {
 	@DontValidate
 	public Resolution cargar() {	
 		this.noticia = FachadaNoticia.getNoticiaPorId(id);
-		return new ForwardResolution("/pages/indexWeb.jsp");
-	}		
-	
-	
-	public boolean isSesionVencida() {
-		return sesionVencida;
-	}
-
-	public void setSesionVencida(boolean sesionVencida) {
-		this.sesionVencida = sesionVencida;
-	}
+		return new ForwardResolution("/pages/web/indexWeb.jsp");
+	}	
 	
 
 	public CategoriaListado getCategoriaListado() {
