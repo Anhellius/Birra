@@ -4,7 +4,6 @@ import javax.servlet.http.HttpSession;
 
 import birra.modelo.fachadas.FachadaLogin;
 import birra.modelo.utiles.Constantes;
-import birra.modelo.utiles.POP3UserValidation;
 import net.sourceforge.stripes.action.DefaultHandler;
 import net.sourceforge.stripes.action.DontValidate;
 import net.sourceforge.stripes.action.ForwardResolution;
