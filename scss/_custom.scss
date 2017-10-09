@@ -10,12 +10,13 @@ body {overflow-x: hidden;}
 //  6.  Fondos colores
 //  7.  Nota
 //  8.  Position
-//  9.  Slide e Imagenes para noticias (pagina principal)
-//  10. Scrollbars
-//  11. Textos colores
-//  12. Textos Tamaños
-//  13. Top-bar con logo centrado
-//  14. Z-Index levels
+//  9.  Quote
+//  10. Slide e Imagenes para noticias (pagina principal)
+//  11. Scrollbars
+//  12. Textos colores
+//  13. Textos Tamaños
+//  14. Top-bar con logo centrado
+//  15. Z-Index levels
 
 
 // 1. BUSCADOR EXPANDIBLE
@@ -591,49 +592,67 @@ $clean-hero-slider-accent: $secondary-color;
 // 13. TEXTOS TAMAÑOS
 // ------------------
 
-.size-12 { font-size: 0.75rem !important; }
-
-.size-14 { font-size: 0.875rem !important; }
-
-.size-16 { font-size: 1rem !important; }
-
-.size-18 { font-size: 1.125rem !important; }
-
-.size-22 { font-size: 1.375rem !important; }
-
-.size-24 { font-size: 1.5rem !important; }
-
-.size-28 { font-size: 1.75rem !important; }
-
-.size-32 { font-size: 2rem !important; }
-
-.size-36 { font-size: 2.25rem !important; }
-
-.size-48 { font-size: 3rem !important; }
-
-.size-60 { font-size: 3.75rem !important; }
-
-.size-72 { font-size: 4.5rem !important; }
-
-.size-84 { font-size: 84px !important; }
-
-.size-96 { font-size: 6rem !important; }
-
-.size-108 { font-size: 6.75rem !important; }
-
-.size-120 { font-size: 7.5rem !important; }
-
-.size-132 {
-  font-size: 8.25rem !important;
+.size-12 {
+  font-size: rem-calc(12) !important;
+}
+.size-14 {
+  font-size: rem-calc(14) !important;
+}
+.size-16 {
+  font-size: rem-calc(16) !important;
+}
+.size-18 {
+  font-size: rem-calc(18) !important;
+}
+.size-22 {
+  font-size: rem-calc(22) !important;
+}
+.size-24 {
+  font-size: rem-calc(24) !important;
+}
+.size-28 {
+  font-size: rem-calc(28) !important;
+}
+.size-32 {
+  font-size: rem-calc(32) !important;
+}
+.size-36 {
+  font-size: rem-calc(36) !important;
   @include breakpoint(small only) {
-    font-size: 4.25rem !important;
+    font-size: rem-calc(30) !important;
   }
 }
-
-.size-144 {
-  font-size: 9rem !important;
+.size-48 {
+  font-size: rem-calc(48) !important;
+}
+.size-60 {
+  font-size: rem-calc(60) !important;
+}
+.size-72 {
+  font-size: rem-calc(72) !important;
+}
+.size-84 {
+  font-size: rem-calc(84) !important;
+}
+.size-96 {
+  font-size: rem-calc(96) !important;
+}
+.size-108 {
+  font-size: rem-calc(108) !important;
+}
+.size-120 {
+  font-size: rem-calc(120) !important;
+}
+.size-132 {
+  font-size: rem-calc(132) !important;
   @include breakpoint(small only) {
-    font-size: 5.8rem !important;
+    font-size: rem-calc(65) !important;
+  }
+}
+.size-144 {
+  font-size: rem-calc(144) !important;
+  @include breakpoint(small only) {
+    font-size: rem-calc(72) !important;
   }
 }
 
