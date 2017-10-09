@@ -35,6 +35,7 @@ import birra.modelo.fachadas.FachadaNoticia;
 import birra.modelo.fachadas.FachadaSponsor;
 import birra.modelo.tipificaciones.Combo;
 import birra.modelo.tipificaciones.IEntidadWorkflow;
+import birra.modelo.tipificaciones.Usuario;
 import birra.modelo.utiles.Constantes;
 
 @SuppressWarnings("unused")
@@ -69,11 +70,11 @@ public class PanelActionBean extends BaseActionBean {
 	
 	public Resolution listadoNoticias() {	
 	
-		/*AgenteEnrolado user = getAgente();
+		Usuario user = getUsuario();
 		if(user==null){
 			setSesionVencida(true);
 			return new ForwardResolution("vencido.jsp");
-		}*/
+		}
 		try {
 			this.noticias=FachadaNoticia.getNoticias();		
 			return new ForwardResolution("/pages/listados/listadoNoticias.jsp");			
@@ -86,11 +87,11 @@ public class PanelActionBean extends BaseActionBean {
 	
 	public Resolution listadoCategorias() {	
 		
-		/*AgenteEnrolado user = getAgente();
+		Usuario user = getUsuario();
 		if(user==null){
 			setSesionVencida(true);
 			return new ForwardResolution("vencido.jsp");
-		}*/
+		}
 		try {
 			this.categoriasListados=FachadaCategoria.getCatListados();	
 			this.categoriasNoticias=FachadaCategoria.getCatNoticias();		
@@ -104,11 +105,11 @@ public class PanelActionBean extends BaseActionBean {
 	
 	public Resolution listadoClasificados() {	
 		
-		/*AgenteEnrolado user = getAgente();
+		Usuario user = getUsuario();
 		if(user==null){
 			setSesionVencida(true);
 			return new ForwardResolution("vencido.jsp");
-		}*/
+		}
 		try {
 			this.clasificados=FachadaClasificado.getClasificados();		
 			return new ForwardResolution("/pages/listados/listadoClasificados.jsp");			
@@ -121,11 +122,11 @@ public class PanelActionBean extends BaseActionBean {
 	
 	public Resolution listadoSponsor() {	
 		
-		/*AgenteEnrolado user = getAgente();
+		Usuario user = getUsuario();
 		if(user==null){
 			setSesionVencida(true);
 			return new ForwardResolution("vencido.jsp");
-		}*/
+		}
 		try {
 			this.sponsors=FachadaSponsor.getSponsors();		
 			return new ForwardResolution("/pages/listados/listadoSponsor.jsp");			
@@ -138,13 +139,12 @@ public class PanelActionBean extends BaseActionBean {
 	
 	public Resolution nuevo() {	
 		
-		/*AgenteEnrolado user = getAgente();
+		Usuario user = getUsuario();
 		if(user==null){
 			setSesionVencida(true);
 			return new ForwardResolution("vencido.jsp");
-		}*/
+		}
 		try {
-			//this.sponsors=FachadaSponsor.getSponsors();		
 			
 			if (tipoNuevo==1){
 				this.sponsor = FachadaSponsor.getPorId(id);
@@ -175,11 +175,11 @@ public class PanelActionBean extends BaseActionBean {
 	
 	public Resolution masInfoPedido() {	
 		
-	/*	AgenteEnrolado user = getAgente();
+		Usuario user = getUsuario();
 		if(user==null){
 			setSesionVencida(true);
 			return new ForwardResolution("vencido.jsp");
-		}	*/	
+		}	
 	
 		//this.pweb = (PWeb) FachadaPedido.getPedidoPorId(pweb.getIdPedido());
 		return new ForwardResolution("/pages/pedidoMasInfo.jsp");		

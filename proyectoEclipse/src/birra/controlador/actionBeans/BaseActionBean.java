@@ -6,13 +6,14 @@ import javax.servlet.http.HttpSession;
 
 import net.sourceforge.stripes.action.ActionBean;
 import net.sourceforge.stripes.action.ActionBeanContext;
+import birra.modelo.tipificaciones.Usuario;
 import birra.modelo.utiles.CargadorPropiedades;
 
 
 public abstract class BaseActionBean implements ActionBean {
 	private ActionBeanContext context;
 	@SuppressWarnings("unused")
-	//private AgenteEnrolado agente;
+	private Usuario usuario;
 	private String version;
 
 	protected boolean sesionVencida;
@@ -32,23 +33,7 @@ public abstract class BaseActionBean implements ActionBean {
 	public void setSesionVencida(boolean sesionVencida) {
 		this.sesionVencida = sesionVencida;
 	}
-
-	/**
-	 * @return the agente
-	 */
-	/*public AgenteEnrolado getAgente() {
-		HttpSession sesion = getContext().getRequest().getSession();
-		
-		return (AgenteEnrolado)sesion.getAttribute("agente");
-	}
-
-	/**
-	 * @param agente the agente to set
-	 */
-	/*public void setAgente(AgenteEnrolado agente) {
-		this.agente = agente;
-	}*/
-
+	
 	public String getVersion() {
 		Properties props = CargadorPropiedades.cargarPropiedades("birraProps");
 		
@@ -58,6 +43,17 @@ public abstract class BaseActionBean implements ActionBean {
 
 	public void setVersion(String version) {
 		this.version = version;
+	}
+
+	public Usuario getUsuario() {
+		HttpSession sesion = getContext().getRequest().getSession();
+		
+		return (Usuario)sesion.getAttribute("usuario");
+	}
+
+	public void setUsuario(Usuario usuario) {
+		HttpSession sesion = getContext().getRequest().getSession();		
+		sesion.setAttribute("usuario",usuario);
 	}
 	
 }

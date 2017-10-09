@@ -3,6 +3,7 @@ package birra.controlador.actionBeans;
 import javax.servlet.http.HttpSession;
 
 import birra.modelo.fachadas.FachadaLogin;
+import birra.modelo.tipificaciones.Usuario;
 import birra.modelo.utiles.Constantes;
 import net.sourceforge.stripes.action.DefaultHandler;
 import net.sourceforge.stripes.action.DontValidate;
@@ -31,6 +32,7 @@ public class LoginActionBean extends BaseActionBean {
 	public Resolution ingresar() {
 		try {
 			if (true) {
+				setUsuario(new Usuario(usuarioLogin));
 				return new RedirectResolution("/miPanel");
 			} else getContext().getValidationErrors().addGlobalError(new SimpleError("Usuario o contraseña incorrecta, intente nuevamente"));
 			
