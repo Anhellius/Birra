@@ -2,779 +2,36 @@
 
 body {overflow-x: hidden;}
 
-//TEXTOS DE COLORES
-
-.text-twitter{
-  color: $twitter ;
-}
-.text-facebook{
-  color: $facebook ;
-}
-.text-google{
-  color: $google ;
-}
-
-//FONDOS DE COLORES
-
-//@mixin background-color($bg-color:white){
-//  background:$bg-color !important;
-//}
-//
-//.bg-gris{
-//  @include background-color($oil);
-//}
-
-//FUENTES
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto+Mono:300,400|Roboto:100,300,400,700');
-.roboto{
-  font-family: 'Roboto', sans-serif !important;
-  &-thin{
-    font-family: 'Roboto', sans-serif !important;
-    font-weight: 100;
-  }
-  &-light{
-    font-family: 'Roboto', sans-serif !important;
-    font-weight: 300;
-  }
-  &-bold{
-    font-family: 'Roboto', sans-serif !important;
-    font-weight: 700;
-  }
-}
-.montserrat{
-  font-family: 'Montserrat', sans-serif !important;
-}
-.robotoMono{
-  font-family: 'Roboto Mono', monospace !important;
-  &-light{
-    font-family: 'Roboto Mono', monospace !important;
-    font-weight: 300 !important;
-  }
-}
-.position-absolute-bottom {
-  @include position(absolute, null, null, 0, null);
-}
-
-.bg-black-alpha {
-  background: linear-gradient(to top, #000 0%, transparent) !important;
-  width: 100%;
-}
-
-//PAGINA PRINCIPAL
-//SLIDE E IMAGEN ESPECIALES PARA NOTICIAS
-$clean-hero-slider-accent: $warning-color;
-.clean-hero-slider {
-  .orbit-caption {
-    width: auto;
-    height: fit-content;
-    background: $black;
-    position: absolute;
-    text-align: center;
-    right: 0;
-    left: 0;
-    padding: 0.2rem 2rem;
-
-    @include breakpoint(medium) {
-      @include vertical-center;
-      background: rgba(0,0,0,.6);
-      text-align: left;
-      width: 80%;
-      right: 0;
-      padding: 1rem 2rem;
-    }
-
-    @include breakpoint(xlarge) {
-      padding-right: 10%;
-    }
-
-    @include breakpoint(xxlarge) {
-      padding-right: 20%;
-    }
-
-    p {
-      font-size: 0.9rem;
-      line-height: 1.25;
-
-      @include breakpoint(medium) {
-        font-size: 1.1rem;
-      }
-    }
-
-    h3 {
-      //color: $clean-hero-slider-accent;
-      //font-size: 1.5rem;
-      //font-weight: bold;
-      margin-bottom: 0;
-
-      @include breakpoint(medium) {
-        //font-size: 2.5rem;
-        //font-weight: normal;
-      }
-    }
-  }
-
-  .orbit-slide {
-    //padding-bottom: 40%;
-    background: $black;
-
-    @include breakpoint(medium) {
-      padding-bottom: 0;
-    }
-  }
-
-  .orbit-controls {
-    button {
-      background: $clean-hero-slider-accent;
-      padding: 1rem 0.5rem;
-
-      &:hover {
-        background: $white;
-        color: $black;
-      }
-    }
-
-    .orbit-previous {
-      @include breakpoint(medium) {
-        left: auto;
-        right: 2.4rem;
-      }
-    }
-
-    .orbit-next {
-      @include breakpoint(medium) {
-        right: 0.5rem;
-      }
-    }
-  }
-
-  .orbit-bullets {
-    display: none;
-
-    @include breakpoint(medium) {
-      display: block;
-      margin-bottom: 0;
-      margin-top: -2.2rem;
-      background: none;
-    }
-
-    button {
-      width: 3rem;
-      height: 0.4rem;
-      border-radius: 0;
-      background-color: $white;
-
-      &.is-active {
-        background-color: $clean-hero-slider-accent;
-      }
-    }
-  }
-
-  ul.orbit-container {
-    height: auto !important;
-  }
-
-  li.orbit-slide {
-    max-height: none !important;
-  }
-}
+//  1.  Buscador expandible
+//  2.  Carousel de cards
+//  3.  Card auspiciantes
+//  4.  Crop de imagen
+//  5.  Fuentes
+//  6.  Fondos colores
+//  7.  Nota
+//  8.  Position
+//  9.  Slide e Imagenes para noticias (pagina principal)
+//  10. Scrollbars
+//  11. Textos colores
+//  12. Textos Tamaños
+//  13. Top-bar con logo centrado
+//  14. Z-Index levels
 
 
-// Z-index-levels
+// 1. BUSCADOR EXPANDIBLE
+// ----------------------
 
-.z-index-1 {
-  z-index: 999;
-}
-
-
-//FOOTER
-
-$marketing-site-footer-bg: #2c3840;
-
-.marketing-site-footer {
-  background: $marketing-site-footer-bg;
-  color: lighten($marketing-site-footer-bg, 40%);
-  //padding: 2rem 0 0;
-
-  .marketing-site-footer-menu-social a {
-    color: $white;
-  }
-
-
-  @include breakpoint(small only) {
-    .cell {
-      margin-bottom: 2rem;
+.searchbar {
+  .material-forms {
+    input[type=search] {
+      margin: 0 !important;
+      height: 2.3rem  !important;
     }
   }
 }
 
-.marketing-site-footer-name {
-  color: $white;
-  margin-bottom: 1rem;
-  //font-size: 2rem;
-}
-
-.marketing-site-footer-title {
-  color: $white;
-  margin-bottom: 1rem;
-  //font-size: 1.25rem;
-}
-
-.marketing-site-footer-block {
-  display: flex;
-  //margin-bottom: 1rem;
-
-  .fa {
-    //font-size: 2rem;
-    color: lighten($marketing-site-footer-bg, 60%);
-  }
-
-  p {
-    //margin-left: 1rem;
-    line-height: 1.125rem;
-  }
-}
-
-.marketing-site-footer-bottom {
-  background: darken($marketing-site-footer-bg, 20%);
-  //padding: 1rem 0;
-
-  p,
-  .menu {
-    margin-bottom: 0;
-  }
-
-  .marketing-site-footer-bottom-links {
-    justify-content: flex-end;
-
-    a {
-      color: lighten($marketing-site-footer-bg, 40%);
-    }
-
-    @include breakpoint(medium down) {
-      justify-content: center;
-    }
-  }
-
-  @include breakpoint(medium down) {
-    text-align: center;
-  }
-}
-
-//TOPBAR CON LOGO CENTRADO
-
-.topbar-center-logo .top-bar-center {
-  flex: 1 0 auto;
-
-  @include breakpoint(small only) {
-    display: none;
-  }
-}
-
-.topbar-center-logo-mobile {
-
-  .menu-icon {
-    vertical-align: text-top;
-  }
-}
-
-input[type='search'] {
-  border: 0 !important;
-  box-shadow: none;
-  &:focus{
-    box-shadow: none;
-  }
-}
-
-//EXPERIMENTO PARA PONER UN LAYER DE BLUR SOBRE CUALQUIER IMAGEN
-
-.blur{
-  overflow: hidden;
-  .orbit-image{
-    width: 110% !important;
-    max-width: 120% !important;
-  }
-  >img {
-    filter: blur(10px);
-    -webkit-filter: blur(10px);
-    -moz-filter: blur(10px);
-    -o-filter: blur(10px);
-    -ms-filter: blur(10px);
-    margin: -10px -10px -10px -10px;
-  }
-
-}
-
-
-//HEADER ENORME PARA NOTA
-
-$large-article-header-bg: url('https://unsplash.it/1024/500/?blur');
-$large-article-header-color: $white;
-$large-article-header-height: rem-calc(500);
-
-.large-article-header {
-  background: $large-article-header-bg no-repeat center;
-  background-size: cover;
-  height: $large-article-header-height;
-  position: relative;
-
-  @include breakpoint(small only) {
-    height: ($large-article-header-height / 1.5);
-  }
-}
-
-.large-article-header-content {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  bottom: rem-calc(50);
-  left: 0;
-  right: 0;
-
-  @include breakpoint(small only) {
-    bottom: rem-calc(20);
-  }
-
-  .center-container {
-    width: 50%;
-    margin: 0 auto;
-
-    @include breakpoint(small only) {
-      width: 100%;
-      padding: 0 rem-calc(20);
-    }
-  }
-
-  .article-date {
-    color: $large-article-header-color;
-  }
-  .article-title {
-    h1 {
-      line-height: rem-calc(50);
-      color: $large-article-header-color;
-      //font-weight: 600;
-
-      @include breakpoint(small only) {
-        line-height: rem-calc(30);
-      }
-    }
-  }
-  .article-details {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    a {
-      color: $large-article-header-color;
-    }
-  }
-  .article-author {
-    display: flex;
-    align-items: center;
-    margin: $global-margin 0;
-    img {
-      border-radius: rem-calc(50);
-    }
-    a {
-      margin-left: $global-margin;
-    }
-  }
-}
-
-
-
-.article-author, .article-comments {
-  display: flex;
-  align-items: center;
-  margin: $global-margin 0;
-  img {
-    border-radius: rem-calc(50);
-  }
-  a {
-    margin-left: $global-margin;
-    color: white;
-    &:hover{
-      color: silver;
-    }
-  }
-}
-
-$social-button-size: 3.125rem;
-$social-button-border-width: 0.125rem;
-$social-button-font-size: 1.5625rem;
-$social-button-line-height: 2em;
-$social-button-border-radius: 1.6875rem;
-$social-button-transition: all 0.5s ease;
-$social-button-margin: 0.75rem;
-
-// Source: https://designpieces.com/2012/12/social-media-colours-hex-and-rgb/
-$social-brand-facebook: #3b5998;
-$social-brand-twitter: #55acee;
-$social-brand-google-plus: #dd4b39;
-
-@mixin social-button($brand-color, $brand-icon) {
-  background: $brand-color;
-
-  &:before {
-    font-family: "FontAwesome";
-    content: $brand-icon;
-  }
-
-  &:hover,
-  &:focus {
-    color: $brand-color;
-    background: $white;
-    border-color: $brand-color;
-  }
-}
-
-
-.neat-article-container {
-  //margin-top: 1.5rem;
-
-  .neat-article-header {
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
-
-    .article-header-avatar {
-      padding-right: 0.5rem;
-      padding-left: 0.5rem;
-
-      .header-avatar {
-        width: rem-calc(60);
-        height: rem-calc(60);
-        border-radius: 50%;
-      }
-    }
-
-    .article-header-author {
-      flex: 1 0 0;
-
-      .author-name {
-        color: $black;
-        margin-bottom: 0;
-      }
-
-      .author-description,
-      .article-date-read {
-        color: $dark-gray;
-        margin-bottom: 0;
-        font-size: 0.85em;
-      }
-    }
-  }
-
-  .neat-article-title {
-    margin-top: 1rem;
-
-    .article-title {
-      color: $black;
-      //font-weight: 600;
-    }
-  }
-
-  .neat-article-image {
-    //margin-top: 1.5rem;
-
-    .article-image {
-      width: 100%;
-      //height: 100vh;
-
-      //@include breakpoint(medium only) {
-      //  height: 65vh;
-      //}
-      //
-      //@include breakpoint(small only) {
-      //  //height: 45vh;
-      //}
-    }
-  }
-
-  .neat-article-content {
-    //margin-top: 2rem;
-
-    .article-social {
-      .rounded-social-buttons {
-        text-align: center;
-
-        .social-button {
-          display: block;
-          position: relative;
-          cursor: pointer;
-          width: $social-button-size;
-          height: $social-button-size;
-          border: $social-button-border-width solid transparent;
-          padding: 0;
-          text-decoration: none;
-          text-align: center;
-          color: $white;
-          font-size: $social-button-font-size;
-          font-weight: normal;
-          line-height: $social-button-line-height;
-          border-radius: $social-button-border-radius;
-          transition: $social-button-transition;
-          margin-right: $social-button-margin;
-          margin-bottom: $social-button-margin;
-
-          &:hover,
-          &:focus {
-            transform: rotate(360deg);
-          }
-
-          &.facebook {
-            @include social-button($social-brand-facebook, "\f09a")
-          }
-
-          &.twitter {
-            @include social-button($social-brand-twitter, "\f099")
-          }
-
-          &.google-plus {
-            @include social-button($social-brand-google-plus, "\f0d5")
-          }
-        }
-      }
-    }
-
-    .article-content {
-      color: $black;
-    }
-  }
-}
-
-$card-user-profile-bg: $card-background;
-$card-user-profile-text-color: $body-font-color;
-
-.card-user-profile {
-  position: relative;
-  z-index: 0;
-  //@include card-container($card-user-profile-bg, $card-user-profile-text-color,  $global-radius);
-
-  &:hover {
-    .card-user-profile-img {
-      opacity: 1;
-    }
-  }
-}
-
-.card-user-profile-content {
-  position: relative;
-
-  //&::before {
-  //  position: absolute;
-  //  content: '';
-  //  top: rem-calc(-55);
-  //  left: rem-calc(-30);
-  //  width: 0;
-  //  height: 0;
-  //  border-style: solid;
-  //  border-width: rem-calc(55) 0 0 rem-calc(500);
-  //  z-index: 0;
-  //  border-color: transparent transparent transparent $card-user-profile-bg;
-  //}
-}
-
-.card-user-profile-actions {
-  @include card-divider;
-  background: $card-user-profile-bg;
-  display: flex;
-  border-top: 1px solid lightgrey;
-}
-
-.card-user-profile-img {
-  max-width: 100%;
-  opacity: 0.85;
-  transition: all 0.25s ease;
-}
-
-.card-user-profile-avatar {
-  position: absolute;
-  bottom: 85%;
-  left: 0;
-  right:0;
-  z-index: 2;
-  max-width: rem-calc(60);
-  margin:0 auto;
-
-  img {
-    border-radius: 50%;
-    box-shadow: 0 0 15px rgba($black, 0.3);
-  }
-}
-
-.card-user-profile-name {
-  //margin-bottom: 0;
-  //font-weight: 300;
-  //font-size: 1.5rem;
-}
-
-.card-user-profile-button {
-  margin-bottom: 0;
-  flex: 1 0 0;
-
-  + .card-user-profile-button {
-    margin-left: 1rem;
-  }
-}
-
-.card-user-profile-info {
-  //font-size: 0.875rem;
-  //letter-spacing: 1px;
-  //opacity: 0.8;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-$login-box-radius: $global-radius;
-$login-box-bg: $white;
-$login-box-shadow: 0 2px 4px rgba($black, 0.4);
-$login-box-inner-padding: 2.5rem;
-$login-box-social-bg: url('https://images.pexels.com/photos/179124/pexels-photo-179124.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb');
-$social-brand-facebook: #3b5998;
-$social-brand-twitter: #55acee;
-$social-brand-linkedin: #007bb5;
-$social-brand-youtube: #bb0000;
-$social-brand-instagram: #125688;
-$social-brand-pinterest: #cb2027;
-$social-brand-google-plus: #dd4b39;
-$social-brand-github: #000000;
-$social-brand-tumblr: #32506d;
-
-
-.login-box {
-  box-shadow: $login-box-shadow;
-  background: $login-box-bg;
-  border-radius: $login-box-radius;
-  overflow: hidden;
-
-  .or {
-    @include absolute-center;
-    @include badge;
-    font-size: 1.275rem;
-    background: $medium-gray;
-    box-shadow: $login-box-shadow;
-
-    @include breakpoint(small only) {
-      top: 85%;
-    }
-  }
-}
-
-.login-box-title {
-  font-weight: 300;
-  font-size: 1.875rem;
-  margin-bottom: 1.25rem;
-}
-
-.login-box-form-section,
-.login-box-social-section-inner {
-  padding: $login-box-inner-padding;
-}
-
-.login-box-social-section {
-  //background: $login-box-social-bg;
-  background-color: #6f5499;
-  background-size: cover;
-  background-position: center;
-}
-
-.login-box-input {
-  margin-bottom: 1.25rem;
-  height: 2rem;
-  border: 0;
-  padding-left: 0;
-  box-shadow: none;
-  border-bottom: 1px solid $primary-color;
-  font-weight: 400;
-}
-
-.login-box-input:focus {
-  color: $primary-color;
-  transition: 0.2s ease-in-out;
-  box-shadow: none;
-  border: 0;
-  border-bottom: 2px solid $primary-color;
-}
-
-.login-box-submit-button {
-  @include button(true, $primary-color, auto, auto, solid);
-  border-radius: $global-radius;
-  text-transform: uppercase;
-  margin-bottom: 0;
-}
-
-.login-box-submit-button:hover,
-.login-box-submit-button:focus {
-  box-shadow: $login-box-shadow;
-}
-
-.login-box-submit-button:active {
-  box-shadow: 0 1px 2px rgba($black, 0.4);
-}
-
-.login-box-social-button-facebook {
-  @include button(true, $social-brand-facebook, auto, auto, solid);
-  font-weight: 500;
-  margin-bottom: 1.25rem;
-  text-transform: uppercase;
-}
-
-.login-box-social-button-twitter {
-  @include button(true, $social-brand-twitter, auto, $white, solid);
-  font-weight: 500;
-  margin-bottom: 1.25rem;
-  text-transform: uppercase;
-}
-
-.login-box-social-button-google {
-  @include button(true, $social-brand-google-plus, auto, $white, solid);
-  font-weight: 500;
-  margin-bottom: 1.25rem;
-  text-transform: uppercase;
-}
-
-[class*="login-box-social-button-"]:hover,
-[class*="login-box-social-button-"]:focus {
-  box-shadow: $login-box-shadow;
-}
-
-.login-box-social-headline {
-  display: block;
-  margin-bottom: rem-calc(40);
-  font-size: 1.875rem;
-  color: $white;
-  text-align: center;
-}
-
-
-
-
-
-//CAROUSEL DE NETFLIX
+// 2. CAROUSEL DE CARDS
+// --------------------
 
 
 .contain {
@@ -897,31 +154,235 @@ $social-brand-tumblr: #32506d;
   //}
 }
 
-@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
-  ::-webkit-scrollbar {
-    width:  $size;
-    height: $size;
-  }
+// 3. CARD AUSPICIANTES
+// --------------------
 
-  ::-webkit-scrollbar-thumb {
-    background: $foreground-color;
-  }
 
-  ::-webkit-scrollbar-track {
-    background: $background-color;
-  }
+$card-user-profile-bg: $card-background;
+$card-user-profile-text-color: $body-font-color;
 
-  // For Internet Explorer
-  body {
-    scrollbar-face-color: $foreground-color;
-    scrollbar-track-color: $background-color;
+.card-user-profile {
+  position: relative;
+  z-index: 0;
+  //@include card-container($card-user-profile-bg, $card-user-profile-text-color,  $global-radius);
+
+  &:hover {
+    .card-user-profile-img {
+      opacity: 1;
+    }
   }
 }
 
-@include scrollbars(0, slategray);
+.card-user-profile-content {
+  position: relative;
 
+  //&::before {
+  //  position: absolute;
+  //  content: '';
+  //  top: rem-calc(-55);
+  //  left: rem-calc(-30);
+  //  width: 0;
+  //  height: 0;
+  //  border-style: solid;
+  //  border-width: rem-calc(55) 0 0 rem-calc(500);
+  //  z-index: 0;
+  //  border-color: transparent transparent transparent $card-user-profile-bg;
+  //}
+}
 
-//QUOTE
+.card-user-profile-actions {
+  @include card-divider;
+  background: $card-user-profile-bg;
+  display: flex;
+  border-top: 1px solid lightgrey;
+}
+
+.card-user-profile-img {
+  max-width: 100%;
+  opacity: 0.85;
+  transition: all 0.25s ease;
+}
+
+.card-user-profile-avatar {
+  position: absolute;
+  bottom: 85%;
+  left: 0;
+  right:0;
+  z-index: 2;
+  max-width: rem-calc(60);
+  margin:0 auto;
+
+  img {
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba($black, 0.3);
+  }
+}
+
+.card-user-profile-name {
+  //margin-bottom: 0;
+  //font-weight: 300;
+  //font-size: 1.5rem;
+}
+
+.card-user-profile-button {
+  margin-bottom: 0;
+  flex: 1 0 0;
+
+  + .card-user-profile-button {
+    margin-left: 1rem;
+  }
+}
+
+.card-user-profile-info {
+  //font-size: 0.875rem;
+  //letter-spacing: 1px;
+  //opacity: 0.8;
+}
+
+// 4. CROP DE IMAGEN
+// -----------------
+
+.cropcontainer {
+  width:  100%;
+  height: 350px;
+  object-fit: none; /* Do not scale the image */
+  object-position: center; /* Center the image within the element */
+}
+
+// 5. FUENTES
+// ----------
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto+Mono:300,400|Roboto:100,300,400,700');
+.roboto{
+  font-family: 'Roboto', sans-serif !important;
+  &-thin{
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 100;
+  }
+  &-light{
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 300;
+  }
+  &-bold{
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 700;
+  }
+}
+.montserrat{
+  font-family: 'Montserrat', sans-serif !important;
+}
+.robotoMono{
+  font-family: 'Roboto Mono', monospace !important;
+  &-light{
+    font-family: 'Roboto Mono', monospace !important;
+    font-weight: 300 !important;
+  }
+}
+
+// 6. FONDOS COLORES
+// -----------------
+
+.bg-black-alpha {
+  background: linear-gradient(to top, #000 0%, transparent) !important;
+  width: 100%;
+}
+//@mixin background-color($bg-color:white){
+//  background:$bg-color !important;
+//}
+//
+//.bg-gris{
+//  @include background-color($oil);
+//}
+
+// 7. NOTA
+// -------
+
+.neat-article-container {
+  //margin-top: 1.5rem;
+
+  .neat-article-header {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+
+    .article-header-avatar {
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
+
+      .header-avatar {
+        width: rem-calc(60);
+        height: rem-calc(60);
+        border-radius: 50%;
+      }
+    }
+
+    .article-header-author {
+      flex: 1 0 0;
+
+      .author-name {
+        color: $black;
+        margin-bottom: 0;
+      }
+
+      .author-description,
+      .article-date-read {
+        color: $dark-gray;
+        margin-bottom: 0;
+        font-size: 0.85em;
+      }
+    }
+  }
+
+  .neat-article-title {
+    margin-top: 1rem;
+
+    .article-title {
+      color: $black;
+      //font-weight: 600;
+    }
+  }
+
+  .neat-article-image {
+    //margin-top: 1.5rem;
+
+    .article-image {
+      width: 100%;
+      //height: 100vh;
+
+      //@include breakpoint(medium only) {
+      //  height: 65vh;
+      //}
+      //
+      //@include breakpoint(small only) {
+      //  //height: 45vh;
+      //}
+    }
+  }
+
+  .neat-article-content {
+    //margin-top: 2rem;
+
+    .article-social {
+      .rounded-social-buttons {
+        text-align: center;
+      }
+    }
+
+    .article-content {
+      color: $black;
+    }
+  }
+}
+
+// 8. POSITION
+// -----------
+
+.position-absolute-bottom {
+  @include position(absolute, null, null, 0, null);
+}
+
+// 9. QUOTE
+// --------
 
 $pull-quote-maxwidth: 50%;
 $pull-quote-color: $primary-color;
@@ -970,9 +431,391 @@ $pull-quote-gradient: true;
   }
 }
 
-.cropcontainer {
-   width:  100%;
-   height: 350px;
-  object-fit: none; /* Do not scale the image */
-  object-position: center; /* Center the image within the element */
- }
+// 10. SLIDE E IMAGENES PARA NOTICIAS
+// ----------------------------------
+
+$clean-hero-slider-accent: $secondary-color;
+.clean-hero-slider {
+  .orbit-caption {
+    width: auto;
+    height: fit-content;
+    background: rgba(10,10,10,0.8);
+    position: absolute;
+    text-align: center;
+    right: 0;
+    left: 0;
+    padding: 0.2rem 2rem;
+
+    @include breakpoint(medium) {
+      @include vertical-center;
+      background: rgba(0,0,0,.6);
+      text-align: left;
+      width: 80%;
+      right: 0;
+      padding: 1rem 2rem;
+    }
+
+    @include breakpoint(xlarge) {
+      padding-right: 10%;
+    }
+
+    @include breakpoint(xxlarge) {
+      padding-right: 20%;
+    }
+
+    p {
+      font-size: 0.9rem;
+      line-height: 1.25;
+
+      @include breakpoint(medium) {
+        font-size: 1.1rem;
+      }
+    }
+
+    h3 {
+      //color: $clean-hero-slider-accent;
+      //font-size: 1.5rem;
+      //font-weight: bold;
+      margin-bottom: 0;
+
+      @include breakpoint(medium) {
+        //font-size: 2.5rem;
+        //font-weight: normal;
+      }
+    }
+  }
+
+  .orbit-slide {
+    //padding-bottom: 40%;
+    background: $black;
+
+    @include breakpoint(medium) {
+      padding-bottom: 0;
+    }
+  }
+
+  .orbit-controls {
+    button {
+      background: $clean-hero-slider-accent;
+      padding: 1rem 0.5rem;
+
+      &:hover {
+        background: $white;
+        color: $black;
+      }
+    }
+
+    .orbit-previous {
+      @include breakpoint(medium) {
+        left: auto;
+        right: 2.4rem;
+      }
+    }
+
+    .orbit-next {
+      @include breakpoint(medium) {
+        right: 0.5rem;
+      }
+    }
+  }
+
+  .orbit-bullets {
+    display: none;
+
+    @include breakpoint(medium) {
+      display: block;
+      margin-bottom: 0;
+      margin-top: -2.2rem;
+      background: none;
+    }
+
+    button {
+      width: 3rem;
+      height: 0.4rem;
+      border-radius: 0;
+      background-color: $white;
+
+      &.is-active {
+        background-color: $clean-hero-slider-accent;
+      }
+    }
+  }
+
+  ul.orbit-container {
+    height: auto !important;
+  }
+
+  li.orbit-slide {
+    max-height: none !important;
+  }
+}
+
+// 11. SCROLLBARS
+// --------------
+
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
+  ::-webkit-scrollbar {
+    width:  $size;
+    height: $size;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+
+  // For Internet Explorer
+  body {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+@include scrollbars(0, slategray);
+
+// 12. TEXTOS COLORES
+// ------------------
+
+.text-twitter{
+  color: $twitter ;
+}
+.text-facebook{
+  color: $facebook ;
+}
+.text-google{
+  color: $google ;
+}
+
+// 13. TEXTOS TAMAÑOS
+// ------------------
+
+.size-12 { font-size: 0.75rem !important; }
+
+.size-14 { font-size: 0.875rem !important; }
+
+.size-16 { font-size: 1rem !important; }
+
+.size-18 { font-size: 1.125rem !important; }
+
+.size-22 { font-size: 1.375rem !important; }
+
+.size-24 { font-size: 1.5rem !important; }
+
+.size-28 { font-size: 1.75rem !important; }
+
+.size-32 { font-size: 2rem !important; }
+
+.size-36 { font-size: 2.25rem !important; }
+
+.size-48 { font-size: 3rem !important; }
+
+.size-60 { font-size: 3.75rem !important; }
+
+.size-72 { font-size: 4.5rem !important; }
+
+.size-84 { font-size: 84px !important; }
+
+.size-96 { font-size: 6rem !important; }
+
+.size-108 { font-size: 6.75rem !important; }
+
+.size-120 { font-size: 7.5rem !important; }
+
+.size-132 {
+  font-size: 8.25rem !important;
+  @include breakpoint(small only) {
+    font-size: 4.25rem !important;
+  }
+}
+
+.size-144 {
+  font-size: 9rem !important;
+  @include breakpoint(small only) {
+    font-size: 5.8rem !important;
+  }
+}
+
+// 14. TOPBAR CON LOGO CENTRADO
+// ----------------------------
+
+.topbar-center-logo .top-bar-center {
+  flex: 1 0 auto;
+
+  @include breakpoint(small only) {
+    display: none;
+  }
+}
+
+.topbar-center-logo-mobile {
+
+  .menu-icon {
+    vertical-align: text-top;
+  }
+}
+
+input[type='search'] {
+  border: 0 !important;
+  box-shadow: none;
+  &:focus{
+    box-shadow: none;
+  }
+}
+
+// Z-index-levels
+// --------------
+
+.z-index-1 {
+  z-index: 999;
+}
+.z-index-2 {
+  z-index: 9999;
+}
+
+
+
+//$login-box-radius: $global-radius;
+//$login-box-bg: $white;
+//$login-box-shadow: 0 2px 4px rgba($black, 0.4);
+//$login-box-inner-padding: 2.5rem;
+//$login-box-social-bg: url('https://images.pexels.com/photos/179124/pexels-photo-179124.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb');
+//$social-brand-facebook: #3b5998;
+//$social-brand-twitter: #55acee;
+//$social-brand-linkedin: #007bb5;
+//$social-brand-youtube: #bb0000;
+//$social-brand-instagram: #125688;
+//$social-brand-pinterest: #cb2027;
+//$social-brand-google-plus: #dd4b39;
+//$social-brand-github: #000000;
+//$social-brand-tumblr: #32506d;
+//
+//
+//.login-box {
+//  box-shadow: $login-box-shadow;
+//  background: $login-box-bg;
+//  border-radius: $login-box-radius;
+//  overflow: hidden;
+//
+//  .or {
+//    @include absolute-center;
+//    @include badge;
+//    font-size: 1.275rem;
+//    background: $medium-gray;
+//    box-shadow: $login-box-shadow;
+//
+//    @include breakpoint(small only) {
+//      top: 85%;
+//    }
+//  }
+//}
+//
+//.login-box-title {
+//  font-weight: 300;
+//  font-size: 1.875rem;
+//  margin-bottom: 1.25rem;
+//}
+//
+//.login-box-form-section,
+//.login-box-social-section-inner {
+//  padding: $login-box-inner-padding;
+//}
+//
+//.login-box-social-section {
+//  //background: $login-box-social-bg;
+//  background-color: #6f5499;
+//  background-size: cover;
+//  background-position: center;
+//}
+//
+//.login-box-input {
+//  margin-bottom: 1.25rem;
+//  height: 2rem;
+//  border: 0;
+//  padding-left: 0;
+//  box-shadow: none;
+//  border-bottom: 1px solid $primary-color;
+//  font-weight: 400;
+//}
+//
+//.login-box-input:focus {
+//  color: $primary-color;
+//  transition: 0.2s ease-in-out;
+//  box-shadow: none;
+//  border: 0;
+//  border-bottom: 2px solid $primary-color;
+//}
+//
+//.login-box-submit-button {
+//  @include button(true, $primary-color, auto, auto, solid);
+//  border-radius: $global-radius;
+//  text-transform: uppercase;
+//  margin-bottom: 0;
+//}
+//
+//.login-box-submit-button:hover,
+//.login-box-submit-button:focus {
+//  box-shadow: $login-box-shadow;
+//}
+//
+//.login-box-submit-button:active {
+//  box-shadow: 0 1px 2px rgba($black, 0.4);
+//}
+//
+//.login-box-social-button-facebook {
+//  @include button(true, $social-brand-facebook, auto, auto, solid);
+//  font-weight: 500;
+//  margin-bottom: 1.25rem;
+//  text-transform: uppercase;
+//}
+//
+//.login-box-social-button-twitter {
+//  @include button(true, $social-brand-twitter, auto, $white, solid);
+//  font-weight: 500;
+//  margin-bottom: 1.25rem;
+//  text-transform: uppercase;
+//}
+//
+//.login-box-social-button-google {
+//  @include button(true, $social-brand-google-plus, auto, $white, solid);
+//  font-weight: 500;
+//  margin-bottom: 1.25rem;
+//  text-transform: uppercase;
+//}
+//
+//[class*="login-box-social-button-"]:hover,
+//[class*="login-box-social-button-"]:focus {
+//  box-shadow: $login-box-shadow;
+//}
+//
+//.login-box-social-headline {
+//  display: block;
+//  margin-bottom: rem-calc(40);
+//  font-size: 1.875rem;
+//  color: $white;
+//  text-align: center;
+//}
+
+
+////////////////////////////////////////////////////////////////////
+// EXPERIMENTO PARA PONER UN LAYER DE BLUR SOBRE CUALQUIER IMAGEN //
+////////////////////////////////////////////////////////////////////
+
+.blur{
+  overflow: hidden;
+  .orbit-image{
+    width: 110% !important;
+    max-width: 120% !important;
+  }
+  >img {
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+    margin: -10px -10px -10px -10px;
+  }
+
+}
+
+

@@ -1,0 +1,1244 @@
+@mixin material-forms {
+  $button-background-focus: lighten($primary-color, 4%) !default;
+  // 11. Forms
+  // ==========================================================================
+
+  // Text Inputs + Textarea
+  $input-height: 3rem !default;
+  $input-border-color: $secondary-color !default;
+  $input-border: 1px solid $input-border-color !default;
+  $input-background: #fff !default;
+  $input-error-color: $error-color !default;
+  $input-success-color: $success-color !default;
+  $input-focus-color: $secondary-color !default;
+  $input-font-size: 1rem !default;
+  $input-margin-bottom: 20px;
+  $input-margin: 0 0 $input-margin-bottom 0 !default;
+  $input-padding: 0 !important;
+  $input-transition: all .3s !default;
+  $label-font-size: .8rem !default;
+  $input-disabled-color: rgba(0, 0, 0, .42) !default;
+  $input-disabled-solid-color: #949494 !default;
+  $input-disabled-border: 1px dotted $input-disabled-color !default;
+  $input-invalid-border: 1px solid $input-error-color !default;
+  $placeholder-text-color: lighten($input-border-color, 20%) !default;
+  //$placeholder-text-color: $secondary-color !default;
+
+  // Radio Buttons
+  $radio-fill-color: $secondary-color !default;
+  $radio-empty-color: #5a5a5a !default;
+  $radio-border: 2px solid $radio-fill-color !default;
+
+  // Range
+  $range-height: 14px !default;
+  $range-width: 14px !default;
+  $track-height: 3px !default;
+
+  // Select
+  $select-border: 1px solid #f2f2f2 !default;
+  $select-background: rgba(255, 255, 255, 0.90) !default;
+  $select-focus: 1px solid lighten($secondary-color, 47%) !default;
+  $select-option-hover: rgba(0, 0, 0, .06) !default;
+  $select-option-focus: rgba(0, 0, 0, .03) !default;
+  $select-padding: 5px !default;
+  $select-radius: 2px !default;
+  $select-disabled-color: rgba(0, 0, 0, .3) !default;
+
+  // Switches
+  $switch-bg-color: $secondary-color !default;
+  $switch-checked-lever-bg: desaturate(lighten($switch-bg-color, 25%), 25%) !default;
+  $switch-unchecked-bg: #F1F1F1 !default;
+  $switch-unchecked-lever-bg: rgba(0, 0, 0, .38) !default;
+  $switch-radius: 45px !default;
+
+  $dropdown-item-height: 50px !default;
+  $dropdown-hover-bg-color: #eee !default;
+
+  // No Text Select
+  .no-select {
+    user-select: none;
+  }
+
+  // Remove Focus Boxes
+  select:focus {
+    outline: $select-focus;
+  }
+
+  button:focus {
+    outline: none;
+    background-color: $button-background-focus;
+  }
+
+  label {
+    font-size: $label-font-size;
+    color: $input-border-color;
+  }
+
+
+  /* Text Inputs + Textarea
+     ========================================================================== */
+
+  /* Style Placeholders */
+
+  ::placeholder {
+    color: $placeholder-text-color;
+  }
+
+  /* Text inputs */
+
+  input:not([type]),
+  input[type=text]:not(.browser-default),
+  input[type=password]:not(.browser-default),
+  input[type=email]:not(.browser-default),
+  input[type=url]:not(.browser-default),
+  input[type=time]:not(.browser-default),
+  input[type=date]:not(.browser-default),
+  input[type=datetime]:not(.browser-default),
+  input[type=datetime-local]:not(.browser-default),
+  input[type=tel]:not(.browser-default),
+  input[type=number]:not(.browser-default),
+  input[type=search]:not(.browser-default),
+  textarea.materialize-textarea {
+
+    // General Styles
+    background-color: transparent;
+    border: none;
+    border-bottom: $input-border;
+    border-radius: 0;
+    outline: none;
+    height: $input-height;
+    width: 100%;
+    font-size: $input-font-size;
+    margin: $input-margin;
+    padding: $input-padding;
+    box-shadow: none;
+    box-sizing: content-box;
+    transition: $input-transition;
+
+    // Disabled input style
+    &:disabled,
+    &[readonly="readonly"] {
+      color: $input-disabled-color;
+      border-bottom: $input-disabled-border;
+    }
+
+    // Disabled label style
+    &:disabled+label,
+    &[readonly="readonly"]+label {
+      color: $input-disabled-color;
+    }
+
+    // Focused input style
+    &:focus:not([readonly]) {
+      border-bottom: 1px solid $input-focus-color;
+      box-shadow: 0 1px 0 0 $input-focus-color;
+    }
+
+    // Focused label style
+    &:focus:not([readonly])+label {
+      color: $input-focus-color;
+    }
+
+    // Valid Input Style
+    &.valid,
+    &:focus.valid {
+      @extend %valid-input-style;
+    }
+
+    // Custom Success Message
+    &.valid + label:after,
+    &:focus.valid + label:after {
+      @extend %custom-success-message;
+    }
+
+    // Invalid Input Style
+    &.invalid,
+    &:focus.invalid {
+      @extend %invalid-input-style;
+    }
+
+    // Custom Error message
+    &.invalid + label:after,
+    &:focus.invalid + label:after {
+      @extend %custom-error-message;
+    }
+
+    // Full width label when using validate for error messages
+    &.validate + label {
+      width: 100%;
+    }
+
+    // Form Message Shared Styles
+    & + label:after {
+      @extend %input-after-style;
+    }
+
+    // TODO: Remove once input fields are reworked to support validation messages better
+    &.invalid + label:after,
+    &.valid + label:after{
+      display: none;
+    }
+
+    &.invalid + label.active:after,
+    &.valid + label.active:after{
+      display: block;
+    }
+  }
+
+
+  /* Validation Sass Placeholders */
+  %valid-input-style {
+    border-bottom: 1px solid $input-success-color;
+    box-shadow: 0 1px 0 0 $input-success-color;
+  }
+  %invalid-input-style {
+    border-bottom: $input-invalid-border;
+    box-shadow: 0 1px 0 0 $input-error-color;
+  }
+  %custom-success-message {
+    content: attr(data-success);
+    color: $input-success-color;
+    opacity: 1;
+    transform: translateY(9px);
+  }
+  %custom-error-message {
+    content: attr(data-error);
+    color: $input-error-color;
+    opacity: 1;
+    transform: translateY(9px);
+  }
+  %input-after-style {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    opacity: 0;
+    transition: .2s opacity ease-out, .2s color ease-out;
+  }
+
+
+  // Styling for input field wrapper
+  .input-field {
+    // Inline styles
+    &.inline {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 5px;
+
+      input,
+      .select-dropdown {
+        margin-bottom: 1rem;
+      }
+    }
+
+    // Gutter spacing
+    &.column {
+      label {
+        left: $grid-column-gutter / 2 !important;
+      }
+
+      .prefix ~ label,
+      .prefix ~ .validate ~ label {
+        width: calc(100% - 3rem - #{$grid-column-gutter});
+      }
+    }
+
+    position: relative;
+    margin-top: 1rem;
+
+    label {
+      color: $input-border-color;
+      position: absolute;
+      top: 0;
+      //left: 0;
+      height: 100%;
+      font-size: 1rem;
+      cursor: text;
+      transition: transform .2s ease-out;
+      transform-origin: 0% 100%;
+      text-align: initial;
+      transform: translateY(12px);
+      pointer-events: none;
+
+      &:not(.label-icon).active {
+        transform: translateY(-14px) scale(.8);
+        transform-origin: 0 0;
+      }
+    }
+
+    // Prefix Icons
+    .prefix {
+      position: absolute;
+      width: $input-height;
+      font-size: 2rem;
+      transition: color .2s;
+
+      &.active { color: $input-focus-color; }
+    }
+
+    .prefix ~ input,
+    .prefix ~ textarea,
+    .prefix ~ label,
+    .prefix ~ .validate ~ label,
+    .prefix ~ .autocomplete-content {
+      margin-left: 3rem;
+      width: 92%;
+      width: calc(100% - 3rem);
+    }
+
+    .prefix ~ label { margin-left: 3rem; }
+
+    @media #{small medium} {
+      .prefix ~ input {
+        width: 86%;
+        width: calc(100% - 3rem);
+      }
+    }
+
+    @media #{small only} {
+      .prefix ~ input {
+        width: 80%;
+        width: calc(100% - 3rem);
+      }
+    }
+  }
+
+
+  /* Search Field */
+
+  .input-field input[type=search] {
+    display: block;
+    line-height: inherit;
+
+    .nav-wrapper & {
+      height: inherit;
+      padding-left: 4rem;
+      width: calc(100% - 4rem);
+      border: 0;
+      box-shadow: none;
+    }
+
+    &:focus {
+      background-color: $input-background;
+      border: 0;
+      box-shadow: none;
+      color: #444;
+
+      & + label i,
+      & ~ .mdi-navigation-close,
+      & ~ .material-icons {
+        color: #444;
+      }
+    }
+
+    & + label {
+      left: 1rem;
+    }
+
+    & ~ .mdi-navigation-close,
+    & ~ .material-icons {
+      position: absolute;
+      top: 0;
+      right: 1rem;
+      color: transparent;
+      cursor: pointer;
+      font-size: 2rem;
+      transition: .3s color;
+    }
+  }
+
+
+  /* Textarea */
+
+  // Default textarea
+  textarea {
+    width: 100%;
+    height: $input-height;
+    background-color: transparent;
+
+    &.materialize-textarea {
+      // Fixes validation messages for dynamic textareas
+      &.validate + label {
+        &::after {
+          top: calc(100% - 12px);
+        }
+        &:not(.label-icon).active {
+          transform: translateY(-25px);
+        }
+        height: 100%;
+      }
+
+      overflow-y: hidden; /* prevents scroll bar flash */
+      padding: .8rem 0 1.6rem 0; /* prevents text jump on Enter keypress */
+      resize: none;
+      min-height: $input-height;
+    }
+  }
+
+  // For textarea autoresize
+  .hiddendiv {
+    display: none;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word; /* future version of deprecated 'word-wrap' */
+    padding-top: 1.2rem; /* prevents text jump on Enter keypress */
+
+    // Reduces repaints
+    position: absolute;
+    top: 0;
+  }
+
+
+  /* Autocomplete */
+  .autocomplete-content {
+    margin-top: -1 * $input-margin-bottom;
+    margin-bottom: $input-margin-bottom;
+    display: block;
+    opacity: 1;
+    position: static;
+
+    li {
+      .highlight { color: #444; }
+
+      img {
+        height: $dropdown-item-height - 10;
+        width: $dropdown-item-height - 10;
+        margin: 5px 15px;
+      }
+    }
+  }
+
+  /* File Input
+     ========================================================================== */
+
+  .file-field {
+    position: relative;
+
+    .file-path-wrapper {
+      overflow: hidden;
+      padding-left: 10px;
+    }
+
+    input.file-path { width: 100%; }
+
+    .btn {
+      float: left;
+      height: $input-height;
+      line-height: $input-height;
+    }
+
+    span {
+      cursor: pointer;
+    }
+
+    input[type=file] {
+
+      // Needed to override webkit button
+      &::-webkit-file-upload-button {
+        display: none;
+      }
+
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      font-size: 20px;
+      cursor: pointer;
+      opacity: 0;
+      filter: alpha(opacity=0);
+    }
+  }
+  /* Radio Buttons
+     ========================================================================== */
+
+  // Remove default Radio Buttons
+  [type="radio"]:not(:checked),
+  [type="radio"]:checked {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  [type="radio"]:not(:checked) + label,
+  [type="radio"]:checked + label {
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    font-size: 1rem;
+    transition: .28s ease;
+    user-select: none;
+  }
+
+  [type="radio"] + label:before,
+  [type="radio"] + label:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 4px;
+    width: 16px;
+    height: 16px;
+    z-index: 0;
+    transition: .28s ease;
+  }
+
+  /* Unchecked styles */
+  [type="radio"]:not(:checked) + label:before,
+  [type="radio"]:not(:checked) + label:after,
+  [type="radio"]:checked + label:before,
+  [type="radio"]:checked + label:after,
+  [type="radio"].with-gap:checked + label:before,
+  [type="radio"].with-gap:checked + label:after {
+    border-radius: 50%;
+  }
+
+  [type="radio"]:not(:checked) + label:before,
+  [type="radio"]:not(:checked) + label:after {
+    border: 2px solid $radio-empty-color;
+  }
+
+  [type="radio"]:not(:checked) + label:after {
+    transform: scale(0);
+  }
+
+  /* Checked styles */
+  [type="radio"]:checked + label:before {
+    border: 2px solid transparent;
+  }
+
+  [type="radio"]:checked + label:after,
+  [type="radio"].with-gap:checked + label:before,
+  [type="radio"].with-gap:checked + label:after {
+    border: $radio-border;
+  }
+
+  [type="radio"]:checked + label:after,
+  [type="radio"].with-gap:checked + label:after {
+    background-color: $radio-fill-color;
+  }
+
+  [type="radio"]:checked + label:after {
+    transform: scale(1.02);
+  }
+
+  /* Radio With gap */
+  [type="radio"].with-gap:checked + label:after {
+    transform: scale(.5);
+  }
+
+  /* Focused styles */
+  [type="radio"].tabbed:focus + label:before {
+    box-shadow: 0 0 0 10px rgba(0,0,0,.1);
+  }
+
+  /* Disabled Radio With gap */
+  [type="radio"].with-gap:disabled:checked + label:before {
+    border: 2px solid $input-disabled-color;
+  }
+
+  [type="radio"].with-gap:disabled:checked + label:after {
+    border: none;
+    background-color: $input-disabled-color;
+  }
+
+  /* Disabled style */
+  [type="radio"]:disabled:not(:checked) + label:before,
+  [type="radio"]:disabled:checked + label:before {
+    background-color: transparent;
+    border-color: $input-disabled-color;
+  }
+
+  [type="radio"]:disabled + label {
+    color: $input-disabled-color;
+  }
+
+  [type="radio"]:disabled:not(:checked) + label:before {
+    border-color: $input-disabled-color;
+  }
+
+  [type="radio"]:disabled:checked + label:after {
+    background-color: $input-disabled-color;
+    border-color: $input-disabled-solid-color;
+  }
+  /* Checkboxes
+   ========================================================================== */
+
+  /* CUSTOM CSS CHECKBOXES */
+  form p {
+    margin-bottom: 10px;
+    text-align: left;
+  }
+
+  form p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Remove default checkbox */
+  [type="checkbox"]:not(:checked),
+  [type="checkbox"]:checked {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  // Checkbox Styles
+  [type="checkbox"] {
+    // Text Label Style
+    + label {
+      position: relative;
+      padding-left: 35px;
+      cursor: pointer;
+      display: inline-block;
+      height: 25px;
+      line-height: 25px;
+      font-size: 1rem;
+      user-select: none;
+    }
+
+    /* checkbox aspect */
+    + label:before,
+    &:not(.filled-in) + label:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 18px;
+      height: 18px;
+      z-index: 0;
+      border: 2px solid $radio-empty-color;
+      border-radius: 1px;
+      margin-top: 2px;
+      transition: .2s;
+    }
+
+    &:not(.filled-in) + label:after {
+      border: 0;
+      transform: scale(0);
+    }
+
+    &:not(:checked):disabled + label:before {
+      border: none;
+      background-color: $input-disabled-color;
+    }
+
+    // Focused styles
+    &.tabbed:focus + label:after {
+      transform: scale(1);
+      border: 0;
+      border-radius: 50%;
+      box-shadow: 0 0 0 10px rgba(0,0,0,.1);
+      background-color: rgba(0,0,0,.1);
+    }
+  }
+
+  [type="checkbox"]:checked {
+    + label:before {
+      top: -4px;
+      left: -5px;
+      width: 12px;
+      height: 22px;
+      border-top: 2px solid transparent;
+      border-left: 2px solid transparent;
+      border-right: $radio-border;
+      border-bottom: $radio-border;
+      transform: rotate(40deg);
+      backface-visibility: hidden;
+      transform-origin: 100% 100%;
+    }
+
+    &:disabled + label:before {
+      border-right: 2px solid $input-disabled-color;
+      border-bottom: 2px solid $input-disabled-color;
+    }
+  }
+
+  /* Indeterminate checkbox */
+  [type="checkbox"]:indeterminate {
+    +label:before {
+      top: -11px;
+      left: -12px;
+      width: 10px;
+      height: 22px;
+      border-top: none;
+      border-left: none;
+      border-right: $radio-border;
+      border-bottom: none;
+      transform: rotate(90deg);
+      backface-visibility: hidden;
+      transform-origin: 100% 100%;
+    }
+
+    // Disabled indeterminate
+    &:disabled + label:before {
+      border-right: 2px solid $input-disabled-color;
+      background-color: transparent;
+    }
+  }
+
+  // Filled in Style
+  [type="checkbox"].filled-in {
+    // General
+    + label:after {
+      border-radius: 2px;
+    }
+
+    + label:before,
+    + label:after {
+      content: '';
+      left: 0;
+      position: absolute;
+      /* .1s delay is for check animation */
+      transition: border .25s, background-color .25s, width .20s .1s, height .20s .1s, top .20s .1s, left .20s .1s;
+      z-index: 1;
+    }
+
+    // Unchecked style
+    &:not(:checked) + label:before {
+      width: 0;
+      height: 0;
+      border: 3px solid transparent;
+      left: 6px;
+      top: 10px;
+      transform: rotateZ(37deg);
+      transform-origin: 100% 100%;
+    }
+
+    &:not(:checked) + label:after {
+      height: 20px;
+      width: 20px;
+      background-color: transparent;
+      border: 2px solid $radio-empty-color;
+      top: 0px;
+      z-index: 0;
+    }
+
+    // Checked style
+    &:checked {
+      + label:before {
+        top: 0;
+        left: 1px;
+        width: 8px;
+        height: 13px;
+        border-top: 2px solid transparent;
+        border-left: 2px solid transparent;
+        border-right: 2px solid $input-background;
+        border-bottom: 2px solid $input-background;
+        transform: rotateZ(37deg);
+        transform-origin: 100% 100%;
+      }
+
+      + label:after {
+        top: 0;
+        width: 20px;
+        height: 20px;
+        border: 2px solid $secondary-color;
+        background-color: $secondary-color;
+        z-index: 0;
+      }
+    }
+
+    // Focused styles
+    &.tabbed:focus + label:after {
+      border-radius: 2px;
+      border-color: $radio-empty-color;
+      background-color: rgba(0,0,0,.1);
+    }
+
+    &.tabbed:checked:focus + label:after {
+      border-radius: 2px;
+      background-color: $secondary-color;
+      border-color: $secondary-color;
+    }
+
+    // Disabled style
+    &:disabled:not(:checked) + label:before {
+      background-color: transparent;
+      border: 2px solid transparent;
+    }
+
+    &:disabled:not(:checked) + label:after {
+      border-color: transparent;
+      background-color: $input-disabled-solid-color;
+    }
+
+    &:disabled:checked + label:before {
+      background-color: transparent;
+    }
+
+    &:disabled:checked + label:after {
+      background-color: $input-disabled-solid-color;
+      border-color: $input-disabled-solid-color;
+    }
+  }
+
+
+  /* Range
+     ========================================================================== */
+
+  .range-field {
+    position: relative;
+  }
+
+  input[type=range],
+  input[type=range] + .thumb {
+    @extend .no-select;
+    cursor: pointer;
+  }
+
+  input[type=range] {
+    position: relative;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    margin: 15px 0;
+    padding: 0;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  input[type=range] + .thumb {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    border: none;
+    height: 0;
+    width: 0;
+    border-radius: 50%;
+    background-color: $radio-fill-color;
+    margin-left: 7px;
+
+    transform-origin: 50% 50%;
+    transform: rotate(-45deg);
+
+    .value {
+      display: block;
+      width: 30px;
+      text-align: center;
+      color: $radio-fill-color;
+      font-size: 0;
+      transform: rotate(45deg);
+    }
+
+    &.active {
+      border-radius: 50% 50% 50% 0;
+
+      .value {
+        color: $input-background;
+        margin-left: -1px;
+        margin-top: 8px;
+        font-size: 10px;
+      }
+    }
+  }
+
+  // WebKit
+  input[type=range] {
+    -webkit-appearance: none;
+  }
+
+  input[type=range]::-webkit-slider-runnable-track {
+    height: $track-height;
+    background: #c2c0c2;
+    border: none;
+  }
+
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: $range-height;
+    width: $range-width;
+    border-radius: 50%;
+    background-color: $radio-fill-color;
+    transform-origin: 50% 50%;
+    margin: -5px 0 0 0;
+    transition: .3s;
+  }
+
+  input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #ccc;
+  }
+
+  // FireFox
+  input[type=range] {
+    /* fix for FF unable to apply focus style bug  */
+    border: 1px solid white;
+
+    /*required for proper track sizing in FF*/
+  }
+
+  input[type=range]::-moz-range-track {
+    height: $track-height;
+    background: #ddd;
+    border: none;
+  }
+
+  input[type=range]::-moz-range-thumb {
+    border: none;
+    height: $range-height;
+    width: $range-width;
+    border-radius: 50%;
+    background: $radio-fill-color;
+    margin-top: -5px;
+  }
+
+  // hide the outline behind the border
+  input[type=range]:-moz-focusring {
+    outline: 1px solid #fff;
+    outline-offset: -1px;
+  }
+
+  input[type=range]:focus::-moz-range-track {
+    background: #ccc;
+  }
+
+  // IE 10+
+  input[type=range]::-ms-track {
+    height: $track-height;
+
+    // remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead
+    background: transparent;
+
+    // leave room for the larger thumb to overflow with a transparent border */
+    border-color: transparent;
+    border-width: 6px 0;
+
+    /*remove default tick marks*/
+    color: transparent;
+  }
+
+  input[type=range]::-ms-fill-lower {
+    background: #777;
+  }
+
+  input[type=range]::-ms-fill-upper {
+    background: #ddd;
+  }
+
+  input[type=range]::-ms-thumb {
+    border: none;
+    height: $range-height;
+    width: $range-width;
+    border-radius: 50%;
+    background: $radio-fill-color;
+  }
+
+  input[type=range]:focus::-ms-fill-lower {
+    background: #888;
+  }
+
+  input[type=range]:focus::-ms-fill-upper {
+    background: #ccc;
+  }
+
+  /* Select Field
+     ========================================================================== */
+
+  select { display: none; }
+  select.browser-default { display: block; }
+
+  select {
+    background-color: $select-background;
+    width: 100%;
+    padding: $select-padding;
+    border: $select-border;
+    border-radius: $select-radius;
+    height: $input-height;
+  }
+
+
+  .input-field {
+    select {
+      display: block;
+      position: absolute;
+      width: 0;
+      pointer-events: none;
+      height: 0;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
+  }
+
+  .select-label {
+    position: absolute;
+  }
+
+  .select-wrapper {
+    &.valid {
+      & > input.select-dropdown {
+        @extend %valid-input-style;
+      }
+
+      & + label:after {
+        @extend %custom-success-message;
+      }
+    }
+
+    &.invalid {
+      & > input.select-dropdown {
+        @extend %invalid-input-style;
+      }
+
+      & + label:after {
+        @extend %custom-error-message;
+      }
+    }
+
+    &.valid + label,
+    &.invalid + label {
+      width: 100%;
+      pointer-events: none;
+    }
+
+    & + label:after {
+      @extend %input-after-style;
+    }
+
+    position: relative;
+
+    input.select-dropdown {
+      position: relative;
+      cursor: pointer;
+      background-color: transparent;
+      border: none;
+      border-bottom: $input-border;
+      outline: none;
+      height: $input-height;
+      line-height: $input-height;
+      width: 100%;
+      font-size: $input-font-size;
+      margin: $input-margin;
+      padding: 0;
+      display: block;
+      user-select:none;
+    }
+
+    span.caret {
+      color: initial;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      height: 10px;
+      margin: auto 0;
+      font-size: 10px;
+      line-height: 10px;
+    }
+
+    & + label {
+      position: absolute;
+      top: -26px;
+      font-size: $label-font-size;
+    }
+  }
+
+  // Disabled styles
+  select:disabled {
+    color: $input-disabled-color;
+  }
+
+  .select-wrapper.disabled {
+    span.caret,
+    & + label {
+      color: $input-disabled-color;
+    }
+  }
+
+  .select-wrapper input.select-dropdown:disabled {
+    color: $input-disabled-color;
+    cursor: default;
+    user-select: none;
+  }
+
+  .select-wrapper i {
+    color: $select-disabled-color;
+  }
+
+  .select-dropdown li.disabled,
+  .select-dropdown li.disabled > span,
+  .select-dropdown li.optgroup {
+    color: $select-disabled-color;
+    background-color: transparent;
+  }
+
+  .select-dropdown.dropdown-content {
+    li {
+      &.active {
+        background-color: transparent;
+      }
+
+      &:hover {
+        background-color: $select-option-hover;
+      }
+
+      &.selected {
+        background-color: $select-option-focus;
+      }
+    }
+  }
+
+  // Prefix Icons
+  .prefix ~ .select-wrapper {
+    margin-left: 3rem;
+    width: 92%;
+    width: calc(100% - 3rem);
+  }
+
+  .prefix ~ label { margin-left: 3rem; }
+
+  // Icons
+  .select-dropdown li {
+    img {
+      height: $dropdown-item-height - 10;
+      width: $dropdown-item-height - 10;
+      margin: 5px 15px;
+      float: right;
+    }
+  }
+
+  // Optgroup styles
+  .select-dropdown li.optgroup {
+    border-top: 1px solid $dropdown-hover-bg-color;
+
+    &.selected > span {
+      color: rgba(0, 0, 0, .7);
+    }
+
+    & > span {
+      color: rgba(0, 0, 0, .4);
+    }
+
+    & ~ li.optgroup-option {
+      padding-left: 1rem;
+    }
+  }
+
+  /* Switch
+   ========================================================================== */
+
+  .switch,
+  .switch * {
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+
+  .switch label {
+    cursor: pointer;
+  }
+
+  .switch label input[type=checkbox] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+    &:checked + .lever {
+      background-color: $switch-checked-lever-bg;
+
+      &:before, &:after {
+        left: 18px;
+      }
+
+      &:after {
+        background-color: $switch-bg-color;
+      }
+    }
+  }
+
+  .switch label .lever {
+    content: "";
+    display: inline-block;
+    position: relative;
+    width: 36px;
+    height: 14px;
+    background-color: $switch-unchecked-lever-bg;
+    border-radius: $switch-radius;
+    margin-right: 10px;
+    transition: background 0.3s ease;
+    vertical-align: middle;
+    margin: 0 16px;
+
+    &:before, &:after {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      left: 0;
+      top: -3px;
+      transition: left 0.3s ease, background .3s ease, box-shadow 0.1s ease, transform .1s ease;
+    }
+
+    &:before {
+      background-color: transparentize($switch-bg-color, .85);
+    }
+
+    &:after {
+      background-color: $switch-unchecked-bg;
+      box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+    }
+  }
+
+  // Switch active style
+  input[type=checkbox]:checked:not(:disabled) ~ .lever:active::before,
+  input[type=checkbox]:checked:not(:disabled).tabbed:focus ~ .lever::before {
+    transform: scale(2.4);
+    background-color: transparentize($switch-bg-color, .85);
+  }
+
+  input[type=checkbox]:not(:disabled) ~ .lever:active:before,
+  input[type=checkbox]:not(:disabled).tabbed:focus ~ .lever::before {
+    transform: scale(2.4);
+    background-color: rgba(0,0,0,.08);
+  }
+
+  // Disabled Styles
+  .switch input[type=checkbox][disabled] + .lever {
+    cursor: default;
+    background-color: rgba(0,0,0,.12);
+  }
+
+  .switch label input[type=checkbox][disabled] + .lever:after,
+  .switch label input[type=checkbox][disabled]:checked + .lever:after {
+    background-color: $input-disabled-solid-color;
+  }
+
+
+}
+
+.material-forms{
+  @include material-forms;
+}
+  //@import 'input-fields';
+  //@import 'radio-buttons';
+  //@import 'checkboxes';
+  //@import 'switches';
+  //@import 'select';
+  //@import 'file-input';
+  //@import 'range';
+
+// 8. Date + Time Picker
+// ==========================================================================
+
+$datepicker-display-font-size: 2.8rem;
+$datepicker-weekday-color: rgba(0, 0, 0, .87) !default;
+$datepicker-weekday-bg: darken($secondary-color, 7%) !default;
+$datepicker-date-bg: $secondary-color !default;
+$datepicker-year: rgba(255, 255, 255, .7) !default;
+$datepicker-focus: rgba(0,0,0, .05) !default;
+$datepicker-selected: $secondary-color !default;
+$datepicker-selected-outfocus: desaturate(lighten($secondary-color, 35%), 15%) !default;
+
+$timepicker-clock-color: rgba(0, 0, 0, .87) !default;
+$timepicker-clock-plate-bg: #eee;

@@ -4,6 +4,10 @@
 @import 'foundation';
 @import 'custom';
 @import 'colores';
+@import 'forms';
+@import 'date_picker/default.date';
+@import 'date_picker/default';
+@import 'date_picker/default.time';
 @import 'motion-ui';
 
 @include foundation-global-styles;
