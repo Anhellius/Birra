@@ -39,7 +39,7 @@ import birra.modelo.tipificaciones.Usuario;
 import birra.modelo.utiles.Constantes;
 
 @SuppressWarnings("unused")
-@UrlBinding("")
+@UrlBinding("/inicio")
 public class InicialActionBean extends BaseActionBean {	
 
 	private boolean sesionVencida;
@@ -64,14 +64,8 @@ public class InicialActionBean extends BaseActionBean {
 	@DontValidate
 	public Resolution cargar() {	
 		this.noticia = FachadaNoticia.getNoticiaPorId(id);
-		return new ForwardResolution("/pages/index.jsp");
-	}
-	
-	
-	
-	
-	
-		
+		return new ForwardResolution("/pages/indexWeb.jsp");
+	}		
 	
 	
 	public boolean isSesionVencida() {
