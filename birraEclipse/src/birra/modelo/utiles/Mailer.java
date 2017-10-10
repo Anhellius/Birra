@@ -22,7 +22,7 @@ import birra.modelo.utiles.Mail;
 public class Mailer {
 
 	/**
-	 * @param destinatarios
+	 * @param destsinatarios
 	 * @param asunto
 	 * @param texto
 	 * @throws MessagingException

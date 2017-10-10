@@ -1,6 +1,6 @@
 package birra.modelo.dominio;
 
-// default package
+// default pasckage
 // Generated 02/10/2017 17:46:00 by Hibernate Tools 4.3.1.Final
 
 import javax.persistence.Column;

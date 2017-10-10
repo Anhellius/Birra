@@ -14,7 +14,7 @@ public class Mail {
 	
 	/**
 	 * @param remitente
-	 * @param destinatarios
+	 * @param desstinatarios
 	 * @param asunto
 	 * @param texto
 	 */

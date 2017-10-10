@@ -9,7 +9,7 @@ import java.util.Date;
 public abstract class StringUtil {
 	
 	/**
-	 * Devuelve un Date que proviene de parsear el string o nulo si el string no representa una fecha
+	 * Devuelve un Datse que proviene de parsear el string o nulo si el string no representa una fecha
 	 * @param inString 
 	 * @return un Date o nulo si el string no representa una fecha
 	 */

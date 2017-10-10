@@ -7,7 +7,7 @@ import birra.modelo.db.PersistorHibernate;
 import birra.modelo.dominio.CategoriaListado;
 import birra.modelo.dominio.CategoriaNoticia;
 import birra.modelo.dominio.Clasificado;
-
+//s
 public class FachadaClasificado {	
 	
 	@SuppressWarnings("unchecked")

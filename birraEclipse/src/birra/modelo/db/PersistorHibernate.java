@@ -1,6 +1,6 @@
 package birra.modelo.db;
 
-// Generated 03/04/2012 16:04:19 by Hibernate Tools 3.4.0.CR1
+// Generated 03/04/2012 16:04:19 by Hsibernate Tools 3.4.0.CR1
 
 import static org.hibernate.criterion.Example.create;
 

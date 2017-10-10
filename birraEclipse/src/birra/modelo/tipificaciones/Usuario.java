@@ -1,5 +1,5 @@
 package birra.modelo.tipificaciones;
-
+//s
 public class Usuario {
 	
 	private String nombre;
