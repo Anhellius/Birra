@@ -12,7 +12,7 @@ import net.sourceforge.stripes.action.Resolution;
 import net.sourceforge.stripes.action.SimpleMessage;
 import net.sourceforge.stripes.action.UrlBinding;
 import net.sourceforge.stripes.validation.SimpleError;
-
+//s
 @UrlBinding("/login")
 public class LoginActionBean extends BaseActionBean {
 	
