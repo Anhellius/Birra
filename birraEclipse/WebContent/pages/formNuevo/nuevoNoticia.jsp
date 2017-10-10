@@ -30,9 +30,13 @@
 						<label>Copete</label>
 						<stripes:text name="noticia.copete" class="required" />						
 					</div>
-					<div class="small-6 column">
+					<div class="small-3 column">
 						<label>Autor</label>
 						<stripes:text name="noticia.autor" class="required" />					
+					</div>
+					<div class="small-3 column">
+						<label>Desc Autor</label>
+						<stripes:text name="noticia.descAutor" class="required" />					
 					</div>
 				</div>	
 				

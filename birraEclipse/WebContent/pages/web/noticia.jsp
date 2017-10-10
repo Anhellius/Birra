@@ -60,9 +60,9 @@
                    ${actionBean.noticia.autor}
                 </p>
                 <p class="author-description">
-                    Periodista, columnista, hacedir de cervezas y creador de Birra webSite
+                     ${actionBean.noticia.descAutor}
                 </p>
-                <p class="article-date-read"><fmt:formatDate value="${actionBean.noticia.fecha}" pattern="dd/MM/yyyy"/></p><a href="categoria.html"><button class="hollow button tiny rounded">ACTUALIDAD</button></a>
+                <p class="article-date-read"><fmt:formatDate value="${actionBean.noticia.fecha}" pattern="dd/MM/yyyy"/></p><a href="categoria?id=${actionBean.noticia.categorianoticia.idCategoriaNoticia}"><button class="hollow button tiny rounded">${actionBean.noticia.categorianoticia.descripcion}</button></a>
             </div>
         </div>
         <div class="neat-article-title">
