@@ -582,6 +582,15 @@ $clean-hero-slider-accent: $secondary-color;
 // 12. TEXTOS COLORES
 // ------------------
 
+.white-text{
+  a{
+    color: white;
+    &:hover{
+      color: grey;
+    }
+  }
+}
+
 .text-twitter{
   color: $twitter ;
 }
