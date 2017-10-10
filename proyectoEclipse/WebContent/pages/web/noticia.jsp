@@ -1,3 +1,4 @@
+<%@ include file="/pages/taglibs.jsp" %>
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
@@ -8,7 +9,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Birra</title>
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="pages/web/css/app.css">
 </head>
 <body>
 
@@ -21,17 +22,13 @@
 <div class="top-bar topbar-center-logo" id="example-menu">
     <div class="top-bar-left">
         <ul class="dropdown menu align-middle z-index-2" data-dropdown-menu>
-            <li class="menu-text padding-0"><a class="padding-0" href="./"><img src="img/birra3.jpg" style="width: 90px" alt=""></a></li>
+            <li class="menu-text padding-0"><a class="padding-0" href="./"><img src="pages/img/birra3.jpg" style="width: 90px" alt=""></a></li>
             <li>
-                <a href="#">Categorías</a>
+                <a href="#">Categor�as</a>
                 <ul class="menu vertical">
-                    <li><a href="categoria.html">El Negocio</a></li>
-                    <li><a href="categoria.html">Actualidad</a></li>
-                    <li><a href="categoria.html">Ciencia y Tecno</a></li>
-                    <li><a href="categoria.html">De Gira</a></li>
-                    <li><a href="categoria.html">RSE</a></li>
-                    <li><a href="categoria.html">Entrevista</a></li>
-                    <li><a href="categoria.html">Historias de Birra</a></li>
+                	<c:forEach items="${actionBean.categoriasNoticias}" var="p" varStatus="i">
+                   		 <li><a href="categoria?id=${p.idCategoriaNoticia}">${p.descripcion}</a></li>
+                    </c:forEach>
                 </ul>
             </li>
             <li><a href="#">Contacto</a></li>
@@ -60,24 +57,24 @@
             </div>
             <div class="article-header-author">
                 <p class="author-name">
-                    Algún Nombre
+                   ${actionBean.noticia.autor}
                 </p>
                 <p class="author-description">
                     Periodista, columnista, hacedir de cervezas y creador de Birra webSite
                 </p>
-                <p class="article-date-read">27 de abril de 2017</p><a href="categoria.html"><button class="hollow button tiny rounded">ACTUALIDAD</button></a>
+                <p class="article-date-read"><fmt:formatDate value="${actionBean.noticia.fecha}" pattern="dd/MM/yyyy"/></p><a href="categoria.html"><button class="hollow button tiny rounded">ACTUALIDAD</button></a>
             </div>
         </div>
         <div class="neat-article-title">
             <h3 class="article-title h2 robotoMono-light">
-                Vamos con otro título más largo a ver que onda cuanto ocupa y como se vería en diferentes pantallas
+                ${actionBean.noticia.titulo}
             </h3>
-            <h5 class="roboto-light grey-text margin-bottom-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consequuntur, eius eum ipsum maxime omnis praesentium quia quos, ratione recusandae repellat saepe unde. At est molestiae perferendis, qui velit voluptatum?</h5>
+            <h5 class="roboto-light grey-text margin-bottom-1">${actionBean.noticia.copete}</h5>
         </div>
     </div>
     </div>
     <div class="neat-article-image">
-        <img class="article-image" src="img/notas/nota-11.jpg" alt="Space">
+        <img class="article-image" src="pages/imagenesCargadas/${actionBean.noticia.nombreImagenPrincipal}" alt="Space">
     </div>
     <div class="grid-x gid-margin-x grid-padding-y grid-padding-x" id="sticky1">
         <div class="neat-article-content cell small-12 large-offset-1 large-1 small-order-2  medium-order-1" data-sticky-container>
@@ -94,32 +91,7 @@
             <div class="article-content">
 
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate accusantium unde culpa est dolorem earum in numquam accusamus, recusandae dolorum. Aperiam nesciunt iste numquam laboriosam, asperiores explicabo impedit laborum, non, itaque quae nemo, assumenda sequi autem pariatur debitis obcaecati culpa mollitia ratione perspiciatis officiis accusamus magni! Inventore ipsam alias non ea dolores veritatis vero sint libero tempore. Alias vero, libero sapiente, maxime facilis magnam, natus modi mollitia at ut numquam consequuntur expedita recusandae incidunt perspiciatis placeat sint doloribus. Ipsam numquam, optio consequuntur commodi possimus! Earum rem rerum, possimus, quae repellat modi omnis quos sapiente magni nesciunt similique atque veniam ipsa.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate accusantium unde culpa est dolorem earum in numquam accusamus, recusandae dolorum. Aperiam nesciunt iste numquam laboriosam, asperiores explicabo impedit laborum, non, itaque quae nemo, assumenda sequi autem pariatur debitis obcaecati culpa mollitia ratione perspiciatis officiis accusamus magni! Inventore ipsam alias non ea dolores veritatis vero sint libero tempore. Alias vero, libero sapiente, maxime facilis magnam, natus modi mollitia at ut numquam consequuntur expedita recusandae incidunt perspiciatis placeat sint doloribus. Ipsam numquam, optio consequuntur commodi possimus! Earum rem rerum, possimus, quae repellat modi omnis quos sapiente magni nesciunt similique atque veniam ipsa.
-                </p>
-                <p>Well, dreams, they feel real while we're in them right? Its only when we wake up then we realize that something was actually strange. If we are gonna perform Inception then we need imagination. <q class="pull-quote">Una frase algo de para destacar si se quiere</q> No creeping doubts? Not feeling persecuted, Dom? Chased around the globe by anonymous corporations and police forces, the way the projections persecute the dreamer? Admit it: you don't believe in one reality anymore. So choose. Choose to be here. Choose me. Great. Thank you. So, now we're trapped in Fischer's mind battling his own private army, and if we get killed, we'll be lost in limbo till our brains turn to scrambled egg. To wake up from that after, after years, after decades... after we'd become old souls thrown back into youth like that... I knew something was wrong with her. She just wouldn't admit it. Eventually, she told me the truth. She was possessed by an idea, this one, very simple idea, that changed everything. That our world wasn't real. That she needed to wake up to come back to reality, that, in order to get back home, we had to kill ourselves.</p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate accusantium unde culpa est dolorem earum in numquam accusamus, recusandae dolorum. Aperiam nesciunt iste numquam laboriosam, asperiores explicabo impedit laborum, non, itaque quae nemo, assumenda sequi autem pariatur debitis obcaecati culpa mollitia ratione perspiciatis officiis accusamus magni! Inventore ipsam alias non ea dolores veritatis vero sint libero tempore. Alias vero, libero sapiente, maxime facilis magnam, natus modi mollitia at ut numquam consequuntur expedita recusandae incidunt perspiciatis placeat sint doloribus. Ipsam numquam, optio consequuntur commodi possimus! Earum rem rerum, possimus, quae repellat modi omnis quos sapiente magni nesciunt similique atque veniam ipsa.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate accusantium unde culpa est dolorem earum in numquam accusamus, recusandae dolorum. Aperiam nesciunt iste numquam laboriosam, asperiores explicabo impedit laborum, non, itaque quae nemo, assumenda sequi autem pariatur debitis obcaecati culpa mollitia ratione perspiciatis officiis accusamus magni! Inventore ipsam alias non ea dolores veritatis vero sint libero tempore. Alias vero, libero sapiente, maxime facilis magnam, natus modi mollitia at ut numquam consequuntur expedita recusandae incidunt perspiciatis placeat sint doloribus. Ipsam numquam, optio consequuntur commodi possimus! Earum rem rerum, possimus, quae repellat modi omnis quos sapiente magni nesciunt similique atque veniam ipsa.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate accusantium unde culpa est dolorem earum in numquam accusamus, recusandae dolorum. Aperiam nesciunt iste numquam laboriosam, asperiores explicabo impedit laborum, non, itaque quae nemo, assumenda sequi autem pariatur debitis obcaecati culpa mollitia ratione perspiciatis officiis accusamus magni! Inventore ipsam alias non ea dolores veritatis vero sint libero tempore. Alias vero, libero sapiente, maxime facilis magnam, natus modi mollitia at ut numquam consequuntur expedita recusandae incidunt perspiciatis placeat sint doloribus. Ipsam numquam, optio consequuntur commodi possimus! Earum rem rerum, possimus, quae repellat modi omnis quos sapiente magni nesciunt similique atque veniam ipsa.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate accusantium unde culpa est dolorem earum in numquam accusamus, recusandae dolorum. Aperiam nesciunt iste numquam laboriosam, <q class="pull-quote">asperiores explicabo impedit laborum, non, itaque quae nemo</q> assumenda sequi autem pariatur debitis obcaecati culpa mollitia ratione perspiciatis officiis accusamus magni! Inventore ipsam alias non ea dolores veritatis vero sint libero tempore. Alias vero, libero sapiente, maxime facilis magnam, natus modi mollitia at ut numquam consequuntur expedita recusandae incidunt perspiciatis placeat sint doloribus. Ipsam numquam, optio consequuntur commodi possimus! Earum rem rerum, possimus, quae repellat modi omnis quos sapiente magni nesciunt similique atque veniam ipsa.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate accusantium unde culpa est dolorem earum in numquam accusamus, recusandae dolorum. Aperiam nesciunt iste numquam laboriosam, asperiores explicabo impedit laborum, non, itaque quae nemo, assumenda sequi autem pariatur debitis obcaecati culpa mollitia ratione perspiciatis officiis accusamus magni! Inventore ipsam alias non ea dolores veritatis vero sint libero tempore. Alias vero, libero sapiente, maxime facilis magnam, natus modi mollitia at ut numquam consequuntur expedita recusandae incidunt perspiciatis placeat sint doloribus. Ipsam numquam, optio consequuntur commodi possimus! Earum rem rerum, possimus, quae repellat modi omnis quos sapiente magni nesciunt similique atque veniam ipsa.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate accusantium unde culpa est dolorem earum in numquam accusamus, recusandae dolorum. Aperiam nesciunt iste numquam laboriosam, asperiores explicabo impedit laborum, non, itaque quae nemo, assumenda sequi autem pariatur debitis obcaecati culpa mollitia ratione perspiciatis officiis accusamus magni! Inventore ipsam alias non ea dolores veritatis vero sint libero tempore. Alias vero, libero sapiente, maxime facilis magnam, natus modi mollitia at ut numquam consequuntur expedita recusandae incidunt perspiciatis placeat sint doloribus. Ipsam numquam, optio consequuntur commodi possimus! Earum rem rerum, possimus, quae repellat modi omnis quos sapiente magni nesciunt similique atque veniam ipsa.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate accusantium unde culpa est dolorem earum in numquam accusamus, recusandae dolorum. Aperiam nesciunt iste numquam laboriosam, asperiores explicabo impedit laborum, non, itaque quae nemo, assumenda sequi autem pariatur debitis obcaecati culpa mollitia ratione perspiciatis officiis accusamus magni! Inventore ipsam alias non ea dolores veritatis vero sint libero tempore. Alias vero, libero sapiente, maxime facilis magnam, natus modi mollitia at ut numquam consequuntur expedita recusandae incidunt perspiciatis placeat sint doloribus. Ipsam numquam, optio consequuntur commodi possimus! Earum rem rerum, possimus, quae repellat modi omnis quos sapiente magni nesciunt similique atque veniam ipsa.
+                    ${actionBean.noticia.cuerpo}                    
                 </p>
             </div>
         </div>
@@ -128,9 +100,6 @@
     </div>
 
 </div>
-
-
-
 
 
 
@@ -154,11 +123,11 @@
 </footer>
 
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/what-input.min.js"></script>
-    <script src="js/foundation.min.js"></script>
+    <script src="pages/web/js/jquery.min.js"></script>
+    <script src="pages/web/js/what-input.min.js"></script>
+    <script src="pages/web/js/foundation.min.js"></script>
     <script src="https://use.fontawesome.com/b825156fce.js"></script>
-    <script src="js/app.js"></script>
+    <script src="pages/web/js/app.js"></script>
 </body>
 </html>
 <script>

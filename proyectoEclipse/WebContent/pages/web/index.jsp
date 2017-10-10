@@ -1,3 +1,4 @@
+<%@ include file="/pages/taglibs.jsp" %>
 <!doctype html>
 <html class="no-js" lang="en">
   <head>
@@ -5,14 +6,14 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Birra</title>
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="pages/web/css/app.css">
   </head>
   <body>
 <div class="">
   <!--INICIO DE TOPBAR-->
   <div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
     <button class="menu-icon" type="button" data-toggle="example-menu"></button>
-    <div class="title-bar-title"><img src="img/birra3.jpg" style="width: 90px" alt=""></div>
+    <div class="title-bar-title"><img src="pages/web/img/birra3.jpg" style="width: 90px" alt=""></div>
   </div>
 
   <div class="top-bar topbar-center-logo" id="example-menu">
@@ -20,15 +21,11 @@
       <ul class="dropdown menu align-middle z-index-2" data-dropdown-menu>
         <li class="menu-text padding-0"><a class="padding-0" href="./"><img src="img/birra3.jpg" style="width: 90px" alt=""></a></li>
         <li>
-          <a href="#">CategorÃ­as</a>
+          <a href="#">Categorías</a>
           <ul class="menu vertical">
-            <li><a href="categoria.html">El Negocio</a></li>
-            <li><a href="categoria.html">Actualidad</a></li>
-            <li><a href="categoria.html">Ciencia y Tecno</a></li>
-            <li><a href="categoria.html">De Gira</a></li>
-            <li><a href="categoria.html">RSE</a></li>
-            <li><a href="categoria.html">Entrevista</a></li>
-            <li><a href="categoria.html">Historias de Birra</a></li>
+            <c:forEach items="${actionBean.categoriasNoticias}" var="p" varStatus="i">
+              <li><a href="categoria?id=${p.idCategoriaNoticia}">${p.descripcion}</a></li>
+            </c:forEach>
           </ul>
         </li>
         <li><a href="#">Contacto</a></li>
@@ -147,75 +144,24 @@
             <div class="row" id="content">
               <div class="row__inner">
 
-                <div class="tile shadow margin-bottom-1"    data-open="exampleModal1">
-                    <div class="card-user-profile">
-                      <div class="responsive-embed widescreen">
-                        <img class="card-user-profile-img" src="img/sponsor/bar-1.jpg" alt="picture of space" />
-                      </div>
-                      <div class="card-user-profile-content card-section text-center">
-                        <div class="card-user-profile-avatar">
-                          <img src="img/sponsor/logo-1.png" alt="picture of yeti" />
-                        </div>
-                        <p class="">Hileras 6 <br> <small>Cerveceria</small></p>
-                      </div>
-                    </div>
-                </div>
+				<c:forEach items="${actionBean.sponsors}" var="p" varStatus="i">
 
-                <div class="tile shadow margin-bottom-1"  >
-                    <div class="card-user-profile">
-                      <div class="responsive-embed widescreen">
-                        <img class="card-user-profile-img" src="img/sponsor/bar-2.jpg" alt="picture of space" />
-                      </div>
-                      <div class="card-user-profile-content card-section text-center">
-                        <div class="card-user-profile-avatar">
-                          <img src="img/sponsor/logo-2.jpg" alt="picture of yeti" />
-                        </div>
-                        <p class="">El Castillo <br> <small>Cerveceria AMECAMECA</small></p>
-                      </div>
-                    </div>
-                </div>
-
-                <div class="tile shadow margin-bottom-1"  >
-                    <div class="card-user-profile">
-                      <div class="responsive-embed widescreen">
-                        <img class="card-user-profile-img" src="img/sponsor/bar-3.jpg" alt="picture of space" />
-                      </div>
-                      <div class="card-user-profile-content card-section text-center">
-                        <div class="card-user-profile-avatar">
-                          <img src="img/sponsor/logo-3.png" alt="picture of yeti" />
-                        </div>
-                        <p class="">Founders Brewing Co. <br> <small>Since 1977</small></p>
-                      </div>
-                    </div>
-                </div>
-
-                <div class="tile shadow margin-bottom-1"  >
-                    <div class="card-user-profile">
-                      <div class="responsive-embed widescreen">
-                        <img class="card-user-profile-img" src="img/sponsor/bar-4.jpg" alt="picture of space" />
-                      </div>
-                      <div class="card-user-profile-content card-section text-center">
-                        <div class="card-user-profile-avatar">
-                          <img src="img/sponsor/logo-4.png" alt="picture of yeti" />
-                        </div>
-                        <p class="">Cerveceria Kross <br> <small>Cerveceria Curacavu Chile</small></p>
-                      </div>
-                    </div>
-                </div>
-
-                <div class="tile shadow margin-bottom-1"  >
-                    <div class="card-user-profile">
-                      <div class="responsive-embed widescreen">
-                        <img class="card-user-profile-img" src="img/sponsor/bar-5.jpg" alt="picture of space" />
-                      </div>
-                      <div class="card-user-profile-content card-section text-center">
-                        <div class="card-user-profile-avatar">
-                          <img src="img/sponsor/logo-5.png" alt="picture of yeti" />
-                        </div>
-                        <p class="">Stella Artois <br> <small>BELGIUM</small></p>
-                      </div>
-                    </div>
-                </div>
+	                <div class="tile shadow margin-bottom-1" data-open="exampleModal1">
+	                    <div class="card-user-profile">
+	                      <div class="responsive-embed widescreen">
+	                        <img class="card-user-profile-img" src="pages/imagenesCargadas/${p.imagenFondo}" alt="picture of space" />
+	                      </div>
+	                      <div class="card-user-profile-content card-section text-center">
+	                        <div class="card-user-profile-avatar">
+	                          <img src="pages/imagenesCargadas/${p.imagenLogo}" alt="picture of yeti" />
+	                        </div>
+	                        <p class="">${p.nombre} <br> <small>${p.breveDescripcion}</small></p>
+	                      </div>
+	                    </div>
+	                </div> 
+                
+                </c:forEach>
+                               
 
               </div>
             </div>
@@ -488,11 +434,11 @@
     </div>
   </div>
 
-  <script src="js/jquery.min.js"></script>
-  <script src="js/what-input.min.js"></script>
-  <script src="js/foundation.min.js"></script>
+  <script src="pages/web/js/jquery.min.js"></script>
+  <script src="pages/web/js/what-input.min.js"></script>
+  <script src="pages/web/js/foundation.min.js"></script>
   <script src="https://use.fontawesome.com/b825156fce.js"></script>
-  <script src="js/app.js"></script>
+  <script src="pages/web/js/app.js"></script>
   </body>
 </html>
 <script>

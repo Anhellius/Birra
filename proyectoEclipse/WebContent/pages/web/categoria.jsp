@@ -1,3 +1,4 @@
+<%@ include file="/pages/taglibs.jsp" %>
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
@@ -8,14 +9,14 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Birra</title>
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="pages/web/css/app.css">
 </head>
 <body>
 
 <!--INICIO DE TOPBAR-->
 <div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
     <button class="menu-icon" type="button" data-toggle="example-menu"></button>
-    <div class="title-bar-title"><img src="img/birra3.jpg" style="width: 90px" alt=""></div>
+    <div class="title-bar-title"><img src="pages/web/img/birra3.jpg" style="width: 90px" alt=""></div>
 </div>
 
 <div class="top-bar topbar-center-logo" id="example-menu">
@@ -23,15 +24,11 @@
         <ul class="dropdown menu align-middle z-index-2" data-dropdown-menu>
             <li class="menu-text padding-0"><a class="padding-0" href="./"><img src="img/birra3.jpg" style="width: 90px" alt=""></a></li>
             <li>
-                <a href="#">Categorías</a>
+                <a href="#">Categor�as</a>
                 <ul class="menu vertical">
-                    <li><a href="categoria.html">El Negocio</a></li>
-                    <li><a href="categoria.html">Actualidad</a></li>
-                    <li><a href="categoria.html">Ciencia y Tecno</a></li>
-                    <li><a href="categoria.html">De Gira</a></li>
-                    <li><a href="categoria.html">RSE</a></li>
-                    <li><a href="categoria.html">Entrevista</a></li>
-                    <li><a href="categoria.html">Historias de Birra</a></li>
+                   <c:forEach items="${actionBean.categoriasNoticias}" var="p" varStatus="i">
+                   		 <li><a href="categoria?id=${p.idCategoriaNoticia}">${p.descripcion}</a></li>
+                    </c:forEach>
                 </ul>
             </li>
             <li><a href="#">Contacto</a></li>
@@ -55,7 +52,7 @@
         <div class="cell small-12 large-7">
             <div class="grid-x align-justify">
                 <div class="cell shrink">
-                    <h2 >Categorías</h2>
+                    <h2 >Categor�as</h2>
                 </div>
                 <div class="cell shrink align-self-middle">
                     <ul class="menu">
@@ -65,75 +62,44 @@
                     </ul>
                 </div>
                 <div class="cell small-12">
-                    <button class="button tiny rounded" href="#">ACTUALIDAD</button>
-                    <button class="hollow button tiny rounded" href="#">EL NEGOCIO</button>
-                    <button class="hollow button tiny rounded" href="#">CIANCIA Y TECNO</button>
-                    <button class="hollow button tiny rounded" href="#">DE GIRA</button>
-                    <button class="hollow button tiny rounded" href="#">RSE</button>
-                    <button class="hollow button tiny rounded" href="#">ENTREVISTA</button>
-                    <button class="hollow button tiny rounded" href="#">HISTORIAS DE BIRRA</button>
+                    <c:forEach items="${actionBean.categoriasNoticias}" var="p" varStatus="i">
+                   		 <li><a href="categoria?id=${p.idCategoriaNoticia}">${p.descripcion}</a></li>
+                    </c:forEach>
                 </div>
             </div>
 
 
             <hr>
-            <div class="separator-center margin-top-2">
-                <a href="noticia.html">
-                <div class="media-object">
-                    <div class="media-object-section">
-                        <div class="thumbnail">
-                            <img src="img/notas/nota-1.jpg" style="width: 100px">
-                        </div>
-                    </div>
-                    <div class="media-object-section main-section text-left">
-                        <h4 class="robotoMono-light">Dreams feel real while we're in them.</h4>
-                        <p class="black-text">I'm going to improvise. Listen, there's something you should know about me... about inception. An idea is like a virus, resilient, highly contagious. The smallest seed of an idea can grow. It can grow to define or destroy you.</p>
-                        <p><small class="grey-text">27 de abril de 2017 - <i class="fa fa-user-circle-o" aria-hidden="true"></i> Algún Nombre</small></p>
-                    </div>
-                </div>
-                </a>
-            </div>
-            <div class="separator-center margin-top-2">
-                <a href="noticia.html">
-                    <div class="media-object">
-                        <div class="media-object-section">
-                            <div class="thumbnail">
-                                <img src="img/notas/nota-1.jpg" style="width: 100px">
-                            </div>
-                        </div>
-                        <div class="media-object-section main-section text-left">
-                            <h4 class="robotoMono-light">Dreams feel real while we're in them.</h4>
-                            <p class="black-text">I'm going to improvise. Listen, there's something you should know about me... about inception. An idea is like a virus, resilient, highly contagious. The smallest seed of an idea can grow. It can grow to define or destroy you.</p>
-                            <p><small class="grey-text">27 de abril de 2017 - <i class="fa fa-user-circle-o" aria-hidden="true"></i> Algún Nombre</small></p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="separator-center margin-top-2">
-                <a href="noticia.html">
-                    <div class="media-object">
-                        <div class="media-object-section">
-                            <div class="thumbnail">
-                                <img src="img/notas/nota-1.jpg" style="width: 100px">
-                            </div>
-                        </div>
-                        <div class="media-object-section main-section text-left">
-                            <h4 class="robotoMono-light">Dreams feel real while we're in them.</h4>
-                            <p class="black-text">I'm going to improvise. Listen, there's something you should know about me... about inception. An idea is like a virus, resilient, highly contagious. The smallest seed of an idea can grow. It can grow to define or destroy you.</p>
-                            <p><small class="grey-text">27 de abril de 2017 - <i class="fa fa-user-circle-o" aria-hidden="true"></i> Algún Nombre</small></p>
-                        </div>
-                    </div>
-                </a>
-            </div>
+            
+            <c:forEach items="${actionBean.noticias}" var="p" varStatus="i">
+	            <div class="separator-center margin-top-2">
+	                <a href="noticia.html">
+	                <div class="media-object">
+	                    <div class="media-object-section">
+	                        <div class="thumbnail">
+	                            <img src="pages/imagenesCargadas/${p.nombreImagenPrincipal}" style="width: 100px">
+	                        </div>
+	                    </div>
+	                    <div class="media-object-section main-section text-left">
+	                        <h4 class="robotoMono-light">${p.titulo}</h4>
+	                        <p class="black-text">${p.copete}</p>
+	                        <p><small class="grey-text"><fmt:formatDate value="${p.fecha}" pattern="dd/MM/yyyy"/> - <i class="fa fa-user-circle-o" aria-hidden="true"></i> ${p.autor}</small></p>
+	                    </div>
+	                </div>
+	                </a>
+	            </div>
+            </c:forEach>
+            
+            
         </div>
     </div>
 </div>
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/what-input.min.js"></script>
-    <script src="js/foundation.min.js"></script>
+    <script src="pages/web/js/jquery.min.js"></script>
+    <script src="pages/web/js/what-input.min.js"></script>
+    <script src="pages/web/js/foundation.min.js"></script>
     <script src="https://use.fontawesome.com/b825156fce.js"></script>
-    <script src="js/app.js"></script>
+    <script src="pages/web/js/app.js"></script>
 </body>
 </html>
 <script>
