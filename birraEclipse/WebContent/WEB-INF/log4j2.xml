@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<Configuration status="DEBUG" verbose="true" name="birra">
+     
+     <Appenders>      
+     	    <Console name="Console" target="SYSTEM_OUT">
+		      <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level - %msg%n"/>
+		    </Console>
+     
+       <RollingFile name="file-log" fileName="c:/logs/birra.log"
+			filePattern="c:/logs/birra-%d{yyyy-MM-dd}.log">
+			<PatternLayout>
+				<pattern>[%-5level] [%NDC] %d{yyyy-MM-dd HH:mm:ss} [%t]  %c{1} - %m%n</pattern>
+			</PatternLayout>
+			<RegexFilter regex=".*\b(insert|update|delete|INSERT|UPDATE|DELETE)\b.*"  onMatch="ACCEPT" onMismatch="DENY"/>
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="10MB"/>
+			</Policies>
+			<DefaultRolloverStrategy max="30"/>
+		</RollingFile>
+		
+		<RollingFile name="file-error-log" fileName="c:/logs/birra-ERROR.log"
+			filePattern="c:/logs/birra-ERROR-%d{yyyy-MM-dd}.log">
+			<PatternLayout>
+				<pattern>[%-5level] [%NDC] %d{yyyy-MM-dd HH:mm:ss} [%t]  %c{1} - %m%n</pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="10MB"/>
+			</Policies>
+			<DefaultRolloverStrategy max="30"/>
+		</RollingFile>
+
+    </Appenders>
+<Loggers>            
+    	<logger name="p6spy" level="DEBUG" additivity="false">            
+            <AppenderRef ref="file-log" />
+			   <AppenderRef ref="Console" />   
+        </logger>       
+        
+        <Root level="WARN">
+			<AppenderRef ref="file-error-log"/>
+			   <AppenderRef ref="Console" />  
+	    </Root> 
+	 </Loggers> 
+</Configuration>
