@@ -107,8 +107,11 @@
             </div>
             <nav class="orbit-bullets">
               <button class="is-active" data-slide="0"><span class="show-for-sr">Lorem Ipsum Etiam</span></button>
-              <button data-slide="1"><span class="show-for-sr">Lorem Ipsum Etiam</span></button>
-              <button data-slide="2"><span class="show-for-sr">Lorem Ipsum Etiam</span></button>
+              <c:forEach items="${actionBean.noticiasActualidad}" var="p" varStatus="i">
+              	<c:if test="${i.index>0}">
+             	 <button data-slide="${i.index}"><span class="show-for-sr">Lorem Ipsum Etiam</span></button>             	
+             	 </c:if>
+              </c:forEach>
             </nav>
           </div>
 

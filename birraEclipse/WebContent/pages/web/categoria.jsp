@@ -73,19 +73,19 @@
             
             <c:forEach items="${actionBean.noticias}" var="p" varStatus="i">
 	            <div class="separator-center margin-top-2">
-	                <a href="noticia.html">
-	                <div class="media-object">
-	                    <div class="media-object-section">
-	                        <div class="thumbnail">
-	                            <img src="pages/imagenesCargadas/${p.nombreImagenPrincipal}" style="width: 100px">
-	                        </div>
-	                    </div>
-	                    <div class="media-object-section main-section text-left">
-	                        <h4 class="robotoMono-light">${p.titulo}</h4>
-	                        <p class="black-text">${p.copete}</p>
-	                        <p><small class="grey-text"><fmt:formatDate value="${p.fecha}" pattern="dd/MM/yyyy"/> - <i class="fa fa-user-circle-o" aria-hidden="true"></i> ${p.autor}</small></p>
-	                    </div>
-	                </div>
+	                <a href="noticia?id=${p.idNoticia}">
+		                <div class="media-object">
+		                    <div class="media-object-section">
+		                        <div class="thumbnail">
+		                            <img src="pages/imagenesCargadas/${p.nombreImagenPrincipal}" style="width: 100px">
+		                        </div>
+		                    </div>
+		                    <div class="media-object-section main-section text-left">
+		                        <h4 class="robotoMono-light">${p.titulo}</h4>
+		                        <p class="black-text">${p.copete}</p>
+		                        <p><small class="grey-text"><fmt:formatDate value="${p.fecha}" pattern="dd/MM/yyyy"/> - <i class="fa fa-user-circle-o" aria-hidden="true"></i> ${p.autor}</small></p>
+		                    </div>
+		                </div>
 	                </a>
 	            </div>
             </c:forEach>
