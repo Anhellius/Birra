@@ -44,6 +44,7 @@ public class Noticia implements java.io.Serializable, IPersistible {
 	private String autor;
 	private Date fecha;
 	private String cuerpo;	
+	private String descAutor;
 	private boolean publicada; 
 	
 	private FileBean imagenPrincipal;
@@ -182,6 +183,14 @@ public class Noticia implements java.io.Serializable, IPersistible {
 
 	public void setNombreImagenPrincipal(String nombreImagenPrincipal) {
 		this.nombreImagenPrincipal = nombreImagenPrincipal;
+	}
+
+	public String getDescAutor() {
+		return descAutor;
+	}
+
+	public void setDescAutor(String descAutor) {
+		this.descAutor = descAutor;
 	}
 
 }
