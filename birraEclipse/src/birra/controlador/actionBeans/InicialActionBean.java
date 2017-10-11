@@ -79,6 +79,13 @@ public class InicialActionBean extends BaseActionBean {
 		return new ForwardResolution("/pages/web/index.jsp");
 	}	
 	
+	public Resolution getModalSponsor() {	
+		this.sponsor = FachadaSponsor.getPorId(id);
+		return new ForwardResolution("/pages/web/include/modalSponsor.jsp");
+	}	
+	
+	
+	
 
 	public CategoriaListado getCategoriaListado() {
 		return categoriaListado;

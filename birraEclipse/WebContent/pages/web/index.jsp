@@ -24,7 +24,7 @@
               <ul class="orbit-container">
                 <li class="orbit-slide">
                   <figure class="orbit-figure">
-                    <div class="position-absolute z-index-1"><span class="label  size-36 roboto-thin deep-orange darken-4  deep-orange-text text-accent-1">EL NEGOCIO</span></div>
+                    <div class="position-absolute z-index-1"><span class="label  size-36 roboto-thin deep-orange darken-4  deep-orange-text text-accent-1">${actionBean.noticiasElNegocio[0].categorianoticia.descripcion}</span></div>
                     <img class="cropcontainer" src="pages/imagenesCargadas/${actionBean.noticiasElNegocio[0].nombreImagenPrincipal}" alt="image alt text">
                     <figcaption class="orbit-caption">
                       <h3 class="robotoMono-light">${actionBean.noticiasElNegocio[0].titulo}</h3>
@@ -56,7 +56,7 @@
                 <button class="orbit-next deep-orange darken-2"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
               </div>
               <ul class="orbit-container">
-                <div class="position-absolute z-index-1"><span class="label size-36 roboto-thin deep-orange darken-4  deep-orange-text text-accent-1">ACTUALIDAD</span></div>
+                <div class="position-absolute z-index-1"><span class="label size-36 roboto-thin deep-orange darken-4  deep-orange-text text-accent-1">${p.categorianoticia.descripcion}</span></div>
                 
                 <c:forEach items="${actionBean.noticiasActualidad}" var="p" varStatus="i">
 	                <li class="orbit-slide">
@@ -75,11 +75,11 @@
             </div>
             <nav class="orbit-bullets">
               <button class="is-active" data-slide="0"><span class="show-for-sr">Lorem Ipsum Etiam</span></button>
-              <c:forEach items="${actionBean.noticiasActualidad}" var="p" varStatus="i">
-              	<c:if test="${i.index>0}">
-             	 <button data-slide="${i.index}"><span class="show-for-sr">Lorem Ipsum Etiam</span></button>             	
-             	 </c:if>
-              </c:forEach>
+	              <c:forEach items="${actionBean.noticiasActualidad}" var="p" varStatus="i">
+	              	<c:if test="${i.index>0}">
+	             	 <button data-slide="${i.index}"><span class="show-for-sr">Lorem Ipsum Etiam</span></button>             	
+	             	 </c:if>
+	              </c:forEach>
             </nav>
           </div>
 
@@ -101,7 +101,7 @@
 
 				<c:forEach items="${actionBean.sponsors}" var="p" varStatus="i">
 
-	                <div class="tile shadow margin-bottom-1" data-open="exampleModal1">
+	                <div class="tile shadow margin-bottom-1 modalSponsor" name="${p.idSponsor}" data-open="exampleModal1">
 	                    <div class="card-user-profile">
 	                      <div class="responsive-embed widescreen">
 	                        <img class="card-user-profile-img" src="pages/imagenesCargadas/${p.imagenFondo}"/>
@@ -144,8 +144,8 @@
 	              	<c:forEach items="${actionBean.clasificados}" var="p" varStatus="i">
 	              		<c:if test="${p.categorialistado.idCategoriaListado==3}">	
 			                <li class="size-14">
-			                  <a href="">${p.nombre} </a>
-			                  <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
+			                  <a href="${p.web}">${p.nombre} </a>
+			                  <a href="${p.facebook}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
 			                  <a href=""><i class="fa fa-map-marker" aria-hidden="true"></i></a>
 			                </li>
 		               </c:if>
@@ -169,8 +169,8 @@
 	              	<c:forEach items="${actionBean.clasificados}" var="p" varStatus="i">
 	              		<c:if test="${p.categorialistado.idCategoriaListado==4}">	
 			                <li class="size-14">
-			                  <a href="">${p.nombre} </a>
-			                  <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
+			                  <a href="${p.web}">${p.nombre} </a>
+			                  <a href="${p.facebook}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
 			                  <a href=""><i class="fa fa-map-marker" aria-hidden="true"></i></a>
 			                </li>
 		               </c:if>
@@ -193,8 +193,8 @@
 	              	<c:forEach items="${actionBean.clasificados}" var="p" varStatus="i">
 	              		<c:if test="${p.categorialistado.idCategoriaListado==5}">	
 			                <li class="size-14">
-			                  <a href="">${p.nombre} </a>
-			                  <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
+			                   <a href="${p.web}">${p.nombre} </a>
+			                  <a href="${p.facebook}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
 			                  <a href=""><i class="fa fa-map-marker" aria-hidden="true"></i></a>
 			                </li>
 		               </c:if>
@@ -217,8 +217,8 @@
 	              	<c:forEach items="${actionBean.clasificados}" var="p" varStatus="i">
 	              		<c:if test="${p.categorialistado.idCategoriaListado==6}">	
 			                <li class="size-14">
-			                  <a href="">${p.nombre} </a>
-			                  <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
+			                   <a href="${p.web}">${p.nombre} </a>
+			                  <a href="${p.facebook}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
 			                  <a href=""><i class="fa fa-map-marker" aria-hidden="true"></i></a>
 			                </li>
 		               </c:if>
@@ -242,7 +242,7 @@
                   <ul class="orbit-container">
                     <li class="is-active orbit-slide black">
                       <figure class="orbit-figure">
-                        <div class="position-absolute z-index-1"><span class="label  size-36 roboto-thin deep-orange darken-4  deep-orange-text text-accent-1">CIENCIA Y TECNO</span></div>
+                        <div class="position-absolute z-index-1"><span class="label  size-36 roboto-thin deep-orange darken-4  deep-orange-text text-accent-1">${actionBean.noticiasCT[0].categorianoticia.descripcion}</span></div>
                         <img class="orbit-image cropcontainer" src="pages/imagenesCargadas/${actionBean.noticiasCT[0].nombreImagenPrincipal}" alt="image alt text">
                         <figcaption class="orbit-caption">
                           <h4 class="robotoMono-light">${actionBean.noticiasCT[0].titulo}</h4>
@@ -261,7 +261,7 @@
                   <ul class="orbit-container">
                     <li class="is-active orbit-slide black">
                       <figure class="orbit-figure">
-                        <div class="position-absolute z-index-1"><span class="label  size-36 roboto-thin deep-orange darken-4  deep-orange-text text-accent-1">DE GIRA</span></div>
+                        <div class="position-absolute z-index-1"><span class="label  size-36 roboto-thin deep-orange darken-4  deep-orange-text text-accent-1">${actionBean.noticiasDegira[0].categorianoticia.descripcion}</span></div>
                         <img class="orbit-image cropcontainer" src="pages/imagenesCargadas/${actionBean.noticiasDegira[0].nombreImagenPrincipal}" alt="image alt text">
                         <figcaption class="orbit-caption">
                           <h4 class="robotoMono-light">${actionBean.noticiasDegira[0].titulo}</h4>
@@ -280,7 +280,7 @@
                   <ul class="orbit-container">
                     <li class="is-active orbit-slide black">
                       <figure class="orbit-figure">
-                        <div class="position-absolute z-index-1"><span class="label  size-36 roboto-thin deep-orange darken-4  deep-orange-text text-accent-1">RSE</span></div>
+                        <div class="position-absolute z-index-1"><span class="label  size-36 roboto-thin deep-orange darken-4  deep-orange-text text-accent-1">${actionBean.noticiasRSE[0].categorianoticia.descripcion}</span></div>
                         <img class="orbit-image cropcontainer" src="pages/imagenesCargadas/${actionBean.noticiasRSE[0].nombreImagenPrincipal}" alt="image alt text">
                         <figcaption class="orbit-caption">
                           <h4 class="robotoMono-light">${actionBean.noticiasRSE[0].titulo}</h4>
@@ -303,7 +303,7 @@
               <ul class="orbit-container">
                 <li class="is-active orbit-slide black">
                   <figure class="orbit-figure">
-                    <div class="position-absolute z-index-1"><span class="label  size-36 roboto-thin deep-orange darken-4  deep-orange-text text-accent-1">ENTREVISTA</span></div>
+                    <div class="position-absolute z-index-1"><span class="label  size-36 roboto-thin deep-orange darken-4  deep-orange-text text-accent-1">${actionBean.noticiasEntrevista[0].categorianoticia.descripcion}</span></div>
                     <img class="orbit-image cropcontainer" src="pages/imagenesCargadas/${actionBean.noticiasEntrevista[0].nombreImagenPrincipal}" alt="image alt text">
                     <figcaption class="orbit-caption">
                       <h4 class="robotoMono-light">${actionBean.noticiasEntrevista[0].titulo}</h4>
@@ -322,7 +322,7 @@
               <ul class="orbit-container">
                 <li class="is-active orbit-slide black">
                   <figure class="orbit-figure">
-                    <div class="position-absolute z-index-1"><span class="label  size-36 roboto-thin deep-orange darken-4  deep-orange-text text-accent-1">HISTORIAS DE BIRRA</span></div>
+                    <div class="position-absolute z-index-1"><span class="label  size-36 roboto-thin deep-orange darken-4  deep-orange-text text-accent-1">${actionBean.noticiasHistoriasBirra[0].categorianoticia.descripcion}</span></div>
                     <img class="orbit-image cropcontainer" src="pages/imagenesCargadas/${actionBean.noticiasHistoriasBirra[0].nombreImagenPrincipal}" alt="image alt text">
                     <figcaption class="orbit-caption">
                       <h4 class="robotoMono-light">${actionBean.noticiasHistoriasBirra[0].titulo}</h4>
@@ -347,8 +347,8 @@
         	<c:forEach items="${actionBean.clasificados}" var="p" varStatus="i">
 		          <c:if test="${p.categorialistado.idCategoriaListado==1}">
 		          <li class="size-14">
-			            <a href="">${p.nombre}</a>
-			            <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
+			            <a href="${p.web}">${p.nombre} </a>
+			            <a href="${p.facebook}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
 			            <a href=""><i class="fa fa-map-marker" aria-hidden="true"></i></a>
 			          </li>
 		          </c:if>
@@ -367,8 +367,8 @@
         	<c:forEach items="${actionBean.clasificados}" var="p" varStatus="i">
 	          <c:if test="${p.categorialistado.idCategoriaListado==2}">
 		          <li class="size-14">
-		            <a href="">${p.nombre} </a>
-		            <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
+		            <a href="${p.web}">${p.nombre} </a>
+			        <a href="${p.facebook}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
 		            <a href=""><i class="fa fa-map-marker" aria-hidden="true"></i></a>
 		          </li>		          
 	          </c:if>
@@ -395,38 +395,9 @@
 
 
   <div class="large reveal padding-0 shadow  border-none" id="exampleModal1" data-reveal>
-    <div class="grid-x">
-      <div class="cell small-12 large-4">
-        <div class="responsive-embed widescreen position-relative">
-          <div class="position-absolute-bottom padding-horizontal-1 bg-black-alpha">
-            <h4 class="white-text">Nombre del Lugar</h4>
-            <p><small class="white-text">Breve Descripcioin - Lugar y/o dirección todo lindo </small></p>
-          </div>
-          <img src="img/sponsor/bar-1.jpg" alt="">
-        </div>
-        <div class="card-section">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab, architecto dicta dolore eligendi est excepturi facere illum incidunt itaque magni modi nobis omnis, quasi quidem saepe sit tenetur velit.</p>
-        </div>
-        <div class="card-section">
-          <div class="grid-x grid-margin-x text-center">
-            <div class="cell auto">
-              <i class="fa fa-map-o fa-2x blue-grey-text" aria-hidden="true"></i><br> <small>Google Maps</small>
-            </div>
-            <div class="cell auto">
-              <i class="fa fa-external-link fa-2x blue-grey-text" aria-hidden="true"></i><br> <small>Sitio Web</small>
-            </div>
-            <div class="cell auto">
-              <i class="fa fa-envelope-o fa-2x blue-grey-text" aria-hidden="true"></i> <br> <small>Mail</small>
-            </div>
-            <div class="cell auto">
-              <i class="fa fa-share-alt fa-2x blue-grey-text" aria-hidden="true"></i> <br> <small>Compartir</small>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="cell small-12 large-8">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.046484898263!2d-58.43885558513895!3d-34.628265566303654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca4bd65fdfb1%3A0xfd30a6f021ba6530!2sCervecer%C3%ADa+11.25!5e0!3m2!1ses-419!2sar!4v1507061745695" width="800" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
-      </div>
+  
+    <div class="grid-x" id="divModalSponsor">
+      
     </div>
   </div>
 
@@ -440,6 +411,21 @@
 <script>
     $(document).foundation();
     $(document).ready(function() {
+
+    	 $(document).on('change','.modalSponsor', function() {
+     		$.ajax({
+     			url: 'inicio?getModalSponsor',
+     			type: 'post',
+     			data: {'id':$(this).prop('name')},
+     			success: function(data) {
+     					$('#divModalSponsor').replaceWith(data); 							
+     			},
+     			error: function(data){					
+     				alert("Error de sistema, intente nuevamente o comuniquese con el interno 6194 o a sistemas@inti.gob.ar");				
+     			}
+     		});
+     		
+     	});
 
         $('#arrowR').click(function() {
             event.preventDefault();
