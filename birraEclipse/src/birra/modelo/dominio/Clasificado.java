@@ -30,7 +30,8 @@ public class Clasificado implements java.io.Serializable, IPersistible {
 	private String mail;
 	private String telefono;
 	private String web;
-	private String redesSociales;
+	private String facebook;
+	private String twitter;
 	private String direccionMapa;
 	private boolean publicada; 
 
@@ -38,13 +39,12 @@ public class Clasificado implements java.io.Serializable, IPersistible {
 	}
 
 	public Clasificado(CategoriaListado categorialistado, String nombre, String mail, String telefono, String web,
-			String redesSociales, String direccionMapa) {
+			 String direccionMapa) {
 		this.categorialistado = categorialistado;
 		this.nombre = nombre;
 		this.mail = mail;
 		this.telefono = telefono;
 		this.web = web;
-		this.redesSociales = redesSociales;
 		this.direccionMapa = direccionMapa;
 	}
 
@@ -106,15 +106,6 @@ public class Clasificado implements java.io.Serializable, IPersistible {
 		this.web = web;
 	}
 
-	@Column(name = "redesSociales", length = 200)
-	public String getRedesSociales() {
-		return this.redesSociales;
-	}
-
-	public void setRedesSociales(String redesSociales) {
-		this.redesSociales = redesSociales;
-	}
-
 	@Column(name = "direccionMapa", length = 200)
 	public String getDireccionMapa() {
 		return this.direccionMapa;
@@ -130,6 +121,22 @@ public class Clasificado implements java.io.Serializable, IPersistible {
 
 	public void setPublicada(boolean publicada) {
 		this.publicada = publicada;
+	}
+
+	public String getFacebook() {
+		return facebook;
+	}
+
+	public void setFacebook(String facebook) {
+		this.facebook = facebook;
+	}
+
+	public String getTwitter() {
+		return twitter;
+	}
+
+	public void setTwitter(String twitter) {
+		this.twitter = twitter;
 	}
 
 }
