@@ -19,23 +19,27 @@
 				
 				<div class="row expanded vHeight" >
 					<div class="small-6 column">
-						<label>Link Google Maps</label>
+						<label>Link Google Maps Iframe</label>
 						<stripes:text name="sponsor.linkGoogleMaps" class="required" />						
 					</div>
 					<div class="small-6 column">
-						<label>Dirección</label>
-						<stripes:text name="sponsor.direccion" class="required" />					
-					</div>
+						<label>Link Google Maps Compartir</label>
+						<stripes:text name="sponsor.linkGoogleMapsCompartir" class="required" />						
+					</div>					
 				</div>	
 				
 				<div class="row expanded vHeight" >
-					<div class="small-6 column">
+					<div class="small-4 column">
 						<label>Descripcion</label>
 						<stripes:text name="sponsor.descripcion" class="required" />						
 					</div>
-					<div class="small-6 column">
+					<div class="small-4 column">
 						<label>Telefono </label>
 						<stripes:text name="sponsor.telefono" class="required" />					
+					</div>
+					<div class="small-4 column">
+						<label>Dirección</label>
+						<stripes:text name="sponsor.direccion" class="required" />					
 					</div>
 				</div>	
 				<div class="row expanded vHeight" >
@@ -62,11 +66,11 @@
 				<div class="row expanded vHeight" >
 					<div class="small-6 column">
 						<label>Imagen Logo</label>
-						<stripes:file name="sponsor.logo" id="logoImagen" class="required" />						
+						<stripes:file name="sponsor.logo" id="logoImagen" />						
 					</div>
 					<div class="small-6 column">
 						<label>Imagen</label>
-						<stripes:file name="sponsor.fondo" id="fondoImagen" class="required" />						
+						<stripes:file name="sponsor.fondo" id="fondoImagen" />						
 					</div>
 				</div>		
 					

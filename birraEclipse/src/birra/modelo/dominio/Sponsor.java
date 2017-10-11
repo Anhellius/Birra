@@ -46,6 +46,8 @@ public class Sponsor implements java.io.Serializable, IPersistible {
 	private String linkWeb;	
 	private boolean publicada; 
 	
+	private String linkGoogleMapsCompartir;
+	
 	private FileBean logo;
 	private FileBean fondo;
 	private String imagenLogo;
@@ -90,7 +92,7 @@ public class Sponsor implements java.io.Serializable, IPersistible {
 		this.nombre = nombre;
 	}
 
-	@Column(name = "linkGoogleMaps", length = 200)
+	@Column(name = "linkGoogleMaps", length = 1000)
 	public String getLinkGoogleMaps() {
 		return this.linkGoogleMaps;
 	}
@@ -228,6 +230,14 @@ public class Sponsor implements java.io.Serializable, IPersistible {
 
 	public void setImagenFondo(String imagenFondo) {
 		this.imagenFondo = imagenFondo;
+	}
+
+	public String getLinkGoogleMapsCompartir() {
+		return linkGoogleMapsCompartir;
+	}
+
+	public void setLinkGoogleMapsCompartir(String linkGoogleMapsCompartir) {
+		this.linkGoogleMapsCompartir = linkGoogleMapsCompartir;
 	}
 
 }

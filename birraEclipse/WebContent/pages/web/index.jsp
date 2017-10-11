@@ -96,30 +96,28 @@
           <div class="contain position-relative">
             <div id="arrowL" class="orbit-previous"><span class="show-for-sr">Anterior</span><i class="fa fa-angle-left fa-3x" aria-hidden="true"></i></div>
             <div id="arrowR" class="orbit-next"><span class="show-for-sr">Siguiente</span><i class="fa fa-angle-right fa-3x" aria-hidden="true"></i></div>
-            <div class="row" id="content">
-              <div class="row__inner">
-
-				<c:forEach items="${actionBean.sponsors}" var="p" varStatus="i">
-
-	                <div class="tile shadow margin-bottom-1 modalSponsor" name="${p.idSponsor}" data-open="exampleModal1">
-	                    <div class="card-user-profile">
-	                      <div class="responsive-embed widescreen">
-	                        <img class="card-user-profile-img" src="pages/imagenesCargadas/${p.imagenFondo}"/>
-	                      </div>
-	                      <div class="card-user-profile-content card-section text-center">
-	                        <div class="card-user-profile-avatar">
-	                          <img src="pages/imagenesCargadas/${p.imagenLogo}"/>
-	                        </div>
-	                        <p class="">${p.nombre} <br> <small>${p.breveDescripcion}</small></p>
-	                      </div>
-	                    </div>
-	                </div> 
-                
-                </c:forEach>
-                               
-
-              </div>
-            </div>
+				
+				       
+		            <div class="row" id="content">
+		              <div class="row__inner">
+							<c:forEach items="${actionBean.sponsors}" var="p" varStatus="i">	    
+					                <div class="tile shadow margin-bottom-1 modalSponsor" name="${p.idSponsor}" data-open="exampleModal1">
+					                    <div class="card-user-profile">
+					                      <div class="responsive-embed widescreen">
+					                        <img class="card-user-profile-img" src="pages/imagenesCargadas/${p.imagenFondo}"/>
+					                      </div>
+					                      <div class="card-user-profile-content card-section text-center">
+					                        <div class="card-user-profile-avatar">
+					                          <img src="pages/imagenesCargadas/${p.imagenLogo}"/>
+					                        </div>
+					                        <p class="">${p.nombre} <br> <small>${p.breveDescripcion}</small></p>
+					                      </div>
+					                    </div>
+					                </div> 
+		                	  </c:forEach>
+		              </div>
+		            </div>
+	          
 
           </div>
         </div>
@@ -394,8 +392,7 @@
   </footer>
 
 
-  <div class="large reveal padding-0 shadow  border-none" id="exampleModal1" data-reveal>
-  
+  <div class="large reveal padding-0 shadow  border-none" id="exampleModal1" data-reveal>  
     <div class="grid-x" id="divModalSponsor">
       
     </div>
@@ -412,13 +409,14 @@
     $(document).foundation();
     $(document).ready(function() {
 
-    	 $(document).on('change','.modalSponsor', function() {
+    	 $(document).on('click','.modalSponsor', function() {
+        	
      		$.ajax({
      			url: 'inicio?getModalSponsor',
      			type: 'post',
-     			data: {'id':$(this).prop('name')},
+     			data: {'id':$(this).attr('name')},
      			success: function(data) {
-     					$('#divModalSponsor').replaceWith(data); 							
+     					$('#divModalSponsor').html(data); 							
      			},
      			error: function(data){					
      				alert("Error de sistema, intente nuevamente o comuniquese con el interno 6194 o a sistemas@inti.gob.ar");				

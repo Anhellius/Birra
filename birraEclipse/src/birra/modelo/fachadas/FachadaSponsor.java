@@ -145,8 +145,31 @@ public class FachadaSponsor {
 	}
 
 	public static List<Sponsor> getSponsorsHabilitados() {
-		// TODO Auto-generated method stub
-		return null;
+		try {
+			if (!HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().isActive()) {
+				HibernateUtil.getSessionFactory().getCurrentSession().beginTransaction();
+			} else {
+				HibernateUtil.getSessionFactory().getCurrentSession().clear();
+			}		
+			
+			String consulta = "select c "
+					+ " from Sponsor c"
+					+ " where c.publicada=1";
+			
+			List<Sponsor> cl = (List<Sponsor>)HibernateUtil.getSessionFactory().getCurrentSession().createQuery(consulta).list();
+			
+			HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().commit();
+			
+			return cl;
+			
+		} catch (Exception e) {
+			HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().rollback();
+			HibernateUtil.getSessionFactory().getCurrentSession().close();
+			throw e;
+			
+		} finally {
+			HibernateUtil.getSessionFactory().getCurrentSession().close();
+		}
 	}
 
 }

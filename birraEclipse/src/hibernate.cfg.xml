@@ -16,6 +16,9 @@
         <property name="hibernate.connection.password">bamba</property>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="hibernate.connection.username">bamba</property>-->
+        
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
       
         
         <property name="hibernate.current_session_context_class">thread</property>
