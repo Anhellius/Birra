@@ -1,45 +1,70 @@
-<%@ include file="/pages/include/header.jsp" %>
-<html>
+<!doctype html>
+<html class="no-js" lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Birra</title>
+	<link rel="stylesheet" href="pages/web/css/app.css">
+</head>
+  
+
 <body>
+<div class="grid-y grid-frame">
+<%@ include file="/pages/include/header.jsp" %>
 
-<div class="row align-center">
-  <div class="medium-4 columns vHeight">
-
+<div class="cell auto body">
+    <div class="grid-x grid-padding-x align-center-middle height-100 material-forms">
+      <div class="cell small-11 medium-4 shadow padding-horizontal-2 padding-vertical-3">
+      <div class="grid-x align-center">
+	      <div class="cell small-4">
+			<img class="" src="pages/web/img/birra3.jpg" alt="" />
+	   	  </div>
+   	  </div>
     <stripes:form id="form1" beanclass="birra.controlador.actionBeans.LoginActionBean">
-      <div class="row column profile-card">
-      <div class="content">
-        <h4 class="text-center">Ingrese con su cuenta </h4>
-        <label>Email
-          <div class="input-group">
-            <input class="input-group-field" type="text" name="usuarioLogin" id="username" required placeholder="Usuario">           
-          </div>
-        </label>
-        <label>Contraseña
-          <input type="password" name="passwordLogin" id="password" required placeholder="Contraseña">
-        </label>
+
+ 
+        <h4 class="text-center">LOGIN</h4>
+        <div class="input-field">
+          <input type="text" name="usuarioLogin" id="username" class="validate" required>
+          <label for="username">Email</label>
+        </div>
+        <div class="input-field">
+          <input type="password" name="passwordLogin" id="password" required class="validate">
+          <label for="password">Password</label>
+        </div>        
+<!--         <label>Email -->
+<!--           <div class="input-group"> -->
+<!--             <input class="input-group-field" type="text" name="usuarioLogin" id="username" required placeholder="Usuario">            -->
+<!--           </div> -->
+<!--         </label> -->
+<!--         <label>Contraseña -->
+<!--           <input type="password" name="passwordLogin" id="password" required placeholder="Contraseña"> -->
+<!--         </label> -->
         
-        <button type="submit" class="button expanded" name="ingresar">Ingresar</button>
+        <button type="submit" class="button expanded margin-top-3" name="ingresar">Ingresar</button>
           <stripes:errors/>
           <stripes:messages/>
-      </div>	
-      </div>
+	
+
     </stripes:form>
 </div>
 </div>
+        </div>
         
 
 
 
-    <script src="https://www.inti.gob.ar/js/jquery.min.js"></script>
-    <script src="https://www.inti.gob.ar/js/what-input.js"></script>
-    <script src="https://www.inti.gob.ar/js/foundation.min.js"></script>
-    <script src="https://www.inti.gob.ar/js/app.js"></script>
+    <script src="pages/web/js/jquery.min.js"></script>
+    <script src="pages/web/js/what-input.min.js"></script>
+    <script src="pages/web/js/foundation.min.js"></script>
+    <script src="pages/web/js/forms.js"></script>
+    <script src="pages/web/js/app.js"></script>
     <script>
     
    $(document).foundation();
      </script>
     
-    
-    
-      </body>
-</html>
+   </div> 
+   </body>
+   </html> 
