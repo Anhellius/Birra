@@ -5,7 +5,7 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Birra</title>
-	<link rel="stylesheet" href="pages/web/css/app.css">
+	
 </head>
   
 
@@ -59,6 +59,7 @@
     <script src="pages/web/js/what-input.min.js"></script>
     <script src="pages/web/js/foundation.min.js"></script>
     <script src="pages/web/js/forms.js"></script>
+    <script src="https://use.fontawesome.com/b825156fce.js"></script>
     <script src="pages/web/js/app.js"></script>
     <script>
     
