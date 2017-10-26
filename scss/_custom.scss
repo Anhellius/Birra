@@ -13,10 +13,11 @@ body {overflow-x: hidden;}
 //  9.  Quote
 //  10. Slide e Imagenes para noticias (pagina principal)
 //  11. Scrollbars
-//  12. Textos colores
-//  13. Textos Tamaños
-//  14. Top-bar con logo centrado
-//  15. Z-Index levels
+//  12. Tabla material
+//  13. Textos colores
+//  14. Textos Tamaños
+//  15. Top-bar con logo centrado
+//  16. Z-Index levels
 
 
 // 1. BUSCADOR EXPANDIBLE
@@ -579,7 +580,33 @@ $clean-hero-slider-accent: $secondary-color;
 }
 @include scrollbars(0, slategray);
 
-// 12. TEXTOS COLORES
+// 12. TABLA MATERIAL
+// --------------
+
+.material-table{
+  @include table();
+  border-collapse: collapse !important;
+  thead, tbody{
+    border: none;
+  }
+  td, th{
+    background-color:white;
+  }
+  thead th{
+    padding:1.3rem 1.7rem;
+    border-bottom: 1px solid #f1f1f1;
+    text-align: inherit !important;
+  }
+  tbody td{
+    padding:1rem 1.7rem;
+    border-bottom: 1px solid #f1f1f1;
+  }
+  .button, .button-group{
+    margin: 0;
+  }
+}
+
+// 13. TEXTOS COLORES
 // ------------------
 
 .white-text{
@@ -601,7 +628,7 @@ $clean-hero-slider-accent: $secondary-color;
   color: $google ;
 }
 
-// 13. TEXTOS TAMAÑOS
+// 14. TEXTOS TAMAÑOS
 // ------------------
 
 .size-12 {
@@ -668,7 +695,7 @@ $clean-hero-slider-accent: $secondary-color;
   }
 }
 
-// 14. TOPBAR CON LOGO CENTRADO
+// 15. TOPBAR CON LOGO CENTRADO
 // ----------------------------
 
 .topbar-center-logo .top-bar-center {
@@ -694,7 +721,7 @@ input[type='search'] {
   }
 }
 
-// Z-index-levels
+// 16. Z-index-levels
 // --------------
 
 .z-index-1 {
