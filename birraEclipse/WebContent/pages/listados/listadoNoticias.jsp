@@ -67,7 +67,7 @@
 				</td>
 				<td>
 					<div class="row">
-						<i class="fa fa-pencil-square-o fa-lg  modalParaModificar" aria-hidden="true" id="modificarNoticia-4-${p.idNoticia}"></i>
+						<i class="fa fa-pencil-square-o fa-lg  modalParaModificar" aria-hidden="true" id="modificarNoticia-4-${p.idNoticia}" style="cursor:pointer"></i>
 <%-- 						<i class="mdi-editor-border-color modalParaModificar" id="modificarNoticia-4-${p.idNoticia}"></i>								 --%>
 						<a href="noticia?idNoticia=${p.idNoticia}"><i class="mdi-action-search size-24 txt-color" title="Ver noticia"></i></a>
 													
@@ -87,7 +87,17 @@ $(document).foundation();
 		$('.tablaweb').dataTable( {
 			"language": {
 				"url": "https://www.inti.gob.ar/js/Spanish.lang"
-			}
+			},
+			
+	        buttons: [
+	            {
+	                className: 'rounded modalParaNuevo',
+	                text: 'Crear Noticia',
+	                action: function ( e, dt, node, config ) {
+	                    alert( 'Button activated' );
+	                }
+	            }
+	        ]
 		});
 	});  
 </script>

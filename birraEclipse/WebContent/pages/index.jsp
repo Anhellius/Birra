@@ -102,10 +102,11 @@
     <script src="pages/web/js/what-input.min.js"></script>
     <script src="pages/web/js/foundation.min.js"></script>
     <script src="https://use.fontawesome.com/b825156fce.js"></script>
+    <script type="text/javascript" src="pages/web/DataTables/datatables.min.js"></script>
     <script src="pages/web/js/app.js"></script>
     <script src="https://www.inti.gob.ar/js/custom-file-upload.js"></script>
-    <script type="text/javascript" src="https://www.inti.gob.ar/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="https://www.inti.gob.ar/js/dataTables.foundation.min.js"></script>
+<!--     <script type="text/javascript" src="https://www.inti.gob.ar/js/jquery.dataTables.min.js"></script> -->
+<!--     <script type="text/javascript" src="https://www.inti.gob.ar/js/dataTables.foundation.min.js"></script> -->
     <script src="https://www.inti.gob.ar/js/tinymce/tinymce.min.js"></script>
     <script type="text/javascript" src="pages/js/jquery.validate.js"></script>
 	<script type="text/javascript" src="pages/js/additional-methods.js"></script>
