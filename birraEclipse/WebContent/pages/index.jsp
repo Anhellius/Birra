@@ -10,17 +10,36 @@
 </head>
 <body>
 	<div class="off-canvas-wrapper">
+		<div class="title-bar show-for-small-only">
+			<div class="title-bar-left">
+			  <button class="menu-icon" type="button" data-open="offCanvasLeft"></button>
+			  <span class="title-bar-title">MENU</span>
+			</div>
+		</div>
 	  
-	  <div class="off-canvas position-left" id="offCanvasLeft" data-off-canvas>
+	  <div class="off-canvas position-left" id="offCanvasLeft" data-off-canvas  data-animation-in="slide-in-left" data-animation-out="slide-out-left">
 
 	    <!-- Close button -->
 	    <button class="close-button" aria-label="Close menu" type="button" data-close>
 	      <span aria-hidden="true">&times;</span>
 	    </button>
-	
+		<div class="grid-x grey darken-4 grid-padding-x grid-padding-y">
+			<div class="cell small-6 large-4">
+				<img class="" src="pages/web/img/birra.png" alt="" />
+			</div>
+			<div class="cell small-12 large-auto align-self-middle">
+				<small class="white-text"><span class="roboto-bold">Birra</span> <br> <span class="size-12 roboto-light">La Revista del Cervecero</span></small>
+			</div>		
+		</div>
+	    <div class="grid-x grid-padding-x grid-padding-y">
+
+		    <div class="cell auto grey darken-3">
+				<h4 class="roboto-light white-text margin-0"> Panel de Control</h4>
+			</div>
+	    </div>	
+	    <hr class="margin-top-0" />
 	    <!-- Menu -->
 	    <ul class="vertical menu">
-	      <h4 class="subheader">MENU</h4>
 		  <li>
 		  	 <a href="#miPanel?listadoNoticias" name="listadoNoticias" id="miPanel?listadoNoticias">
 			   <i class="fi-home"></i><span>Noticias</span>
@@ -56,11 +75,11 @@
 
     </html>
     
-   		<div class="tiny success reveal callout" id="myModalExitoGrabar" data-animation-out="slide-out-right" data-reveal>
+   		<div class="tiny success reveal callout" id="myModalExitoGrabar" data-animation-in="scale-in-up" data-animation-out="scale-out-down" data-reveal>
 		      <p class="lead"><i class="fi-check size-72 txt-regionales"></i> 
 		     	<p  class="lead" id="pExito"></p>
 		      </p>
-		      <button class="close-button" aria-label="Cerrar alerta" type="button" data-close>
+		      <button class="close-button show-for-small-only" aria-label="Cerrar alerta" type="button" data-close>
 		      <span aria-hidden="true">&times;</span>
 		      </button>
   	    </div> 
@@ -69,30 +88,30 @@
 		    	  <i class="fi-x size-72 txt-pdf"></i>
 		     	  <span id="pError"></span>
 		      </p>
-		      <button class="close-button" aria-label="Cerrar alerta" type="button" data-close>
+		      <button class="close-button show-for-small-only" aria-label="Cerrar alerta" type="button" data-close>
 		      <span aria-hidden="true">&times;</span>
 		      </button>
   	    </div>
   	    
-  	    <div class="large reveal padding-0" id="modalTransicion" data-animation-in="scale-in-up" data-animation-out="scale-out-down" data-reveal  data-options="multipleOpened:true;">
+  	    <div class="small reveal padding-0   border-none radius shadow" id="modalTransicion" data-animation-in="scale-in-up" data-animation-out="scale-out-down" data-reveal  data-options="multipleOpened:true;">
 	  	      <form id="formTransicion">  	    	
 				   <div id="divFormTransicion">
 				   
 				   </div>				   
 			  </form>
 			 
-		      <button class="close-button" aria-label="Cerrar alerta" type="button" data-close>
+		      <button class="close-button show-for-small-only" aria-label="Cerrar alerta" type="button" data-close>
 		      <span aria-hidden="true" class="txt-white">&times;</span>
 		      </button>
   	    </div>
   	    
-  	    <div class="large reveal padding-0" id="modalMasInfo" data-animation-out="slide-out-right" data-reveal>
+  	    <div class="large reveal padding-0  border-none radius" id="modalMasInfo"  data-animation-in="scale-in-up" data-animation-out="scale-out-down" data-reveal>
 	  	     	    	
 			   <div id="divMasInfo">
 			   
 			   </div>		   
 			 
-		      <button class="close-button" aria-label="Cerrar alerta" type="button" data-close>
+		      <button class="close-button show-for-small-only" aria-label="Cerrar alerta" type="button" data-close>
 		      <span aria-hidden="true" class="txt-white">&times;</span>
 		      </button>
   	    </div>

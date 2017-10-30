@@ -26,12 +26,12 @@
  
         <h5 class="margin-bottom-2 text-center">LOGIN</h5>
         <div class="small-12 cell input-field">
-          <input type="text" name="usuarioLogin" id="username" class="" required>
-          <label for="username">Usuario</label>
+          <input type="text" name="usuarioLogin" id="username" required>
+          <label class="active" for="username">Usuario</label>
         </div>
         <div class="small-12 cell input-field">
-          <input type="password" name="passwordLogin" id="password" required class="">
-          <label for="password">Password</label>
+          <input type="password" name="passwordLogin" id="password" required>
+          <label class="active" for="password">Password</label>
         </div>               
 <!--         <label>Email -->
 <!--           <div class="input-group"> -->
