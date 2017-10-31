@@ -19,7 +19,7 @@
 			</div>
 			<div class="cell shrink align-self-bottom">
 <!-- 				<i class="fa fa-plus-circle fa-3x modalParaNuevo deep-orange-text text-darken-4" aria-hidden="true"  id="nuevaNoticia-4"  value="Nuevo Noticia"></i> -->
-				<input type="button" id="nuevaNoticia-4" class="modalParaNuevo small hollow rounded button sombra-1 bg-color3" value="Nueva Noticia">
+<!-- 				<input type="button" id="nuevaNoticia-4" class="modalParaNuevo small hollow rounded button sombra-1 bg-color3" value="Nueva Noticia"> -->
 			</div>
 		</div>
 		
@@ -29,9 +29,9 @@
 	   <table class="material-table scroll shadow tablaweb" id="tablaweb">
 	     <thead>
 	     <tr class="txt-oil">
-	       <th width="50">N°</th>
-	       <th width="500">Título</th>
-	       <th width="200">Autor</th>
+	       <th width="200">N°</th>
+	       <th width="400">Título</th>
+	       <th width="300">Autor</th>
 	       <th width="100">Fecha</th>
 	       <th width="100">Publicado</th>
 	       <th width="100">Acciones</th>
@@ -39,10 +39,10 @@
 	     </thead>
 	     <tbody>
 		<c:forEach items="${actionBean.noticias}" var="p" varStatus="i">
-			<tr class="txt-">
-	       		<td width="1%" class="bold size-18">${p.idNoticia}</td>
-	        	<td>
-	        		${p.titulo}
+			<tr>
+	       		<td width="1%" class="">${p.idNoticia}</td>
+	        	<td class="truncate-1">
+	        		<span>${p.titulo}</span>
 	        	</td>
 	        	<td>${p.autor}</td>
 	        	<td><small><fmt:formatDate value="${p.fecha}"/></small></td>
@@ -68,11 +68,15 @@
 						
 				</td>
 				<td>
-					<div class="row">
-						<i class="fa fa-pencil-square-o fa-lg  modalParaModificar" aria-hidden="true" id="modificarNoticia-4-${p.idNoticia}" style="cursor:pointer"></i>
-<%-- 						<i class="mdi-editor-border-color modalParaModificar" id="modificarNoticia-4-${p.idNoticia}"></i>								 --%>
-						<a href="noticia?idNoticia=${p.idNoticia}"><i class="mdi-action-search size-24 txt-color" title="Ver noticia"></i></a>
-													
+					<div class="grid-x grid-margin-x">
+						<div class="cell shrink">
+							<i class="fa fa-pencil-square-o fa-lg  modalParaModificar deep-orange-text text-darken-4" aria-hidden="true" id="modificarNoticia-4-${p.idNoticia}" style="cursor:pointer"></i>
+							<%-- 						<i class="mdi-editor-border-color modalParaModificar" id="modificarNoticia-4-${p.idNoticia}"></i>								 --%>							
+						</div>
+						<div class="cell shrink">
+							<a href="noticia?idNoticia=${p.idNoticia}"><i class="fa fa-eye fa-lg deep-orange-text text-darken-4" title="Ver noticia"></i></a>
+						</div>						
+					
 					</div>
 				</td>
 	      </tr>
@@ -93,10 +97,27 @@ $(document).foundation();
 			
 	        buttons: [
 	            {
-	                className: 'rounded modalParaNuevo',
+	                className: 'rounded modalParaNuevo-4',
 	                text: 'Crear Noticia',
 	                action: function ( e, dt, node, config ) {
-	                    alert( 'Button activated' );
+	                    /*var id = $(this).prop('id');
+	            		//alert(id);
+	            		var tipoNuevo = id.substring(id.indexOf('-')+1,id.length);
+	            		//alert(tipoNuevo);*/
+	            		//this.idName;
+	            		$.ajax({
+	            			url: 'miPanel?nuevo',
+	            			type: 'post',
+	            			data: {'tipoNuevo':4},
+	            			success: function(data) {				
+	            				$('#divFormTransicion').html(data);
+	            				$('#modalTransicion').foundation('open'); 
+	            				iniciarTiny();   							
+	            			},
+	            			error: function(data){					
+	            				alert("Error de sistema, intente nuevamente.");				
+	            			}
+	            		});
 	                }
 	            }
 	        ]

@@ -8,7 +8,7 @@
 <div class="top-bar topbar-center-logo" id="example-menu">
     <div class="top-bar-left">
         <ul class="dropdown menu align-middle z-index-2" data-dropdown-menu>
-            <li class="menu-text padding-0"><a class="padding-0" href="./"><img src="img/birra3.jpg" style="width: 90px" alt=""></a></li>
+            <li class="menu-text padding-0"><a class="padding-0" href="./"><img src="pages/web/img/birra.png" style="width: 90px" alt=""></a></li>
             <li>
                 <a href="#">Categorías</a>
                 <ul class="menu vertical">

@@ -27,8 +27,8 @@
                     <div class="position-absolute z-index-1"><span class="label  size-36 roboto-thin deep-orange darken-4  deep-orange-text text-accent-1">${actionBean.noticiasElNegocio[0].categorianoticia.descripcion}</span></div>
                     <img class="cropcontainer" src="pages/imagenesCargadas/${actionBean.noticiasElNegocio[0].nombreImagenPrincipal}" alt="image alt text">
                     <figcaption class="orbit-caption">
-                      <h3 class="robotoMono-light">${actionBean.noticiasElNegocio[0].titulo}</h3>
-                      <p class="roboto-light">${actionBean.noticiasElNegocio[0].copete}</p>
+                      <h3 class="truncate-4 robotoMono-light">${actionBean.noticiasElNegocio[0].titulo}</h3>
+                      <p class="truncate-4 roboto-light">${actionBean.noticiasElNegocio[0].copete}</p>
                       <div class="grid-x">
                         <div class="cell small-12 large-shrink"><a href="noticia?id=${actionBean.noticiasElNegocio[0].idNoticia}" class="button rounded expanded deep-orange darken-1">${actionBean.noticiasElNegocio[0].autor}</a></div>
                       </div>
@@ -52,8 +52,8 @@
           <div class="orbit clean-hero-slider" role="region" aria-label="Favorite Space Pictures" data-orbit>
             <div class="orbit-wrapper">
               <div class="orbit-controls">
-                <button class="orbit-previous deep-orange darken-2"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
-                <button class="orbit-next deep-orange darken-2"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+                <button class="orbit-previous deep-orange darken-2"><span class="show-for-sr">Slide anterior</span>&#9664;&#xFE0E;</button>
+                <button class="orbit-next deep-orange darken-2"><span class="show-for-sr">Slide siguiente</span>&#9654;&#xFE0E;</button>
               </div>
               <ul class="orbit-container">
                 <div class="position-absolute z-index-1"><span class="label size-36 roboto-thin deep-orange darken-4  deep-orange-text text-accent-1">${p.categorianoticia.descripcion}</span></div>
@@ -63,9 +63,9 @@
 	                  <figure class="orbit-figure">
 	                    <img class="cropcontainer" src="pages/imagenesCargadas/${p.nombreImagenPrincipal}" alt="image alt text">
 	                    <figcaption class="orbit-caption">
-	                      <h3 class="h4  robotoMono-light">${p.titulo}</h3>
-	                      <p class="roboto-light">${p.copete}</p>
-	                      <a href="noticia2.html" class="button rounded  deep-orange darken-1">${p.autor}</a>
+	                      <h3 class="truncate-4 h4 robotoMono-light">${p.titulo}</h3>
+	                      <p class="truncate-4 roboto-light">${p.copete}</p>
+	                      <a href="noticia2.html" class="button rounded  deep-orange darken-1">Ver más</a>
 	                    </figcaption>
 	                  </figure>
 	                </li>
@@ -254,7 +254,7 @@
               </div>
             </div>
             <div class="large-4 medium-4 small-12 cell">
-              <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+              <div class="orbit" role="region" aria-label="Imagenes de Gira" data-orbit>
                 <div class="orbit-wrapper">
                   <ul class="orbit-container">
                     <li class="is-active orbit-slide black">
@@ -264,7 +264,7 @@
                         <figcaption class="orbit-caption">
                           <h4 class="robotoMono-light">${actionBean.noticiasDegira[0].titulo}</h4>
                           <p>${actionBean.noticiasDegira[0].copete}</p>
-                          <a href="#" class="button rounded deep-orange darken-1">${actionBean.noticiasDegira[0].autor}</a>
+                          <a href="#" class="button rounded deep-orange darken-1">Ver más</a>
                         </figcaption>
                       </figure>
                     </li>
@@ -402,6 +402,8 @@
   <script src="pages/web/js/what-input.min.js"></script>
   <script src="pages/web/js/foundation.min.js"></script>
   <script src="https://use.fontawesome.com/b825156fce.js"></script>
+  <script src="pages/web/js/trunk8.js"></script>  
+  <script src="pages/web/js/materialize.min.js"></script>    
   <script src="pages/web/js/app.js"></script>
   </body>
 </html>
@@ -450,8 +452,8 @@
                     }
                 })
         });
-
-
-
     });
+    $('.truncate-4').trunk8({
+    	   lines: 4
+    	});
 </script>

@@ -9,7 +9,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Birra</title>
-    <link rel="stylesheet" href="pages/web/css/app.css">
+   <link rel="stylesheet" href="pages/web/css/app.css">
 </head>
 <body>
 
@@ -32,7 +32,7 @@
                 </div>
                 <div class="cell small-12">
                     <c:forEach items="${actionBean.categoriasNoticias}" var="p" varStatus="i">
-                   		 <li><a href="categoria?id=${p.idCategoriaNoticia}">${p.descripcion}</a></li>
+                   		 <button class="button tiny rounded hollow" href="categoria?id=${p.idCategoriaNoticia}">${p.descripcion}</button>
                     </c:forEach>
                 </div>
             </div>

@@ -117,7 +117,7 @@
 										${baseURL}/pages/imagenesCargadas/${img.nombreArchivo}
 									</td>
 									<td>
-										<i class="mdi-action-delete eliminarImagen" id="eliminarImagen-${img.idImagen}"></i>
+										<i class="fa fa-trash-o eliminarImagen red-text" id="eliminarImagen-${img.idImagen}" aria-hidden="true" style="cursor:pointer"></i>
 									</td>
 								</tr>
 								</c:forEach>

@@ -75,9 +75,10 @@
 
     </html>
     
-   		<div class="tiny success reveal callout" id="myModalExitoGrabar" data-animation-in="scale-in-up" data-animation-out="scale-out-down" data-reveal>
-		      <p class="lead"><i class="fi-check size-72 txt-regionales"></i> 
-		     	<p  class="lead" id="pExito"></p>
+   		<div class="tiny success reveal callout radius shadow" id="myModalExitoGrabar" data-animation-in="scale-in-up" data-animation-out="scale-out-down" data-reveal>
+		      <p class="lead text-center">
+		      	<i class="fa fa-check-circle-o fa-5x green-text" aria-hidden="true"></i><br />
+		     	<p  class="lead roboto-light text-center" id="pExito"></p>
 		      </p>
 		      <button class="close-button show-for-small-only" aria-label="Cerrar alerta" type="button" data-close>
 		      <span aria-hidden="true">&times;</span>
@@ -217,8 +218,10 @@ $(document).ready(function() {
 		
 		*/
 		var id = $(this).prop('id');
+		//alert(id);
 		var tipoNuevo = id.substring(id.indexOf('-')+1,id.length);
-		$.ajax({
+		//alert(tipoNuevo);
+		/*$.ajax({
 			url: 'miPanel?nuevo',
 			type: 'post',
 			data: {'tipoNuevo':tipoNuevo},
@@ -230,7 +233,7 @@ $(document).ready(function() {
 			error: function(data){					
 				alert("Error de sistema, intente nuevamente.");				
 			}
-		});		
+		});	*/	
 			
 	});	
 	$(document).on('click','.modalParaModificar', function() {
