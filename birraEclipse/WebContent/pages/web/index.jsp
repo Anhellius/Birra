@@ -398,7 +398,7 @@
   </footer>
 
 
-  <div class="large reveal padding-0 shadow  border-none" id="exampleModal1" data-reveal>  
+  <div class="large reveal padding-0 shadow  border-none radius"  data-animation-in="scale-in-up" data-animation-out="scale-out-down" id="exampleModal1" data-reveal>  
     <div class="grid-x" id="divModalSponsor">
       
     </div>
