@@ -14,7 +14,8 @@
 		        <th width="850">Mail</th>
 		        <th width="350">Telefono</th>
 		        <th width="300">Web</th>
-		        <th width="300">Redes sociales</th>
+		        <th width="300">Twitter</th>
+		        <th width="300">Facebook</th>
 		        <th width="300">Dirección</th>
 		        <th width="300">Acciones</th>
 		        <th width="120">Más Info</th>
@@ -31,7 +32,8 @@
 			        	<td>${p.mail}</td>
 			        	<td><small>${p.telefono}</small></td>
 			        	<td>${p.web}</td>
-			        	<td>${p.redesSociales}</td>
+			        	<td>${p.twitter}</td>
+			        	<td>${p.facebook}</td>
 			        	<td>${p.direccionMapa}</td>
 			        	<td>
 			        		<c:if test="${p.publicada}">
