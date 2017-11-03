@@ -42,7 +42,7 @@
 <!--           <input type="password" name="passwordLogin" id="password" required placeholder="Contraseña"> -->
 <!--         </label> -->
         
-        <button type="submit" class="button radius expanded margin-top-3" name="ingresar">Ingresar</button>
+        <button type="submit" class="button radius expanded margin-top-3 shadow" name="ingresar">Ingresar</button>
           <stripes:errors/>
           <stripes:messages/>
 	

@@ -92,7 +92,13 @@
       <div class="grid-x grid-padding-x grid-padding-y">
         <!--SPONSORS-->
         <div class="cell small-12 large-4">
-          <h4 class="separator-left">SPONSORS</h4>
+          <h4 class="separator-left">
+	               	<c:forEach items="${actionBean.clasificados}" var="p" varStatus="i">
+	              		<c:if test="${p.categorialistado.idCategoriaListado==3}">
+	              			${p.categorialistado.descripcion}
+	              		</c:if>
+	              	</c:forEach>
+          </h4>
           <div class="contain position-relative">
             <div id="arrowL" class="orbit-previous"><span class="show-for-sr">Anterior</span><i class="fa fa-angle-left fa-3x" aria-hidden="true"></i></div>
             <div id="arrowR" class="orbit-next"><span class="show-for-sr">Siguiente</span><i class="fa fa-angle-right fa-3x" aria-hidden="true"></i></div>
@@ -125,43 +131,43 @@
 
         <!--CLASIFICADOS-->
         <div class="cell small-12 large-8">
-          <h4 class="separator-left">CLASIFICADOS</h4>
+<!--           <h4 class="separator-left">QUE TOMAR</h4> -->
           <div class="grid-x grid-margin-x">
             <!--donde ir-->
-            <div class="cell large-auto">
+<!--             <div class="cell large-auto"> -->
             	  
-	              <h5 class=" roboto-light">
-	               	<c:forEach items="${actionBean.clasificados}" var="p" varStatus="i">
-	              		<c:if test="${p.categorialistado.idCategoriaListado==3}">
-	              			${p.categorialistado.descripcion}
-	              		</c:if>
-	              	</c:forEach>	
-	              </h5>
+<!-- 	              <h4 class="separator-left"> -->
+<%-- 	               	<c:forEach items="${actionBean.clasificados}" var="p" varStatus="i"> --%>
+<%-- 	              		<c:if test="${p.categorialistado.idCategoriaListado==3}"> --%>
+<%-- 	              			${p.categorialistado.descripcion} --%>
+<%-- 	              		</c:if> --%>
+<%-- 	              	</c:forEach>	 --%>
+<!-- 	              </h4> -->
 	              
-	              <ul class="no-bullet">
-	              	<c:forEach items="${actionBean.clasificados}" var="p" varStatus="i">
-	              		<c:if test="${p.categorialistado.idCategoriaListado==3}">	
-			                <li class="size-14">
-			                  <a href="${p.web}">${p.nombre} </a>
-			                  <a href="${p.facebook}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-			                  <a href=""><i class="fa fa-map-marker" aria-hidden="true"></i></a>
-			                </li>
-		               </c:if>
-	                 </c:forEach>
-	              </ul>
+<!-- 	              <ul class="no-bullet"> -->
+<%-- 	              	<c:forEach items="${actionBean.clasificados}" var="p" varStatus="i"> --%>
+<%-- 	              		<c:if test="${p.categorialistado.idCategoriaListado==3}">	 --%>
+<!-- 			                <li class="size-14"> -->
+<%-- 			                  <a href="${p.web}">${p.nombre} </a> --%>
+<%-- 			                  <a href="${p.facebook}"><i class="fa fa-facebook" aria-hidden="true"></i></a> --%>
+<!-- 			                  <a href=""><i class="fa fa-map-marker" aria-hidden="true"></i></a> -->
+<!-- 			                </li> -->
+<%-- 		               </c:if> --%>
+<%-- 	                 </c:forEach> --%>
+<!-- 	              </ul> -->
 	             
-            </div>
+<!--             </div> -->
             <!--fin donde ir-->
 
             <!--que tomar-->
             <div class="cell large-auto">
-              <h5 class=" roboto-light">
+              <h4 class="separator-left">
 	               	<c:forEach items="${actionBean.clasificados}" var="p" varStatus="i">
 	              		<c:if test="${p.categorialistado.idCategoriaListado==4}">
 	              			${p.categorialistado.descripcion}
 	              		</c:if>
 	              	</c:forEach>	
-	              </h5>
+	              </h4>
 	              
 	              <ul class="no-bullet">
 	              	<c:forEach items="${actionBean.clasificados}" var="p" varStatus="i">
@@ -179,13 +185,13 @@
 
             <!--insumos-->
             <div class="cell large-auto">
-             <h5 class=" roboto-light">
+             <h4 class="separator-left">
 	               	<c:forEach items="${actionBean.clasificados}" var="p" varStatus="i">
 	              		<c:if test="${p.categorialistado.idCategoriaListado==5}">
 	              			${p.categorialistado.descripcion}
 	              		</c:if>
 	              	</c:forEach>	
-	              </h5>
+	              </h4>
 	              
 	              <ul class="no-bullet">
 	              	<c:forEach items="${actionBean.clasificados}" var="p" varStatus="i">
@@ -203,13 +209,13 @@
 
             <!--alquileres de choperas-->
             <div class="cell large-auto">
-              <h5 class=" roboto-light">
+              <h4 class="separator-left">
 	               	<c:forEach items="${actionBean.clasificados}" var="p" varStatus="i">
 	              		<c:if test="${p.categorialistado.idCategoriaListado==6}">
 	              			${p.categorialistado.descripcion}
 	              		</c:if>
 	              	</c:forEach>	
-	              </h5>
+	              </h4>
 	              
 	              <ul class="no-bullet">
 	              	<c:forEach items="${actionBean.clasificados}" var="p" varStatus="i">

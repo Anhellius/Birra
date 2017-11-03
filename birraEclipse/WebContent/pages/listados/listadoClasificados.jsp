@@ -1,24 +1,37 @@
 <%@ include file="/pages/taglibs.jsp" %>
-<div class="off-canvas-wrapper">
-    <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
-    	<div class="off-canvas-content" data-off-canvas-content>
-		    <h4>Clasificados</h4>
-		    <input type="button" id="nuevoClasificado-5" class="modalParaNuevo button sombra-1 bg-color3" value="Nuevo clasificado">
-		  <div class="small-12 columns vHeight">
-		    <table class="material-table scroll sombra-1 hover tablaweb" id="tablaweb">
+<div class="grid-container fluid">
+<div class="grid-x grid-padding-x grid-padding-y">
+	<div class="cell small-12 shadow padding-vertical-2 hide-for-small-only">
+		<div class="grid-x grid-margin-x align-middle">
+			<div class="cell shrink">
+				<i class="fa fa-bars fa-lg" aria-hidden="true"  id="botonOffCanvas" style="cursor:pointer"></i>
+			</div>
+			<div class="cell shrink">
+				<span class="size-22">MENU</span>
+			</div>
+		</div>	
+	</div>
+	<div class="cell small-12 margin-top-1">
+		<div class="grid-x align-justify">
+			<div class="cell shrink">
+		    	<h3 class="roboto-light">Clasificados</h3>
+		    </div>
+		    <div class="cell shrink align-self-bottom">
+<!-- 		    	<input type="button" id="nuevoClasificado-5" class="modalParaNuevo button sombra-1 bg-color3" value="Nuevo clasificado"> -->
+		    </div>
+		</div>
+	</div>			    
+	<div class="cell small-12">
+	   <table class="material-table scroll shadow tablaweb" id="tablaweb">
 		      <thead>
 		      <tr class="txt-oil">
 		        <th width="50">N°</th>
-		        <th width="250">Categoria</th>
+		        <th width="400">Categoria</th>
 		        <th width="500">Nombre</th>
-		        <th width="850">Mail</th>
-		        <th width="350">Telefono</th>
-		        <th width="300">Web</th>
-		        <th width="300">Twitter</th>
-		        <th width="300">Facebook</th>
-		        <th width="300">Dirección</th>
-		        <th width="300">Acciones</th>
-		        <th width="120">Más Info</th>
+		        <th width="100">Mail</th>
+		        <th width="100">Teléfono</th>
+		        <th width="50">Publicar</th>
+		        <th width="100">Acciones</th>
 		      </tr>
 		      </thead>
 		      <tbody>
@@ -31,10 +44,6 @@
 			        	<td>${p.nombre}</td>
 			        	<td>${p.mail}</td>
 			        	<td><small>${p.telefono}</small></td>
-			        	<td>${p.web}</td>
-			        	<td>${p.twitter}</td>
-			        	<td>${p.facebook}</td>
-			        	<td>${p.direccionMapa}</td>
 			        	<td>
 			        		<c:if test="${p.publicada}">
 								 <div class="switch small">
@@ -57,26 +66,60 @@
 							
 						</td>
 						<td>
-							<i class="mdi-editor-border-color modalParaModificar" id="modificarClasificado-5-${p.idClasificado}"></i>
-							<i class="mdi-action-info-outline size-24 txt-color" title="Más Info"></i></div>
+						<div class="grid-x grid-margin-x">
+							<div class="cell shrink">
+								<i class="fa fa-pencil-square-o fa-lg modalParaModificar  deep-orange-text text-darken-4" id="modificarClasificado-5-${p.idClasificado}"></i>
+							</div>
+							<div class="cell shrink">
+								<i class="fa fa-eye fa-lg deep-orange-text text-darken-4" title="Más Info"></i>
+							</div>
+						</div>
 						</td>
 			      </tr>
 				</c:forEach>	     
 			</tbody>
 		    </table>
-		  </div>
-		</div>
+	  	</div>
 	</div>
 </div>
 
+
 <script>
-	$(document).ready(function() {
-		$('.tablaweb').dataTable( {
-			"language": {
-				"url": "https://www.inti.gob.ar/js/Spanish.lang"
-			}
-		});
-	});  
+$(document).foundation();
+$(document).ready(function() {
+	$('.tablaweb').dataTable( {
+		"language": {
+			"url": "https://www.inti.gob.ar/js/Spanish.lang"
+		},
+		
+        buttons: [
+            {
+                className: 'rounded modalParaNuevo-4',
+                text: 'Crear Clasificado',
+                action: function ( e, dt, node, config ) {
+                    /*var id = $(this).prop('id');
+            		//alert(id);
+            		var tipoNuevo = id.substring(id.indexOf('-')+1,id.length);
+            		//alert(tipoNuevo);*/
+            		//this.idName;
+            		$.ajax({
+            			url: 'miPanel?nuevo',
+            			type: 'post',
+            			data: {'tipoNuevo':5},
+            			success: function(data) {				
+            				$('#divFormTransicion').html(data);
+            				$('#modalTransicion').foundation('open'); 
+            				iniciarTiny();   							
+            			},
+            			error: function(data){					
+            				alert("Error de sistema, intente nuevamente.");				
+            			}
+            		});
+                }
+            }
+        ]
+	});
+});  
 </script>
    
 
