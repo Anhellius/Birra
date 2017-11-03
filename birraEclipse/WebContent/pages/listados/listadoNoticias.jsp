@@ -30,10 +30,9 @@
 	     <thead>
 	     <tr class="txt-oil">
 	       <th width="200">N°</th>
-	       <th width="400">Título</th>
-	       <th width="300">Autor</th>
+	       <th width="450">Título</th>
 	       <th width="100">Fecha</th>
-	       <th width="100">Publicado</th>
+	       <th width="50">Publicado</th>
 	       <th width="100">Acciones</th>
 	     </tr>
 	     </thead>
@@ -44,7 +43,6 @@
 	        	<td class="truncate-1">
 	        		<span>${p.titulo}</span>
 	        	</td>
-	        	<td>${p.autor}</td>
 	        	<td><small><fmt:formatDate value="${p.fecha}"/></small></td>
 	        	<td>
 	        		<c:if test="${p.publicada}">

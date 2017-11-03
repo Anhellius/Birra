@@ -26,17 +26,10 @@
 		      <thead>
 		      <tr class="txt-oil">
 		        <th width="50">N°</th>
-		        <th width="250">Nombre</th>
-		        <th width="500">Breve Descripcion</th>
-		        <th width="850">Google Maps</th>
-		        <th width="350">Dirección</th>
-		        <th width="350">Telefono</th>
-		        <th width="350">Mail</th>
-		        <th width="350">Web</th>
-		        <th width="350">Facebook</th>
-		        <th width="350">Twitter</th>
-		        <th width="300">Acciones</th>
-		        <th width="120">Más Info</th>
+		        <th width="450">Nombre</th>
+		        <th width="450">Breve Descripcion</th>
+		        <th width="50">Publicar</th>
+		        <th width="100">Acciones</th>
 		      </tr>
 		      </thead>
 		      <tbody>
@@ -47,13 +40,6 @@
 			        		${p.nombre}
 			        	</td>
 			        	<td>${p.breveDescripcion}</td>
-			        	<td>${p.linkGoogleMaps}</td>
-			        	<td><small>${p.direccion}</small></td>
-			        	<td>${p.telefono}</td>
-			        	<td>${p.mail}</td>
-			        	<td>${p.linkWeb}</td>
-			        	<td>${p.linkFacebook}</td>
-			        	<td>${p.linkTwitter}</td>
 			        	<td>
 			        		<c:if test="${p.publicada}">
 								 <div class="switch small">
@@ -76,9 +62,14 @@
 								
 						</td>
 						<td>
-							<i class="mdi-editor-border-color modalParaModificar" id="modificarClasificado-1-${p.idSponsor}"></i>	
-							<i class="mdi-action-info-outline size-24 txt-color" title="Más Info"></i>					
-							
+							<div class="grid-x grid-margin-x">
+								<div class="cell shrink">
+									<i class="fa fa-pencil-square-o fa-lg modalParaModificar deep-orange-text text-darken-4" aria-hidden="true" style="cursor:pointer" id="modificarClasificado-1-${p.idSponsor}"></i>
+								</div>
+								<div class="cell shrink">	
+									<i class="fa fa-eye fa-lg deep-orange-text text-darken-4" title="Más Info"></i>
+								</div>					
+							</div>
 						</td>
 			      </tr>
 				</c:forEach>	     
