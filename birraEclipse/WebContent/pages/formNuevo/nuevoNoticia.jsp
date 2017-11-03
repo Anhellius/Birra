@@ -142,6 +142,7 @@
 	</stripes:form>
 
 <script>
+	$(document).foundation();
 	$(document).ready(function() {
 		$(document).on('click','#agregarGrilla', function() {
 			var cantidad = parseInt($('#cantidadGrilla').val())+1;
