@@ -121,30 +121,32 @@
  	<script src="pages/web/js/jquery.min.js"></script>
     <script src="pages/web/js/what-input.min.js"></script>
     <script src="pages/web/js/foundation.min.js"></script>
+    <script src="pages/web/js/materialize.min.js"></script>    
     <script src="https://use.fontawesome.com/b825156fce.js"></script>
     <script type="text/javascript" src="pages/web/DataTables/datatables.min.js"></script>
+    <script src="pages/web/js/tinymce/tinymce.min.js"></script>    
     <script src="pages/web/js/app.js"></script>
-    <script src="https://www.inti.gob.ar/js/custom-file-upload.js"></script>
+<!--     <script src="https://www.inti.gob.ar/js/custom-file-upload.js"></script> -->
 <!--     <script type="text/javascript" src="https://www.inti.gob.ar/js/jquery.dataTables.min.js"></script> -->
 <!--     <script type="text/javascript" src="https://www.inti.gob.ar/js/dataTables.foundation.min.js"></script> -->
-    <script src="https://www.inti.gob.ar/js/tinymce/tinymce.min.js"></script>
+<!--     <script src="https://www.inti.gob.ar/js/tinymce/tinymce.min.js"></script> -->
     <script type="text/javascript" src="pages/js/jquery.validate.js"></script>
-	<script type="text/javascript" src="pages/js/additional-methods.js"></script>
-	<script type="text/javascript" src="pages/js/jquery.form.js"></script>
-	<script type="text/javascript" src="pages/js/jquery-ui-1.9.2.js"></script>
-	<script type="text/javascript" src="pages/js/html2canvas.js"></script>
-	<script type="text/javascript" src="pages/js/jspdf.min.js"></script>
-	<script type="text/javascript" src="pages/js/from_html.js"></script>
-	<script type="text/javascript" src="pages/js/jquery.print.js"></script>
-	<script type="text/javascript" src="pages/js/jquery.table2excel.js"></script>
+<!-- 	<script type="text/javascript" src="pages/js/additional-methods.js"></script> -->
+<!-- 	<script type="text/javascript" src="pages/js/jquery.form.js"></script> -->
+<!-- 	<script type="text/javascript" src="pages/js/jquery-ui-1.9.2.js"></script> -->
+<!-- 	<script type="text/javascript" src="pages/js/html2canvas.js"></script> -->
+<!-- 	<script type="text/javascript" src="pages/js/jspdf.min.js"></script> -->
+<!-- 	<script type="text/javascript" src="pages/js/from_html.js"></script> -->
+<!-- 	<script type="text/javascript" src="pages/js/jquery.print.js"></script> -->
+<!-- 	<script type="text/javascript" src="pages/js/jquery.table2excel.js"></script> -->
 	
-	<script type="text/javascript" src="pages/js/dataTables.buttons.min.js"></script>	
-	<script type="text/javascript" src="pages/js/buttons.print.min.js"></script>
-	<script type="text/javascript" src="pages/js/buttons.html5.js"></script>
-	<script type="text/javascript" src="pages/js/buttons.jqueryui.min.js"></script>
-	<script type="text/javascript" src="pages/js/buttons.flash.min.js"></script>
+<!-- 	<script type="text/javascript" src="pages/js/dataTables.buttons.min.js"></script>	 -->
+<!-- 	<script type="text/javascript" src="pages/js/buttons.print.min.js"></script> -->
+<!-- 	<script type="text/javascript" src="pages/js/buttons.html5.js"></script> -->
+<!-- 	<script type="text/javascript" src="pages/js/buttons.jqueryui.min.js"></script> -->
+<!-- 	<script type="text/javascript" src="pages/js/buttons.flash.min.js"></script> -->
 	<script type="text/javascript" src="pages/js/moment.min.js"></script>
-    <script type="text/javascript" src="pages/js/datetime-moment.js"></script>
+<!--     <script type="text/javascript" src="pages/js/datetime-moment.js"></script> -->
 	
 	
 

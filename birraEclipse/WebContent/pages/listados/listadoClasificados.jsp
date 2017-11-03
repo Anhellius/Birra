@@ -68,10 +68,10 @@
 						<td>
 						<div class="grid-x grid-margin-x">
 							<div class="cell shrink">
-								<i class="fa fa-pencil-square-o fa-lg modalParaModificar  deep-orange-text text-darken-4" id="modificarClasificado-5-${p.idClasificado}"></i>
+								<i class="fa fa-pencil-square-o fa-lg modalParaModificar  deep-orange-text text-darken-4" id="modificarClasificado-5-${p.idClasificado}" style="cursor:pointer"></i>
 							</div>
 							<div class="cell shrink">
-								<i class="fa fa-eye fa-lg deep-orange-text text-darken-4" title="Más Info"></i>
+								<i class="fa fa-eye fa-lg deep-orange-text text-darken-4" title="Más Info" style="cursor:pointer"></i>
 							</div>
 						</div>
 						</td>
