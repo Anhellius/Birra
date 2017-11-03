@@ -1,11 +1,28 @@
 <%@ include file="/pages/taglibs.jsp" %>
-<div class="off-canvas-wrapper">
-    <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
-    	<div class="off-canvas-content" data-off-canvas-content>
-		  <h4> Sponsor</h4>
-		  <input type="button" id="nuevoSponsor-1" class="modalParaNuevo button sombra-1 bg-color3" value="Nuevo Sponsor">
-		  <div class="small-12 columns vHeight">
-		    <table class="material-table scroll sombra-1 hover tablaweb" id="tablaweb">
+<div class="grid-container fluid">
+<div class="grid-x grid-padding-x grid-padding-y">
+	<div class="cell small-12 shadow padding-vertical-2 hide-for-small-only">
+		<div class="grid-x grid-margin-x align-middle">
+			<div class="cell shrink">
+				<i class="fa fa-bars fa-lg" aria-hidden="true"  id="botonOffCanvas" style="cursor:pointer"></i>
+			</div>
+			<div class="cell shrink">
+				<span class="size-22">MENU</span>
+			</div>
+		</div>	
+	</div>
+	<div class="cell small-12 margin-top-1">
+		<div class="grid-x align-justify">
+			<div class="cell shrink">		  
+		  		<h3 class="roboto-light"> Sponsor</h3>
+		  	</div>
+		  	<div class="cell shrink align-self-bottom">
+<!-- 		  <input type="button" id="nuevoSponsor-1" class="modalParaNuevo button sombra-1 bg-color3" value="Nuevo Sponsor"> -->
+		  	</div>
+		</div>
+	</div>		  	
+	<div class="cell small-12">
+	   <table class="material-table scroll shadow tablaweb" id="tablaweb">
 		      <thead>
 		      <tr class="txt-oil">
 		        <th width="50">N°</th>
@@ -66,20 +83,47 @@
 			      </tr>
 				</c:forEach>	     
 			</tbody>
-		    </table>
-		  </div>
-		</div>
-	</div>
+		</table>
+	</div>	
+</div>
 </div>
 
 <script>
-	$(document).ready(function() {
-		$('.tablaweb').dataTable( {
-			"language": {
-				"url": "https://www.inti.gob.ar/js/Spanish.lang"
-			}
-		});
-	});  
+$(document).foundation();
+$(document).ready(function() {
+	$('.tablaweb').dataTable( {
+		"language": {
+			"url": "https://www.inti.gob.ar/js/Spanish.lang"
+		},
+		
+        buttons: [
+            {
+                className: 'rounded modalParaNuevo-4',
+                text: 'Crear Sponsor',
+                action: function ( e, dt, node, config ) {
+                    /*var id = $(this).prop('id');
+            		//alert(id);
+            		var tipoNuevo = id.substring(id.indexOf('-')+1,id.length);
+            		//alert(tipoNuevo);*/
+            		//this.idName;
+            		$.ajax({
+            			url: 'miPanel?nuevo',
+            			type: 'post',
+            			data: {'tipoNuevo':1},
+            			success: function(data) {				
+            				$('#divFormTransicion').html(data);
+            				$('#modalTransicion').foundation('open'); 
+            				iniciarTiny();   							
+            			},
+            			error: function(data){					
+            				alert("Error de sistema, intente nuevamente.");				
+            			}
+            		});
+                }
+            }
+        ]
+	});
+});  
 </script>
    
 
