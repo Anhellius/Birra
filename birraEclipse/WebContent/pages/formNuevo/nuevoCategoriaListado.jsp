@@ -19,7 +19,7 @@
 		  			<div class="button hollow rounded"  data-close>CANCELAR</div>
 		  		</div>
 		  		<div class="cell shrink">				
-					<stripes:button class="button rounded" value="Grabar" name="grabar" id="grabar"/>
+					<stripes:button class="button rounded" value="GUARDAR" name="grabar" id="grabar"/>
 				</div>
 			</div>
 		</div>

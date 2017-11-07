@@ -40,18 +40,18 @@
 				<stripes:text name="clasificado.redesSociales" class="required" />
 				<label class="active" for="clasificado.redesSociales">Twitter</label>									
 			</div>
-			<div class="small-4 cell  input-field">
-				<stripes:text name="clasificado.redesSociales" class="required" />
-				<label class="active" for="clasificado.redesSociales">Facebook</label>									
-			</div>	
-			<div class="small-4 cell  input-field">
-				<stripes:text name="clasificado.redesSociales" class="required" />
-				<label class="active" for="clasificado.redesSociales">Google+</label>									
-			</div>	
-			<div class="small-4 cell  input-field">
-				<stripes:text name="clasificado.redesSociales" class="required" />
-				<label class="active" for="clasificado.redesSociales">Instagram</label>									
-			</div>									
+<!-- 			<div class="small-4 cell  input-field"> -->
+<%-- 				<stripes:text name="clasificado.redesSociales" class="required" /> --%>
+<!-- 				<label class="active" for="clasificado.redesSociales">Facebook</label>									 -->
+<!-- 			</div>	 -->
+<!-- 			<div class="small-4 cell  input-field"> -->
+<%-- 				<stripes:text name="clasificado.redesSociales" class="required" /> --%>
+<!-- 				<label class="active" for="clasificado.redesSociales">Google+</label>									 -->
+<!-- 			</div>	 -->
+<!-- 			<div class="small-4 cell  input-field"> -->
+<%-- 				<stripes:text name="clasificado.redesSociales" class="required" /> --%>
+<!-- 				<label class="active" for="clasificado.redesSociales">Instagram</label>									 -->
+<!-- 			</div>									 -->
 		</div>
 		<hr class="margin-0" />		
 		<div class="grid-container">
