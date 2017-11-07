@@ -29,9 +29,9 @@
           <input type="text" name="usuarioLogin" id="username" required>
           <label class="active" for="username">Usuario</label>
         </div>
-        <div class="small-12 cell input-field">
-          <input type="password" name="passwordLogin" id="password" required>
-          <label class="active" for="password">Password</label>
+        <div class="small-12 cell input-field">        
+          <input placeholder=" " type="password" name="passwordLogin" id="password" required>
+          <label class="active" for="password">Password</label>  
         </div>               
 <!--         <label>Email -->
 <!--           <div class="input-group"> -->
@@ -59,11 +59,15 @@
     <script src="pages/web/js/what-input.min.js"></script>
     <script src="pages/web/js/foundation.min.js"></script>
     <script src="pages/web/js/forms.js"></script>
+    <script src="pages/web/js/materialize.min.js"></script>    
     <script src="https://use.fontawesome.com/b825156fce.js"></script>
     <script src="pages/web/js/app.js"></script>
     <script>
     
    $(document).foundation();
+   $( document ).ready(function() {
+   	Materialize.updateTextFields();
+   });
      </script>
     
    </div> 
