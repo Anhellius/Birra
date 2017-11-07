@@ -13,8 +13,8 @@
 					</div>
 				</div>		
 				<hr />			
-		<div class="grid-container margin-vertical-1">
-		  	<div class="grid-x grid-margin-x grid-margin-y align-center">	
+		<div class="grid-container">
+		  	<div class="grid-x grid-margin-x grid-padding-y align-center">	
 		  		<div class="cell shrink">
 		  			<div class="button hollow rounded"  data-close>CANCELAR</div>
 		  		</div>

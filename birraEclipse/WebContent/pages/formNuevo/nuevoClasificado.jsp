@@ -30,17 +30,32 @@
 				<label class="active" for="clasificado.web">Web</label>										
 			</div>
 			<div class="small-4 cell  input-field">
-				<stripes:text name="clasificado.redesSociales" class="required" />
-				<label class="active" for="clasificado.redesSociales">Redes Sociales</label>									
-			</div>
-			<div class="small-4 cell  input-field">
 				<stripes:text name="clasificado.direccionMapa" class="required" />
 				<label class="active" for="clasificado.direccionMapa">Dirección Google Maps</label>
 			</div>
+			<div class="small-12 cell">
+				<h4 class="roboto-light">Redes Sociales</h4>
+			</div>			
+			<div class="small-4 cell  input-field">
+				<stripes:text name="clasificado.redesSociales" class="required" />
+				<label class="active" for="clasificado.redesSociales">Twitter</label>									
+			</div>
+			<div class="small-4 cell  input-field">
+				<stripes:text name="clasificado.redesSociales" class="required" />
+				<label class="active" for="clasificado.redesSociales">Facebook</label>									
+			</div>	
+			<div class="small-4 cell  input-field">
+				<stripes:text name="clasificado.redesSociales" class="required" />
+				<label class="active" for="clasificado.redesSociales">Google+</label>									
+			</div>	
+			<div class="small-4 cell  input-field">
+				<stripes:text name="clasificado.redesSociales" class="required" />
+				<label class="active" for="clasificado.redesSociales">Instagram</label>									
+			</div>									
 		</div>
-		<hr />		
-		<div class="grid-container margin-top-1">
-		  	<div class="grid-x grid-margin-x grid-margin-y align-center">	
+		<hr class="margin-0" />		
+		<div class="grid-container">
+		  	<div class="grid-x grid-margin-x grid-padding-y align-center">	
 		  		<div class="cell shrink">
 		  			<div class="button hollow rounded"  data-close>CANCELAR</div>
 		  		</div>
@@ -53,8 +68,5 @@
 	</stripes:form>
 
 <script>
-$(document).foundation();
-	$(document).ready(function() {
-		
-	});  
+$(document).foundation(); 
 </script>
