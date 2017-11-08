@@ -9,15 +9,17 @@ body {overflow-x: hidden;}
 //  5.  Fuentes
 //  6.  Fondos colores
 //  7.  Nota
-//  8.  Position
-//  9.  Quote
-//  10. Slide e Imagenes para noticias (pagina principal)
-//  11. Scrollbars
-//  12. Tabla material
-//  13. Textos colores
-//  14. Textos Tamaños
-//  15. Top-bar con logo centrado
-//  16. Z-Index levels
+//  8.  Off-Canvas
+//  9.  Position
+//  10. Quote
+//  11. Slide e Imagenes para noticias (pagina principal)
+//  12. Scrollbars
+//  13. Tabla material
+//  14. Textos colores
+//  15. Textos Tamaños
+//  16. Text Truncate
+//  17. Top-bar con logo centrado
+//  18. Z-Index levels
 
 
 // 1. BUSCADOR EXPANDIBLE
@@ -349,7 +351,7 @@ $card-user-profile-text-color: $body-font-color;
 
     .article-image {
       width:  100%;
-      height: 550px;
+      height: 400px;
       object-fit: none; /* Do not scale the image */
       object-position: center; /* Center the image within the element */
       //height: 100vh;
@@ -379,14 +381,21 @@ $card-user-profile-text-color: $body-font-color;
   }
 }
 
-// 8. POSITION
+// 8. OFFCANVAS
+// -------
+
+.off-canvas{
+  border-right: 1px solid lightgrey;
+}
+
+// 9. POSITION
 // -----------
 
 .position-absolute-bottom {
   @include position(absolute, null, null, 0, null);
 }
 
-// 9. QUOTE
+// 10. QUOTE
 // --------
 
 $pull-quote-maxwidth: 50%;
@@ -436,7 +445,7 @@ $pull-quote-gradient: true;
   }
 }
 
-// 10. SLIDE E IMAGENES PARA NOTICIAS
+// 11. SLIDE E IMAGENES PARA NOTICIAS
 // ----------------------------------
 
 $clean-hero-slider-accent: $secondary-color;
@@ -555,7 +564,7 @@ $clean-hero-slider-accent: $secondary-color;
   }
 }
 
-// 11. SCROLLBARS
+// 12. SCROLLBARS
 // --------------
 
 @mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
@@ -580,7 +589,7 @@ $clean-hero-slider-accent: $secondary-color;
 }
 @include scrollbars(0, slategray);
 
-// 12. TABLA MATERIAL
+// 13. TABLA MATERIAL
 // --------------
 
 .material-table{
@@ -600,13 +609,23 @@ $clean-hero-slider-accent: $secondary-color;
   tbody td{
     padding:1rem 1.7rem;
     border-bottom: 1px solid #f1f1f1;
+    &.truncate-1{
+      max-width: 177px;
+    }
   }
   .button, .button-group{
     margin: 0;
   }
+  span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    max-width: 100%;
+  }
 }
 
-// 13. TEXTOS COLORES
+// 14. TEXTOS COLORES
 // ------------------
 
 .white-text{
@@ -628,7 +647,7 @@ $clean-hero-slider-accent: $secondary-color;
   color: $google ;
 }
 
-// 14. TEXTOS TAMAÑOS
+// 15. TEXTOS TAMAÑOS
 // ------------------
 
 .size-12 {
@@ -695,7 +714,43 @@ $clean-hero-slider-accent: $secondary-color;
   }
 }
 
-// 15. TOPBAR CON LOGO CENTRADO
+// 16. TEXT TRUNCATE
+// ----------------------------
+
+/* mixin for multiline */
+@mixin multiLineEllipsis($lineHeight: 1.2em, $lineCount: 1, $bgColor: white){
+  overflow: hidden;
+  position: relative;
+  line-height: $lineHeight;
+  max-height: $lineHeight * $lineCount;
+  text-align: inherit ;
+  margin-right: -.1em;
+  padding-right: 1em;
+  &:before {
+    content: '...';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 1em;
+    height: 1em;
+    margin-top: 0.2em;
+    background: $bgColor;
+  }
+}
+
+.block-with-text {
+  @include multiLineEllipsis($lineHeight: 1.2em, $lineCount: 3, $bgColor:  rgba($black, 0.5));
+}
+.block-with-text-5 {
+  @include multiLineEllipsis($lineHeight: 1.2em, $lineCount: 5, $bgColor:  rgba($black, 0.5));
+}
+
+// 16. TOPBAR CON LOGO CENTRADO
 // ----------------------------
 
 .topbar-center-logo .top-bar-center {
@@ -721,7 +776,7 @@ input[type='search'] {
   }
 }
 
-// 16. Z-index-levels
+// 17. Z-index-levels
 // --------------
 
 .z-index-1 {
@@ -876,4 +931,9 @@ input[type='search'] {
 
 }
 
+.clasificados{
+  height: auto;
+  max-height: 170px;
+  overflow: scroll;
+}
 

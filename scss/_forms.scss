@@ -1219,7 +1219,25 @@
 
 .material-forms{
   @include material-forms;
+
+  select {
+    background-color: #fefefe;
+    width: 100%;
+    padding: 0 20px 0 0;
+    border: 0;
+    border-radius: 0;
+    height: 2.7rem;
+    border-bottom: 1.3px solid lightgrey !important;
+  }
 }
+select{
+  border: none !important;
+}
+
+.switch-paddle::after{
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
   //@import 'input-fields';
   //@import 'radio-buttons';
   //@import 'checkboxes';
