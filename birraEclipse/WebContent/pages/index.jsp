@@ -132,7 +132,7 @@
 <!--     <script src="https://www.inti.gob.ar/js/tinymce/tinymce.min.js"></script> -->
     <script type="text/javascript" src="pages/js/jquery.validate.js"></script>
 <!-- 	<script type="text/javascript" src="pages/js/additional-methods.js"></script> -->
-<!-- 	<script type="text/javascript" src="pages/js/jquery.form.js"></script> -->
+ 	<script type="text/javascript" src="pages/js/jquery.form.js"></script> 
 <!-- 	<script type="text/javascript" src="pages/js/jquery-ui-1.9.2.js"></script> -->
 <!-- 	<script type="text/javascript" src="pages/js/html2canvas.js"></script> -->
 <!-- 	<script type="text/javascript" src="pages/js/jspdf.min.js"></script> -->

@@ -47,7 +47,7 @@
  			<div class="small-4 cell  input-field"> 
  				<stripes:text name="clasificado.redesSociales" class="required" /> 
  				<label class="active" for="clasificado.googlePlus">Google+</label>									 
- 			</div>	 -->
+ 			</div>
  			<div class="small-4 cell  input-field"> 
  				<stripes:text name="clasificado.redesSociales" class="required" /> 
  				<label class="active" for="clasificado.instagram">Instagram</label>									
