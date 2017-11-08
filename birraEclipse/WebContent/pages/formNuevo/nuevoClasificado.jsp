@@ -37,19 +37,19 @@
 				<h4 class="roboto-light">Redes Sociales</h4>
 			</div>			
 			<div class="small-4 cell  input-field">
-				<stripes:text name="clasificado.redesSociales" class="required" />
+				<stripes:text name="clasificado.twetter" class="required" />
 				<label class="active" for="clasificado.twetter">Twitter</label>									
 			</div>
  			<div class="small-4 cell  input-field">
- 				<stripes:text name="clasificado.redesSociales" class="required" />
+ 				<stripes:text name="clasificado.facebook" class="required" />
  				<label class="active" for="clasificado.facebook">Facebook</label>									 
  			</div>	 
  			<div class="small-4 cell  input-field"> 
- 				<stripes:text name="clasificado.redesSociales" class="required" /> 
+ 				<stripes:text name="clasificado.googlePlus" class="required" /> 
  				<label class="active" for="clasificado.googlePlus">Google+</label>									 
  			</div>
  			<div class="small-4 cell  input-field"> 
- 				<stripes:text name="clasificado.redesSociales" class="required" /> 
+ 				<stripes:text name="clasificado.instagram" class="required" /> 
  				<label class="active" for="clasificado.instagram">Instagram</label>									
  			</div>									 
 		</div>
