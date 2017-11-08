@@ -52,8 +52,8 @@
           <div class="orbit clean-hero-slider" role="region" aria-label="Favorite Space Pictures" data-orbit>
             <div class="orbit-wrapper">
               <div class="orbit-controls">
-                <button class="orbit-previous deep-orange darken-2"><span class="show-for-sr">Slide anterior</span>&#9664;&#xFE0E;</button>
-                <button class="orbit-next deep-orange darken-2"><span class="show-for-sr">Slide siguiente</span>&#9654;&#xFE0E;</button>
+                <button class="orbit-previous deep-orange darken-2"  style="cursor:pointer"><span class="show-for-sr">Slide anterior</span>&#9664;&#xFE0E;</button>
+                <button class="orbit-next deep-orange darken-2" style="cursor:pointer"><span class="show-for-sr">Slide siguiente</span>&#9654;&#xFE0E;</button>
               </div>
               <ul class="orbit-container">
                 <div class="position-absolute z-index-1"><span class="label size-36 roboto-thin deep-orange darken-4  deep-orange-text text-accent-1">${p.categorianoticia.descripcion}</span></div>
@@ -100,8 +100,8 @@
 	              	</c:forEach>
           </h4>
           <div class="contain position-relative">
-            <div id="arrowL" class="orbit-previous"><span class="show-for-sr">Anterior</span><i class="fa fa-angle-left fa-3x" aria-hidden="true"></i></div>
-            <div id="arrowR" class="orbit-next"><span class="show-for-sr">Siguiente</span><i class="fa fa-angle-right fa-3x" aria-hidden="true"></i></div>
+            <div id="arrowL" class="orbit-previous" style="cursor:pointer"><span class="show-for-sr">Anterior</span><i class="fa fa-angle-left fa-3x" aria-hidden="true"></i></div>
+            <div id="arrowR" class="orbit-next" style="cursor:pointer"><span class="show-for-sr">Siguiente</span><i class="fa fa-angle-right fa-3x" aria-hidden="true"></i></div>
 				
 				       
 		            <div class="row" id="content">
@@ -179,8 +179,8 @@
 	              <ul class="no-bullet">
 	              	<c:forEach items="${actionBean.clasificados}" var="p" varStatus="i">
 	              		<c:if test="${p.categorialistado.idCategoriaListado==4}">	
-			                <li class="size-14">
-			                  	<a class="margin-right-1" href="${p.web}">${p.nombre} </a>
+			                <li class="button hollow small">
+			                  	<a href="${p.web}">${p.nombre} </a>&nbsp;
 			                  	<c:if test="${p.facebook != null}"><a href="${p.facebook}"><i class="fa fa-facebook" aria-hidden="true"></i></a>&nbsp;</c:if>
 			                  	<c:if test="${p.twitter != null}"><a href="${p.twitter}"><i class="fa fa-twitter" aria-hidden="true"></i></a>&nbsp;</c:if>
 			                  	<c:if test="${p.googlePlus != null}"><a href="${p.googlePlus}"><i class="fa fa-google-plus" aria-hidden="true"></i></a>&nbsp;</c:if>
@@ -198,11 +198,24 @@
             <!--insumos-->
             <div class="cell large-auto">
              <h4 class="separator-left">
+	               	<c:set var = "descripcion" value = ""/>
 	               	<c:forEach items="${actionBean.clasificados}" var="p" varStatus="i">
+	              		
 	              		<c:if test="${p.categorialistado.idCategoriaListado==5}">
-	              			${p.categorialistado.descripcion}
+	              			
+	              			<c:if test="${descripcion != p.categorialistado.descripcion}">
+	              				<c:set var = "descripcion" value = "${p.categorialistado.descripcion}"/>
+	              				<c:out value = "${descripcion}"/>
+	              			</c:if>
+      							              			
 	              		</c:if>
-	              	</c:forEach>	
+	              	</c:forEach>
+	               		               	
+<%-- 	               	<c:forEach items="${actionBean.clasificados}" var="p" varStatus="i"> --%>
+<%-- 	              		<c:if test="${p.categorialistado.idCategoriaListado==5}"> --%>
+<%-- 	              			${p.categorialistado.descripcion} --%>
+<%-- 	              		</c:if> --%>
+<%-- 	              	</c:forEach>	 --%>
 	              </h4>
 	              <div class="grid-y margin-vertical-1 clasificados">
 	              <ul class="no-bullet">
@@ -227,11 +240,23 @@
             <!--alquileres de choperas-->
             <div class="cell large-auto">
               <h4 class="separator-left">
+					<c:set var = "descripcion" value = ""/>
 	               	<c:forEach items="${actionBean.clasificados}" var="p" varStatus="i">
+	              		
 	              		<c:if test="${p.categorialistado.idCategoriaListado==6}">
-	              			${p.categorialistado.descripcion}
+	              			
+	              			<c:if test="${descripcion != p.categorialistado.descripcion}">
+	              				<c:set var = "descripcion" value = "${p.categorialistado.descripcion}"/>
+	              				<c:out value = "${descripcion}"/>
+	              			</c:if>
+      							              			
 	              		</c:if>
-	              	</c:forEach>	
+	              	</c:forEach>	               	
+<%-- 	               	<c:forEach items="${actionBean.clasificados}" var="p" varStatus="i"> --%>
+<%-- 	              		<c:if test="${p.categorialistado.idCategoriaListado==6}"> --%>
+<%-- 	              			${p.categorialistado.descripcion} --%>
+<%-- 	              		</c:if> --%>
+<%-- 	              	</c:forEach>	 --%>
 	              </h4>
 	              <div class="grid-y margin-vertical-1 clasificados">
 	              <ul class="no-bullet">
@@ -368,7 +393,19 @@
 
       <!--oferta academica-->
       <div class="cell small-12 large-6">
-        <h5 class=" roboto-light">Oferta Académica</h5>
+        <h5 class=" roboto-light">
+		<c:set var = "descripcion" value = ""/>
+	               	<c:forEach items="${actionBean.clasificados}" var="p" varStatus="i">
+	              		
+	              		<c:if test="${p.categorialistado.idCategoriaListado==1}">
+	              			
+	              			<c:if test="${descripcion != p.categorialistado.descripcion}">
+	              				<c:set var = "descripcion" value = "${p.categorialistado.descripcion}"/>
+	              				<c:out value = "${descripcion}"/>
+	              			</c:if>
+      							              			
+	              		</c:if>
+	              	</c:forEach></h5>
         <ul class="no-bullet">
         	<c:forEach items="${actionBean.clasificados}" var="p" varStatus="i">
 		          <c:if test="${p.categorialistado.idCategoriaListado==1}">
@@ -391,7 +428,18 @@
       <!--camaras sectoriales-->
       <div class="cell small-12 large-6">
         <h5 class=" roboto-light">     	
-          	Camaras Sectoriales        
+		<c:set var = "descripcion" value = ""/>
+	               	<c:forEach items="${actionBean.clasificados}" var="p" varStatus="i">
+	              		
+	              		<c:if test="${p.categorialistado.idCategoriaListado==2}">
+	              			
+	              			<c:if test="${descripcion != p.categorialistado.descripcion}">
+	              				<c:set var = "descripcion" value = "${p.categorialistado.descripcion}"/>
+	              				<c:out value = "${descripcion}"/>
+	              			</c:if>
+      							              			
+	              		</c:if>
+	              	</c:forEach>        
         </h5>
         <ul class="no-bullet">
         	<c:forEach items="${actionBean.clasificados}" var="p" varStatus="i">
@@ -428,7 +476,7 @@
   </footer>
 
 
-  <div class="large reveal padding-0 shadow  border-none radius"  data-animation-in="scale-in-up" data-animation-out="scale-out-down" id="exampleModal1" data-reveal>  
+  <div class="large reveal padding-0 shadow  border-none radius"  data-animation-in="scale-in-up" data-animation-out="scale-out-down" id="exampleModal1" data-reveal data-v-offset="30">  
     <div class="grid-x" id="divModalSponsor">
       
     </div>

@@ -18,38 +18,38 @@
 				</stripes:select>						
 			</div>	
 			<div class="small-4 cell  input-field">
-				<stripes:text name="clasificado.mail" class="required" />
+				<stripes:text name="clasificado.mail"  />
 				<label class="active" for="clasificado.mail">Mail</label>										
 			</div>
 			<div class="small-4 cell  input-field">
-				<stripes:text name="clasificado.telefono" class="required" />
+				<stripes:text name="clasificado.telefono"  />
 				<label class="active" for="clasificado.telefono">Telefono</label>									
 			</div>
 			<div class="small-4 cell  input-field">
-				<stripes:text name="clasificado.web" class="required" />
+				<stripes:text name="clasificado.web"  />
 				<label class="active" for="clasificado.web">Web</label>										
 			</div>
 			<div class="small-4 cell  input-field">
-				<stripes:text name="clasificado.direccionMapa" class="required" />
+				<stripes:text name="clasificado.direccionMapa"  />
 				<label class="active" for="clasificado.direccionMapa">Dirección Google Maps</label>
 			</div>
 			<div class="small-12 cell">
 				<h4 class="roboto-light">Redes Sociales</h4>
 			</div>			
 			<div class="small-4 cell  input-field">
-				<stripes:text name="clasificado.twetter" class="required" />
+				<stripes:text name="clasificado.twetter"  />
 				<label class="active" for="clasificado.twetter">Twitter</label>									
 			</div>
  			<div class="small-4 cell  input-field">
- 				<stripes:text name="clasificado.facebook" class="required" />
+ 				<stripes:text name="clasificado.facebook"  />
  				<label class="active" for="clasificado.facebook">Facebook</label>									 
  			</div>	 
  			<div class="small-4 cell  input-field"> 
- 				<stripes:text name="clasificado.googlePlus" class="required" /> 
+ 				<stripes:text name="clasificado.googlePlus"  /> 
  				<label class="active" for="clasificado.googlePlus">Google+</label>									 
  			</div>
  			<div class="small-4 cell  input-field"> 
- 				<stripes:text name="clasificado.instagram" class="required" /> 
+ 				<stripes:text name="clasificado.instagram"/> 
  				<label class="active" for="clasificado.instagram">Instagram</label>									
  			</div>									 
 		</div>

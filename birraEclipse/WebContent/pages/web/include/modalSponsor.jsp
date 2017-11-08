@@ -8,28 +8,40 @@
           <img src="pages/imagenesCargadas/${actionBean.sponsor.imagenFondo}" alt="">
         </div>
         <div class="card-section">
-          <p>${actionBean.sponsor.descripcion}</p>
+          <p class="size-12">${actionBean.sponsor.descripcion}</p>
         </div>
         <div class="card-section">
-          <div class="grid-x grid-margin-x text-center">
-            <div class="cell auto">
-              <a href="${actionBean.sponsor.linkGoogleMapsCompartir}"><i class="fa fa-map-o fa-2x blue-grey-text" aria-hidden="true"></i><br> 
-              	<small>Google Maps</small>
+          <div class="grid-x grid-margin-x">
+            <div class="cell small-12">
+              <i class="fa fa-phone blue-grey-text" aria-hidden="true"></i>  <small>Teléfono</small>
+            </div>             
+            <div class="cell small-12">
+              <a href="${actionBean.sponsor.linkGoogleMapsCompartir}"><i class="fa fa-map-o blue-grey-text" aria-hidden="true"></i> 
+              	<small>Abrir en Google Maps</small>
               </a>
             </div>
-            <div class="cell auto">
+            <div class="cell small-12">
             	<a href="${actionBean.sponsor.linkWeb}">
-	              <i class="fa fa-external-link fa-2x blue-grey-text" aria-hidden="true"></i><br> <small>Sitio Web</small>
+	              <i class="fa fa-external-link blue-grey-text" aria-hidden="true"></i> <small>Sitio Web</small>
 	           </a>
             </div>
-            <div class="cell auto">
+            <div class="cell small-12">
               <a href="mailto:${actionBean.sponsor.mail}">
-              	<i class="fa fa-envelope-o fa-2x blue-grey-text" aria-hidden="true"></i> <br> <small>Mail</small>
+              	<i class="fa fa-envelope-o blue-grey-text" aria-hidden="true"></i> <small>Mail</small>
               </a>
             </div>
-            <div class="cell auto">
-              <i class="fa fa-share-alt fa-2x blue-grey-text" aria-hidden="true"></i> <br> <small>Compartir</small>
+            <div class="cell small-12">
+              <i class="fa fa-twitter blue-grey-text" aria-hidden="true"></i>  <small>Twitter</small>
             </div>
+            <div class="cell small-12">
+              <i class="fa fa-facebook blue-grey-text" aria-hidden="true"></i>  <small>Facebook</small>
+            </div> 
+            <div class="cell small-12">
+              <i class="fa fa-google-plus blue-grey-text" aria-hidden="true"></i>  <small>Google+</small>
+            </div>
+            <div class="cell small-12">
+              <i class="fa fa-instagram blue-grey-text" aria-hidden="true"></i>  <small>Instagram</small>
+            </div>                                    
           </div>
         </div>
       </div>
