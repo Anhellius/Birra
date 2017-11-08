@@ -178,7 +178,8 @@
 			                  	<c:if test="${p.twitter != null}"><a href="${p.twitter}"><i class="fa fa-twitter" aria-hidden="true"></i></a>&nbsp;</c:if>
 			                  	<c:if test="${p.googlePlus != null}"><a href="${p.googlePlus}"><i class="fa fa-google-plus" aria-hidden="true"></i></a>&nbsp;</c:if>
 			                  	<c:if test="${p.instagram != null}"><a href="${p.instagram}"><i class="fa fa-instagram" aria-hidden="true"></i></a>&nbsp;</c:if>
-			                  	<c:if test="${p.direccionMapa != null}"><a href=""><i class="fa fa-map-marker" aria-hidden="true"></i></a></c:if>
+			                  	<c:if test="${p.direccionMapa != null}"><a href=""><i class="fa fa-map-marker" aria-hidden="true"></i></a>&nbsp;</c:if>
+			                  	<c:if test="${p.mail != null}"><a href=""><i class="fa fa-envelope-o" aria-hidden="true"></i></a></c:if>
 			                </li>
 		               </c:if>
 	                 </c:forEach>
@@ -206,7 +207,8 @@
 			                  	<c:if test="${p.twitter != null}"><a href="${p.twitter}"><i class="fa fa-twitter" aria-hidden="true"></i></a>&nbsp;</c:if>
 			                  	<c:if test="${p.googlePlus != null}"><a href="${p.googlePlus}"><i class="fa fa-google-plus" aria-hidden="true"></i></a>&nbsp;</c:if>
 			                  	<c:if test="${p.instagram != null}"><a href="${p.instagram}"><i class="fa fa-instagram" aria-hidden="true"></i></a>&nbsp;</c:if>
-			                  	<c:if test="${p.direccionMapa != null}"><a href=""><i class="fa fa-map-marker" aria-hidden="true"></i></a></c:if>
+			                  	<c:if test="${p.direccionMapa != null}"><a href=""><i class="fa fa-map-marker" aria-hidden="true"></i></a>&nbsp;</c:if>
+			                  	<c:if test="${p.mail != null}"><a href=""><i class="fa fa-envelope-o" aria-hidden="true"></i></a></c:if>
 			                </li>
 		               </c:if>
 	                 </c:forEach>
@@ -230,11 +232,12 @@
 	              		<c:if test="${p.categorialistado.idCategoriaListado==6}">	
 			                <li class="size-14">
 			                   	<a class="margin-right-1" href="${p.web}">${p.nombre} </a>
-			                  	<a href="${p.facebook}"><i class="fa fa-facebook" aria-hidden="true"></i></a>&nbsp;
-			                  	<a href="${p.facebook}"><i class="fa fa-twitter" aria-hidden="true"></i></a>&nbsp;
-			                  	<a href="${p.facebook}"><i class="fa fa-google-plus" aria-hidden="true"></i></a>&nbsp;
-			                  	<a href="${p.facebook}"><i class="fa fa-instagram" aria-hidden="true"></i></a>&nbsp;
-		                  		<a href=""><i class="fa fa-map-marker" aria-hidden="true"></i></a>
+			                  	<c:if test="${p.facebook != null}"><a href="${p.facebook}"><i class="fa fa-facebook" aria-hidden="true"></i></a>&nbsp;</c:if>
+			                  	<c:if test="${p.twitter != null}"><a href="${p.twitter}"><i class="fa fa-twitter" aria-hidden="true"></i></a>&nbsp;</c:if>
+			                  	<c:if test="${p.googlePlus != null}"><a href="${p.googlePlus}"><i class="fa fa-google-plus" aria-hidden="true"></i></a>&nbsp;</c:if>
+			                  	<c:if test="${p.instagram != null}"><a href="${p.instagram}"><i class="fa fa-instagram" aria-hidden="true"></i></a>&nbsp;</c:if>
+			                  	<c:if test="${p.direccionMapa != null}"><a href=""><i class="fa fa-map-marker" aria-hidden="true"></i></a>&nbsp;</c:if>
+			                  	<c:if test="${p.mail != null}"><a href=""><i class="fa fa-envelope-o" aria-hidden="true"></i></a></c:if>
 			                </li>
 		               </c:if>
 	                 </c:forEach>
@@ -364,11 +367,12 @@
 		          <c:if test="${p.categorialistado.idCategoriaListado==1}">
 		          <li class="size-14">
 			            <a class="margin-right-1" href="${p.web}">${p.nombre} </a>
-	                  	<a href="${p.facebook}"><i class="fa fa-facebook" aria-hidden="true"></i></a>&nbsp;
-	                  	<a href="${p.facebook}"><i class="fa fa-twitter" aria-hidden="true"></i></a>&nbsp;
-	                  	<a href="${p.facebook}"><i class="fa fa-google-plus" aria-hidden="true"></i></a>&nbsp;
-	                  	<a href="${p.facebook}"><i class="fa fa-instagram" aria-hidden="true"></i></a>&nbsp;
-			            <a href=""><i class="fa fa-map-marker" aria-hidden="true"></i></a>
+	                  	<c:if test="${p.facebook != null}"><a href="${p.facebook}"><i class="fa fa-facebook" aria-hidden="true"></i></a>&nbsp;</c:if>
+	                  	<c:if test="${p.twitter != null}"><a href="${p.twitter}"><i class="fa fa-twitter" aria-hidden="true"></i></a>&nbsp;</c:if>
+	                  	<c:if test="${p.googlePlus != null}"><a href="${p.googlePlus}"><i class="fa fa-google-plus" aria-hidden="true"></i></a>&nbsp;</c:if>
+	                  	<c:if test="${p.instagram != null}"><a href="${p.instagram}"><i class="fa fa-instagram" aria-hidden="true"></i></a>&nbsp;</c:if>
+	                  	<c:if test="${p.direccionMapa != null}"><a href=""><i class="fa fa-map-marker" aria-hidden="true"></i></a>&nbsp;</c:if>
+			            <c:if test="${p.mail != null}"><a href=""><i class="fa fa-envelope-o" aria-hidden="true"></i></a></c:if>
 			          </li>
 		          </c:if>
 	        </c:forEach>
@@ -387,11 +391,12 @@
 	          <c:if test="${p.categorialistado.idCategoriaListado==2}">
 		          <li class="size-14">
 		            <a class="margin-right-1" href="${p.web}">${p.nombre} </a>
-                  	<a href="${p.facebook}"><i class="fa fa-facebook" aria-hidden="true"></i></a>&nbsp;
-                  	<a href="${p.facebook}"><i class="fa fa-twitter" aria-hidden="true"></i></a>&nbsp;
-                  	<a href="${p.facebook}"><i class="fa fa-google-plus" aria-hidden="true"></i></a>&nbsp;
-                  	<a href="${p.facebook}"><i class="fa fa-instagram" aria-hidden="true"></i></a>&nbsp;
-		            <a href=""><i class="fa fa-map-marker" aria-hidden="true"></i></a>
+                  	<c:if test="${p.facebook != null}"><a href="${p.facebook}"><i class="fa fa-facebook" aria-hidden="true"></i></a>&nbsp;</c:if>
+                  	<c:if test="${p.twitter != null}"><a href="${p.twitter}"><i class="fa fa-twitter" aria-hidden="true"></i></a>&nbsp;</c:if>
+                  	<c:if test="${p.googlePlus != null}"><a href="${p.googlePlus}"><i class="fa fa-google-plus" aria-hidden="true"></i></a>&nbsp;</c:if>
+                  	<c:if test="${p.instagram != null}"><a href="${p.instagram}"><i class="fa fa-instagram" aria-hidden="true"></i></a>&nbsp;</c:if>
+                  	<c:if test="${p.direccionMapa != null}"><a href=""><i class="fa fa-map-marker" aria-hidden="true"></i></a>&nbsp;</c:if>
+			        <c:if test="${p.mail != null}"><a href=""><i class="fa fa-envelope-o" aria-hidden="true"></i></a></c:if>
 		          </li>		          
 	          </c:if>
           	</c:forEach>	
