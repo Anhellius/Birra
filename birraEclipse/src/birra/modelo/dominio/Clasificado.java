@@ -32,6 +32,8 @@ public class Clasificado implements java.io.Serializable, IPersistible {
 	private String web;
 	private String facebook;
 	private String twitter;
+	private String googlePlus;
+	private String instagram;
 	private String direccionMapa;
 	private boolean publicada; 
 
@@ -46,6 +48,24 @@ public class Clasificado implements java.io.Serializable, IPersistible {
 		this.telefono = telefono;
 		this.web = web;
 		this.direccionMapa = direccionMapa;
+	}
+
+	public Clasificado(Integer idClasificado, CategoriaListado categorialistado, String nombre, String mail,
+			String telefono, String web, String facebook, String twitter, String googlePlus, String instagram,
+			String direccionMapa, boolean publicada) {
+		super();
+		this.idClasificado = idClasificado;
+		this.categorialistado = categorialistado;
+		this.nombre = nombre;
+		this.mail = mail;
+		this.telefono = telefono;
+		this.web = web;
+		this.facebook = facebook;
+		this.twitter = twitter;
+		this.googlePlus = googlePlus;
+		this.instagram = instagram;
+		this.direccionMapa = direccionMapa;
+		this.publicada = publicada;
 	}
 
 	@Id
@@ -137,6 +157,22 @@ public class Clasificado implements java.io.Serializable, IPersistible {
 
 	public void setTwitter(String twitter) {
 		this.twitter = twitter;
+	}
+
+	public String getGooglePlus() {
+		return googlePlus;
+	}
+
+	public void setGooglePlus(String googlePlus) {
+		this.googlePlus = googlePlus;
+	}
+
+	public String getInstagram() {
+		return instagram;
+	}
+
+	public void setInstagram(String instagram) {
+		this.instagram = instagram;
 	}
 
 }
