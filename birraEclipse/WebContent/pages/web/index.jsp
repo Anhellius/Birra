@@ -162,9 +162,16 @@
             <!--que tomar-->
             <div class="cell large-auto">
               <h4 class="separator-left">
+              	<c:set var = "descripcion" value = ""/>
 	               	<c:forEach items="${actionBean.clasificados}" var="p" varStatus="i">
+	              		
 	              		<c:if test="${p.categorialistado.idCategoriaListado==4}">
-	              			${p.categorialistado.descripcion}
+	              			
+	              			<c:if test="${descripcion != p.categorialistado.descripcion}">
+	              				<c:set var = "descripcion" value = "${p.categorialistado.descripcion}"/>
+	              				<c:out value = "${descripcion}"/>
+	              			</c:if>
+      							              			
 	              		</c:if>
 	              	</c:forEach>	
 	              </h4>
