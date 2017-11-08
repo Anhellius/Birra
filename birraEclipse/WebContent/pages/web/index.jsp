@@ -168,18 +168,22 @@
 	              		</c:if>
 	              	</c:forEach>	
 	              </h4>
-	              
+	              <div class="grid-y margin-vertical-1 clasificados">
 	              <ul class="no-bullet">
 	              	<c:forEach items="${actionBean.clasificados}" var="p" varStatus="i">
 	              		<c:if test="${p.categorialistado.idCategoriaListado==4}">	
 			                <li class="size-14">
-			                  <a href="${p.web}">${p.nombre} </a>
-			                  <a href="${p.facebook}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-			                  <a href=""><i class="fa fa-map-marker" aria-hidden="true"></i></a>
+			                  	<a class="margin-right-1" href="${p.web}">${p.nombre} </a>
+			                  	<a href="${p.facebook}"><i class="fa fa-facebook" aria-hidden="true"></i></a>&nbsp;
+			                  	<a href="${p.facebook}"><i class="fa fa-twitter" aria-hidden="true"></i></a>&nbsp;
+			                  	<a href="${p.facebook}"><i class="fa fa-google-plus" aria-hidden="true"></i></a>&nbsp;
+			                  	<a href="${p.facebook}"><i class="fa fa-instagram" aria-hidden="true"></i></a>&nbsp;
+			                  	<a href=""><i class="fa fa-map-marker" aria-hidden="true"></i></a>
 			                </li>
 		               </c:if>
 	                 </c:forEach>
 	              </ul>
+	              </div>
             </div>
             <!--fin que tomar-->
 
@@ -192,18 +196,22 @@
 	              		</c:if>
 	              	</c:forEach>	
 	              </h4>
-	              
+	              <div class="grid-y margin-vertical-1 clasificados">
 	              <ul class="no-bullet">
 	              	<c:forEach items="${actionBean.clasificados}" var="p" varStatus="i">
 	              		<c:if test="${p.categorialistado.idCategoriaListado==5}">	
 			                <li class="size-14">
-			                   <a href="${p.web}">${p.nombre} </a>
-			                  <a href="${p.facebook}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-			                  <a href=""><i class="fa fa-map-marker" aria-hidden="true"></i></a>
+			                   	<a class="margin-right-1" href="${p.web}">${p.nombre} </a>
+			                  	<a href="${p.facebook}"><i class="fa fa-facebook" aria-hidden="true"></i></a>&nbsp;
+			                  	<a href="${p.facebook}"><i class="fa fa-twitter" aria-hidden="true"></i></a>&nbsp;
+			                  	<a href="${p.facebook}"><i class="fa fa-google-plus" aria-hidden="true"></i></a>&nbsp;
+			                  	<a href="${p.facebook}"><i class="fa fa-instagram" aria-hidden="true"></i></a>&nbsp;
+			                  	<a href=""><i class="fa fa-map-marker" aria-hidden="true"></i></a>
 			                </li>
 		               </c:if>
 	                 </c:forEach>
 	              </ul>
+	              </div>
             </div>
             <!--fin insumos-->
 
@@ -216,18 +224,22 @@
 	              		</c:if>
 	              	</c:forEach>	
 	              </h4>
-	              
+	              <div class="grid-y margin-vertical-1 clasificados">
 	              <ul class="no-bullet">
 	              	<c:forEach items="${actionBean.clasificados}" var="p" varStatus="i">
 	              		<c:if test="${p.categorialistado.idCategoriaListado==6}">	
 			                <li class="size-14">
-			                   <a href="${p.web}">${p.nombre} </a>
-			                  <a href="${p.facebook}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-			                  <a href=""><i class="fa fa-map-marker" aria-hidden="true"></i></a>
+			                   	<a class="margin-right-1" href="${p.web}">${p.nombre} </a>
+			                  	<a href="${p.facebook}"><i class="fa fa-facebook" aria-hidden="true"></i></a>&nbsp;
+			                  	<a href="${p.facebook}"><i class="fa fa-twitter" aria-hidden="true"></i></a>&nbsp;
+			                  	<a href="${p.facebook}"><i class="fa fa-google-plus" aria-hidden="true"></i></a>&nbsp;
+			                  	<a href="${p.facebook}"><i class="fa fa-instagram" aria-hidden="true"></i></a>&nbsp;
+		                  		<a href=""><i class="fa fa-map-marker" aria-hidden="true"></i></a>
 			                </li>
 		               </c:if>
 	                 </c:forEach>
 	              </ul>
+	              </div>
             </div>
             <!--fin alquileres de choperas-->
 
@@ -351,8 +363,11 @@
         	<c:forEach items="${actionBean.clasificados}" var="p" varStatus="i">
 		          <c:if test="${p.categorialistado.idCategoriaListado==1}">
 		          <li class="size-14">
-			            <a href="${p.web}">${p.nombre} </a>
-			            <a href="${p.facebook}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+			            <a class="margin-right-1" href="${p.web}">${p.nombre} </a>
+	                  	<a href="${p.facebook}"><i class="fa fa-facebook" aria-hidden="true"></i></a>&nbsp;
+	                  	<a href="${p.facebook}"><i class="fa fa-twitter" aria-hidden="true"></i></a>&nbsp;
+	                  	<a href="${p.facebook}"><i class="fa fa-google-plus" aria-hidden="true"></i></a>&nbsp;
+	                  	<a href="${p.facebook}"><i class="fa fa-instagram" aria-hidden="true"></i></a>&nbsp;
 			            <a href=""><i class="fa fa-map-marker" aria-hidden="true"></i></a>
 			          </li>
 		          </c:if>
@@ -371,8 +386,11 @@
         	<c:forEach items="${actionBean.clasificados}" var="p" varStatus="i">
 	          <c:if test="${p.categorialistado.idCategoriaListado==2}">
 		          <li class="size-14">
-		            <a href="${p.web}">${p.nombre} </a>
-			        <a href="${p.facebook}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+		            <a class="margin-right-1" href="${p.web}">${p.nombre} </a>
+                  	<a href="${p.facebook}"><i class="fa fa-facebook" aria-hidden="true"></i></a>&nbsp;
+                  	<a href="${p.facebook}"><i class="fa fa-twitter" aria-hidden="true"></i></a>&nbsp;
+                  	<a href="${p.facebook}"><i class="fa fa-google-plus" aria-hidden="true"></i></a>&nbsp;
+                  	<a href="${p.facebook}"><i class="fa fa-instagram" aria-hidden="true"></i></a>&nbsp;
 		            <a href=""><i class="fa fa-map-marker" aria-hidden="true"></i></a>
 		          </li>		          
 	          </c:if>
