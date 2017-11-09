@@ -1,7 +1,7 @@
 <%@ include file="/pages/taglibs.jsp" %>
 <div class="grid-container fluid">
 <div class="grid-x grid-padding-x grid-padding-y">
-	<div class="cell small-12 shadow padding-vertical-2 hide-for-small-only">
+	<div class="cell small-12 shadow padding-vertical-2 hide-for-small-only white">
 		<div class="grid-x grid-margin-x align-middle">
 			<div class="cell shrink">
 				<i class="fa fa-bars fa-lg" aria-hidden="true"  id="botonOffCanvas" style="cursor:pointer"></i>

@@ -8,7 +8,7 @@
 	<title>Birra</title>
 	
 </head>
-<body>
+<body class="grey lighten-3">
 	<div class="off-canvas-wrapper">
 		<div class="title-bar show-for-small-only">
 			<div class="title-bar-left">
