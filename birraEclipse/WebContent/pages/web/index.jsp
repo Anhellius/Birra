@@ -30,7 +30,7 @@
                       <h3 class="truncate-4 robotoMono-light">${actionBean.noticiasElNegocio[0].titulo}</h3>
                       <p class="truncate-4 roboto-light">${actionBean.noticiasElNegocio[0].copete}</p>
                       <div class="grid-x">
-                        <div class="cell small-12 large-shrink"><a href="noticia?id=${actionBean.noticiasElNegocio[0].idNoticia}" class="button rounded expanded deep-orange darken-1">${actionBean.noticiasElNegocio[0].autor}</a></div>
+                        <div class="cell small-12 large-shrink"><a href="noticia?id=${actionBean.noticiasElNegocio[0].idNoticia}" class="button rounded expanded deep-orange darken-1">Ver más</a></div>
                       </div>
 
                     </figcaption>
@@ -65,7 +65,7 @@
 	                    <figcaption class="orbit-caption">
 	                      <h3 class="truncate-4 h4 robotoMono-light">${p.titulo}</h3>
 	                      <p class="truncate-4 roboto-light">${p.copete}</p>
-	                      <a href="noticia2.html" class="button rounded  deep-orange darken-1">Ver más</a>
+	                      <a href="noticia?id=${p.idNoticia}" class="button rounded  deep-orange darken-1">Ver más</a>
 	                    </figcaption>
 	                  </figure>
 	                </li>
@@ -298,7 +298,7 @@
                         <figcaption class="orbit-caption">
                           <h4 class="robotoMono-light">${actionBean.noticiasCT[0].titulo}</h4>
                           <p>${actionBean.noticiasCT[0].copete}</p>
-                          <a href="#" class="button rounded deep-orange darken-1">${actionBean.noticiasCT[0].autor}</a>
+                          <a href="noticia?id=${actionBean.noticiasCT[0].idNoticia}" class="button rounded deep-orange darken-1">Ver más</a>
                         </figcaption>
                       </figure>
                     </li>
@@ -317,7 +317,7 @@
                         <figcaption class="orbit-caption">
                           <h4 class="robotoMono-light">${actionBean.noticiasDegira[0].titulo}</h4>
                           <p>${actionBean.noticiasDegira[0].copete}</p>
-                          <a href="#" class="button rounded deep-orange darken-1">Ver más</a>
+                          <a href="noticia?id=${actionBean.noticiasDegira[0].idNoticia}" class="button rounded deep-orange darken-1">Ver más</a>
                         </figcaption>
                       </figure>
                     </li>
@@ -336,7 +336,7 @@
                         <figcaption class="orbit-caption">
                           <h4 class="robotoMono-light">${actionBean.noticiasRSE[0].titulo}</h4>
                           <p>${actionBean.noticiasRSE[0].copete}</p>
-                          <a href="#" class="button rounded deep-orange darken-1">${actionBean.noticiasRSE[0].autor}</a>
+                          <a href="noticia?id=${actionBean.noticiasRSE[0].idNoticia}" class="button rounded deep-orange darken-1">Ver más</a>
                         </figcaption>
                       </figure>
                     </li>
@@ -359,7 +359,7 @@
                     <figcaption class="orbit-caption">
                       <h4 class="robotoMono-light">${actionBean.noticiasEntrevista[0].titulo}</h4>
                       <p>${actionBean.noticiasEntrevista[0].copete}</p>
-                      <a href="#" class="button rounded deep-orange darken-1">${actionBean.noticiasEntrevista[0].autor}</a>
+                      <a href="noticia?id=${actionBean.noticiasEntrevista[0].idNoticia}" class="button rounded deep-orange darken-1">Ver más</a>
                     </figcaption>
                   </figure>
                 </li>
@@ -378,7 +378,7 @@
                     <figcaption class="orbit-caption">
                       <h4 class="robotoMono-light">${actionBean.noticiasHistoriasBirra[0].titulo}</h4>
                       <p>${actionBean.noticiasHistoriasBirra[0].copete}</p>
-                      <a href="#" class="button rounded deep-orange darken-1">${actionBean.noticiasHistoriasBirra[0].autor}</a>
+                      <a href="noticia?id=${actionBean.noticiasHistoriasBirra[0].idNoticia}" class="button rounded deep-orange darken-1">Ver más</a>
                     </figcaption>
                   </figure>
                 </li>
