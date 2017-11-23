@@ -13,7 +13,9 @@
         <div class="card-section">
           <div class="grid-x grid-margin-x">
             <div class="cell small-12">
+              <a href="tel:${actionBean.sponsor.telefono}">
               <i class="fa fa-phone blue-grey-text" aria-hidden="true"></i>  <small>Teléfono</small>
+              </a>
             </div>             
             <div class="cell small-12">
               <a href="${actionBean.sponsor.linkGoogleMapsCompartir}"><i class="fa fa-map-o blue-grey-text" aria-hidden="true"></i> 
@@ -31,16 +33,24 @@
               </a>
             </div>
             <div class="cell small-12">
+              <a href="${actionBean.sponsor.linkTwitter}">
               <i class="fa fa-twitter blue-grey-text" aria-hidden="true"></i>  <small>Twitter</small>
+              </a>
             </div>
             <div class="cell small-12">
+              <a href="${actionBean.sponsor.linkFacebook}">
               <i class="fa fa-facebook blue-grey-text" aria-hidden="true"></i>  <small>Facebook</small>
+              </a>
             </div> 
             <div class="cell small-12">
+              <a href="${actionBean.sponsor.linkFacebook}">
               <i class="fa fa-google-plus blue-grey-text" aria-hidden="true"></i>  <small>Google+</small>
+              </a>
             </div>
             <div class="cell small-12">
+              <a href="${actionBean.sponsor.linkInstagram}">
               <i class="fa fa-instagram blue-grey-text" aria-hidden="true"></i>  <small>Instagram</small>
+              </a>
             </div>                                    
           </div>
         </div>

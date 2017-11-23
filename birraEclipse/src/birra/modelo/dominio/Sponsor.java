@@ -43,6 +43,8 @@ public class Sponsor implements java.io.Serializable, IPersistible {
 	private String mail;
 	private String linkFacebook;
 	private String linkTwitter;
+	private String linkInstagram;
+	private String linkGooglePlus;
 	private String linkWeb;	
 	private boolean publicada; 
 	
@@ -59,7 +61,7 @@ public class Sponsor implements java.io.Serializable, IPersistible {
 	}
 
 	public Sponsor(String nombre, String linkGoogleMaps, String direccion, String descripcion,
-			String telefono, String mail, String linkFacebook, String linkTwitter, String linkWeb) {
+			String telefono, String mail, String linkFacebook, String linkInstagram, String linkGooglePlus, String linkTwitter, String linkWeb) {
 		this.nombre = nombre;
 		this.linkGoogleMaps = linkGoogleMaps;
 		this.direccion = direccion;
@@ -67,6 +69,8 @@ public class Sponsor implements java.io.Serializable, IPersistible {
 		this.telefono = telefono;
 		this.mail = mail;
 		this.linkFacebook = linkFacebook;
+		this.linkInstagram = linkInstagram;
+		this.linkGooglePlus = linkGooglePlus;
 		this.linkTwitter = linkTwitter;
 		this.linkWeb = linkWeb;
 	}
@@ -238,6 +242,22 @@ public class Sponsor implements java.io.Serializable, IPersistible {
 
 	public void setLinkGoogleMapsCompartir(String linkGoogleMapsCompartir) {
 		this.linkGoogleMapsCompartir = linkGoogleMapsCompartir;
+	}
+
+	public String getLinkGooglePlus() {
+		return linkGooglePlus;
+	}
+
+	public void setLinkGooglePlus(String linkGooglePlus) {
+		this.linkGooglePlus = linkGooglePlus;
+	}
+
+	public String getLinkInstagram() {
+		return linkInstagram;
+	}
+
+	public void setLinkInstagram(String linkInstagram) {
+		this.linkInstagram = linkInstagram;
 	}
 
 }
