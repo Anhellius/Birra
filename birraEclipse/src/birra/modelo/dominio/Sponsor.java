@@ -34,8 +34,7 @@ import net.sourceforge.stripes.action.FileBean;
 public class Sponsor implements java.io.Serializable, IPersistible {
 	
 	private Integer idSponsor;
-	private String nombre;
-	private String breveDescripcion;
+	private String nombre;	
 	private String linkGoogleMaps;
 	private String direccion;
 	private String descripcion;
@@ -43,12 +42,12 @@ public class Sponsor implements java.io.Serializable, IPersistible {
 	private String mail;
 	private String linkFacebook;
 	private String linkTwitter;
-	private String linkInstagram;
-	private String linkGooglePlus;
 	private String linkWeb;	
-	private boolean publicada; 
-	
+	private String breveDescripcion;
+	private boolean publicada; 	
 	private String linkGoogleMapsCompartir;
+	private String linkGooglePlus;
+	private String linkInstagram;
 	
 	private FileBean logo;
 	private FileBean fondo;
