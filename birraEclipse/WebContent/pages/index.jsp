@@ -206,7 +206,7 @@ $(document).ready(function() {
 						}
 				},
 				error: function(data){
-					alert("Error de sistema. Comuniquese con sistemas@inti.gob.ar");		
+					alert("Error de sistema, intente nuevamente o comuniquese con el administrador del Sistema");		
 				}
 			}).submit();	
 	});	

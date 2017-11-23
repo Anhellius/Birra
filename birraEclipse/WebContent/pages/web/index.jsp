@@ -24,7 +24,11 @@
               <ul class="orbit-container">
                 <li class="orbit-slide">
                   <figure class="orbit-figure">
-                    <div class="position-absolute z-index-1"><span class="label  size-36 roboto-thin deep-orange darken-4  deep-orange-text text-accent-1">${actionBean.noticiasElNegocio[0].categorianoticia.descripcion}</span></div>
+                    <div class="position-absolute z-index-1">
+                    	<span class="label  size-36 roboto-thin deep-orange darken-4  deep-orange-text text-accent-1">
+                    		${actionBean.noticiasElNegocio[0].categorianoticia.descripcion}
+                    	</span>
+                    </div>
                     <img class="cropcontainer" src="pages/imagenesCargadas/${actionBean.noticiasElNegocio[0].nombreImagenPrincipal}" alt="image alt text">
                     <figcaption class="orbit-caption">
                       <h3 class="truncate-4 robotoMono-light">${actionBean.noticiasElNegocio[0].titulo}</h3>
@@ -56,19 +60,22 @@
                 <button class="orbit-next deep-orange darken-2" style="cursor:pointer"><span class="show-for-sr">Slide siguiente</span>&#9654;&#xFE0E;</button>
               </div>
               <ul class="orbit-container">
-                <div class="position-absolute z-index-1"><span class="label size-36 roboto-thin deep-orange darken-4  deep-orange-text text-accent-1">${p.categorianoticia.descripcion}</span></div>
-                
                 <c:forEach items="${actionBean.noticiasActualidad}" var="p" varStatus="i">
-	                <li class="orbit-slide">
-	                  <figure class="orbit-figure">
-	                    <img class="cropcontainer" src="pages/imagenesCargadas/${p.nombreImagenPrincipal}" alt="image alt text">
-	                    <figcaption class="orbit-caption">
-	                      <h3 class="truncate-4 h4 robotoMono-light">${p.titulo}</h3>
-	                      <p class="truncate-4 roboto-light">${p.copete}</p>
-	                      <a href="noticia?id=${p.idNoticia}" class="button rounded  deep-orange darken-1">Ver más</a>
-	                    </figcaption>
-	                  </figure>
-	                </li>
+					<li class="orbit-slide">
+	                	<figure class="orbit-figure">
+		                  	<div class="position-absolute z-index-1">
+		                  		<span class="label size-36 roboto-thin deep-orange darken-4  deep-orange-text text-accent-1">
+			                		${p.categorianoticia.descripcion}
+			                	</span>
+			                </div>
+	                    	<img class="cropcontainer" src="pages/imagenesCargadas/${p.nombreImagenPrincipal}" alt="image alt text">
+	                    	<figcaption class="orbit-caption">
+	                      		<h3 class="truncate-4 h4 robotoMono-light">${p.titulo}</h3>
+	                      		<p class="truncate-4 roboto-light">${p.copete}</p>
+	                      		<a href="noticia?id=${p.idNoticia}" class="button rounded  deep-orange darken-1">Ver más</a>
+	                    	</figcaption>
+	                  	</figure>
+					</li>
                 </c:forEach>
                 
               </ul>
@@ -505,7 +512,7 @@
      					$('#divModalSponsor').html(data); 							
      			},
      			error: function(data){					
-     				alert("Error de sistema, intente nuevamente o comuniquese con el interno 6194 o a sistemas@inti.gob.ar");				
+     				alert("Error de sistema, intente nuevamente o comuniquese con el administrador del Sistema");				
      			}
      		});
      		
